@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfcontinue&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-content.html">
+							<span class="access-hide">Previous page: &lt;cfcontent&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-cookie.html">
+							<span class="access-hide">Previous page: &lt;cfcookie&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfcontinue&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfcontinue&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfcontinue&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/continue/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Used within a cfloop tag. Returns processing to the top of a loop.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfcontinue</span> <span class="err">#</span><span class="na">string</span> <span class="na">label</span><span class="err">#</span><span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								label<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/continue/_attributes/label.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>used to a address a specific loop instead of the nearest one.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/continue/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<h3>Tags</h3>
+<script type="text/template" id="code-adccd9242b390ff5c82803ff14575b28" data-trycf="true" data-script="false"><cfset count = 0 />
+<cfloop from="1" to="10" index="x">
+	<!--- ignoring row 5 and continue the loop --->
+	<cfif x is 5>
+		<cfcontinue  />
+	</cfif>
+	<cfset count++ />
+</cfloop>
+<cfdump var="#count#" label="Count variable is" abort /></script>
+<div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">count</span> <span class="o">=</span> <span class="m">0</span> <span class="o">/</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfloop</span> <span class="nv">from</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="nv">to</span><span class="o">=</span><span class="s2">&quot;10&quot;</span> <span class="nv">index</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="nb">&gt;</span>
+	<span class="cm">&lt;!--- ignoring row 5 and continue the loop ---&gt;</span>
+	<span class="nb">&lt;cfif</span> <span class="nv">x</span> <span class="o">is</span> <span class="m">5</span><span class="nb">&gt;</span>
+		<span class="nt">&lt;cfcontinue</span>  <span class="nt">/&gt;</span>
+	<span class="nb">&lt;/cfif&gt;</span>
+	<span class="nb">&lt;cfset</span> <span class="nv">count</span><span class="o">++</span> <span class="o">/</span><span class="nb">&gt;</span>
+<span class="nb">&lt;/cfloop&gt;</span>
+<span class="nb">&lt;cfdump</span> <span class="k">var</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#count#</span><span class="s2">&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Count variable is&quot;</span> <span class="nv">abort</span> <span class="o">/</span><span class="nb">&gt;</span>
+</pre></div><h3>Script</h3>
+<script type="text/template" id="code-4760d6bacabffa50cc1ea849f42d5a06" data-trycf="true" data-script="true">count = 0;
+count2 = 0;
+for (x = 1; x <= 10; x++) {
+	count2++;
+	// ignoring row 5 and continue the loop
+	if (x is 5) {
+		continue;
+	}
+	count++;
+}
+dump(var=count, label="Count variable is");
+dump(var=count2, label="Count2 variable is");</script>
+<div class="highlight"><pre><span class="nv">count</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+<span class="nv">count2</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+<span class="nf">for</span> <span class="p">(</span><span class="nv">x</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="nv">x</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">;</span> <span class="nv">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nv">count2</span><span class="o">++</span><span class="p">;</span>
+	<span class="c">// ignoring row 5 and continue the loop</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nv">x</span> <span class="o">is</span> <span class="m">5</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nv">continue</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nv">count</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="nv">count</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Count variable is&quot;</span><span class="p">);</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="nv">count2</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Count2 variable is&quot;</span><span class="p">);</span>
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

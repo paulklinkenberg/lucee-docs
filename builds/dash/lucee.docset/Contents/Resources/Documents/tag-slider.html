@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfslider&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-sleep.html">
+							<span class="access-hide">Previous page: &lt;cfsleep&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-spreadsheet.html">
+							<span class="access-hide">Previous page: &lt;cfspreadsheet&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfslider&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfslider&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfslider&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Used inside cfform, cfslider lets you place a slider control in a CFML form. A slider  control is like a sliding volume control. The slider groove is the area over which the slider moves.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfslider</span>
+    <span class="na">name=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">label=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">refreshLabel=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">range=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scale=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">value=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onValidate=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">message=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onError=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">height=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">width=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">vSpace=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">hSpace=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">align=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tickMarkMajor=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tickMarkMinor=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tickMarkImages=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tickMarkLabels=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">lookAndFeel=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">vertical=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">bgColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">textColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">font=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">fontSize=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">italic=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">bold=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">notSupported=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A name for the cfslider control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								label<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/label.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A label that displays with the slider control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								refreshLabel<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/refreshLabel.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. If Yes, the label is not refreshed when the slider is moved. Default is Yes.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								range<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/range.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The values of the left and right slider range. The slider value displays as the slider is moved.  Separate values by a comma.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scale<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/scale.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Unsigned integer. Defines the slider scale within the value of range.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The starting slider setting. Must be within the values specified in range. Defaults to the  minimum value specified in range.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onValidate<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/onValidate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of a valid JavaScript function used to validate user input; in this case,  a change to the default slider value.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								message<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/message.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Message text to appear if validation fails.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onError<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/onError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of a valid JavaScript function to execute in the event of a failed validation.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								height<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/height.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Height of the slider control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								width<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/width.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Width of the slider control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								vSpace<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/vSpace.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Vertical margin spacing above and below slider control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								hSpace<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/hSpace.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Horizontal margin spacing to the left and right of slider control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								align<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/align.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Alignment value.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tickMarkMajor<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/tickMarkMajor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes to render major tickmarks in the slider scale.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tickMarkMinor<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/tickMarkMinor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes to render minor tickmarks in the slider scale.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tickMarkImages<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/tickMarkImages.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>image used for tickmarks</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tickMarkLabels<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/tickMarkLabels.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>label used for tickmarks</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								lookAndFeel<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/lookAndFeel.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A stylistic choice for the slider.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								vertical<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/vertical.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes renders the slider in the browser vertically. No renders the slider horizontally.  This is the default.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								bgColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/bgColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Background color of slider label. See textColor for color options.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								textColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/textColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Slider label text color. Valid entries are: black, magenta,  cyan, orange, darkgray, pink, gray, white, lightgray, yellow.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								font<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/font.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Font name for label text.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fontSize<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/fontSize.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Font size for label text measured in points.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								italic<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/italic.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes for italicized label text, No for normal text. Default is No.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								bold<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/bold.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Enter Yes for bold label text, No for medium text. Default is No.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								notSupported<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_attributes/notSupported.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The text to display if a page containing a Java applet-based cfform control is opened by a  browser that does not support Java or has Java support disabled.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/slider/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

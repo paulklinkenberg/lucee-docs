@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Starting Tomcat and verifying the installation on Windows</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="running-lucee-securing-tomcat-and-lucee-on-windows.html">
+							<span class="access-hide">Previous page: Securing Tomcat and Lucee on Windows</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="running-lucee-configuring-tomcat-as-a-windows-service.html">
+							<span class="access-hide">Previous page: Configuring Tomcat as a Windows service</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Starting Tomcat and verifying the installation on Windows</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Starting Tomcat and verifying the installation on Windows</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="running-lucee.html">Running Lucee</a></li>
+			
+				<li><a href="running-lucee-windows.html">Windows</a></li>
+			
+			<li class="active">Starting Tomcat and verifying the installation on Windows</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/11.starting-tomcat-and-verifying-the-installation-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/1093758943-tomcat-logo65x45.jpg" alt="tomcat-logo65x45.jpg" /></p><p>Go to the services applet of the Windows control panel and start the service. Much more cooler is the command line:</p>
+<div class="highlight"><pre>net start tomcat8
+</pre></div><p>Congratulations! Your Apache Tomcat is alive. To check if everything is okay, we take a look to the filesystem and the log files.</p>
+<ol>
+  <li>Tomcat should generate log files in the folder <strong>D:\Tomcat\logs</strong></li>
+  <li>A new folder named <em>Catalina</em> plus sub folders should be present underneath <strong>D:\Tomcat\work</strong> and <strong>D:\Tomcat\conf</strong></li>
+</ol><p>Open a browser to access Tomcat's administration interface.</p>
+<ol>
+  <li>For a local access use this URL: http://localhost:8080</li>
+  <li>To access the UI from remote, replace <em>localhost</em> with the DNS name or IP-Address of your server. Examples: http://192.168.100.100:8080, http://svlucee01.netfusion.local:8080</li>
+</ol>
+<ul>
+  <li>If you have changed the default port <em>8080</em> to something else, then replace 8080 with your choosen port number.</li>
+  <li>Accessing the administration interface from <em>remote</em> will fail, If you didn't open the Windows firewall.</li>
+</ul><p>On the right side of the administration interface, a choice of three pages is available:</p>
+<ol>
+  <li><strong>Server Status</strong>: An overview about the health and configuration of Tomcat</li>
+  <li><strong>Manager App</strong>: An overview about the deployed Apps</li>
+  <li><strong>Host Manager</strong>: Tool to manage hosts</li>
+</ol><p>To access these pages, <em>you need to login</em> with your previously created account.</p>
+<hr/><p><em>Tip</em>: Save this script as a CMD-file to your desktop as a convenient Tomcat restarter:</p>
+<div class="highlight"><pre>net stop Tomcat8
+ping -n 11 127.0.0.1
+del D:\Tomcat\Logs\*.* /Q
+net start Tomcat8
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

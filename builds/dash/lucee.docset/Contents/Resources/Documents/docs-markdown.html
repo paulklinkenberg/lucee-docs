@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: LuceeDocs-flavoured Markdown</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="docs-structure.html">
+							<span class="access-hide">Previous page: Documentation structure</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="docs-reference-pages.html">
+							<span class="access-hide">Previous page: Reference pages</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">LuceeDocs-flavoured Markdown</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">LuceeDocs-flavoured Markdown</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="about.html">About the docs</a></li>
+			
+				<li><a href="docs-content.html">Content</a></li>
+			
+			<li class="active">LuceeDocs-flavoured Markdown</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/06.docs/01.content/02.markdown/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>The base markdown engine used is <a href="https://github.com/sirthias/pegdown">pegdown</a>. Please see both the <a href="http://daringfireball.net/projects/markdown/">official markdown website</a> and the the <a href="https://github.com/sirthias/pegdown">pegdown repository</a> for the supported syntax.</p><p>On top of this base layer, the Lucee Documentation system processes its own special syntaxes for syntax highlighting, cross referencing and notice boxes. It also processes YAML front matter to glean extra metadata about pages.</p><h2>Syntax highlighting</h2><p>Syntax highlighted code blocks start and end with three backticks on their own line with an optional lexer after the first set of ticks. </p><p>For example, a code block using a 'luceescript' lexer, would look like this:</p>
+<pre>
+```luceescript
+x = y;
+WriteOutput( x );
+```
+</pre><p>A code block without syntax higlighting would look like this:</p>
+<pre>
+```
+x = y;
+WriteOutput( x );
+```
+</pre>
+<div class="card-wrap">
+			<div class="card card-blue">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Info</p>
+						<p>We have implemented two lexers for Lucee, <code>lucee</code> and <code>luceescript</code>. The former is used for tag based code, the latter, script based. For a complete list of available lexers, see the <a href="http://pygments.org/docs/lexers/">Pygments website</a>.</p>
+    
+					</div>
+				</div>
+			</div>
+		</div><h3>Embedded TryCF code runner</h3><p>In addition to syntax highlighting, we also will take any lexer that is suffixed with <code>+trycf</code>, and convert the contained code into a runnable and editable sample using <a href="http://trycf.com">TryCF</a> (in the website only). For example:</p>
+<pre>
+```luceescript+trycf
+x = 10;
+WriteOutput( x );
+```
+</pre><p>or:</p>
+<pre>
+```lucee+trycf
+&lt;cfset x = 10&gt;
+&lt;cfoutput&gt;#x#&lt;/cfoutput&gt;
+```
+</pre><h2>Cross referencing</h2><p>Cross referencing between pages can be achieved using a double square bracket syntax surrounding the id of the page you wish to link to. For example:</p>
+<div class="highlight"><pre>[[function-abs]]
+</pre></div><p>When the link is rendered, the title of the page will be passed to the renderer. To provide a custom text for the link, use the following syntax:</p>
+<div class="highlight"><pre>[[function-abs|Custom link text]]
+</pre></div><h2>Notice boxes</h2><p>Various "notice boxes" can be rendered by using a nested blockquote syntax. The nesting level dictates the type of notice rendered.</p><h3>Info boxes</h3><p>Info boxes use three levels of blockquote indentation:</p>
+<div class="highlight"><pre>&gt;&gt;&gt; An example info box
+</pre></div>
+<div class="card-wrap">
+			<div class="card card-blue">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Info</p>
+						<p>An example info box</p>
+    
+					</div>
+				</div>
+			</div>
+		</div><h3>Warning boxes</h3><p>Warning boxes use four levels of blockquote indentation:</p>
+<div class="highlight"><pre>&gt;&gt;&gt;&gt; An example warning box
+</pre></div>
+<div class="card-wrap">
+			<div class="card card-yellow">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Warning</p>
+						<p>An example warning box</p>
+      
+					</div>
+				</div>
+			</div>
+		</div><h3>Important boxes</h3><p>Important boxes use five levels of blockquote indentation:</p>
+<div class="highlight"><pre>&gt;&gt;&gt;&gt;&gt; An example &#39;important&#39; box
+</pre></div>
+<div class="card-wrap">
+			<div class="card card-red">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Important</p>
+						<p>An example 'important' box</p>
+        
+					</div>
+				</div>
+			</div>
+		</div><h3>Tip boxes</h3><p>Tip boxes use six levels of blockquote indentation:</p>
+<div class="highlight"><pre>&gt;&gt;&gt;&gt;&gt;&gt; An example tip box
+</pre></div>
+<div class="card-wrap">
+			<div class="card card-green">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Tip</p>
+						<p>An example tip box</p>
+          
+					</div>
+				</div>
+			</div>
+		</div><h2>YAML Front Matter</h2><p>YAML Front Matter is used to add metadata to pages that can then be used by the build system. The syntax takes the form of three dashes <code>---</code> at the very beginning of a markdown document, followed by a YAML block, followed by three dashes on their own line. For example:</p>
+<div class="highlight"><pre>---
+variableName: value
+arrayVariable:
+    - arrayValue 1
+    - arrayValue 2
+---
+</pre></div><h3>Standard metadata</h3><p>The system relies upon an <strong>id</strong> variable and <strong>title</strong> variable to be present in all pages in order to build its tree and perform cross referencing tasks. It will also allow you to tag pages with categories and 'related' links.</p><p>A full example might look like:</p>
+<div class="highlight"><pre>---
+id: function-abs
+title: Abs()
+related:
+    - &quot;[Problem with Abs()](http://someblog.com/somearticle.html)&quot;
+categories:
+    - number
+    - math
+</pre></div><p>Category links will be rendered as <code>[[category-categoryname]]</code>. Related links will be rendered using the markdown renderer so can use any valid link format, including our custom cross referencing syntax (see above, and note the required double quotes to escape the special characters).</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

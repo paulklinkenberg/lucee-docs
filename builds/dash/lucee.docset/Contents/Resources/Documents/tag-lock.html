@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cflock&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-location.html">
+							<span class="access-hide">Previous page: &lt;cflocation&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-log.html">
+							<span class="access-hide">Previous page: &lt;cflog&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cflock&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cflock&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cflock&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/lock/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Provides two types of locks to ensure the integrity of shared data: Exclusive lock and Read-only  lock. An exclusive lock single-threads access to the CFML constructs in its body. Single-threaded access  implies that the body of the tag can be executed by at most one request at a time. A request executing  inside a cflock tag has an "exclusive lock" on the tag. No other requests can start executing inside the  tag while a request has an exclusive lock. Lucee issues exclusive locks on a first-come, first-served  basis. A read-only lock allows multiple requests to access the CFML constructs inside its body concurrently.  Therefore, read-only locks should be used only when the shared data is read only and not modified. If another  request already has an exclusive lock on the shared data, the request waits for the exclusive lock to be  released.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nb">&lt;cflock</span>
+    <span class="nv">timeout</span><span class="o">=</span><span class="s2">&quot;object&quot;</span>
+    <span class="p">[</span><span class="nv">scope</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">throwOnTimeout</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+<span class="nb">&gt;</span>
+</pre></div>
+
+
+	
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								timeout<br>
+								<sub>(object, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/lock/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the maximum amount of time, in seconds, to wait to obtain a lock. If a lock can be  obtained within the specified period, execution continues inside the body of the tag. Otherwise, the  behavior depends on the value of the throwOnTimeout attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scope<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/lock/_attributes/scope.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the scope as one of the following: Application, Server, or Session. This attribute is mutually  exclusive with the name attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/lock/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the name of the lock. Only one request can execute inside a cflock tag with a given  name. Therefore, providing the name attribute allows for synchronizing access to resources from  different parts of an application. Lock names are global to a server. They are shared  between applications and user sessions, but not across clustered servers. This attribute is mutually  exclusive with the scope attribute. Therefore, do not specify the scope attribute and the name attribute  in a tag. The value of name cannot be an empty string.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								throwOnTimeout<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/lock/_attributes/throwOnTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Specifies how timeout conditions are handled. If the value is Yes, an exception is  generated to provide notification of the timeout. If the value is No, execution continues past the  cfclock tag. Default is Yes.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/lock/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>readOnly or Exclusive. Specifies the type of lock: read-only or exclusive. Default is Exclusive.  A read-only lock allows more than one request to read shared data. An exclusive lock allows only one  request to read or write to shared data.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/lock/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

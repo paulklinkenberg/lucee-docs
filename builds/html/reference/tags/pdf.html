@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfpdf&gt;</title>
+		<base href="../../">
+
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
+			<script src="assets/js/respond.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+
+	<body class="tag">
+		<nav class="menu menu-left nav-drawer" id="menu">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<a class="nav-drawer-logo" href="index.html"><img class="Lucee" src="assets/images/lucee-logo-bw.png"></a>
+						<ul class="nav">
+		
+			
+		
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides/getting-started.html">Getting Started</a>
+
+					
+					
+
+
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="reference.html">Reference</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle " data-target="#reference" data-toggle="collapse" aria-expanded="true">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse expand" id="reference">
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/functions.html">Lucee functions</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/tags.html">Lucee tags</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/unsupported.html">Unsupported Tags &amp; Functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/additional.html">Additional Tags &amp; Functions</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides.html">Guides and tutorials</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#guides" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="guides">
+							
+						
+							
+								
+								
+								<li><a href="guides/getting-started.html">Getting Started</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/running-lucee.html">Running Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/updating-lucee.html">Updating Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/cookbooks.html">Cookbook</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/working-with-source.html">Working with the Lucee Source</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/extensions.html">Extensions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/about-lucee.html">About Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/lucee-5.html">Lucee 5</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="categories.html">Categories</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#categories" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="categories">
+							
+						
+							
+								
+								
+								<li><a href="categories/ajax.html">Ajax features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/array.html">Arrays</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/binary.html">Binary data</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/boolean.html">Booleans</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/collection.html">Collections</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/component.html">Components (CFCs)</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/currency.html">Currency features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/date.html">Date and time</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/decision.html">Decision logic</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/formatting.html">Formatting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/html.html">HTML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/image.html">Image manipulation</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/javascript.html">JavaScript</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/json.html">JSON</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/ldap.html">LDAP</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/list.html">Lists</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/math.html">Math</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/number.html">Numbers</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/parsing.html">Parsing</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/pdf.html">PDFs</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/query.html">Queries</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/regex.html">Regex</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/sort.html">Sorting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/string.html">Strings</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/struct.html">Structures</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/video.html">Video</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/wddx.html">WDDX</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/webservice.html">Web services</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/xml.html">XML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/zip.html">Zip files</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="docs.html">About the docs</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#about" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="about">
+							
+						
+							
+								
+								
+								<li><a href="docs/content.html">Content</a></li>
+							
+						
+							
+								
+								
+								<li><a href="docs/build.html">Build</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+	</ul>
+						<hr>
+						<ul class="nav">
+							<li>
+								<a href="http://lucee.org"><span class="fa fa-fw fa-globe"></span>Lucee Website</a>
+							</li>
+							<li>
+								<a href="https://github.com/lucee/lucee-docs"><span class="fa fa-fw fa-github"></span>Source repository</a>
+							</li>
+							<li>
+								<a href="http://javadoc.lucee.org"><span class="fa fa-fw fa-code"></span>JavaDocs</a>
+							</li>
+							<li>
+								<a href="download.html"><span class="fa fa-fw fa-download"></span>Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="header">
+			<ul class="hidden-lg nav nav-list pull-left">
+				<li>
+					<a class="menu-toggle" href="#menu">
+						<span class="access-hide">Menu</span>
+						<span class="icon icon-menu icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="/reference/tags/param.html">
+							<span class="access-hide">Previous page: &lt;cfparam&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="/reference/tags/pdfform.html">
+							<span class="access-hide">Previous page: &lt;cfpdfform&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+				<li>
+					<a class="menu-toggle" href="#search">
+						<span class="access-hide">Search</span>
+						<span class="icon icon-search icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfpdf&gt;</span>
+		</header>
+		<div class="menu menu-right menu-search" id="search">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<div class="menu-content-inner">
+							<label class="access-hide" for="lucee-docs-search-input">Search</label>
+							<input class="form-control form-control-lg menu-search-focus" id="lucee-docs-search-input" placeholder="Search" type="search">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfpdf&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="reference/tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfpdf&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Manipulates existing PDF documents. The following list describes some of the tasks you can perform with the cfpdf tag: - Merge several PDF documents into one PDF document. - Delete pages from a PDF document. - Merge pages from one or more PDF documents and generate a new PDF document. - Linearize PDF documents for faster web display. - Remove interactivity from forms created in Acrobat(c) to generate flat PDF documents. - Encrypt and add password protection to PDF documents. - Generate thumbnail images from PDF documents or pages. - Add or remove watermarks from PDF documents or pages. - Retrieve information associated with a PDF document, such as the software used to generate the file or the author, and set information for a PDF document, such as the title, author and keywords. - Create PDF portfolios - Add and remove header/footer from PDF documents - Optimize PDF documents</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfpdf</span>
+    <span class="err">[</span><span class="na">action=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ascending=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">copyFrom=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ddxfile=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">destination=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">directory=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">encrypt=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">flatten=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">foreground=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">format=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">image=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">imagePrefix=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">filter=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">info=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">inputFiles=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">isBase64=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">keepBookmark=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">newOwnerPassword=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">newUserPassword=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">opacity=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">order=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">outputFiles=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">overwrite=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">pages=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">password=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">permissions=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">position=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">resolution=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">rotation=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">saveOption=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scale=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showOnPrint=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">source=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">stopOnError=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">transparent=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">version=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span><span class="cm">&lt;!--- body ---&gt;</span>[<span class="nt">&lt;/cfpdf&gt;</span>]
+</pre></div>
+
+
+	<p>This tag <strong>may</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>action to take</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ascending<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/ascending.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Order in which the PDF files are sorted</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>used for action "extractText", defines the format type of the extraction, valid values are: string,xml</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								copyFrom<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/copyFrom.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Pathname of the PDF document from which to use the first page as a watermark</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ddxfile<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/ddxfile.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Pathname of the DDX file, or a string with DDX instructions</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								destination<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/destination.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Pathname of the modified PDF document. If the destination file exists, you must set the overwrite attribute to yes. If the destination file does not exist, CFML creates the file, if the parent directory exists.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								directory<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/directory.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Directory of the PDF documents to merge. You must specify either the directory attribute or the source attribute. If you specify the directory attribute, CFML orders the documents by filename in descending order, by default. To change the order of the files, use the order attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								encrypt<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/encrypt.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Encryption type for the PDF output file</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								flatten<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/flatten.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies to forms created in Acrobat only (not forms created in LiveCycle); specifies whether interactivity is turned off</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								foreground<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/foreground.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Placement of the watermark on the page</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								format<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/format.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>File type of thumbnail image output</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								image<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/image.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Image used as a watermark. You can specify a pathname, a variable that contains an image file, or a image variable</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								imagePrefix<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/imagePrefix.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>prefix used for each image thumbnail file generated. The image filenames use the format: imagePrefix_page_n.format.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								filter<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/filter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>file filter, used with attribute directory</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								info<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/info.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Structure variable for relevant information</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								inputFiles<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/inputFiles.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Structure that maps the PDF source files to the input variables in the DDX file, or a string of elements and their pathname.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								isBase64<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/isBase64.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Valid only when the image attribute is specified. Specifies whether the image used as a watermark is in Base64 format</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								keepBookmark<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/keepBookmark.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether bookmarks from the source PDF documents are retained in the merged document</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>PDF document variable name</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								newOwnerPassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/newOwnerPassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Password used to set permissions on a PDF document</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								newUserPassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/newUserPassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Password used to open PDF document</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								opacity<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/opacity.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Opacity of the watermark. Valid values are integers in the range 0 (transparent) through 10 (opaque).</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								order<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/order.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Order in which the PDF documents in the directory are merged</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								outputFiles<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/outputFiles.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Structure that contains the output files in the DDX file or string as keys and the pathname to the result file as the value.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								overwrite<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/overwrite.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether PDF output overwrites the destination file</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								pages<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/pages.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Page or pages in the source PDF document on which to perform the action. You can specify multiple pages and page ranges as follows: "1,6-9,56-89,100, 110-120".</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								password<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/password.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Owner or user password of the source PDF document, if the document is password-protected.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								permissions<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/permissions.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>type of permissions on the PDF document</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								position<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/position.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Position on the page where the watermark is placed. The position represents the top-left corner of the watermark. Specify the x and y coordinates; for example "50,30".</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								resolution<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/resolution.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Image quality used to generate thumbnail images</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								rotation<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/rotation.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Degree of rotation of the watermark image on the page.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								saveOption<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/saveOption.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Save options for the PDF output</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scale<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/scale.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Size of the thumbnail relative to the source page. The value represents a percentage from 1 through 100.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showOnPrint<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/showOnPrint.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specify whether to print the watermark with the PDF document</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								source<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/source.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>PDF document used as the source.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								stopOnError<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/stopOnError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Valid only if the directory attribute is specified. If the specified directory contains files other then readable PDF files, Lucee either stops merge process or continues.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								transparent<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/transparent.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>(format="png" only) Specifies whether the image background is transparent or opaque</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								version<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_attributes/version.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Version of the PDF used to write the document</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/pdf/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/base.min.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: New and modified functions</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="lucee-5-dialect-lucee.html">
+							<span class="access-hide">Previous page: The Lucee dialect</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="lucee-5-java-interface.html">
+							<span class="access-hide">Previous page: Extended Java Interface</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">New and modified functions</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">New and modified functions</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="lucee-5.html">Lucee 5</a></li>
+			
+			<li class="active">New and modified functions</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/08.functions-tags/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Core Functions</h1><p><strong>Functions to do use core functionality of the system.</strong></p><h3>ObjectNew (new)</h3><p><code>objectNew(string componentName[, any arguments]):component</code></p><p>This function is a replacement for <code>createObject(&quot;component&quot;,...)</code> and you can use this function in the same way, however unlike <code>createObject(&quot;component&quot;,...)</code> this functions invokes the <code>init</code> method of the component, if there is one, and allows you to pass arguments to the <code>init</code> method.</p>
+<div class="highlight"><pre><span class="c">// create a component from type `FullName` and invokes the constructor with 2 arguments in the form of an array</span>
+<span class="nv">c</span><span class="o">=</span><span class="nf">objectNew</span><span class="p">(</span><span class="s2">&quot;my.FullName&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Susi&quot;</span><span class="p">,</span><span class="s2">&quot;Sorglos&quot;</span><span class="p">]);</span>
+
+<span class="c">// create a component from type `FullName` and invokes the constructor with named arguments</span>
+<span class="nv">c</span><span class="o">=</span><span class="nf">objectNew</span><span class="p">(</span><span class="s2">&quot;my.FullName&quot;</span><span class="p">,{</span><span class="nv">firstame</span><span class="p">:</span><span class="s2">&quot;Susi&quot;</span><span class="p">,</span><span class="nv">lastname</span><span class="p">:</span><span class="s2">&quot;Sorglos&quot;</span><span class="p">});</span>
+</pre></div><p>Maybe you ask yourself "why this function?" when I can do the same with the <code>new</code> operator as follows:</p>
+<div class="highlight"><pre><span class="nv">c</span><span class="o">=</span><span class="nv">new</span> <span class="nf">my.FullName</span><span class="p">(</span><span class="s2">&quot;Susi&quot;</span><span class="p">,</span><span class="s2">&quot;Sorglos&quot;</span><span class="p">);</span>
+</pre></div><p>This is true, but this function is made for the dynamic loading of components, for example components defined in a configuration file.</p>
+<div class="highlight"><pre><span class="nv">c</span><span class="o">=</span><span class="nf">objectNew</span><span class="p">(</span><span class="nv">config.componentName</span><span class="p">,</span> <span class="nv">config.arguments</span><span class="p">);</span>
+</pre></div><h3>Render (new)</h3><p><code>render(string code [,string dialect]):string</code></p><p>Similar to the function <code>evaluate</code>, this function allows to execute CFML/Lucee code that you provide as a string.</p>
+<div class="highlight"><pre><span class="nf">render</span><span class="p">(</span><span class="s1">&#39;&lt;cfmail subject=&quot;Hi There!&quot; from=&quot;#from#&quot;  to=&quot;#to#&quot;&gt;Salve!&lt;/cfmail&gt; &#39;</span><span class="p">);</span>
+</pre></div><h3>getTagData/getFunctionData (extended)</h3><p>These 2 functions are now supporting a new argument named <code>dialect</code>. Possible values are <code>CFML</code> or <code>Lucee</code>. With this argument you can define the dialect you want details for, if not defined the dialect of the current template is used.</p><h1>Locale/Regional Functions</h1><p><strong>Functions specific for dealing with <code>locale</code> and <code>timezone</code>. Lucee 5 now handles <code>locale</code> (java.util.Locale) and <code>timezone</code> (java.util.TimeZone) objects natively. So the function <code>getLocale()</code> now returns a locale object and <code>getTimeZone()</code> now returns a timezone object. Of course Lucee can still handle string representations of these types as previously.</strong></p><h3>GetLocaleInfo (new)</h3><p><code>getLocaleInfo([,locale locale [, locale displayLocale]]):struct</code></p><p>This function merges the <code>locale</code> functions <code>getLocaleCountry, getLocaleDisplayName, getLocaleInfo, getLocaleLanguage</code> to a single function and "deprecate" the existin locale functions.</p>
+<div class="highlight"><pre><span class="nf">dump</span><span class="p">(</span><span class="nf">getLocaleInfo</span><span class="p">(</span><span class="nf">getLocale</span><span class="p">()));</span> <span class="c">// shows information from a locale object</span>
+<span class="nf">dump</span><span class="p">(</span><span class="nf">getLocaleInfo</span><span class="p">(</span><span class="s2">&quot;de_ch&quot;</span><span class="p">));</span> <span class="c">// shows information to a locale string</span>
+</pre></div><h1>OSGi Functions</h1><p><strong>Functions specific for dealing with OSGi.</strong></p><h3>BundleInfo (new)</h3><p><code>bundleInfo(any object):struct</code></p><p>If the given object is loaded via an OSGi bundle, this function returns the information about the bundle.</p>
+<div class="highlight"><pre><span class="nf">dump</span><span class="p">(</span><span class="nf">bundleInfo</span><span class="p">(</span><span class="nv">obj</span><span class="p">));</span> <span class="c">// dumps from what bundle the class of the given object comes from</span>
+</pre></div><h3>ManifestRead (new)</h3><p><code>manifestRead(string pathToJarOrManifestFile):struct</code></p><p>Reads a manifest file and returns the contents as a struct.</p>
+<div class="highlight"><pre><span class="nf">dump</span><span class="p">(</span><span class="nf">manifestread</span><span class="p">(</span><span class="s2">&quot;C:\whatever\whatever.jar&quot;</span><span class="p">));</span> <span class="c">// dumps the manifest from whatever.jar as a struct</span>
+</pre></div><h3>JavaNew (new)</h3><p><code>javaNew(string className, string nameOrPath, string versionOrDelimiter):any</code></p><p>This function is a replacement for <code>createObject(&quot;java&quot;,...)</code> and you can use this function in the same way, but in addition you can also load a class by defining a OSGi bundle and version. In that case Lucee will check if that class is available locally, if not it will try to download the necessary bundle from the update provider.</p>
+<div class="highlight"><pre><span class="c">// Load a class with the definition of the bundle name and version, in this case we are using a different version than the one Lucee has in the core.</span>
+<span class="nv">POIFSFileSystem</span><span class="o">=</span><span class="nf">javaNew</span><span class="p">(</span><span class="s2">&quot;org.apache.poi.poifs.filesystem.POIFSFileSystem&quot;</span><span class="p">,</span><span class="s2">&quot;apache.poi&quot;</span><span class="p">,</span><span class="s2">&quot;3.11.0&quot;</span><span class="p">);</span>
+
+<span class="c">// The second and third argument are optional, if the version does not matter simply omit it.</span>
+<span class="nv">POIFSFileSystem</span><span class="o">=</span><span class="nf">javaNew</span><span class="p">(</span><span class="s2">&quot;org.apache.poi.poifs.filesystem.POIFSFileSystem&quot;</span><span class="p">,</span><span class="s2">&quot;apache.poi&quot;</span><span class="p">);</span>
+
+<span class="c">// Or if the class is available in the environment</span>
+<span class="nv">POIFSFileSystem</span><span class="o">=</span><span class="nf">javaNew</span><span class="p">(</span><span class="s2">&quot;org.apache.poi.poifs.filesystem.POIFSFileSystem&quot;</span><span class="p">);</span>
+
+<span class="c">// You can also still load objects the classic way, but this is not recommended.</span>
+<span class="nv">POIFSFileSystem</span><span class="o">=</span><span class="nf">javaNew</span><span class="p">(</span><span class="s2">&quot;org.apache.poi.poifs.filesystem.POIFSFileSystem&quot;</span><span class="p">,</span><span class="s2">&quot;C:\whatever\apache-poi.jar&quot;</span><span class="p">);</span>
+</pre></div><h1>Web Service Functions</h1><p><strong>Functions to handle web services.</strong></p><h3>WebserviceNew (new)</h3><p><code>webserviceNew(string url [, struct arguments]):webserviceProxy</code></p><p>Creates a web service proxy object, a reference to a remote webservice. This function is a replacement for the <code>createObject(&quot;webservice&quot;,...)</code> function.</p><h1>Cache Functions</h1><p><strong>With Lucee 5 we have added some cache functions related to "regions", but these functions only have only been added for compatibility to other CFML Engines. These functions are already marked as "deprecated" and we strongly suggest not to use them in new code.</strong></p><p>The functions are:</p>
+<ul>
+  <li>cacheregionexists()</li>
+  <li>cacheregionnew()</li>
+  <li>cacheregionremove()</li>
+</ul>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

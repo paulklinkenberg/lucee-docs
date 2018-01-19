@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfcontent&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-component.html">
+							<span class="access-hide">Previous page: &lt;cfcomponent&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-continue.html">
+							<span class="access-hide">Previous page: &lt;cfcontinue&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfcontent&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfcontent&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfcontent&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Defines the MIME type returned by the current page. Optionally, lets you specify the name of a file  to be returned with the page.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nb">&lt;cfcontent</span>
+    <span class="p">[</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">deleteFile</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">range</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">file</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">content</span><span class="o">=</span><span class="s2">&quot;binary&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">variable</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">reset</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+<span class="nb">&gt;</span><span class="cm">&lt;!--- body ---&gt;</span>[<span class="nb">&lt;/cfcontent&gt;</span>]
+</pre></div>
+
+
+	<p>This tag <strong>may</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Defines the File/ MIME content type returned by the current page.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								deleteFile<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_attributes/deleteFile.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Yes deletes the file after the download operation. Defaults to No.  This attribute applies only if you specify a file with the file attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								range<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_attributes/range.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Yes allows download ranges, no forbids download range, default let it open for client.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								file<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_attributes/file.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the file being retrieved</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								content<br>
+								<sub>(binary, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_attributes/content.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>this attribute is deprecated, use variable instead</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								variable<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_attributes/variable.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the variable name to the content to output as binary</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								reset<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_attributes/reset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Yes discards output that precedes the call to cfcontent. No preserves the output that precedes the call. Defaults to Yes. The reset  and file attributes are mutually exclusive. If you specify a file, the reset attribute has no effect.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/content/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

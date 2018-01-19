@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: ArrayAppend</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-array.html">
+							<span class="access-hide">Previous page: Array</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-arrayavg.html">
+							<span class="access-hide">Previous page: ArrayAvg</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">ArrayAppend</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">ArrayAppend</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">ArrayAppend</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arrayappend/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Appends an array element to an array.</p>
+
+	<p><strong>Returns:</strong> boolean</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">ArrayAppend</span><span class="p">(</span> <span class="nv">array</span><span class="p">,</span> <span class="nv">value</span> <span class="p">[,</span> <span class="nv">merge</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								array<br>
+								<sub>(array, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arrayappend/_arguments/array.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The array to which the element should be appended.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arrayappend/_arguments/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The element to append. Can be any type.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								merge<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arrayappend/_arguments/merge.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This argument only applies when the value is an array.  If set to true appends array elements individually to the source array.  If false (default) the complete array is added as one element at the end, in the source array.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arrayappend/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<script type="text/template" id="code-b4e8ed7a2caa07606d7d25cd6f2ded8e" data-trycf="true" data-script="true">numbers = [ 1, 2, 3, 4 ];
+ArrayAppend( numbers, 5 );
+Dump( numbers ); // Outputs [ 1, 2, 3, 4, 5 ]
+
+numbers     = [ 1, 2, 3, 4 ];
+moreNumbers = [ 5, 6, 7, 8 ];
+ArrayAppend( numbers, moreNumbers );
+Dump( numbers ); // Outputs [ 1, 2, 3, 4, [ 5, 6, 7, 8 ] ]
+
+numbers     = [ 1, 2, 3, 4 ];
+moreNumbers = [ 5, 6, 7, 8 ];
+ArrayAppend( numbers, moreNumbers, true );
+Dump( numbers ); // Outputs [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+</script>
+<div class="highlight"><pre><span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">];</span>
+<span class="nf">ArrayAppend</span><span class="p">(</span> <span class="nv">numbers</span><span class="p">,</span> <span class="m">5</span> <span class="p">);</span>
+<span class="nf">Dump</span><span class="p">(</span> <span class="nv">numbers</span> <span class="p">);</span> <span class="c">// Outputs [ 1, 2, 3, 4, 5 ]</span>
+
+<span class="nv">numbers</span>     <span class="o">=</span> <span class="p">[</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">];</span>
+<span class="nv">moreNumbers</span> <span class="o">=</span> <span class="p">[</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span> <span class="p">];</span>
+<span class="nf">ArrayAppend</span><span class="p">(</span> <span class="nv">numbers</span><span class="p">,</span> <span class="nv">moreNumbers</span> <span class="p">);</span>
+<span class="nf">Dump</span><span class="p">(</span> <span class="nv">numbers</span> <span class="p">);</span> <span class="c">// Outputs [ 1, 2, 3, 4, [ 5, 6, 7, 8 ] ]</span>
+
+<span class="nv">numbers</span>     <span class="o">=</span> <span class="p">[</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">];</span>
+<span class="nv">moreNumbers</span> <span class="o">=</span> <span class="p">[</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span> <span class="p">];</span>
+<span class="nf">ArrayAppend</span><span class="p">(</span> <span class="nv">numbers</span><span class="p">,</span> <span class="nv">moreNumbers</span><span class="p">,</span> <span class="nv">true</span> <span class="p">);</span>
+<span class="nf">Dump</span><span class="p">(</span> <span class="nv">numbers</span> <span class="p">);</span> <span class="c">// Outputs [ 1, 2, 3, 4, 5, 6, 7, 8 ]</span>
+</pre></div>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-array.html">Arrays</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

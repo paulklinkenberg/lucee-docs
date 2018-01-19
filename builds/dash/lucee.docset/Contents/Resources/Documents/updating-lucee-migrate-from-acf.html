@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Migrate from ACF</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="updating-lucee-update-from-railo.html">
+							<span class="access-hide">Previous page: Update from Railo</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="cookbook.html">
+							<span class="access-hide">Previous page: Cookbook</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Migrate from ACF</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Migrate from ACF</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="updating-lucee.html">Updating Lucee</a></li>
+			
+			<li class="active">Migrate from ACF</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/03.updating-lucee/04.migrate-from-acf/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Migrate from Adobe(R) ColdFusion(R)</h1><p>Lucee is highly compatible with ACF, and most of your cfml/cfscript code that runs on ACF will run on Lucee without any modifications.</p><p>There are, however, some known issues of compatibility that you should be aware of, and that might affect your application if your code utilizes the affected features:</p><h3>Arrays in ACF are passed by value</h3><p><strong>What:</strong> In ACF arrays are passed to functions by value, meaning that if you call a function and the argument(s) passed to it are arrays, then the arrays are first copied into a new object, and the function then uses that new object. In Lucee -- passing an array to a function is done by a pointer, like all other complex objects.</p><p>For example: <div class="highlight"><pre><span class="nv">function</span> <span class="nf">writeArrayPlusOne</span><span class="p">(</span><span class="nv">arr</span><span class="p">)</span> <span class="p">{</span>  <span class="nf">arr.append</span><span class="p">(</span> <span class="nf">arr.len</span><span class="p">()</span> <span class="o">+</span> <span class="m">1</span> <span class="p">);</span>  <span class="nf">for</span> <span class="p">(</span><span class="k">var</span> <span class="nv">el</span> <span class="nv">in</span> <span class="nv">arr</span><span class="p">)</span> <span class="nf">writeOutput</span><span class="p">(</span> <span class="nv">el</span> <span class="p">);</span> <span class="p">}</span> <span class="nv">arr</span> <span class="o">=</span> <span class="p">[</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span> <span class="p">];</span> <span class="nf">writeArrayPlusOne</span><span class="p">(</span> <span class="nv">arr</span> <span class="p">);</span> <span class="nf">writeDump</span><span class="p">(</span> <span class="nv">arr</span> <span class="p">);</span> </pre></div></p><p>The example above will show <code>arr</code> with items <code>[ 1, 2, 3 ]</code> on ACF, but <code>[ 1, 2, 3, 4 ]</code> on Lucee</p><p><strong>Why:</strong> We decided not to follow the ACF way for the following reasons:</p>
+<ul>
+  <li>Performance - copying the array for each function call adds a lot of unnecessary overhead</li>
+  <li>Consistency - Passing an array by value is inconsistent with all of the other <em>complex</em> object types which are passed by pointer</li>
+</ul>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

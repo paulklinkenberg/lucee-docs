@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: QuerySlice</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-querysetcell.html">
+							<span class="access-hide">Previous page: QuerySetCell</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-querysome.html">
+							<span class="access-hide">Previous page: QuerySome</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">QuerySlice</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">QuerySlice</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">QuerySlice</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryslice/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>creates a new query containing a part of the given query</p>
+
+	<p><strong>Returns:</strong> query</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">QuerySlice</span><span class="p">(</span> <span class="nv">query</span><span class="p">,</span> <span class="nv">offset</span> <span class="p">[,</span> <span class="nv">length</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								query<br>
+								<sub>(query, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryslice/_arguments/query.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								offset<br>
+								<sub>(number, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryslice/_arguments/offset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								length<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryslice/_arguments/length.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryslice/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<script type="text/template" id="code-3b8d02c24b69ec4868223ac7fd011ef1" data-trycf="true" data-script="true">people = QueryNew( "name,dob,age", "varchar,date,int", [
+    [ "Susi", CreateDate( 1970, 1, 1 ), 0 ],
+    [ "Urs" , CreateDate( 1995, 1, 1 ), 0 ],
+    [ "Fred", CreateDate( 1960, 1, 1 ), 0 ],
+    [ "Jim" , CreateDate( 1988, 1, 1 ), 0 ]
+]);
+
+Dump( var=people, label="people - origional query" );
+
+/* Output:
+
+| name | dob                 | age |
+------------------------------------
+| Susi | 1970-01-01 00:00:00 | 0   |
+| Urs  | 1995-01-01 00:00:00 | 0   |
+| Fred | 1960-01-01 00:00:00 | 0   |
+| Jim  | 1988-01-01 00:00:00 | 0   |
+
+*/
+// paging
+qrySlice = people.slice(3,2)
+dump(var=qrySlice, label='qrySlice - from record 3, 2 records');
+/* Output:
+| name | dob                 | age |
+------------------------------------
+| Fred | 1960-01-01 00:00:00 | 0   |
+| Jim  | 1988-01-01 00:00:00 | 0   |
+*/</script>
+<div class="highlight"><pre><span class="nv">people</span> <span class="o">=</span> <span class="nf">QueryNew</span><span class="p">(</span> <span class="s2">&quot;name,dob,age&quot;</span><span class="p">,</span> <span class="s2">&quot;varchar,date,int&quot;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">[</span> <span class="s2">&quot;Susi&quot;</span><span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1970</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">&quot;Urs&quot;</span> <span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1960</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">&quot;Jim&quot;</span> <span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1988</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">]</span>
+<span class="p">]);</span>
+
+<span class="nf">Dump</span><span class="p">(</span> <span class="k">var</span><span class="o">=</span><span class="nv">people</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;people - origional query&quot;</span> <span class="p">);</span>
+
+<span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span>
+
+<span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
+<span class="o">------------------------------------</span>
+<span class="err">|</span> <span class="nv">Susi</span> <span class="err">|</span> <span class="m">1970</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Urs</span>  <span class="err">|</span> <span class="m">1995</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Fred</span> <span class="err">|</span> <span class="m">1960</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Jim</span>  <span class="err">|</span> <span class="m">1988</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+
+<span class="o">*/</span>
+<span class="c">// paging</span>
+<span class="nv">qrySlice</span> <span class="o">=</span> <span class="nf">people.slice</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="nv">qrySlice</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s1">&#39;qrySlice - from record 3, 2 records&#39;</span><span class="p">);</span>
+<span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span>
+<span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
+<span class="o">------------------------------------</span>
+<span class="err">|</span> <span class="nv">Fred</span> <span class="err">|</span> <span class="m">1960</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Jim</span>  <span class="err">|</span> <span class="m">1988</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="o">*/</span>
+</pre></div>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-query.html">Queries</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

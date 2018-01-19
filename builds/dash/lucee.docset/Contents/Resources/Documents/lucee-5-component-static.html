@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Static support for components</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="lucee-5-class-updating.html">
+							<span class="access-hide">Previous page: Class Updating</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="lucee-5-dialect-lucee.html">
+							<span class="access-hide">Previous page: The Lucee dialect</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Static support for components</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Static support for components</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="lucee-5.html">Lucee 5</a></li>
+			
+			<li class="active">Static support for components</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/06.component-static/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Static support for components</h1><p><strong>Lucee 5 supports static variables and functions inside components.</strong></p><p>Example:</p>
+<div class="highlight"><pre><span class="nv">component</span> <span class="p">{</span>
+     <span class="c">// inside the static constructor you can define static variables, this code is executed when the &quot;class&quot; instance is loaded</span>
+     <span class="nv">static</span> <span class="p">{</span>
+            <span class="nv">susi</span><span class="o">=</span><span class="m">1</span><span class="p">;</span> <span class="c">// written to the static scope</span>
+            <span class="nv">static.sorglos</span><span class="o">=</span><span class="m">2</span><span class="p">;</span> <span class="c">// again written to the static scope</span>
+     <span class="p">}</span>
+
+     <span class="nv">public</span> <span class="nv">static</span> <span class="nv">function</span> <span class="nf">testStatic</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+     <span class="nv">public</span> <span class="nv">function</span> <span class="nf">testInstance</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nf">testStatic</span><span class="p">();</span> <span class="c">// calling a static function</span>
+          <span class="nv">return</span> <span class="nv">static.sorglos</span><span class="p">;</span> <span class="c">// returning data from the static scope</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div><p>The "static" constructor <code>static {...}</code> is executed once before the component is loaded for the first time, so every component of the same type shares the same static scope.</p><p>You can use static functions and data as follows.</p>
+<div class="highlight"><pre><span class="nv">component</span> <span class="nv">Test</span> <span class="p">{</span>
+   <span class="nv">static</span> <span class="p">{</span>
+      <span class="nv">staticValue</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="nv">public</span> <span class="nv">static</span> <span class="nv">function</span> <span class="nf">testStatic</span><span class="p">(){}</span>
+<span class="p">}</span>
+</pre></div>
+<div class="highlight"><pre><span class="nv">Test</span><span class="p">::</span><span class="nf">testStatic</span><span class="p">();</span>
+<span class="nv">x</span><span class="o">=</span><span class="nv">Test</span><span class="p">::</span> <span class="nv">staticValue</span><span class="p">;</span>
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

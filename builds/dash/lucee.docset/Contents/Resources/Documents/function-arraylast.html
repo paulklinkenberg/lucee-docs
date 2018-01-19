@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: ArrayLast</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-arrayisempty.html">
+							<span class="access-hide">Previous page: ArrayIsEmpty</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-arraylen.html">
+							<span class="access-hide">Previous page: ArrayLen</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">ArrayLast</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">ArrayLast</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">ArrayLast</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraylast/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Returns the last element of an array</p>
+
+	<p><strong>Returns:</strong> any</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">ArrayLast</span><span class="p">(</span> <span class="nv">array</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								array<br>
+								<sub>(array, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraylast/_arguments/array.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>a array</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraylast/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<script type="text/template" id="code-9a22ea95d4c06208187e1b5ba097bcc0" data-trycf="true" data-script="true">aNames = array("Marcus","Sarah","Josefine");
+arrayLast(aNames);
+
+dump( var=aNames, label="aNames - origional array" );
+dump(var=arrayLast(aNames),label="last element of array aNames");</script>
+<div class="highlight"><pre><span class="nv">aNames</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="s2">&quot;Marcus&quot;</span><span class="p">,</span><span class="s2">&quot;Sarah&quot;</span><span class="p">,</span><span class="s2">&quot;Josefine&quot;</span><span class="p">);</span>
+<span class="nf">arrayLast</span><span class="p">(</span><span class="nv">aNames</span><span class="p">);</span>
+
+<span class="nf">dump</span><span class="p">(</span> <span class="k">var</span><span class="o">=</span><span class="nv">aNames</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;aNames - origional array&quot;</span> <span class="p">);</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="nf">arrayLast</span><span class="p">(</span><span class="nv">aNames</span><span class="p">),</span><span class="nv">label</span><span class="o">=</span><span class="s2">&quot;last element of array aNames&quot;</span><span class="p">);</span>
+</pre></div>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-array.html">Arrays</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

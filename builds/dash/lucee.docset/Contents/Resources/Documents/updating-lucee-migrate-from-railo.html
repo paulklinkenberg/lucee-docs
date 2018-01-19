@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Migrate from Railo</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="updating-lucee-update.html">
+							<span class="access-hide">Previous page: Update Lucee</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="updating-lucee-update-from-railo.html">
+							<span class="access-hide">Previous page: Update from Railo</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Migrate from Railo</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Migrate from Railo</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="updating-lucee.html">Updating Lucee</a></li>
+			
+			<li class="active">Migrate from Railo</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/03.updating-lucee/02.migrate-from-railo/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Migrate from Railo (c)</h1><p>Lucee is forked from the Railo CFML Server (Version 4.2) so you can easily migrate an existing Railo installation as follows.</p><p><strong>Please read all the instructions before you get started.</strong></p><p><em>Lucee will rewrite some of the configuration files in your existing installation. It will also do a backup of the original contents as a zip file (see below) in case you need to roll back, but it's advisable to make a backup of the original installation just in case.</em></p>
+<ol>
+  <li>Download the <code>lucee-[version]-jars.zip</code> package from our <a href="https://bitbucket.org/lucee/lucee/downloads">download section</a> and unzip it somewhere.</li>
+  <li>Stop your Railo server.</li>
+  <li>In the zip file you will find a file called <code>lucee.jar</code>. Use that JAR to replace the existing <code>railo.jar</code> in your Railo installation's <code>lib</code> directory. <strong>Important: make sure you <em>remove</em> the railo.jar completely. Do not just rename it (e.g. to "railo.jar.bak"), otherwise most servlet engines will still pick it up!</strong></li>
+  <li>Replace the rest of the jars in the <code>lib</code> directory with the jars from the zip file. The jars have the same names as the original files so you can simply copy them to the directory.</li>
+  <li>Restart your Railo Server which will now convert itself into a Lucee Server.</li>
+</ol><p>When it first starts, Lucee rewrites the server context and all individual web contexts. All the changes made are logged in detail to the <code>application.log</code> log file. To see these entries make sure the <code>application.log</code> file has set the log level "Info" or less. In the process Lucee does a backup of each original context in a zip file named using the pattern "railo-[server|web]-context-old.zip".</p><h2>IIS BonCode connector</h2><p>If you are using the <a href="http://tomcatiis.riaforge.org/">BonCode connector for IIS/Tomcat</a>, you may need to update to the 1.0.20 (or later) version which supports Lucee.</p>
+<ol>
+  <li><a href="http://tomcatiis.riaforge.org/">Download</a> version 1.0.20 (or later)</li>
+  <li>From the AJP13 folder inside the downloaded zip, copy the following 2 files to the <code>BIN</code> directory in each of your web roots, replacing the existing files:</li>
+</ol>
+<ul>
+  <li><code>BonCodeAJP13.dll</code></li>
+  <li><code>BonCodeIIS.dll</code></li>
+</ul><h2>Server/Web administrator URLs</h2><p>To access the server admin and individual web context admin GUIs, you will need to replace "/railo-context/" in each URL with "/lucee/". For example instead of</p><p>http://localhost:8888/railo-context/admin/server.cfm</p><p>you should now use:</p><p>http://localhost:8888/lucee/admin/server.cfm</p><h2>Optional Steps</h2><p>Lucee only converts the Railo config settings, it does not touch your Servlet Engine configuration since Lucee will work with the existing Railo configuration.</p><h3>web.xml (jetty)/webdefault.xml (tomcat)</h3><p>You <strong>can</strong> for example change the class names in the servlet definitions from</p>
+<div class="highlight"><pre><span class="nt">&lt;servlet&gt;</span>
+    <span class="nt">&lt;servlet-name&gt;</span>GlobalCFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
+    <span class="nt">&lt;description&gt;</span>CFML runtime Engine<span class="nt">&lt;/description&gt;</span>
+   <span class="nt">&lt;servlet-class&gt;</span>railo.loader.servlet.CFMLServlet<span class="nt">&lt;/servlet-class&gt;</span>
+    <span class="nt">&lt;init-param&gt;</span>
+        <span class="nt">&lt;param-name&gt;</span>railo-web-directory<span class="nt">&lt;/param-name&gt;</span>
+       <span class="nt">&lt;param-value&gt;</span>{web-root-directory}/WEB-INF/railo/<span class="nt">&lt;/param-value&gt;</span>
+        <span class="nt">&lt;description&gt;</span>Railo Web Directory directory<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/init-param&gt;</span>
+    <span class="nt">&lt;init-param&gt;</span>
+        <span class="nt">&lt;param-name&gt;</span>railo-server-root<span class="nt">&lt;/param-name&gt;</span>
+        <span class="nt">&lt;param-value&gt;</span>D:\webroot<span class="nt">&lt;/param-value&gt;</span>
+        <span class="nt">&lt;description&gt;</span>Directory where Lucee server root is stored.<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/init-param&gt;</span>
+    <span class="nt">&lt;load-on-startup&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span>
+<span class="nt">&lt;/servlet&gt;</span>
+</pre></div><p>to</p>
+<div class="highlight"><pre><span class="nt">&lt;servlet&gt;</span>
+    <span class="nt">&lt;servlet-name&gt;</span>GlobalCFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
+    <span class="nt">&lt;description&gt;</span>CFML runtime Engine<span class="nt">&lt;/description&gt;</span>
+   <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.CFMLServlet<span class="nt">&lt;/servlet-class&gt;</span>
+    <span class="nt">&lt;init-param&gt;</span>
+        <span class="nt">&lt;param-name&gt;</span>lucee-web-directory<span class="nt">&lt;/param-name&gt;</span>
+       <span class="nt">&lt;param-value&gt;</span>{web-root-directory}/WEB-INF/lucee/<span class="nt">&lt;/param-value&gt;</span>
+        <span class="nt">&lt;description&gt;</span>Lucee Web Directory directory<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/init-param&gt;</span>
+    <span class="nt">&lt;init-param&gt;</span>
+        <span class="nt">&lt;param-name&gt;</span>lucee-server-root<span class="nt">&lt;/param-name&gt;</span>
+        <span class="nt">&lt;param-value&gt;</span>D:\webroot<span class="nt">&lt;/param-value&gt;</span>
+        <span class="nt">&lt;description&gt;</span>Directory where Lucee server root is stored.<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/init-param&gt;</span>
+    <span class="nt">&lt;load-on-startup&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span>
+<span class="nt">&lt;/servlet&gt;</span>
+</pre></div><p>but doing so isn't necessary and makes no difference to Lucee. **When you change a path like "D:\projects/whatever/railo/server" to "D:\projects/whatever/lucee/server", Lucee will no longer find the original configuration and because of that not migrating it, so it is really better to changes paths like this AFTER the migration! **</p><p>The same applies to the "railo-inst.jar" defined in your start script: you can change it but it is not necessary.</p><h2>Extensions</h2><p>Partially or fully Java based extensions that rely on certain Railo interfaces may not work and could possibly prevent Lucee from starting.</p><p>The following extensions need to be updated in order to work with Lucee. It is best uninstall them before you migrate then re-install them afterwards so that you get the new Lucee compatible versions:</p>
+<ul>
+  <li>All cache extensions (Memcached, Infinispan)</li>
+  <li>MongoDB extension</li>
+</ul><p>This list will be added to as issues come to light.</p><h3>Spreadsheet</h3><p>The original <a href="https://github.com/teamcfadvance/cfspreadsheet-railo">Railo extension produced by TeamCfAdvance</a> is not compatible with Lucee and should be removed.</p><p>However a <a href="https://github.com/Leftbower/cfspreadsheet-lucee">modified version by Andrew Kretzer</a> is now available and can be installed in Lucee by carefully following the instructions provided.</p><p>Alternatively, a standalone (non-extension) <a href="https://github.com/cfsimplicity/lucee-spreadsheet">spreadsheet library for Lucee</a> is available which supports almost all of the extension's functionality.</p><h3>Video</h3><p>If you have installed the Video extension, you may see the following error: <code>java.lang.NoClassDefFoundError: railo/runtime/video/VideoExecuter</code>. To fix this simply <a href="https://bitbucket.org/lucee/lucee/downloads/railo-video-extension-adapter-for-lucee.jar">download the railo-video-extension-adapter-for-lucee.jar</a> and place it next to the "railo-extension-video.jar" in your installation.</p><h2>org.railo.cfml... component paths</h2><p>If you have used the component path <em>org.railo.cfml...</em> as a <strong>return or argument type</strong>, it must be changed to <em>org.lucee.cfml</em>, eg.</p>
+<div class="highlight"><pre><span class="nx">org</span><span class="p">.</span><span class="nx">railo</span><span class="p">.</span><span class="nx">cfml</span><span class="p">.</span><span class="nx">Query</span> <span class="kd">function</span> <span class="nx">newQuery</span><span class="p">(){</span>
+   <span class="k">return</span> <span class="k">new</span> <span class="nx">Query</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div><p>These CFCs may be affected:</p><p><img src="https://bitbucket.org/repo/rX87Rq/images/2979463242-cfcs.jpg" alt="cfcs.jpg" /></p><h3>objectSave()</h3><p>Objects persisted with <em>objectSave()</em> on Railo, can not be loaded with <em>objectLoad()</em> on Lucee.</p><h3>Other issues?</h3><p>If you are having problems please post to the <a href="https://groups.google.com/forum/#!forum/lucee">Lucee Google Group</a>.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

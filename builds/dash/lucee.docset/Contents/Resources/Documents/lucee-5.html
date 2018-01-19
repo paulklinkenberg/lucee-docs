@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Lucee 5</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="chapter" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="about-lucee.html">
+							<span class="access-hide">Previous page: About Lucee</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="lucee-5-extensions.html">
+							<span class="access-hide">Previous page: Extensions in Lucee 5</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Lucee 5</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Lucee 5</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+			<li class="active">Lucee 5</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/chapter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Lucee 5</h1><p>Lucee 5 is the first major release after forking from the Railo project. Lucee 5 is not about dazzling new features but about improving the core language and providing a complete architectural overhaul of the engine.</p><p>This brings Lucee and CFML to a whole new level!</p><h2>New Language dialect</h2><p>In addition to the existing "CFML" language dialect, Lucee 5 comes with a completely new dialect simply called "Lucee".</p><p><a href="lucee-5-dialect-lucee.html">The Lucee dialect</a></p><h2>Language Enhancements</h2><p>Lucee 5 provides the following core language enhancements:</p>
+<ul>
+  <li><p><a href="lucee-5-abstract-final.html">Abstract/Final Modifiers</a> - Lucee already supports interfaces, but interfaces have not been well adopted by the community, because they are only used to do "sign a contract" when you implement them. Abstract and Final modifiers are a much more intuitive and flexible way to do the same and even more.</p></li>
+  <li><p><a href="lucee-5-access=modifiers.html">Access Modifiers for variables</a> - Lucee already supports access modifiers for functions, but with Lucee 4 this was limited to functions, Lucee 5 now also supports the same for variables.</p></li>
+  <li><p><a href="lucee-5-component-static.html">Static support for components</a> - Lucee 5 supports static variables and functions inside components.</p></li>
+  <li><p><a href="lucee-5-lambda.html">Lambda Expressions</a> - Lucee 5 support Lambda Expression alongside closures, a shorthand notation for anonymous functions.</p></li>
+  <li><p><a href="lucee-5-functions-tags.html">New and modified functions</a> - New and modified functions in Lucee 5.</p></li>
+  <li><p><a href="lucee-5-tags.html">New and modified tags</a> - New and modified tags in Lucee 5.</p></li>
+  <li><p><a href="lucee-5-cached-within.html">Cached Within</a> - We not only added the attribute <code>cachedWithin</code> to the tag <code>cffile</code> and <code>cfhttp</code>, we have also added an interface to Lucee to make your own <code>cachedwithin</code> implementation.</p></li>
+  <li><p><a href="lucee-5-unquoted-arguments.html">Handling unquoted arguments as variables</a></p></li>
+  <li><p><a href="lucee-5-java-interface.html">Extended Java Interface</a> - (TODO) - Lucee provides a interface to interact with Lucee from within Java, Lucee 5 has extended this interface with a lot of new functionality, which makes it far easier to write Extensions for Lucee.</p></li>
+</ul><h2>Architecture Enhancements</h2><p>Lucee 5 has had a complete overhaul under the hood, we have not only redone a lot of the existing functionality, we have also extended the interfaces to the engine to make way for a lot of possible functionality in the future.</p>
+<ul>
+  <li><p><a href="lucee-5-osgi.html">OSGi</a> - Lucee 5 is completely <a href="http://en.wikipedia.org/wiki/OSGi">OSGi</a> based, OSGi is the defacto standard in most Java enterprise environments, to manage bundles (jar libraries) used by the environment.</p></li>
+  <li><p>JSR 223 (TODO) - Lucee 5 fully supports the <a href="http://en.wikipedia.org/wiki/Scripting_for_the_Java_Platform">JSR 223</a> standard and this is something we are very proud of. JSR 223 will open new doors for many exciting possibilities in the future.</p></li>
+  <li><p><a href="lucee-5-class-updating.html">Class Updating</a> - Previously an optional feature in Lucee 4, class updating is now an integral part of Lucee 5. Lucee 5 is able to update existing classes and this has a huge impact on memory consumption, especially in environments where a lot of CFML templates are used.</p></li>
+  <li><p>Bytecode Handling - We have improved the generated Java Bytecode produced in general by optimizing it for Java &gt;=7 and we have done specific improvements of the generated bytecode in multiple places.</p></li>
+</ul><h2>Extensions</h2><p>Lucee 5 has had a complete overhaul of the existing extension framework, to make them more flexible and far easier for anyone to create an extension. See <a href="lucee-5-extensions.html">Extensions in Lucee 5</a></p><h2>Install/Upgrade instructions</h2>
+<ul>
+  <li>Fresh install (TODO)</li>
+  <li>Updating from Lucee 4.5 (TODO)</li>
+  <li><a href="lucee-5-updating-railo.html">Upgrading from Railo</a></li>
+</ul>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

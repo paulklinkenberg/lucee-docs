@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: CreateDate</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-cos.html">
+							<span class="access-hide">Previous page: Cos</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-createdatetime.html">
+							<span class="access-hide">Previous page: CreateDateTime</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">CreateDate</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">CreateDate</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">CreateDate</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createdate/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Creates a CFML date object from the given year, month and day. </p><p>CreateDate is a subset of <a href="function-createdatetime.html">CreateDateTime</a>. The time in the returned object is set to 00:00:00.</p>
+
+	<p><strong>Returns:</strong> datetime</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">CreateDate</span><span class="p">(</span> <span class="nv">year</span><span class="p">,</span> <span class="nv">month</span><span class="p">,</span> <span class="nv">day</span> <span class="p">[,</span> <span class="nv">timezone</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								year<br>
+								<sub>(number, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createdate/_arguments/year.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Integer in the range 0-9999. Integers in the range 0-29 are converted to 2000-2029. Integers in the range 30-99 are converted to 1930-1999. You cannot specify dates before AD 100.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								month<br>
+								<sub>(number, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createdate/_arguments/month.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Integer in the range 1-12</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								day<br>
+								<sub>(number, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createdate/_arguments/day.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Integer in the range 1-31</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timezone<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createdate/_arguments/timezone.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A datetime object is independent of a specific timezone; it is only an offset in milliseconds from <code>1970-1-1 00.00:00 UTC</code> (Coordinated Universal Time).</p><p>The timezone only comes into play when you need specific information like hours in a day, minutes in a hour or which day it is as these calculations depend on the timezone.</p><p>A timezone must be specified in order to translate the date object to something else. If you do not provide the timezone in the function call, it will default to the timezone specified in the Lucee Administrator (Settings/Regional), or the timezone specified for the current request using the function <a href="function-settimezone.html">setTimezone()</a>.</p><p>You can find a list of all available timezones in the Lucee administrator (Settings/Regional). Some examples of valid timezones include:</p>
+<ul>
+  <li>AGT (for time in Argentina)</li>
+  <li>Europe/Zurich (for time in Zurich/Switzerland)</li>
+  <li>HST (Hawaiian Standard Time in the USA)</li>
+</ul>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createdate/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">mydate</span> <span class="o">=</span> <span class="nf">createDate</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="nf">now</span><span class="p">()),</span> <span class="nf">month</span><span class="p">(</span><span class="nf">now</span><span class="p">()),</span> <span class="nf">day</span><span class="p">(</span><span class="nf">now</span><span class="p">()))</span><span class="nb">&gt;</span>
+
+<span class="nb">&lt;cfoutput&gt;</span>
+The date is <span class="p">#</span><span class="nf">dateFormat</span><span class="p">(</span><span class="nv">myDate</span><span class="p">,</span> <span class="s2">&quot;dddd, d mmmm yyyy&quot;</span><span class="p">)#</span>.
+<span class="nb">&lt;/cfoutput&gt;</span>
+</pre></div>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-date.html">Date and time</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

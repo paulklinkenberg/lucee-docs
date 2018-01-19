@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Reference pages</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="docs-markdown.html">
+							<span class="access-hide">Previous page: LuceeDocs-flavoured Markdown</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="docs-build.html">
+							<span class="access-hide">Previous page: Build</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Reference pages</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Reference pages</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="about.html">About the docs</a></li>
+			
+				<li><a href="docs-content.html">Content</a></li>
+			
+			<li class="active">Reference pages</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/06.docs/01.content/03.docsreference/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Pages that document <a href="functions.html">Lucee functions</a> and <a href="tags.html">Lucee tags</a> are a little more involved than standard documentation page types. They still use the same basic <a href="docs-structure.html">page tree system</a> but pull in extra information from Lucee source code and make use of multiple markdown files to produce the final output.</p>
+<div class="card-wrap">
+			<div class="card card-green">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Tip</p>
+						<p>Folders and markdown files that begin with an underscore, <code>_</code>, are ignored by the documentation tree builder and are used to supplement various page types such as function and tag reference pages.</p>
+          
+					</div>
+				</div>
+			</div>
+		</div><h2>Functions</h2><p>The basic folder structure of a function reference is as follows:</p>
+<div class="highlight"><pre>/nameoffunction
+    /_arguments
+    	argument1name.md
+    	argument2name.md
+    _examples.md
+    function.md
+</pre></div><p>The <code>function.md</code> file indicates that this page is a <strong>function</strong> page type. Its content will consist of YAML front matter to indicate its page title, id and any related content and categories, and the description of the function.</p><p>The <code>_examples.md</code> file is an optional plain markdown file that can be use to provide examples for the function. </p><p>The <code>_arguments</code> folder should contain a single markdown file per named argument that the function accepts. The name of the file corresponds to the name of the argument. The content of the markdown file provides the description of the argument.</p><p>All other reference material, such as argument types and mandatory status, are taken from the Lucee source code.</p><h2>Tags</h2><p>The basic folder structure of a function reference is as follows:</p>
+<div class="highlight"><pre>/nameoftag
+    /_attributes
+    	attribute1name.md
+    	attribute2name.md
+    _examples.md
+    tag.md
+</pre></div><p>The <code>tag.md</code> file indicates that this page is a <strong>tag</strong> page type. Its content will consist of YAML front matter to indicate its page title, id and any related content and categories, and the description of the tag.</p><p>The <code>_examples.md</code> file is an optional plain markdown file that can be use to provide examples for the tag. </p><p>The <code>_attributes</code> folder should contain a single markdown file per named attribute that the tag accepts. The name of the file corresponds to the name of the attribute. The content of the markdown file provides the description of the attribute.</p><p>All other reference material, such as attribute types and mandatory status, and tag formatting options are taken from the Lucee source code.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

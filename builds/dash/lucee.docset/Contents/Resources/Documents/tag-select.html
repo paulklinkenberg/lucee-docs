@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfselect&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-search.html">
+							<span class="access-hide">Previous page: &lt;cfsearch&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-servlet.html">
+							<span class="access-hide">Previous page: &lt;cfservlet&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfselect&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfselect&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfselect&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Used inside cfform, cfselect lets you construct a drop-down list box form control. You can  populate the drop-down list box from a query, or using the option tag. Use option elements to populate  lists. The syntax for the option tag is the same as for its HTML counterpart.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfselect</span>
+    <span class="err">[</span><span class="na">datafld=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">caseSensitive=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">datasrc=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dataformatas=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">disabled=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">multiple=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">title=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dir=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">lang=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmousedown=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmouseup=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmouseover=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmousemove=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmouseout=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onkeypress=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onkeyup=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onkeydown=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="na">name=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">size=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">required=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">message=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onError=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">multiple=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">query=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">selected=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">value=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">display=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">passThrough=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">class=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">id=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onBlur=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onChange=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onClick=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onDblclick=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onFocus=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">style=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tabIndex=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">label=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">enabled=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">group=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">height=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">queryPosition=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tooltip=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">visible=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">width=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">editable=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								datafld<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/datafld.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								caseSensitive<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/caseSensitive.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>is compare for selected case sensitive or not</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								datasrc<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/datasrc.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dataformatas<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/dataformatas.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								disabled<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/disabled.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								multiple<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/multiple.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								title<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/title.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dir<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/dir.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								lang<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/lang.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmousedown<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onmousedown.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to run  when the user releases a mouse button in the control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmouseup<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onmouseup.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to run  when the user presses a mouse button in the control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmouseover<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onmouseover.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmousemove<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onmousemove.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmouseout<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onmouseout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onkeypress<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onkeypress.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onkeyup<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onkeyup.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to run  when the user releases a keyboard key in the control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onkeydown<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onkeydown.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to run when the user depresses a keyboard  key in the control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of the form you are creating.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								size<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/size.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Number of entries in the drop-down list.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								required<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/required.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. If Yes, a list element must be selected when the form is submitted, and the size of  the drop-down list must be at least two. Default is No.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								message<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/message.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Message that displays if required = 'Yes' and no selection is made.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onError<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of a valid JavaScript function to execute in the event of a failed validation.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								multiple<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/multiple.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								query<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/query.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of the query to be used to populate the drop-down list box.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								selected<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/selected.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A value matching at least one entry in value to preselect the entry in the drop-down list box.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The query column value for the list element. Used with the query attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								display<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/display.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The query column displayed. Defaults to the value of value. Used with the query attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								passThrough<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/passThrough.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>HTML attributes that are not explicitly supported by cfselect. If you specify an attribute and  its value, the attribute and its value are passed to the HTML code that is generated for the cfselect  tag.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								class<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/class.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								id<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/id.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>ID for form input element.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onBlur<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onBlur.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onChange<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onChange.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to run  when the control changes due to user action.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onClick<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onClick.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to run when the user clicks the control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onDblclick<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onDblclick.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onFocus<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/onFocus.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								style<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/style.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Lucee passes the  style attribute to the browser.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tabIndex<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/tabIndex.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								label<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/label.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Label to put next to the control on a Flash or XML-format form.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								enabled<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/enabled.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Flash only: Boolean value specifying whether to show the control.  Space that would be occupied by an invisible control is  blank.  Default: true</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								group<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/group.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Query column to use to group the items in the drop-down  list into a two-level hierarchical list.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								height<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/height.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The height of the control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								queryPosition<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/queryPosition.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If you populate the options list with a query and use HTML  option child tags to specify additional entries, determines  the location of the items from the query relative to the items  from the option tags:  - above: Put the query items above the options items.  - below: Put the query items below the options items.  Default: above</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tooltip<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/tooltip.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Flash only: Text to display when the mouse pointer hovers over the control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								visible<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/visible.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Flash only: Boolean value specifying whether to show the control.  Space that would be occupied by an invisible control is  blank.  Default: true</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								width<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/width.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The width of the control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								editable<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_attributes/editable.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Boolean value specifying whether you can edit the  contents of the control.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/select/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

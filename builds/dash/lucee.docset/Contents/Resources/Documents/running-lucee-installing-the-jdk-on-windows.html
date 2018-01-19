@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Installing the JDK on Windows</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="running-lucee-installing-oracle-java-on-windows.html">
+							<span class="access-hide">Previous page: Installing Oracle Java on Windows</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="running-lucee-installing-the-server-jre-on-windows.html">
+							<span class="access-hide">Previous page: Installing the server JRE on Windows</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Installing the JDK on Windows</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Installing the JDK on Windows</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="running-lucee.html">Running Lucee</a></li>
+			
+				<li><a href="running-lucee-windows.html">Windows</a></li>
+			
+			<li class="active">Installing the JDK on Windows</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/05.installing-the-jdk-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/398847305-java-logo70x45.jpg" alt="java-logo70x45.jpg" /></p><p>First download the current <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java 8 SE Development Kit</a>.</p><p>Choose the <strong>Windows x64</strong> edition and save it to a temporary folder on your server.</p><h2>Installation</h2>
+<ol>
+  <li>Create the folder <strong>C:\Program Files\Oracle Java JDK</strong> on your server.</li>
+  <li>Start the installer by double-clicking the downloaded .exe file.</li>
+  <li>Click <em>Next</em>. Select <strong>Development Tools</strong> and set the "Install to..." location to be the folder you created above.</li>
+  <li>Untick <strong>Source Code</strong> and <strong>Public JRE</strong>. We don't need these.</li>
+  <li>Click <em>Next</em> to start installing.</li>
+</ol><p><img src="https://bitbucket.org/repo/rX87Rq/images/252239566-java-jdk-setup.png" alt="java-jdk-setup.png" /></p><h2>Set JDK_HOME Environment variable</h2><p>Finally we need to set an environment variable to point to our new Java installation:</p>
+<ol>
+  <li>Open the control panel and choose the <em>system applet</em></li>
+  <li>Click the <em>Advanced</em> tab and the button <em>Environment Variables</em></li>
+  <li>Click <em>New...</em> at the <strong>System Variables</strong></li>
+  <li>Use <strong>JDK_HOME</strong> as the name of the variable and the path <strong>C:\Program Files\Oracle Java JDK</strong> as the value.</li>
+  <li>Finish by clicking OK until your are back at the control panel.</li>
+</ol><p>Or using the command line: <div class="highlight"><pre>setx JDK_HOME &quot;C:\Program Files\Oracle Java JDK&quot; /m </pre></div></p><p>To check the environment variable has been set correctly:</p>
+<ol>
+  <li>Open a <em>new</em> command prompt, type <strong>set</strong> and hit <em>enter</em></li>
+  <li>Scroll until you see the variable <strong>JDK_HOME</strong></li>
+</ol><h2>Update</h2><p>It is important to keep Java updated with the latest security patches. To do so simply download the latest installer, <em>Stop your Tomcat-Service</em> and install the new version over the old one. Don't forget to re-start Tomcat after the update.</p><h2>Silent Installation</h2><p>If you need to install this product on several servers then a silent installation will make your life easier: <div class="highlight"><pre>jdk-8u31-windows-x64.exe /s addlocal=&quot;ToolsFeature&quot; installdir=&quot;C:\Program Files\Oracle Java JDK&quot; setx JDK_HOME &quot;C:\Program Files\Oracle Java JDK&quot; /m </pre></div></p><p>(Make sure you change the update version number as appropriate). - - -</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfobject&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-oauth.html">
+							<span class="access-hide">Previous page: &lt;cfoauth&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-objectcache.html">
+							<span class="access-hide">Previous page: &lt;cfobjectcache&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfobject&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfobject&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfobject&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Lets you call methods in COM, CORBA, and JAVA objects.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfobject</span>
+    <span class="na">name=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">component=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">action=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">class=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">context=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">delimiters=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">server=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">locale=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">webservice=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">username=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">password=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyServer=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPort=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyUser=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPassword=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name for the instantiated component.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								component<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/component.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of component to instantiate.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The object type. You can omit this attribute or specify component. Lucee automatically sets the type to component.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<ul>
+  <li>create: instantiates a COM object (typically, a DLL) before invoking methods or properties.</li>
+  <li>connect: connects to a COM object (typically, an EXE) running on server.</li>
+</ul>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								class<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/class.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Component ProgID for the object to invoke. When using Java stubs to connect to the COM object, the class must be the ProgID of the COM object.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								context<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/context.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<ul>
+  <li>inproc
+  <ul>
+    <li>local</li>
+    <li>remote</li>
+  </ul></li>
+</ul><p>In Windows, if not specified, uses Registry setting.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								delimiters<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/delimiters.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if specified a classpath, use as delimiter for the entries, default is comma.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								server<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/server.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Server name, using Universal Naming Convention (UNC) or Domain Name Serve (DNS) convention, in one of these forms:</p>
+<pre><code>* \\lanserver
+* lanserver
+* http://www.servername.com
+* www.servername.com
+* 127.0.0.1
+</code></pre>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								locale<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/locale.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Sets arguments for a call to init_orb. Use this attribute only for VisiBroker ORBs. It is available on C++, Version 3.2. The value must be in the form: locale = " -ORBagentAddr 199.99.129.33 -ORBagentPort 19000"</p><p>Each type-value pair must start with a hyphen.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								webservice<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/webservice.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The absolute URL of the web service.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								username<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/username.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The user name to use to access the web service. If the webservice attribute specifies a web service configured name in the Lucee Administrator, overrides any user name specified in the Administrator entry.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								password<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/password.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The password to use to access the web service. If the webservice attribute specifies a web service name configured in the Lucee Administrator, overrides any password specified in the Administrator entry.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyServer<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/proxyServer.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The proxy server required to access the web service URL.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPort<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The port to use on the proxy server.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyUser<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/proxyUser.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The user ID to send to the proxy server.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_attributes/proxyPassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The user's password on the proxy server.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/object/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

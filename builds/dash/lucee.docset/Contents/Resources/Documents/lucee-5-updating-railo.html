@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Upgrading from Railo</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="lucee-5-upgrading-lucee-45.html">
+							<span class="access-hide">Previous page: Upgrading from Lucee 4.5</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="categories.html">
+							<span class="access-hide">Previous page: Categories</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Upgrading from Railo</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Upgrading from Railo</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="lucee-5.html">Lucee 5</a></li>
+			
+			<li class="active">Upgrading from Railo</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/16.updating-railo/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Upgrade from Railo</h1>
+<ul>
+  <li>Stop the servlet engine</li>
+  <li>Go to the Lucee website to the <a href="http://lucee.org/downloads.html">download page</a>, download "Custom/JARs for Lucee 5" and unzip the downloaded zip file somewhere on your system.</li>
+  <li>If the folder "{servlet-engine}/lib/ext" exists: remove all jars, but do not remove the directory "railo-server"/"lucee-server" if that directory is present there (which is the case with default installations).</li>
+  <li>If the folder "{servlet-engine}/lib/ext" doesn' exist yet: Create the folder "{servlet-engine}/lib/ext"</li>
+  <li>Copy <strong>lucee.jar</strong> and <strong>org-apache-felix-main-x-x-x.jar</strong> (x-x-x stands for a specific version) to "{servlet-engine}/lib/ext"</li>
+  <li>Remove "-javaagent:.../...-inst.jar" from the startup script.</li>
+  <li>Remove "MessageBrokerServlet" definition with mapping from your web.xml (Tomcat: conf/web.xml, Jetty etc/webdefault.xml)</li>
+  <li>Add Lucee Servlet to /conf/web.xml (pay attention to the load-on-startup values for your servlets)</li>
+</ul>
+<div class="highlight"><pre><span class="nt">&lt;servlet&gt;</span>
+ 		<span class="nt">&lt;servlet-name&gt;</span>LuceeServlet<span class="nt">&lt;/servlet-name&gt;</span>
+ 		<span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.LuceeServlet<span class="nt">&lt;/servlet-class&gt;</span>
+ 		<span class="nt">&lt;load-on-startup&gt;</span>2<span class="nt">&lt;/load-on-startup&gt;</span>
+ 	<span class="nt">&lt;/servlet&gt;</span>
+ 	<span class="nt">&lt;servlet-mapping&gt;</span>
+ 		<span class="nt">&lt;servlet-name&gt;</span>LuceeServlet<span class="nt">&lt;/servlet-name&gt;</span>
+ 		<span class="nt">&lt;url-pattern&gt;</span>*.lucee<span class="nt">&lt;/url-pattern&gt;</span>
+ 		<span class="nt">&lt;url-pattern&gt;</span>/index.lucee/*<span class="nt">&lt;/url-pattern&gt;</span>
+ 	<span class="nt">&lt;/servlet-mapping&gt;</span>
+</pre></div>
+<ul>
+  <li>Add the following code to to catalina.properties (Tomcat: conf/catalina.properties) at the and of <strong>common.loader=...</strong></li>
+</ul>
+<div class="highlight"><pre>,&quot;${catalina.base}/lib/ext&quot;,&quot;${catalina.base}/lib/ext/*.jar&quot;,&quot;${catalina.home}/lib/ext&quot;,&quot;${catalina.home}/lib/ext/*.jar&quot;
+</pre></div>
+<ul>
+  <li>If you have not defined a "railo-server-directory"/"lucee-server-directory" in your servlet specification, add the rest of the jars you have downloaded to "{servlet-engine}/lucee-server/bundles/" (you will need to create these folders). If you have defined a "railo-server-directory"/"lucee-server-directory" with your servlet specification copy the jars to "{lucee-server-directory-path}/lucee-server/bundles"</li>
+  <li>Please check the servlet definition for the CFMLServlet: The value for "<load-on-startup>" should be 1, otherwise (at this stage) the params "lucee-server-directory" and "lucee-web-directory" are ignored!</li>
+  <li>Start the servlet engine</li>
+</ul><p><strong>Important information</strong></p><p>With Lucee 5 the JARs used by Lucee (except lucee.jar and org-apache-felix-main-x-x-x.jar) are handled by Lucee and no longer by the servlet engine. It is therefore important that the servlet engine does not load the jars you added. Therefore they should not be in the servlet engines classpath, for example not inside the lib folder.</p><p><strong>Sample Lucee Servlet Definition in web.xml</strong></p>
+<div class="highlight"><pre><span class="c">&lt;!-- ===================================================================== --&gt;</span>
+    <span class="c">&lt;!-- Lucee CFML Servlet - this is the main Lucee servlet                   --&gt;</span>
+    <span class="c">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --&gt;</span>
+    <span class="nt">&lt;servlet&gt;</span>
+        <span class="nt">&lt;servlet-name&gt;</span>CFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.CFMLServlet<span class="nt">&lt;/servlet-class&gt;</span>
+        <span class="nt">&lt;init-param&gt;</span>
+            <span class="nt">&lt;param-name&gt;</span>lucee-server-directory<span class="nt">&lt;/param-name&gt;</span>
+            <span class="nt">&lt;param-value&gt;</span>D:/ApacheTomcat/<span class="nt">&lt;/param-value&gt;</span>
+            <span class="nt">&lt;description&gt;</span>Directory where Lucee server directory is stored<span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;/init-param&gt;</span>
+        <span class="nt">&lt;init-param&gt;</span>
+            <span class="nt">&lt;param-name&gt;</span>lucee-web-directory<span class="nt">&lt;/param-name&gt;</span>
+            <span class="nt">&lt;param-value&gt;</span>D:/ApacheTomcat/lucee-web/{web-context-label}/<span class="nt">&lt;/param-value&gt;</span>
+            <span class="nt">&lt;description&gt;</span>Lucee Web Directory<span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;/init-param&gt;</span>
+        <span class="nt">&lt;load-on-startup&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span>
+    <span class="nt">&lt;/servlet&gt;</span>
+    <span class="nt">&lt;servlet-mapping&gt;</span>
+        <span class="nt">&lt;servlet-name&gt;</span>CFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>*.cfc<span class="nt">&lt;/url-pattern&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>*.cfm<span class="nt">&lt;/url-pattern&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>*.cfml<span class="nt">&lt;/url-pattern&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>/index.cfc/*<span class="nt">&lt;/url-pattern&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>/index.cfm/*<span class="nt">&lt;/url-pattern&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>/index.cfml/*<span class="nt">&lt;/url-pattern&gt;</span>
+    <span class="nt">&lt;/servlet-mapping&gt;</span>
+
+    <span class="nt">&lt;servlet&gt;</span>
+        <span class="nt">&lt;servlet-name&gt;</span>LuceeServlet<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.LuceeServlet<span class="nt">&lt;/servlet-class&gt;</span>
+        <span class="nt">&lt;load-on-startup&gt;</span>2<span class="nt">&lt;/load-on-startup&gt;</span>
+    <span class="nt">&lt;/servlet&gt;</span>
+    <span class="nt">&lt;servlet-mapping&gt;</span>
+        <span class="nt">&lt;servlet-name&gt;</span>LuceeServlet<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>*.lucee<span class="nt">&lt;/url-pattern&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>/index.lucee/*<span class="nt">&lt;/url-pattern&gt;</span>
+    <span class="nt">&lt;/servlet-mapping&gt;</span>
+    <span class="c">&lt;!-- ===================================================================== --&gt;</span>
+    <span class="c">&lt;!-- Lucee REST Servlet - handles Lucee&#39;s RESTful web services             --&gt;</span>
+    <span class="c">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --&gt;</span>
+    <span class="nt">&lt;servlet&gt;</span>
+        <span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.RestServlet<span class="nt">&lt;/servlet-class&gt;</span>
+        <span class="nt">&lt;load-on-startup&gt;</span>3<span class="nt">&lt;/load-on-startup&gt;</span>
+    <span class="nt">&lt;/servlet&gt;</span>
+    <span class="nt">&lt;servlet-mapping&gt;</span>
+        <span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;url-pattern&gt;</span>/rest/*<span class="nt">&lt;/url-pattern&gt;</span>
+    <span class="nt">&lt;/servlet-mapping&gt;</span>
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

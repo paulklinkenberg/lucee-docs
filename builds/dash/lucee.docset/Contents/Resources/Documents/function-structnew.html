@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: StructNew</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-structmap.html">
+							<span class="access-hide">Previous page: StructMap</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-structreduce.html">
+							<span class="access-hide">Previous page: StructReduce</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">StructNew</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">StructNew</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">StructNew</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/structnew/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Creates an empty structure.</p>
+
+	<p><strong>Returns:</strong> struct</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">StructNew</span><span class="p">(</span> <span class="p">[</span> <span class="nv">type</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/structnew/_arguments/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the type of structure created:</p>
+<ul>
+  <li><strong>linked</strong>: a struct with linked or ordered keys that maintain their insertion order</li>
+  <li><strong>normal</strong> (default): a regular struct</li>
+  <li><strong>soft</strong>: a struct with soft reference values, which are cleared at the discretion of the garbage collector in response to memory demand.</li>
+  <li><strong>weak</strong>: a struct containing weakly referenced values, which do not prevent their referents from being garbage collected. Weak references are most often used to implement simple caches.</li>
+</ul><p><em>Note, the type "synchronized" is no longer supported and will be ignored; all struct/scopes are "thread safe" since version 4.1.</em></p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/structnew/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><strong>Lucee Script</strong></p>
+<div class="highlight"><pre><span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">(</span><span class="s2">&quot;soft&quot;</span><span class="p">);</span>
+<span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">(</span><span class="s2">&quot;weak&quot;</span><span class="p">);</span>
+<span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">(</span><span class="s2">&quot;linked&quot;</span><span class="p">);</span>
+</pre></div><p><strong>Lucee Tags</strong> <div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">()</span><span class="nb">&gt;</span> </pre></div></p>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-struct.html">Structures</a></li>
+			
+				<li><a href="category-collection.html">Collections</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

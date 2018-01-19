@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Set a Mapping (regular, component and custom tag mapping)</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="cookbook-application-context-basic.html">
+							<span class="access-hide">Previous page: Create a Application.cfc</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="cookbook-application-context-update.html">
+							<span class="access-hide">Previous page: Update current Application Context</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Set a Mapping (regular, component and custom tag mapping)</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Set a Mapping (regular, component and custom tag mapping)</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="cookbook.html">Cookbook</a></li>
+			
+			<li class="active">Set a Mapping (regular, component and custom tag mapping)</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/02.application-context-set-mapping/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Set a regular Mapping</h1><p>Lucee allows to set directory mappings in your Application.cfc, this mappings are only valid for the current request. <div class="highlight"><pre>#!javascript // Application.cfc component {  this.mappings[&#39;/shop&#39;]=getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop&quot;; } </pre></div></p><p>We define the mappings as a struct, where the key of the struct is the virtual path.</p><p>Now you can simply use that mapping in your code <div class="highlight"><pre>#!html  &lt;cfinclude template=&quot;/shop/whatever.cfm&quot;&gt; &lt;!--- load a template from the &quot;shop&quot; mapping ---&gt;  &lt;cfset cfc=new shop.Whatever()&gt;&lt;!--- load a CFC from the &quot;shop&quot; mapping (see also &quot;this.componentpaths&quot; for handling components) ---&gt; </pre></div></p><h2>Component and Custom Tag Mappings</h2><p>The previous example only has shown how to do a regular mapping, but Lucee is providing 3 types of mappings, regular component and custom tag mappings. <div class="highlight"><pre>#!javascript // Application.cfc component {  this.componentpaths=[getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;testbox&quot;];// mapping testbox components  this.customtagpaths=[getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;helper&quot;];// mapping a collection of helper custom tags</p><p>} </pre></div></p><p>In difference to "this.mappings", " this.componentpaths" and "this.customtagpaths" are taking arrays as input and not structs, because in that case there is not "virtual path" that needs to be defined.</p><h2>Advanced</h2><p>In the previous example we have simply set a path, like you can see in the admin a mapping can contain more data than only a physical path, of course you can use this settings also with a mapping done in the Application.cfc <div class="highlight"><pre>#!javascript // Application.cfc component {  this.mappings[&#39;/shop&#39;]={  physical:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop&quot;,  archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop.lar&quot;,  primary:&quot;archive&quot;  }; } </pre></div></p><p>In that case we not only define a physical path, we also define a Lucee archive (.lar). "primary" defines where Lucee is checking first for a resource, let's say you have the following code <div class="highlight"><pre>#!html  &lt;cfinclude template=&quot;/shop/whatever.cfm&quot;&gt; </pre></div></p><p>In that case Lucee first checks in the archive for "whatever.cfm" , if not found there, it looks inside the physical path.</p><p>Of course this can be done for all mapping types <div class="highlight"><pre>#!javascript // Application.cfc component {  this.componentpaths=[{archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;testbox.lar&quot;}];// loading testbox from a archive  this.customtagpaths=[{archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;helper.lar&quot;}];// a collection of helper custom tags</p><p>}; } </pre></div></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

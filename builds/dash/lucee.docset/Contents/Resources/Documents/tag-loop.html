@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfloop&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-logout.html">
+							<span class="access-hide">Previous page: &lt;cflogout&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-mail.html">
+							<span class="access-hide">Previous page: &lt;cfmail&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfloop&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfloop&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfloop&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Looping is a very powerful programming technique that lets you repeat a set of instructions or  display output repeatedly until one or more conditions are met. cfloop supports five types of loops.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nb">&lt;cfloop</span>
+    <span class="p">[</span><span class="nv">index</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">from</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">to</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">step</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">condition</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">query</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">startRow</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">endRow</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">maxRows</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">array</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">delimiters</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">collection</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">struct</span><span class="o">=</span><span class="s2">&quot;struct&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">item</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">file</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">characters</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">startline</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">endline</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">charset</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">group</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">groupCaseSensitive</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">times</span><span class="o">=</span><span class="s2">&quot;numeric&quot;</span><span class="p">]</span>
+<span class="nb">&gt;</span>
+</pre></div>
+
+
+	
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								index<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/index.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Index value. Lucee sets it to from value and increments or decrements by step value, until it equals to value.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								from<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/from.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Beginning value of index.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								to<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/to.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Ending value of index.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								step<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/step.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Step by which to increment or decrement the index value.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								condition<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/condition.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Condition that controls the loop.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								query<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/query.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Query that controls the loop. this can be a variable name or the query itself.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								startRow<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/startRow.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>First row of query that is included in the loop.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								endRow<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/endRow.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Last row of query that is included in the loop. You cannot use this attribute together with the attribute maxRows.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								maxRows<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/maxRows.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the maximum number of rows to display in the output section. You cannot use this attribute together with the attribute endrow.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								list<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/list.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A list, variable, or file name; contains a list</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								array<br>
+								<sub>(array, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/array.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>An array.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								delimiters<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/delimiters.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Character(s) that separates items in list</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								collection<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/collection.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Collection to loop over</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								struct<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/struct.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>struct to loop over</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								item<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/item.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Key for the collection</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								file<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/file.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>file path</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								characters<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/characters.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The number of characters to read during each iteration of the loop from the file specified in the file attribute. If the value of the characters attribute is more than the number of characters in the file, Lucee uses the number of characters in the file.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								startline<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/startline.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>start line</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								endline<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/endline.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>end line</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								charset<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/charset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>charset for read the file</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								group<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/group.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the query column to use when you group sets of records together to send as an e-mail  message. For example, if you send a set of billing statements to customers, you might group on  "Customer_ID." The group attribute, which is case sensitive, eliminates adjacent duplicates when the  data is sorted by the specified field. See the Usage section for exceptions.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								groupCaseSensitive<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/groupCaseSensitive.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Boolean indicating whether to group with regard to case or not. The default value is NO;  case is considered while grouping. If the query attribute specifies a query object that was generated  by a case-insensitive SQL query, set the groupCaseSensitive attribute to NO to keep the recordset  intact.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								label<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/label.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>used to a address this loop from a "break" or "continue" statement (instead of the nearest one).</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								times<br>
+								<sub>(numeric, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_attributes/times.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>used for a simple loop that is looping n times</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/loop/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Scripts installing Tomcat and Lucee on Windows</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="running-lucee-installing-the-server-jre-on-windows.html">
+							<span class="access-hide">Previous page: Installing the server JRE on Windows</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="running-lucee-securing-iis.html">
+							<span class="access-hide">Previous page: Securing IIS</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Scripts installing Tomcat and Lucee on Windows</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Scripts installing Tomcat and Lucee on Windows</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="running-lucee.html">Running Lucee</a></li>
+			
+				<li><a href="running-lucee-windows.html">Windows</a></li>
+			
+			<li class="active">Scripts installing Tomcat and Lucee on Windows</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/07.scripts-installing-tomcat-and-lucee-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<div class="highlight"><pre>set catalina.home=C:\Program Files\Tomcat
+set catalina.base=D:\Tomcat
+set jvm.dir=C:\Program Files\Oracle Java Server
+set tomcat.port=8080
+
+set lucee.home=C:\Program Files\Lucee
+set lucee.base=D:\Lucee
+
+md &quot;%catalina.home%&quot;
+md &quot;%catalina.home%\bin&quot;
+md &quot;%catalina.home%\lib&quot;
+
+md %catalina.base%
+md %catalina.base%\conf
+md %catalina.base%\webapps
+md %catalina.base%webapps\host-manager
+md %catalina.base%\webapps\manager
+md %catalina.base%\webapps\root
+md %catalina.base%\endorsed
+md %catalina.base%\logs
+md %catalina.base%\temp
+md %catalina.base%\work
+
+rem Expand the Tomcat files now
+pause
+
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //IS//Tomcat8 --DisplayName=&quot;Apache Tomcat&quot; --Description=&quot;Apache Tomcat&quot; --Startup=&quot;auto&quot;
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 --Classpath=&quot;%catalina.home%\bin\bootstrap.jar;%catalina.home%\bin\tomcat-juli.jar&quot;
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 --Jvm=&quot;%jvm.dir%\jre\bin\server\jvm.dll&quot;
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 ++JvmOptions=&quot;-Dcatalina.home=%catalina.home%;-Dcatalina.base=%catalina.base%;-Djava.endorsed.dirs=%catalina.base%\endorsed;-Djava.io.tmpdir=%catalina.base%\Temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file=%catalina.base%\conf\logging.properties&quot;
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 --LogLevel=&quot;Info&quot; --LogPrefix=&quot;tomcat_service_&quot; --LogPath=&quot;%catalina.base%\Logs&quot; --StdOutput=&quot;auto&quot; --StdError=&quot;auto&quot; --PidFile=&quot;tomcat8.pid&quot;
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 --StartClass=&quot;org.apache.catalina.startup.Bootstrap&quot; --StartMode=&quot;jvm&quot; ++StartParams=&quot;start&quot;  
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 --StopClass=&quot;org.apache.catalina.startup.Bootstrap&quot; --StopMode=&quot;jvm&quot; ++StopParams=&quot;stop&quot; --StopTimeout=&quot;0&quot;
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 ++JvmOptions=&quot;-Xms4096m;-Xmx4096m;-Xss512k;-XX:NewSize=1024M;-XX:MaxNewSize=1024M;-XX:GCTimeRatio=5;-XX:ThreadPriorityPolicy=42;-XX:ParallelGCThreads=4;--XX:MaxGCPauseMillis=50;-XX:+DisableExplicitGC;-XX:MaxHeapFreeRatio=70;-XX:MinHeapFreeRatio=40;-XX:+OptimizeStringConcat;-XX:+UseTLAB;-XX:+ScavengeBeforeFullGC;-XX:CompileThreshold=1500;-XX:+TieredCompilation;-XX:+UseBiasedLocking;-Xverify:none;-XX:+UseThreadPriorities;-XX:+UseFastAccessorMethods;-XX:+UseCompressedOops;-XX:ReservedCodeCacheSize=256m&quot;
+
+netsh advfirewall firewall add rule name=&quot;Apache Tomcat&quot; dir=in action=allow protocol=TCP localport=%tomcat.port% program=&quot;%catalina.home%\bin\tomcat8.exe&quot; profile=ANY
+
+md &quot;%lucee.home%&quot;
+md %lucee.base%
+
+rem Expand the Lucee files now
+pause
+
+&quot;%catalina.home%\bin\tomcat8.exe&quot; //US//Tomcat8 ++JvmOptions=&quot;-javaagent:%lucee.home%\lucee-inst.jar&quot;
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

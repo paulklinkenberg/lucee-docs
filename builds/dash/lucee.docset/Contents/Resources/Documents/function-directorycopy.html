@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: DirectoryCopy</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-deserializejson.html">
+							<span class="access-hide">Previous page: DeserializeJSON</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-directorycreate.html">
+							<span class="access-hide">Previous page: DirectoryCreate</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">DirectoryCopy</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">DirectoryCopy</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">DirectoryCopy</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/directorycopy/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Copies the contents of a directory to a destination directory.</p>
+
+	<p><strong>Returns:</strong> void</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">DirectoryCopy</span><span class="p">(</span> <span class="nv">source</span><span class="p">,</span> <span class="nv">destination</span> <span class="p">[,</span> <span class="nv">recurse</span> <span class="p">[,</span> <span class="nv">filter</span> <span class="p">[,</span> <span class="nv">createPath</span> <span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								source<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/directorycopy/_arguments/source.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Pathname of directory from which you copy content.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								destination<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/directorycopy/_arguments/destination.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Path of the destination directory. If not an absolute path, it is relative to the source directory.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								recurse<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/directorycopy/_arguments/recurse.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If true, copies the subdirectories, otherwise only the files in the source directory.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								filter<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/directorycopy/_arguments/filter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Filter to be used to filter the data copied: - A string that uses "*" as a wildcard, for example, "*.cfm" - a UDF (User defined Function) using the following pattern "functioname(String path):boolean", the function is run for every single file, if the function returns true, then the file is will be added to the list otherwise it will be omitted</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								createPath<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/directorycopy/_arguments/createPath.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to false, expects all parent directories to exist, true (default) will generate necessary directories</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/directorycopy/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this function.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

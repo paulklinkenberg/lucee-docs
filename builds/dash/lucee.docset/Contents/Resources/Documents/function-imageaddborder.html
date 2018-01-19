@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: ImageAddBorder</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-iif.html">
+							<span class="access-hide">Previous page: IIf</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-imageblur.html">
+							<span class="access-hide">Previous page: ImageBlur</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">ImageAddBorder</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">ImageAddBorder</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">ImageAddBorder</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Adds a rectangular border around the outside edge of a image.</p>
+
+	<p><strong>Returns:</strong> void</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">ImageAddBorder</span><span class="p">(</span> <span class="nv">name</span> <span class="p">[,</span> <span class="nv">thickness</span> <span class="p">[,</span> <span class="nv">color</span> <span class="p">[,</span> <span class="nv">borderType</span> <span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/_arguments/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The image on which this operation is performed.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								thickness<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/_arguments/thickness.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Thickness of the border in pixels. The default value is 1. The border is added to the outside edge of the image; the image area is increased accordingly.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								color<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/_arguments/color.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Optional. Border color. The default border color is black. See Usage. Only valid if the borderType is not specified or if borderType = "constant".</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								borderType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/_arguments/borderType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The type of border: - zero: Sets the border color to black. - constant: Sets the border to the specified color (default). - copy: Sets sample values to copies of the nearest valid pixel. For example, pixels to the left of the valid rectangle assume the value of the valid edge pixel in the same row. Pixels both above and to the left of the valid rectangle assume the value of the upper-left pixel. - reflect: Mirrors the edges of the source image. For example, if the left edge of the valid rectangle is located at x = 10, pixel (9, y) is a copy of pixel (10, y) and pixel (6, y) is a copy of pixel (13, y). - wrap: Tiles the source image in the plane.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this function.</em></p>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-image.html">Image manipulation</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

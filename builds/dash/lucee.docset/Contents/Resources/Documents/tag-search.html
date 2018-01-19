@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfsearch&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-script.html">
+							<span class="access-hide">Previous page: &lt;cfscript&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-select.html">
+							<span class="access-hide">Previous page: &lt;cfselect&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfsearch&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfsearch&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfsearch&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Executes searches against data indexed</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfsearch</span>
+    <span class="na">name=</span><span class="s">&quot;string&quot;</span>
+    <span class="na">collection=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">criteria=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">maxRows=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">startRow=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">external=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">language=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">category=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">categoryTree=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">status=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">suggestions=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">contextPassages=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">contextBytes=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">contextHighlightBegin=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">contextHighlightEnd=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">previousCriteria=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A name for the search query.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								collection<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/collection.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The logical collection name that is the target of the search operation or an external collection  with fully qualified path.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the criteria type for the search.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								criteria<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/criteria.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the criteria for the search following the syntactic rules specified by type.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								maxRows<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/maxRows.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the maximum number of entries for index queries. If omitted, all rows are returned.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								startRow<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/startRow.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the first row number to be retrieved. Default is 1.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								external<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/external.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								language<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/language.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Deprecated. This attribute is now ignored and the language of the collection is used to perform the search.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								category<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/category.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A list of categories, separated by commas, to which  the search is limited. If specified, and the collection  does not have categories enabled, Lucee</p>
+<pre><code>        throws an exception.
+</code></pre>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								categoryTree<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/categoryTree.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The location in a hierarchical category tree at which  to start the search. Lucee searches at and  below this level. If specified, and the collection does  not have categories enabled, Lucee throws an  exception. Can be used in addition to category  attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								status<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/status.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the name of the structure variable into  which Lucee places search information, including  alternative criteria suggestions (spelling corrections).</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								suggestions<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/suggestions.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether Lucene returns spelling suggestions  for possibly misspelled words.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								contextPassages<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/contextPassages.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The number of passages/sentences Lucene returns in  the context summary (that is, the context column of  the results).  Default: 3</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								contextBytes<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/contextBytes.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The maximum number of bytes Lucene returns in the  context summary.  Default: 300</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								contextHighlightBegin<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/contextHighlightBegin.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The HTML to prepend to search terms in the context  summary. Use this attribute in conjunction with  contextHighlightEnd to highlight search terms in the  context summary.  Default: <b></p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								contextHighlightEnd<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/contextHighlightEnd.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The HTML to prepend to search terms in the context  summary. Use this attribute in conjunction with  contextHighlightEnd to highlight search terms in the  context summary.  Default: </b></p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								previousCriteria<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_attributes/previousCriteria.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of a result set from an existing set of search  results. Lucene searches the result set for criteria  without regard to the previous search score or rank.  Use this attribute to implement searching within result  sets.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/search/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

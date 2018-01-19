@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: CreateObject</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-createguid.html">
+							<span class="access-hide">Previous page: CreateGUID</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-createodbcdate.html">
+							<span class="access-hide">Previous page: CreateODBCDate</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">CreateObject</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">CreateObject</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">CreateObject</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>The CreateObject function takes different arguments depending on the value of the first argument:</p>
+<div class="highlight"><pre><span class="nf">CreateObject</span><span class="p">(</span><span class="s1">&#39;com&#39;</span><span class="p">,</span> <span class="nv">class</span><span class="p">,</span> <span class="nv">context</span><span class="p">,</span> <span class="nv">serverName</span><span class="p">)</span>
+<span class="nf">CreateObject</span><span class="p">(</span><span class="s1">&#39;component&#39;</span><span class="p">,</span> <span class="nv">component</span><span class="o">-</span><span class="nv">name</span><span class="p">)</span>
+<span class="nf">CreateObject</span><span class="p">(</span><span class="s1">&#39;corba&#39;</span><span class="p">,</span> <span class="nv">context</span><span class="p">,</span> <span class="nv">class</span><span class="p">,</span> <span class="nv">locale</span><span class="p">)</span>
+<span class="nf">CreateObject</span><span class="p">(</span><span class="s1">&#39;java&#39;</span><span class="p">,</span> <span class="nv">class</span><span class="p">)</span>
+<span class="nf">CreateObject</span><span class="p">(</span><span class="s1">&#39;webservice&#39;</span><span class="p">,</span> <span class="nv">urltowsdl</span><span class="p">,</span> <span class="p">[,</span> <span class="nv">portname</span><span class="p">])</span>
+</pre></div>
+<div class="card-wrap">
+			<div class="card card-yellow">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Warning</p>
+						<p>In Lucee 5, this function has been deprecated in favour of the <code>new object()</code> syntax (reference needed). In line with our <a href="http://lucee.org/blog/the-lucee-language.html">committment to CFML</a>, this function will never be dropped from the language and you are safe to use it going forward.</p>
+      
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<p><strong>Returns:</strong> any</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">CreateObject</span><span class="p">(</span> <span class="nv">type</span> <span class="p">[,</span> <span class="nv">classname</span> <span class="p">[,</span> <span class="nv">context</span> <span class="p">[,</span> <span class="nv">arg4</span> <span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>one of the following: - com: for loading a com Object - java: for loading a java object - webservice: for loading a remote webservice - component: for loading a Component</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								classname<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/classname.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the usage of this argument depend on type defined with argument "type": - com: Component ProgID for the object to invoke. - java: java class to load - webservice: WSDL url to call - component: The CFC name; corresponds to the name of the file that defines the component</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								context<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/context.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the usage of this argument depend on type defined with argument "type": - com: not used (ignored) - java: classpath used to load the defined class, this can be a list of multiple paths (directories containing class files or jar files) - webservice: a struct containing the following optional keys (username,password,proxyServer,proxyPort,proxyUser,proxyPassword) - component: not used (ignored)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								arg4<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/arg4.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the usage of this argument depend on type defined with argument "type": - com: not used (ignored) - java: delimiter used for the classpath (default comma) - webservice: not used (ignored) - component: not used (ignored)</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this function.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

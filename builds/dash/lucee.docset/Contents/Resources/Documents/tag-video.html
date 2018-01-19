@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfvideo&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-update.html">
+							<span class="access-hide">Previous page: &lt;cfupdate&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-videoplayer.html">
+							<span class="access-hide">Previous page: &lt;cfvideoplayer&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfvideo&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfvideo&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfvideo&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>play a video</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfvideo</span>
+    <span class="err">[</span><span class="na">execution=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="na">action=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">source=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">source1=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">source2=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">destination=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">nameconflict=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">width=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">height=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">debug=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">buffersize=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">profile=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">quality=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">audiobitrate=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">audiosamplerate=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">aspectRatio=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">fps=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">framerate=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">videoBitrate=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">videoBitrateMin=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">videoBitrateMax=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">videoBitrateTolerance=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">author=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">title=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">comment=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">copyright=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">max=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">start=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">result=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">videocodec=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">audiocodec=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">data=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								execution<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/execution.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>values can be "quality" or "performance"</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Type of video manipulation that the tag performs.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								source<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/source.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>source video to read in</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								source1<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/source1.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>"left" source video to read in for concatenation</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								source2<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/source2.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>"right" source video to read in for concatenation</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								destination<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/destination.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>directory of the destination video to create</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the destination video</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								nameconflict<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/nameconflict.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Action to take if filename is the same as that of a file in the directory. (error,skip,overwrite,makeunique)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								width<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/width.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>width of destination video</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								height<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/height.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>height of destination video</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								debug<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/debug.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								buffersize<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/buffersize.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								profile<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/profile.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>standard profile definition (declared in video.xml)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								quality<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/quality.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>alias for profile</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								audiobitrate<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/audiobitrate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>audio bitrate, default same as input or part of defined quality (example: 10kbps, 10mbps, 10bps)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								audiosamplerate<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/audiosamplerate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>audio sampling rate, default same as input or part of defined quality</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								aspectRatio<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/aspectRatio.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>aspect ratio (16:9,4:3)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fps<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/fps.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>how many frames are used per second</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								framerate<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/framerate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>how many frames are used per second (alias for fps)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								videoBitrate<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/videoBitrate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>video bitrate, default same as input or part of defined quality (example: 10kbps, 10mbps, 10bps)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								videoBitrateMin<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/videoBitrateMin.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>minimal video bitrate of variable bitrate, default same as input or part of defined quality (example: 10kbps, 10mbps, 10bps)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								videoBitrateMax<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/videoBitrateMax.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>maximum video bitrate of variable bitrate, default same as input or part of defined quality (example: 10kbps, 10mbps, 10bps)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								videoBitrateTolerance<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/videoBitrateTolerance.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>video bitrate tolerance of variable bitrate, default same as input or part of defined quality (example: 10kbps, 10mbps, 10bps)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								author<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/author.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>author meta data of the destination video</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								title<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/title.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>title meta data of the destination video</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								comment<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/comment.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>comment meta data of the destination video</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								copyright<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/copyright.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>copyright meta data of the destination video</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								max<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/max.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>maximum length of destination video, you can defines max frame (10f) or max time (1145ms,3.123s)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								start<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/start.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>offset of destination video based on source, you can defines frames (10f) or time (1145ms,3.123s)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								result<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/result.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of struct that hold action info (default:cfvideo)</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								videocodec<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/videocodec.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>force video codec</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								audiocodec<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/audiocodec.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>force audio codec</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								data<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_attributes/data.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>for internal use only</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/video/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

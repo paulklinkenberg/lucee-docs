@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: NumberFormat</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-nullvalue.html">
+							<span class="access-hide">Previous page: NullValue</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-objectequals.html">
+							<span class="access-hide">Previous page: ObjectEquals</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">NumberFormat</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">NumberFormat</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">NumberFormat</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/numberformat/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Creates a custom-formatted number value. For international  number formatting use LSNumberFormat.  [mask - quicky]  _,9 Digit placeholder; . decimal point; 0 Pads with zeros;  ( ) less than zero, puts parentheses around the mask  + plus sign before positive number minus before negative  - a space before positive minus sign before negative  , Separates every third decimal place with a comma.  L,C Left-justifies or center-justifies number  $ dollar sign before formatted number.  ^ Separates left and right formatting.</p>
+
+	<p><strong>Returns:</strong> string</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">NumberFormat</span><span class="p">(</span> <span class="nv">number</span> <span class="p">[,</span> <span class="nv">mask</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								number<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/numberformat/_arguments/number.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A number.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								mask<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/numberformat/_arguments/mask.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>_ = optional didgit . = decimal point 0 = mandortory digit</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/numberformat/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<div class="highlight"><pre>#numberFormat(1.23,&#39;__.00&#39;)# = 1.23
+#numberFormat(123,&#39;__.00&#39;)# = 123.00
+</pre></div>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-number.html">Numbers</a></li>
+			
+				<li><a href="category-string.html">Strings</a></li>
+			
+				<li><a href="category-formatting.html">Formatting</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

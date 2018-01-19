@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Update current Application Context</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="cookbook-application-context-set-mapping.html">
+							<span class="access-hide">Previous page: Set a Mapping (regular, component and custom tag mapping)</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="cookbook-basic-date.html">
+							<span class="access-hide">Previous page: Basic Date</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Update current Application Context</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Update current Application Context</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="cookbook.html">Cookbook</a></li>
+			
+			<li class="active">Update current Application Context</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/03.application-context-update/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Update Application Context</h1><p>Lucee allows to update a existing application context defined for example with a Application.cfc. So for example add a per application mapping</p>
+<div class="highlight"><pre><span class="cm">&lt;!--- creates a mapping with name &quot;/test&quot; that is pointing to the current directory ---&gt;</span>
+<span class="nt">&lt;cfapplication</span> <span class="na">action=</span><span class="s">&quot;update&quot;</span> <span class="na">mappings=</span><span class="s">&quot;#{&#39;/test&#39;:getDirectoryFromPath(getCurrentTemplatePath())}#&quot;</span><span class="nt">&gt;</span>
+</pre></div><p>this examples does not extend the already defined per application mappings with this new one, it replaces them. So when you plan to add a mapping best read the existing mappings with help of the function getApplicationSettings() and extend this mappings as follows:</p>
+<div class="highlight"><pre><span class="cm">&lt;!--- read the existing per application mappings ---&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">mappings</span><span class="o">=</span><span class="nf">getApplicationSettings</span><span class="p">().</span><span class="nv">mappings</span><span class="nb">&gt;</span>
+
+<span class="cm">&lt;!--- add a mapping with name &quot;/test&quot; to the mappings struct ---&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">mappings</span><span class="p">[</span><span class="s1">&#39;/test&#39;</span><span class="p">]</span><span class="o">=</span><span class="nf">getDirectoryFromPath</span><span class="p">(</span><span class="nf">getCurrentTemplatePath</span><span class="p">())</span><span class="nb">&gt;</span>
+
+<span class="cm">&lt;!--- add all mappings ---&gt;</span>
+<span class="nt">&lt;cfapplication</span> <span class="na">action=</span><span class="s">&quot;update&quot;</span> <span class="na">mappings=</span><span class="s">&quot;#mappings#&quot;</span><span class="nt">&gt;</span>
+</pre></div><p>Of course you not only can update mappings, you can update all kind of data, <cfappliaction> is supporting all possible settings you can do in the Application.cfc!</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

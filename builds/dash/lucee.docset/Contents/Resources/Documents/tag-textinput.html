@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cftextinput&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-textarea.html">
+							<span class="access-hide">Previous page: &lt;cftextarea&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-thread.html">
+							<span class="access-hide">Previous page: &lt;cfthread&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cftextinput&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cftextinput&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cftextinput&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Lets you place a single-line text entry box in a cfform. The tag also gives you control over  font characteristics.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cftextinput</span>
+    <span class="na">name=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">value=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">required=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">range=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">validate=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onValidate=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">message=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onError=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">size=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">font=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">fontSize=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">italic=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">bold=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">height=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">width=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">vSpace=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">hSpace=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">align=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">bgColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">textColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">maxLength=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">notSupported=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A name for the cftextinput control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Initial value that displays in the text control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								required<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/required.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. If Yes, the user must enter or change text. Default is No.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								range<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/range.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Minimum value, maximum value range, separated by a comma. Valid only for numeric data.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								validate<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/validate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>date: verifies format mm/dd/yy.  eurodate: verifies date format dd/mm/yyyy.  time: verifies time format hh:mm:ss.  float: verifies floating point format.  integer: verifies integer format.  telephone: verifies telephone format ###-###-####. The  separator can be a blank. Area code and exchange must  begin with digit 1 - 9.  zipcode: verifies, in U.S. formats only, 5- or 9-digit  format #####-####. The separator can be a blank.  creditcard: strips blanks and dashes; verifies number using  mod10 algorithm. Number must have 13-16 digits.  social_security_number: verifies format ###-##-####. The  separator can be a blank.  regular_expression: matches input against pattern  attribute.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onValidate<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/onValidate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of a JavaScript function used to validate user input. The form object, input object,  and input object value are passed to the routine, which should return TRUE if validation succeeds and  FALSE otherwise. When used, the validate attribute is ignored.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								message<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/message.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Message text to display if validation fails.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onError<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/onError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of a JavaScript function to execute in the event of a failed validation.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								size<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/size.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Number of characters displayed before horizontal scroll bar displays.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								font<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/font.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Font name for text.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fontSize<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/fontSize.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Font size for text.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								italic<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/italic.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes for italicized text, No for normal text. Default is No.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								bold<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/bold.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes for boldface text, No for medium text. Default is No.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								height<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/height.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Height value of the control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								width<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/width.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Width value of the control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								vSpace<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/vSpace.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Vertical spacing of the control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								hSpace<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/hSpace.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Horizontal spacing of the control, in pixels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								align<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/align.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Alignment value.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								bgColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/bgColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Background color of the control.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								textColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/textColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Text color for the control. See bgColor for color options.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								maxLength<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/maxLength.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The maximum length of text entered.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								notSupported<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_attributes/notSupported.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The text to display if the page containing a Java applet-based  cfform control is opened by a browser that does not support Java or has Java support disabled.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/textinput/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfchart&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-catch.html">
+							<span class="access-hide">Previous page: &lt;cfcatch&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-chartdata.html">
+							<span class="access-hide">Previous page: &lt;cfchartdata&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfchart&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfchart&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfchart&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Generates and displays a chart.</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfchart</span>
+    <span class="err">[</span><span class="na">backgroundColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">chartHeight=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">chartWidth=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dataBackgroundColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">font=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">fontBold=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">fontItalic=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">fontSize=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">foregroundColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">format=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">gridlines=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">labelFormat=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">categoryLabelPositions=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">markerSize=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">pieSliceStyle=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scaleFrom=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scaleTo=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">seriesPlacement=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">show3D=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showBorder=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showLegend=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showMarkers=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showXGridlines=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showXLabel=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showTooltip=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">source=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">showYGridlines=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sortXAxis=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">style=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">title=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tipbgcolor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tipStyle=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">url=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">xAxisTitle=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">xAxisType=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">xOffset=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">yAxisTitle=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">yAxisType=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">yOffset=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span><span class="cm">&lt;!--- body ---&gt;</span>[<span class="nt">&lt;/cfchart&gt;</span>]
+</pre></div>
+
+
+	<p>This tag <strong>may</strong> have a body.</p>
+	<p>This tag is also supported within cfscript</p>
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								backgroundColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/backgroundColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Color of the area between the data background and the chart  border, around labels and around the legend. Hexadecimal  value or supported named color. For a hex value, use the form:  textColor = "##xxxxxx", where x = 0-9 or A-F; use two hash  signs or none.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								chartHeight<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/chartHeight.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Chart height; integer number of pixels</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								chartWidth<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/chartWidth.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Chart width; integer number of pixels</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dataBackgroundColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/dataBackgroundColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>color for control. For a hex value, use the form:  textColor = "##xxxxxx", where x = 0-9 or A-F; use two hash  signs or none.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								font<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/font.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Font of data in column.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fontBold<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/fontBold.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes: displays grid control text in bold</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fontItalic<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/fontItalic.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes: displays grid control text in italics</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fontSize<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/fontSize.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Size of text in column.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								foregroundColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/foregroundColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>color for control. For a hex value, use the form:  textColor = "##xxxxxx", where x = 0-9 or A-F; use two hash  signs or none.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								format<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/format.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>File format in which to save graph.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								gridlines<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/gridlines.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Number of grid lines to display on value axis, including  axis; positive integer.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								labelFormat<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/labelFormat.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Format for Y-axis labels.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								categoryLabelPositions<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/categoryLabelPositions.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Label postion relative to axis: standard, up_45, up_90, down_45, down_90 or horizontal (standard) and vertical (down_90). Default is horizontal.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								markerSize<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/markerSize.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Size of data point marker. in pixels. Integer.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Page variable name. String. Generates the the graph as  binary data and assigns it to the specified variable.  Suppresses chart display. You can use the name value in  the cffile tag to write the chart to a file.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								pieSliceStyle<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/pieSliceStyle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies to chartseries type attribute value pie.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scaleFrom<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/scaleFrom.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Y-axis minimum value; integer</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scaleTo<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/scaleTo.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Y-axis max value; integer</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								seriesPlacement<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/seriesPlacement.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies to charts that have more than one data series.  Relative positions of series.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								show3D<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/show3D.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Display chart with three-dimensional appearance.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showBorder<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/showBorder.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Whether to display a border around the chart</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showLegend<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/showLegend.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>yes: if chart contains more than one data series, display  legend</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showMarkers<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/showMarkers.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies to chartseries type attribute values line, curve  and scatter.  yes: display markers at data points</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showXGridlines<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/showXGridlines.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>yes: display X-axis gridlines</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showXLabel<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/showXLabel.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>yes: shows the x-axis labels</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showTooltip<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/showTooltip.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>show the tooltip or not</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								source<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/source.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>variable name of the source path, if set the path to the source file is returned and no image tag is written to response strea.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								showYGridlines<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/showYGridlines.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>yes: display Y-axis gridlines</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sortXAxis<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/sortXAxis.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Display column labels in alphabetic order along X-axis.  Ignored if the xAxisType attribute is scale.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								style<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/style.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>XML file or string to use to specify the style of the chart.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								title<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/title.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Title of the chart.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tipbgcolor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/tipbgcolor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>color for control. For a hex value, use the form:  textColor = "##xxxxxx", where x = 0-9 or A-F; use two hash  signs or none.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tipStyle<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/tipStyle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Determines the action that opens a popup window to display  information about the current chart element.  - mouseDown: display if the user positions the cursor at the element  and clicks the mouse. Applies only to Flash format graph files (Flash not supported).  - mouseOver: displays if the user positions the cursor at the element  - none: suppresses display</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								url<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/url.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>URL to open if the user clicks item in a data series; the  onClick destination page.</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								xAxisTitle<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/xAxisTitle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>text; X-axis title</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								xAxisType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/xAxisType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<ul>
+  <li>category The axis indicates the data category. Data is  sorted according to the sortXAxis attribute.  - scale The axis is numeric. All cfchartdata item attribute  values must numeric. The X axis is automatically sorted  numerically.</li>
+</ul>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								xOffset<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/xOffset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies if show3D="yes". Number of units by which to  display the chart as angled, horizontally</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								yAxisTitle<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/yAxisTitle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>text; X-axis title</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								yAxisType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/yAxisType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Currently has no effect, as Y axis is always used for data  values. Valid values are category and scale</p>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								yOffset<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_attributes/yOffset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies if show3D="yes". Number of units by which to  display the chart as angled, horizontally.</p>
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chart/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Installing Apache Tomcat on Windows</title>
+		<base href="../../../">
+
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
+			<script src="assets/js/respond.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+
+	<body class="page">
+		<nav class="menu menu-left nav-drawer" id="menu">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<a class="nav-drawer-logo" href="index.html"><img class="Lucee" src="assets/images/lucee-logo-bw.png"></a>
+						<ul class="nav">
+		
+			
+		
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="guides/getting-started.html">Getting Started</a>
+
+					
+					
+
+
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="reference.html">Reference</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#reference" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="reference">
+							
+						
+							
+								
+								
+								<li><a href="reference/functions.html">Lucee functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/tags.html">Lucee tags</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/unsupported.html">Unsupported Tags &amp; Functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/additional.html">Additional Tags &amp; Functions</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="guides.html">Guides and tutorials</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle " data-target="#guides" data-toggle="collapse" aria-expanded="true">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse expand" id="guides">
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/getting-started.html">Getting Started</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/running-lucee.html">Running Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/updating-lucee.html">Updating Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/cookbooks.html">Cookbook</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/working-with-source.html">Working with the Lucee Source</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/extensions.html">Extensions</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/about-lucee.html">About Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/lucee-5.html">Lucee 5</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="categories.html">Categories</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#categories" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="categories">
+							
+						
+							
+								
+								
+								<li><a href="categories/ajax.html">Ajax features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/array.html">Arrays</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/binary.html">Binary data</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/boolean.html">Booleans</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/collection.html">Collections</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/component.html">Components (CFCs)</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/currency.html">Currency features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/date.html">Date and time</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/decision.html">Decision logic</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/formatting.html">Formatting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/html.html">HTML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/image.html">Image manipulation</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/javascript.html">JavaScript</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/json.html">JSON</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/ldap.html">LDAP</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/list.html">Lists</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/math.html">Math</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/number.html">Numbers</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/parsing.html">Parsing</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/pdf.html">PDFs</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/query.html">Queries</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/regex.html">Regex</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/sort.html">Sorting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/string.html">Strings</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/struct.html">Structures</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/video.html">Video</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/wddx.html">WDDX</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/webservice.html">Web services</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/xml.html">XML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/zip.html">Zip files</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="docs.html">About the docs</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#about" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="about">
+							
+						
+							
+								
+								
+								<li><a href="docs/content.html">Content</a></li>
+							
+						
+							
+								
+								
+								<li><a href="docs/build.html">Build</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+	</ul>
+						<hr>
+						<ul class="nav">
+							<li>
+								<a href="http://lucee.org"><span class="fa fa-fw fa-globe"></span>Lucee Website</a>
+							</li>
+							<li>
+								<a href="https://github.com/lucee/lucee-docs"><span class="fa fa-fw fa-github"></span>Source repository</a>
+							</li>
+							<li>
+								<a href="http://javadoc.lucee.org"><span class="fa fa-fw fa-code"></span>JavaDocs</a>
+							</li>
+							<li>
+								<a href="download.html"><span class="fa fa-fw fa-download"></span>Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="header">
+			<ul class="hidden-lg nav nav-list pull-left">
+				<li>
+					<a class="menu-toggle" href="#menu">
+						<span class="access-hide">Menu</span>
+						<span class="icon icon-menu icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="/guides/running-lucee/windows/installing-the-boncode-connector-and-mod_cfml.html">
+							<span class="access-hide">Previous page: Installing the Boncode connector and mod_cfml</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="/guides/running-lucee/windows/installing-oracle-java-on-windows.html">
+							<span class="access-hide">Previous page: Installing Oracle Java on Windows</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+				<li>
+					<a class="menu-toggle" href="#search">
+						<span class="access-hide">Search</span>
+						<span class="icon icon-search icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Installing Apache Tomcat on Windows</span>
+		</header>
+		<div class="menu menu-right menu-search" id="search">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<div class="menu-content-inner">
+							<label class="access-hide" for="lucee-docs-search-input">Search</label>
+							<input class="form-control form-control-lg menu-search-focus" id="lucee-docs-search-input" placeholder="Search" type="search">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Installing Apache Tomcat on Windows</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="guides/running-lucee.html">Running Lucee</a></li>
+			
+				<li><a href="guides/running-lucee/windows.html">Windows</a></li>
+			
+			<li class="active">Installing Apache Tomcat on Windows</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/03.installing-apache-tomcat-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/1093758943-tomcat-logo65x45.jpg" alt="tomcat-logo65x45.jpg" /></p><p>Before we start with the installation, we need to dive into some basics:</p><h2>What we don't like</h2>
+<ul>
+  <li>A mix of binaries (exe, dll-files) and configuration data (eg. xml files) in the <em>application directory</em></li>
+  <li>The software needs <strong>change permissions</strong> to write data into his <em>application directory</em></li>
+  <li>A windows service needs <strong>System Authority</strong> permissions</li>
+</ul><h2>What we really like</h2>
+<ul>
+  <li>The application can live perfectly with <strong>read permissions</strong> in its <em>application directory</em></li>
+  <li>The data of the application can be stored in a <em>data directory</em> on a different drive as C-drive</li>
+  <li>A windows service can run with a <strong>low privileged</strong> user permissions</li>
+</ul><p>This guide will fully cover a setup of Apache Tomcat to fullfill these goals from <em>What we really like</em> above.</p><p>In terms of Apache Tomcat, we split the files by setting Tomcat's main variables to the <strong>Application path</strong> and <strong>Data path</strong> later on:</p>
+<blockquote><p>catalina.home=C:\Program Files\Tomcat<br/>catalina.base=D:\Tomcat</p>
+</blockquote><p>Before we start, let's download Apache Tomcat from this page: <a href="http://tomcat.apache.org/download-80.cgi">Tomcat 8 Downloads</a>. Scroll down a bit and choose the link <strong><em>64-bit Windows zip</em></strong>. Download the product and unzip the content to a temporary folder on your server.</p><h2>Installation</h2>
+<ol>
+  <li>Create the folders <strong>C:\Program Files\Tomcat</strong>, <strong>C:\Program Files\Tomcat\bin</strong> and <strong>C:\Program Files\Tomcat\lib</strong></li>
+  <li>Browse the expanded content in your temporary folder and change into the folder <strong>apache-tomcat-8.0.18</strong>.</li>
+  <li>Copy the five files from the root in to the folder <strong>C:\Program Files\Tomcat</strong></li>
+  <li>Goto the folder named <em>bin</em>.</li>
+  <li>Copy all files, except <em>*.bat</em>, <em>*.gz</em> and <em>*.sh</em> to the folder <strong>C:\Program Files\Tomcat\bin</strong>. We don't need need the batch files: The Tomcat service will get his configuration from the Windows registry instead.</li>
+  <li>Go back one level and goto to the folder named <em>lib</em></li>
+  <li>Copy all files to the folder <strong>C:\Program Files\Tomcat\lib</strong></li>
+</ol><p>That's it, at least for the application folder. Tomcat requires approximately 10MB of diskspace.</p><p>Command line:</p>
+<div class="highlight"><pre>md &quot;C:\Program Files\Tomcat&quot;
+copy D:\temp\apache-tomcat-8.0.18\*.* &quot;C:\Program Files\Tomcat&quot; /Y
+
+md &quot;C:\Program Files\Tomcat\bin&quot;
+copy D:\temp\apache-tomcat-8.0.18\bin\*.exe &quot;C:\Program Files\Tomcat\bin&quot; /Y
+copy D:\temp\apache-tomcat-8.0.18\bin\*.dll &quot;C:\Program Files\Tomcat\bin&quot; /Y
+copy D:\temp\apache-tomcat-8.0.18\bin\*.jar &quot;C:\Program Files\Tomcat\bin&quot; /Y
+copy D:\temp\apache-tomcat-8.0.18\bin\*.xml &quot;C:\Program Files\Tomcat\bin&quot; /Y
+
+md &quot;C:\Program Files\Tomcat\lib&quot;
+copy D:\temp\apache-tomcat-8.0.18\lib\*.jar &quot;C:\Program Files\Tomcat\lib&quot; /Y
+</pre></div><p>Note: You can paste the content of the container above directly into the command line of the server.</p><p>Now lets do the same for the configuration and data folder:</p>
+<ol>
+  <li>Create the folders: <strong>D:\Tomcat</strong>, <strong>D:\Tomcat\conf</strong> and <strong>D:\Tomcat\webapps</strong>.</li>
+  <li>Goto the folder named <em>conf</em>.</li>
+  <li>Copy all files to the folder <strong>D:\Tomcat\conf</strong></li>
+  <li>Create the folders <strong>D:\Tomcat\webapps\host-manager</strong>, <strong>D:\Tomcat\webapps\manager</strong> and <strong>D:\Tomcat\webapps\root</strong>.</li>
+  <li>Goto the folder named <em>webapps</em>.</li>
+  <li>Copy the folders <em>host-manager</em>, <em>manager</em> and <em>root</em> to the matching folder on the target. All these folders have subfolders.</li>
+  <li>Create the folders <strong>D:\Tomcat\logs</strong>, <strong>D:\Tomcat\endorsed</strong>, <strong>D:\Tomcat\temp</strong> and <strong>D:\Tomcat\work</strong>. Some of these directories remain empty until the very first start of Tomcat.</li>
+</ol><p>Command line:</p>
+<div class="highlight"><pre>md D:\Tomcat
+md D:\Tomcat\conf
+copy D:\temp\apache-tomcat-8.0.18\conf\*.* D:\Tomcat\conf /Y
+
+md D:\Tomcat\webapps
+md D:\Tomcat\webapps\host-manager
+xcopy D:\temp\apache-tomcat-8.0.18\webapps\host-manager\*.* D:\Tomcat\webapps\host-manager /s /Y
+md D:\Tomcat\webapps\manager
+xcopy D:\temp\apache-tomcat-8.0.18\webapps\manager\*.* D:\Tomcat\webapps\manager /s /Y
+md D:\Tomcat\webapps\root
+xcopy D:\temp\apache-tomcat-8.0.18\webapps\root\*.* D:\Tomcat\webapps\root /s /Y
+
+md D:\Tomcat\endorsed
+md D:\Tomcat\logs
+md D:\Tomcat\temp
+md D:\Tomcat\work
+</pre></div><p>We finished the basic installation. Now we have to edit some of the configuration files.<br/>Let's go to the folder <strong>D:\Tomcat\conf</strong>.</p><h2>server.xml</h2><p>Catalina's default host needs some tweaking. Find the line:</p>
+<div class="highlight"><pre><span class="nt">&lt;Host</span> <span class="na">name=</span><span class="s">&quot;localhost&quot;</span>  <span class="na">appBase=</span><span class="s">&quot;webapps&quot;</span>
+            <span class="na">unpackWARs=</span><span class="s">&quot;true&quot;</span> <span class="na">autoDeploy=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</pre></div><p>Change this line to:</p>
+<div class="highlight"><pre><span class="nt">&lt;Host</span> <span class="na">name=</span><span class="s">&quot;localhost&quot;</span> <span class="na">appBase=</span><span class="s">&quot;D:\Tomcat\webapps&quot;</span> <span class="na">workDir=</span><span class="s">&quot;D:\Tomcat\work\Catalina\localhost&quot;</span> <span class="na">unpackWARs=</span><span class="s">&quot;true&quot;</span> <span class="na">autoDeploy=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</pre></div><p>A few lines below, you will find the line:</p>
+<div class="highlight"><pre><span class="nt">&lt;Valve</span> <span class="na">className=</span><span class="s">&quot;org.apache.catalina.valves.AccessLogValve&quot;</span> <span class="na">directory=</span><span class="s">&quot;logs&quot;</span>
+</pre></div><p>We need to specify the full path to the log directory:</p>
+<div class="highlight"><pre><span class="nt">&lt;Valve</span> <span class="na">className=</span><span class="s">&quot;org.apache.catalina.valves.AccessLogValve&quot;</span> <span class="na">directory=</span><span class="s">&quot;D:\Tomcat\logs&quot;</span>
+</pre></div><p>The next step is optional. Tomcat and Lucee are listening on port <strong>8080</strong> to access the administrator interface. Other web servers might use this port already or if you suffer from a security paranoia like i do, we want to have this port on a <em>really weard number</em>. </p><p><em>Note:</em> The Lucee'ians are used to have port <strong>8888</strong> to access the administrator interface.</p><p>Find the setting:</p>
+<div class="highlight"><pre><span class="nt">&lt;Connector</span> <span class="na">port=</span><span class="s">&quot;8080&quot;</span> <span class="na">protocol=</span><span class="s">&quot;HTTP/1.1&quot;</span>
+               <span class="na">connectionTimeout=</span><span class="s">&quot;20000&quot;</span>
+               <span class="na">redirectPort=</span><span class="s">&quot;8443&quot;</span> <span class="nt">/&gt;</span>
+</pre></div><p>Change the port <em>8080</em> to the new port. </p><p>If you like to access the Tomcat Administration from outside of the server, the Windows firewall needs to be opened with a rule:</p>
+<div class="highlight"><pre>netsh advfirewall firewall add rule name=&quot;Apache Tomcat&quot; dir=in action=allow protocol=TCP localport=8888 program=&quot;C:\Program Files\Tomcat\bin\tomcat8.exe&quot; profile=ANY
+</pre></div><p>You don't like the command prompt? Add the rule with the firewall applet in the control panel. Be sure, that the port is limited to the main exe file <strong>C:\Program Files\Tomcat\bin\tomcat8.exe</strong>.</p>
+<blockquote><p>Todo: maxHttpHeaderSize="8192" (Default: 4096)  minSpareThreads="25" (Default: 4)  disableUploadTimeout="true" (Default: false)</p>
+</blockquote><h2>tomcat-users.xml</h2><p>This file holds rules, usernames and passwords to access the administrator interface of Tomcat. The access to the administrator interface is disabled by default:</p>
+<div class="highlight"><pre><span class="c">&lt;!--</span>
+<span class="c">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span>
+<span class="c">  &lt;role rolename=&quot;role1&quot;/&gt;</span>
+<span class="c">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat&quot;/&gt;</span>
+<span class="c">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span>
+<span class="c">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span>
+<span class="c">--&gt;</span>
+</pre></div><p>Replace the content with this:</p>
+<div class="highlight"><pre><span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;admin-gui&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;manager-gui&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;user</span> <span class="na">name=</span><span class="s">&quot;AccountName&quot;</span> <span class="na">password=</span><span class="s">&quot;VeryStrongPassword&quot;</span> <span class="na">roles=</span><span class="s">&quot;admin-gui,manager-gui&quot;</span> <span class="nt">/&gt;</span>
+</pre></div><p>Choose a clever name for the administrator account. For security reasons, do not choose <em>admin</em> oder <em>administrator</em>! The password should contain a mix between upper- and lower-case letters, numbers and special characters like _-!.</p><h2>catalina.properties</h2><p>This is an optional task, which cuts the time Tomcat takes to start:</p><p>Find the line:</p>
+<div class="highlight"><pre>tomcat.util.scan.StandardJarScanFilter.jarsToSkip=\
+</pre></div><p>Remove the lines below until the next comment and change the line to:</p>
+<div class="highlight"><pre>tomcat.util.scan.StandardJarScanFilter.jarsToSkip=\*.jar
+</pre></div><p>Instead of skipping the list of JAR's at startup, Tomcat will skip all JAR's.</p><p>Find the line:</p>
+<div class="highlight"><pre>tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-core*.jar,log4j-taglib*.jar
+</pre></div><p>Add a <strong>remark</strong> in front of the line:</p>
+<div class="highlight"><pre>#tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-core*.jar,log4j-taglib*.jar
+</pre></div><h2>Update</h2><p>An minor update requires mostly only the replacement of the files in the folders <strong>C:\Program Files\Tomcat\bin</strong> and <strong>C:\Program Files\Tomcat\lib</strong>. Stop the Tomcat service, replace the files and start the service. That's it.</p>
+<ul>
+  <li>
+  <ul>
+    <li>- Reference: <a href="http://tomcat.apache.org/tomcat-8.0-doc/config/systemprops.html">Tomcat Configuration Reference</a></li>
+  </ul></li>
+</ul>
+<hr/>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/base.min.js" type="text/javascript"></script>
+	</body>
+</html>
