@@ -111,7 +111,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Defines the action to be taken with directory(ies) specified in directory.</p><p>[list|create|delete|rename]</p>
+								<p>Defines the action to be taken with directory(ies) specified in directory.</p>
+<p>[list|create|delete|rename]</p>
 							</td>
 						</tr>
 					
@@ -123,7 +124,8 @@
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/listinfo.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<ul>
-  <li>all: includes all information in the result set.  - name: includes only filenames in the result set.</li>
+<li>all: includes all information in the result set.
+- name: includes only filenames in the result set.</li>
 </ul>
 							</td>
 						</tr>
@@ -135,7 +137,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/storeacl.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>An array of struct where each struct represents a permission or grant. Example: [{email="xxx@yyy.com", permission="full_control"}, {group="all", permission="read"}]</p>
+								<p>An array of struct where each struct represents a permission or grant.
+Example:
+[{email=&quot;xxx@yyy.com&quot;, permission=&quot;full_control&quot;}, {group=&quot;all&quot;, permission=&quot;read&quot;}]</p>
 							</td>
 						</tr>
 					
@@ -158,11 +162,12 @@
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<ul>
-  <li>file: includes only filenames.
-  <ul>
-    <li>dir: includes only directory names.</li>
-    <li>all: includes both filenames and directory names.</li>
-  </ul></li>
+<li>file: includes only filenames.
+<ul>
+<li>dir: includes only directory names.</li>
+<li>all: includes both filenames and directory names.</li>
+</ul>
+</li>
 </ul>
 							</td>
 						</tr>
@@ -196,7 +201,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required for action = "list". Ignored by all other actions. Name of output query for directory  listing.</p>
+								<p>Required for action = &quot;list&quot;. Ignored by all other actions. Name of output query for directory
+listing.</p>
 							</td>
 						</tr>
 					
@@ -207,7 +213,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/filter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Optional for action = "list". Ignored by all other actions. Can be either a wildcard filter,  e.g. "m*", or a UDF/Closure which accepts the file/directory name and returns a boolean value to indicate  whether that item should be included in the result or not.</p>
+								<p>Optional for action = &quot;list&quot;. Ignored by all other actions. Can be either a wildcard filter,
+e.g. &quot;m*&quot;, or a UDF/Closure which accepts the file/directory name and returns a boolean value to indicate
+whether that item should be included in the result or not.</p>
 							</td>
 						</tr>
 					
@@ -218,7 +226,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/filterDelimiters.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Optional when passing a filter pattern. This value is used as a delimiter for the patterns.  Default is the pipe "|" character.</p>
+								<p>Optional when passing a filter pattern. This value is used as a delimiter for the patterns.
+Default is the pipe &quot;|&quot; character.</p>
 							</td>
 						</tr>
 					
@@ -229,7 +238,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/mode.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Used with action = "Create" to define the permissions for a directory on UNIX and Linux  platforms. Ignored on Windows. Options correspond to the octal values of the UNIX chmod command. From  left to right, permissions are assigned for owner, group, and other.</p>
+								<p>Used with action = &quot;Create&quot; to define the permissions for a directory on UNIX and Linux
+platforms. Ignored on Windows. Options correspond to the octal values of the UNIX chmod command. From
+left to right, permissions are assigned for owner, group, and other.</p>
 							</td>
 						</tr>
 					
@@ -240,7 +251,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/sort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Optional for action = "list". Ignored by all other actions. The query columns by which to sort  the directory listing. Any combination of columns from query output can be specified in comma-separated list.  You can specify ASC (ascending) or DESC (descending) as qualifiers for column names. ASC is the default</p>
+								<p>Optional for action = &quot;list&quot;. Ignored by all other actions. The query columns by which to sort
+the directory listing. Any combination of columns from query output can be specified in comma-separated list.
+You can specify ASC (ascending) or DESC (descending) as qualifiers for column names. ASC is the default</p>
 							</td>
 						</tr>
 					
@@ -251,7 +264,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/newDirectory.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required for action = "rename". Ignored by all other actions. The new name of the directory  specified in the directory attribute.</p>
+								<p>Required for action = &quot;rename&quot;. Ignored by all other actions. The new name of the directory
+specified in the directory attribute.</p>
 							</td>
 						</tr>
 					
@@ -262,7 +276,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/destination.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required for action = "copy". Ignored by all other actions. Path of the destination directory. If not an absolute path, it is relative to the source directory.</p>
+								<p>Required for action = &quot;copy&quot;. Ignored by all other actions. Path of the destination directory. If not an absolute path, it is relative to the source directory.</p>
 							</td>
 						</tr>
 					
@@ -284,7 +298,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/directory/_attributes/nameconflict.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>When used with action="copy" the possible values are: [Overwrite]|Error. When used with action="create" the possible values are: [Error]|Skip. Ignored for all other actions.</p>
+								<p>When used with action=&quot;copy&quot; the possible values are: [Overwrite]|Error.  When used with action=&quot;create&quot; the possible values are: [Error]|Skip. Ignored for all other actions.</p>
 							</td>
 						</tr>
 					

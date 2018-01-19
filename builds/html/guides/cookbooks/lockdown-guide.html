@@ -519,36 +519,64 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/15.lockdown-guide/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Lockdown Guide</h1><p>A guide to limit access to a Lucee server to necessary minimum.</p><p>On Windows it is recommended to run the Lucee/Tomcat service as a restricted user with only the required permissions rather than under SYSTEM account.</p><h2>Restricted Access Plus SSH Tunnelling</h2><p>As with ACF, it is recommended best security practice to restrict access to URI's that are not necessary to publicly expose.</p><p>Examples that have been cited include:</p>
+	<h1>Lockdown Guide</h1>
+<p>A guide to limit access to a Lucee server to necessary minimum.</p>
+<p>On Windows it is recommended to run the Lucee/Tomcat service as a restricted user with only the required permissions rather than under SYSTEM account.</p>
+<h2>Restricted Access Plus SSH Tunnelling</h2>
+<p>As with ACF, it is recommended best security practice to restrict access to URI's that are not necessary to publicly expose.</p>
+<p>Examples that have been cited include:</p>
 <ul>
-  <li>/lucee</li>
-  <li>/manager</li>
-  <li>/host-manager</li>
-  <li>/web-inf</li>
-  <li>/meta-inf</li>
-</ul><p>An Apache directive that restricts access to /lucee, as an example, is given below:</p>
+<li>/lucee</li>
+<li>/manager</li>
+<li>/host-manager</li>
+<li>/web-inf</li>
+<li>/meta-inf</li>
+</ul>
+<p>An Apache directive that restricts access to /lucee, as an example, is given below:</p>
 <pre><code>&lt;Location /lucee&gt;
     Order Deny,Allow
     Deny from all
     Allow from 127.0.0.1
 &lt;/Location&gt;
-</code></pre><p>In the above example, only the localhost IP address, 127.0.0.1, would be allowed to navigate to any url that contains /lucee. This directive effectively blocks access to URL's that begin with /lucee/ from any other IP address, cutting off any exploits that attempt to use resources located under /lucee.</p><p>So far, so good. But then how can admins access the admin panels such as /lucee/admin/server.cfm if they don't have physical access to the server???</p><p>There is a relatively simple technique called SSH tunneling which will allow an administrator to log into a web server with URI's restricted to 127.0.0.1 as in the above directive. In a nutshell, the admin logs onto the server using SSH with the -D flag and a free local port of your choice, and then sets up a browser to use the server, via the local port specified, as a proxy. The net effect is that once the admin is logged into the server via SSH and has the browser properly set, browsing to 127.0.0.1/lucee/admin/server.cfm opens the login screen on the server, not on the local machine!</p><p>This approach allows one to lock down potentially vulnerable URI's and still allow an admin to access them securely, <em>over an encrypted connection</em>, from any IP address, no matter where they happen to be when a difficulty with the server arises. An encrypted connection is an added bonus because it will prevent a hacker from gaining access to the admin credentials if your internet connection is compromised in some way with a packet sniffer, for instance. And SSH tunneling is <em>much</em> easier to setup compared to configuring HTTPS for /lucee/ access. And it is much more portable! You can leave a particular browser set up to use a proxy connection, as detailed below, simply add the -D flag when shhing into a server, and you can use this technique to securely access a restricted admin area of any number of servers.</p><p>Detailed instructions for SSH tunneling:</p><p>1) ssh into a server using the -D flag, example: ssh -D 60001 user@102.103.108.39</p><p>2) In your web browser, setup your proxy to point to "localhost", your port (for our example our port is 60001), using SOCKS5. This should work with any browser. Using Firefox as an example, here's how to do that:</p>
+</code></pre>
+<p>In the above example, only the localhost IP address, 127.0.0.1, would be allowed to navigate to any url that contains /lucee. This directive effectively blocks access to URL's that begin with /lucee/ from any other IP address, cutting off any exploits that attempt to use resources located under /lucee.</p>
+<p>So far, so good. But then how can admins access the admin panels such as /lucee/admin/server.cfm if they don't have physical access to the server???</p>
+<p>There is a relatively simple technique called SSH tunneling which will allow an administrator to log into a web server with URI's restricted to 127.0.0.1 as in the above directive. In a nutshell, the admin logs onto the server using SSH with the -D flag and a free local port of your choice, and then sets up a browser to use the server, via the local port specified, as a proxy. The net effect is that once the admin is logged into the server via SSH and has the browser properly set, browsing to 127.0.0.1/lucee/admin/server.cfm opens the login screen on the server, not on the local machine!</p>
+<p>This approach allows one to lock down potentially vulnerable URI's and still allow an admin to access them securely, <em>over an encrypted connection</em>, from any IP address, no matter where they happen to be when a difficulty with the server arises. An encrypted connection is an added bonus because it will prevent a hacker from gaining access to the admin credentials if your internet connection is compromised in some way with a packet sniffer, for instance. And SSH tunneling is <em>much</em> easier to setup compared to configuring HTTPS for /lucee/ access. And it is much more portable! You can leave a particular browser set up to use a proxy connection, as detailed below, simply add the -D flag when shhing into a server, and you can use this technique to securely access a restricted admin area of any number of servers.</p>
+<p>Detailed instructions for SSH tunneling:</p>
+<ol>
+<li>
+<p>ssh into a server using the -D flag, example: ssh -D 60001 user@102.103.108.39</p>
+</li>
+<li>
+<p>In your web browser, setup your proxy to point to &quot;localhost&quot;, your port (for our example our port is 60001), using SOCKS5. This should work with any browser. Using Firefox as an example, here's how to do that:</p>
+</li>
+</ol>
 <ul>
-  <li>Go to Preferences</li>
-  <li>Click the Advanced icon</li>
-  <li>Click the Network tab</li>
-  <li>Click the Settings button, across from where it says "Configure how Firefox connects to the Internet</li>
-  <li>Select Manual proxy configuration</li>
-  <li>In the SOCKS Host field put "localhost" without the quotation marks</li>
-  <li>In the Port field put the port number you used in the -D flag, 60001 in our example</li>
-  <li>Select SOCKS v5</li>
-  <li>Click OK</li>
-</ul><p>3) To revert the browser to normal behavior, simply choose No Proxy in the Network Settings dialog</p><p>4) Note that the port chosen is arbitrary, it only has to be available and match in both the -D flag and SOCKS port setting.</p><h2>Some Good Resources written for Railo that can be adapted for Lucee</h2>
+<li>Go to Preferences</li>
+<li>Click the Advanced icon</li>
+<li>Click the Network tab</li>
+<li>Click the Settings button, across from where it says &quot;Configure how Firefox connects to the Internet</li>
+<li>Select Manual proxy configuration</li>
+<li>In the SOCKS Host field put &quot;localhost&quot; without the quotation marks</li>
+<li>In the Port field put the port number you used in the -D flag, 60001 in our example</li>
+<li>Select SOCKS v5</li>
+<li>Click OK</li>
+</ul>
+<ol start="3">
+<li>
+<p>To revert the browser to normal behavior, simply choose No Proxy in the Network Settings dialog</p>
+</li>
+<li>
+<p>Note that the port chosen is arbitrary, it only has to be available and match in both the -D flag and SOCKS port setting.</p>
+</li>
+</ol>
+<h2>Some Good Resources written for Railo that can be adapted for Lucee</h2>
 <ul>
-  <li>OWASP Securing Tomcat: https://www.owasp.org/index.php/Securing_tomcat</li>
-  <li>Railo installation on CentOS Best Practices : http://blog.getrailo.com/assets/content/RailoInstallationonCentOSLinux6BestPractices.pdf</li>
-  <li>Railo Admin Lock down guide for IIS : https://www.youtube.com/watch?v=dYt4rap7LWQ (What can be adapted)</li>
-  <li>Pete Freitag on securing railo-context: http://www.petefreitag.com/item/715.cfm</li>
+<li>OWASP Securing Tomcat: https://www.owasp.org/index.php/Securing_tomcat</li>
+<li>Railo installation on CentOS Best Practices : http://blog.getrailo.com/assets/content/RailoInstallationonCentOSLinux6BestPractices.pdf</li>
+<li>Railo Admin Lock down guide for IIS : https://www.youtube.com/watch?v=dYt4rap7LWQ (What can be adapted)</li>
+<li>Pete Freitag on securing railo-context: http://www.petefreitag.com/item/715.cfm</li>
 </ul>
 
 							

@@ -105,23 +105,24 @@
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/dateformat/_arguments/mask.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<p>Date formatting mask:</p>
 <ul>
-  <li>d: Day of the month as digits; no leading zero for single-digit days.</li>
-  <li>dd: Day of the month as digits; leading zero for single-digit days.</li>
-  <li>ddd: Day of the week as a three-letter abbreviation.</li>
-  <li>dddd: Day of the week as its full name.</li>
-  <li>m: Month as digits; no leading zero for single-digit months.</li>
-  <li>mm: Month as digits; leading zero for single-digit months.</li>
-  <li>mmm: Month as a three-letter abbreviation.</li>
-  <li>mmmm: Month as its full name.</li>
-  <li>yy: Year as last two digits; leading zero for years less than 10.</li>
-  <li>yyyy: Year represented by four digits.</li>
-  <li>gg: Period/era string. Ignored. Reserved.</li>
-</ul><p>The following masks are options to format the full date and cannot be combined with other masks:</p>
+<li>d: Day of the month as digits; no leading zero for single-digit days.</li>
+<li>dd: Day of the month as digits; leading zero for single-digit days.</li>
+<li>ddd: Day of the week as a three-letter abbreviation.</li>
+<li>dddd: Day of the week as its full name.</li>
+<li>m: Month as digits; no leading zero for single-digit months.</li>
+<li>mm: Month as digits; leading zero for single-digit months.</li>
+<li>mmm: Month as a three-letter abbreviation.</li>
+<li>mmmm: Month as its full name.</li>
+<li>yy: Year as last two digits; leading zero for years less than 10.</li>
+<li>yyyy: Year represented by four digits.</li>
+<li>gg: Period/era string. Ignored. Reserved.</li>
+</ul>
+<p>The following masks are options to format the full date and cannot be combined with other masks:</p>
 <ul>
-  <li>short: equivalent to m/d/y</li>
-  <li>medium: equivalent to mmm d, yyyy</li>
-  <li>long: equivalent to mmmm d, yyyy</li>
-  <li>full: equivalent to dddd, mmmm d, yyyy</li>
+<li>short: equivalent to m/d/y</li>
+<li>medium: equivalent to mmm d, yyyy</li>
+<li>long: equivalent to mmmm d, yyyy</li>
+<li>full: equivalent to dddd, mmmm d, yyyy</li>
 </ul>
 							</td>
 						</tr>
@@ -133,11 +134,14 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/dateformat/_arguments/timezone.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A datetime object is independent of a specific timezone; it is only an offset in milliseconds from <code>1970-1-1 00.00:00 UTC</code> (Coordinated Universal Time).</p><p>The timezone only comes into play when you need specific information like hours in a day, minutes in a hour or which day it is as these calculations depend on the timezone.</p><p>A timezone must be specified in order to translate the date object to something else. If you do not provide the timezone in the function call, it will default to the timezone specified in the Lucee Administrator (Settings/Regional), or the timezone specified for the current request using the function <a href="function-settimezone.html">setTimezone()</a>.</p><p>You can find a list of all available timezones in the Lucee administrator (Settings/Regional). Some examples of valid timezones include:</p>
+								<p>A datetime object is independent of a specific timezone; it is only an offset in milliseconds from <code>1970-1-1 00.00:00 UTC</code> (Coordinated Universal Time).</p>
+<p>The timezone only comes into play when you need specific information like hours in a day, minutes in a hour or which day it is as these calculations depend on the timezone.</p>
+<p>A timezone must be specified in order to translate the date object to something else. If you do not provide the timezone in the function call, it will default to the timezone specified in the Lucee Administrator (Settings/Regional), or the timezone specified for the current request using the function <a href="function-settimezone.html">setTimezone()</a>.</p>
+<p>You can find a list of all available timezones in the Lucee administrator (Settings/Regional). Some examples of valid timezones include:</p>
 <ul>
-  <li>AGT (for time in Argentina)</li>
-  <li>Europe/Zurich (for time in Zurich/Switzerland)</li>
-  <li>HST (Hawaiian Standard Time in the USA)</li>
+<li>AGT (for time in Argentina)</li>
+<li>Europe/Zurich (for time in Zurich/Switzerland)</li>
+<li>HST (Hawaiian Standard Time in the USA)</li>
 </ul>
 							</td>
 						</tr>

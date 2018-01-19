@@ -148,7 +148,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/cc.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Indicates addresses to copy the e-mail message to; "cc" stands for "carbon copy."</p>
+								<p>Indicates addresses to copy the e-mail message to; &quot;cc&quot; stands for &quot;carbon copy.&quot;</p>
 							</td>
 						</tr>
 					
@@ -159,7 +159,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/bcc.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Indicates addresses to copy the e-mail message to, without listing them in the message header.  "bcc" stands for "blind carbon copy."</p>
+								<p>Indicates addresses to copy the e-mail message to, without listing them in the message header.
+&quot;bcc&quot; stands for &quot;blind carbon copy.&quot;</p>
 							</td>
 						</tr>
 					
@@ -192,7 +193,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/subject.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The subject of the mail message. This field may be driven dynamically on  a message-by-message basis</p>
+								<p>The subject of the mail message. This field may be driven dynamically on
+a message-by-message basis</p>
 							</td>
 						</tr>
 					
@@ -225,7 +227,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/mimeattach.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the path of the file to be attached to the e-mail message. An attached file  is MIME-encoded.</p>
+								<p>Specifies the path of the file to be attached to the e-mail message. An attached file
+is MIME-encoded.</p>
 							</td>
 						</tr>
 					
@@ -236,7 +239,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/query.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The name of the cfquery from which to draw data for message(s) to send. Specify this  attribute to send more than one mail message, or to send the results of a query within a message.</p>
+								<p>The name of the cfquery from which to draw data for message(s) to send. Specify this
+attribute to send more than one mail message, or to send the results of a query within a message.</p>
 							</td>
 						</tr>
 					
@@ -247,7 +251,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/group.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the query column to use when you group sets of records together to send as an e-mail  message. For example, if you send a set of billing statements to customers, you might group on  "Customer_ID." The group attribute, which is case sensitive, eliminates adjacent duplicates when the  data is sorted by the specified field. See the Usage section for exceptions.</p>
+								<p>Specifies the query column to use when you group sets of records together to send as an e-mail
+message. For example, if you send a set of billing statements to customers, you might group on
+&quot;Customer_ID.&quot; The group attribute, which is case sensitive, eliminates adjacent duplicates when the
+data is sorted by the specified field. See the Usage section for exceptions.</p>
 							</td>
 						</tr>
 					
@@ -258,7 +265,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/groupCaseSensitive.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Boolean indicating whether to group with regard to case or not. The default value is NO;  case is considered while grouping. If the query attribute specifies a query object that was generated  by a case-insensitive SQL query, set the groupCaseSensitive attribute to NO to keep the recordset  intact.</p>
+								<p>Boolean indicating whether to group with regard to case or not. The default value is NO;
+case is considered while grouping. If the query attribute specifies a query object that was generated
+by a case-insensitive SQL query, set the groupCaseSensitive attribute to NO to keep the recordset
+intact.</p>
 							</td>
 						</tr>
 					
@@ -280,7 +290,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/server.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The address of the SMTP server to use for sending messages. If no server is specified, the  server name specified in the Lucee Administrator is used.</p>
+								<p>The address of the SMTP server to use for sending messages. If no server is specified, the
+server name specified in the Lucee Administrator is used.</p>
 							</td>
 						</tr>
 					
@@ -302,7 +313,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/mailerID.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies a mailer ID to be passed in the X-Mailer SMTP header, which identifies the mailer  application.</p>
+								<p>Specifies a mailer ID to be passed in the X-Mailer SMTP header, which identifies the mailer
+application.</p>
 							</td>
 						</tr>
 					
@@ -368,7 +380,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/async.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>if set to true, the mail is sent asynchronously by the Lucee Task manager (with multiple tries),  if set to false the mail is sent in the same thread that executes the request, which is useful for troubleshooting because you get an error message if there is one.  This setting overrides the setting with the same name in the Lucee Administrator.  This attribute replaces the old "spoolenable" attribute which is still supported as an alias.</p>
+								<p>if set to true, the mail is sent asynchronously by the Lucee Task manager (with multiple tries),
+if set to false the mail is sent in the same thread that executes the request, which is useful for troubleshooting because you get an error message if there is one.
+This setting overrides the setting with the same name in the Lucee Administrator.
+This attribute replaces the old &quot;spoolenable&quot; attribute which is still supported as an alias.</p>
 							</td>
 						</tr>
 					
@@ -390,7 +405,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/priority.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The message priority level. Can be one of the following values:  * An integer in the range 1-5; 1 represents the highest priority.  * One of the following string values, which correspond to the numeric values: highest or urgent, high, normal, low, and lowest or non-urgent.</p>
+								<p>The message priority level. Can be one of the following values:
+* An integer in the range 1-5; 1 represents the highest priority.
+* One of the following string values, which correspond to the numeric values: highest or urgent, high, normal, low, and lowest or non-urgent.</p>
 							</td>
 						</tr>
 					
@@ -423,7 +440,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/mail/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The port number on the proxy server from which the object is requested. Default is 80. When  used with resolveURL, the URLs of retrieved documents that specify a port number are automatically  resolved to preserve links in the retrieved document.</p>
+								<p>The port number on the proxy server from which the object is requested. Default is 80. When
+used with resolveURL, the URLs of retrieved documents that specify a port number are automatically
+resolved to preserve links in the retrieved document.</p>
 							</td>
 						</tr>
 					

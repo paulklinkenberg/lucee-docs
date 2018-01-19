@@ -515,7 +515,9 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Speeds up page rendering when dynamic content does not have to be retrieved each time a user accesses  the page. To accomplish this, cfcache creates temporary files that contain the static HTML returned from  a page. You can use cfcache for simple URLs and URLs that contain URL parameters.</p>
+	<p>Speeds up page rendering when dynamic content does not have to be retrieved each time a user accesses
+the page. To accomplish this, cfcache creates temporary files that contain the static HTML returned from
+a page. You can use cfcache for simple URLs and URLs that contain URL parameters.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nt">&lt;cfcache</span>
@@ -564,7 +566,14 @@
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<ul>
-  <li>cache (default): server-side and client-side template caching.  - flush: refresh cached pages (template caching).  - clientcache: browser-side caching only. To cache a personalized page, use this option.  - servercache: server-side caching only. Not recommended.  - optimal: same as "cache".  - content: same as cache, but cache only the body of the tag, not the complete template (template caching).  - put: adds a key value pair to object cache (see function cachePut for more details)  - get: gets value matching given key from object cache (see function cacheGet for more details)</li>
+<li>cache (default): server-side and client-side template caching.
+- flush: refresh cached pages (template caching).
+- clientcache: browser-side caching only. To cache a personalized page, use this option.
+- servercache: server-side caching only. Not recommended.
+- optimal: same as &quot;cache&quot;.
+- content: same as cache, but cache only the body of the tag, not the complete template (template caching).
+- put: adds a key value pair to object cache (see function cachePut for more details)
+- get: gets value matching given key from object cache (see function cacheGet for more details)</li>
 </ul>
 							</td>
 						</tr>
@@ -598,7 +607,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/throwOnError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A Boolean value specifying whether t throw an error if the flush action encounters an error. Otherwise the action does not generate an error if it fails. If this attribute is true you can handle the error in a cfcatch block, for example, if a specified id value is invalid</p>
+								<p>A Boolean value specifying whether t throw an error if the
+flush
+action encounters an error. Otherwise the action does not generate an error if it fails. If this attribute is
+true
+you can handle the error in a
+cfcatch
+block, for example, if a specified id value is invalid</p>
 							</td>
 						</tr>
 					
@@ -609,7 +624,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>name of return variable, valid with action="get"</p>
+								<p>name of return variable, valid with action=&quot;get&quot;</p>
 							</td>
 						</tr>
 					
@@ -631,7 +646,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>For action="set", object which needs to be stored</p>
+								<p>For action=&quot;set&quot;, object which needs to be stored</p>
 							</td>
 						</tr>
 					
@@ -642,7 +657,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/cacheName.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>definition of the cache used by name, when not set the "default Object Cache" defined in Lucee Administrator is used instead.</p>
+								<p>definition of the cache used by name, when not set the &quot;default Object Cache&quot; defined in Lucee Administrator is used instead.</p>
 							</td>
 						</tr>
 					
@@ -675,7 +690,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/protocol.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the protocol used to create pages from cache. Either http:// or https://. The default  is http://.</p>
+								<p>Specifies the protocol used to create pages from cache. Either http:// or https://. The default
+is http://.</p>
 							</td>
 						</tr>
 					
@@ -686,7 +702,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/timespan.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The interval until the item is flushed from the cache. A decimal number of days, for example: ".25", for one-fourth day (6 hours); "1", for one day; "1.5", for one and one half days A return value from the CreateTimeSpan function, for example, "#CreateTimeSpan(0,6,0,0)#". The default action is to flush the item when it is idle for the time specified by the idleTime attribute, or cfcache action="flush" executes.</p>
+								<p>The interval until the item is flushed from the cache.
+A decimal number of days, for example: &quot;.25&quot;, for one-fourth day (6 hours); &quot;1&quot;, for one day; &quot;1.5&quot;, for one and one half days
+A return value from the CreateTimeSpan function, for example, &quot;#CreateTimeSpan(0,6,0,0)#&quot;.
+The default action is to flush the item when it is idle for the time specified by the idleTime attribute, or cfcache action=&quot;flush&quot; executes.</p>
 							</td>
 						</tr>
 					
@@ -697,7 +716,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/idletime.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Flushes the cached item if it is not accessed for the specified time span: A decimal number of days, for example: ".25", for one-fourth day (6 hours); "1", for one day; "1.5", for one and one half days A return value from the CreateTimeSpan function, for example, "#CreateTimeSpan(0,6,0,0)#".</p>
+								<p>Flushes the cached item if it is not accessed for the specified time span:
+A decimal number of days, for example: &quot;.25&quot;, for one-fourth day (6 hours); &quot;1&quot;, for one day; &quot;1.5&quot;, for one and one half days
+A return value from the CreateTimeSpan function, for example, &quot;#CreateTimeSpan(0,6,0,0)#&quot;.</p>
 							</td>
 						</tr>
 					
@@ -741,7 +762,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/expireURL.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A URL reference. Can include wildcards, for example: "*/view.cfm?id=*". Lucee flushes, from the cache, pages that match the specified URL or pattern.</p>
+								<p>A URL reference. Can include wildcards, for example: &quot;<em>/view.cfm?id=</em>&quot;. Lucee flushes, from the cache, pages that match the specified URL or pattern.</p>
 							</td>
 						</tr>
 					
@@ -752,7 +773,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/cache/_attributes/port.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Port number of the web server from which the URL for the cached page is requested.  In the internal call from cfcache to cfhttp, Lucee resolves each URL variable in the page; this ensures that links in the page remain functional.</p>
+								<p>Port number of the web server from which the URL for the cached page is requested.
+In the internal call from cfcache to cfhttp, Lucee resolves each URL variable in the page; this ensures that links in the page remain functional.</p>
 							</td>
 						</tr>
 					

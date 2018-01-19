@@ -543,11 +543,12 @@
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/structnew/_arguments/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<p>the type of structure created:</p>
 <ul>
-  <li><strong>linked</strong>: a struct with linked or ordered keys that maintain their insertion order</li>
-  <li><strong>normal</strong> (default): a regular struct</li>
-  <li><strong>soft</strong>: a struct with soft reference values, which are cleared at the discretion of the garbage collector in response to memory demand.</li>
-  <li><strong>weak</strong>: a struct containing weakly referenced values, which do not prevent their referents from being garbage collected. Weak references are most often used to implement simple caches.</li>
-</ul><p><em>Note, the type "synchronized" is no longer supported and will be ignored; all struct/scopes are "thread safe" since version 4.1.</em></p>
+<li><strong>linked</strong>: a struct with linked or ordered keys that maintain their insertion order</li>
+<li><strong>normal</strong> (default): a regular struct</li>
+<li><strong>soft</strong>: a struct with soft reference values, which are cleared at the discretion of the garbage collector in response to memory demand.</li>
+<li><strong>weak</strong>: a struct containing weakly referenced values, which do not prevent their referents from being garbage collected. Weak references are most often used to implement simple caches.</li>
+</ul>
+<p><em>Note, the type &quot;synchronized&quot; is no longer supported and will be ignored; all struct/scopes are &quot;thread safe&quot; since version 4.1.</em></p>
 							</td>
 						</tr>
 					
@@ -563,7 +564,10 @@
 <div class="highlight"><pre><span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">(</span><span class="s2">&quot;soft&quot;</span><span class="p">);</span>
 <span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">(</span><span class="s2">&quot;weak&quot;</span><span class="p">);</span>
 <span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">(</span><span class="s2">&quot;linked&quot;</span><span class="p">);</span>
-</pre></div><p><strong>Lucee Tags</strong> <div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">()</span><span class="nb">&gt;</span> </pre></div></p>
+</pre></div>
+<p><strong>Lucee Tags</strong></p>
+<div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">st</span> <span class="o">=</span> <span class="nf">structNew</span><span class="p">()</span><span class="nb">&gt;</span>
+</pre></div>
 
 							<h2>See also</h2>
 		<ul class="list-unstyled">

@@ -114,7 +114,11 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/querynew/_arguments/data.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>data to populate the new Query, a array of arrays or a array of structs.  Example usage:  queryNew("name,age","varchar,numeric",<a class="missing-link">&quot;Susi&quot;,20],[&quot;Urs&quot;,24</a>);  queryNew("name,age","varchar,numeric",<a class="missing-link">name:&quot;Susi&quot;,age:20],[name:&quot;Urs&quot;,age:24</a>);  queryNew("name,age","varchar,numeric",{name:["Susi","Urs"],age:[20,24]});</p>
+								<p>data to populate the new Query, a array of arrays or a array of structs.
+Example usage:
+queryNew(&quot;name,age&quot;,&quot;varchar,numeric&quot;,<a class="missing-link">&amp;quot;Susi&amp;quot;,20],[&amp;quot;Urs&amp;quot;,24</a>);
+queryNew(&quot;name,age&quot;,&quot;varchar,numeric&quot;,<a class="missing-link">name:&amp;quot;Susi&amp;quot;,age:20],[name:&amp;quot;Urs&amp;quot;,age:24</a>);
+queryNew(&quot;name,age&quot;,&quot;varchar,numeric&quot;,{name:[&quot;Susi&quot;,&quot;Urs&quot;],age:[20,24]});</p>
 							</td>
 						</tr>
 					

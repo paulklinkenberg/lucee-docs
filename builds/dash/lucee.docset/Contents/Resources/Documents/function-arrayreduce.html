@@ -64,7 +64,8 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arrayreduce/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Iterates over every entry of the given array and calls the closure with every element.  This function will reduce the array to a single value and will return the value.</p>
+	<p>Iterates over every entry of the given array and calls the closure with every element.
+This function will reduce the array to a single value and will return the value.</p>
 
 	<p><strong>Returns:</strong> any</p>
 
@@ -139,12 +140,11 @@ dump( reduced ); // yields 'hello there lucee'</script>
     <span class="nv">return</span> <span class="nv">carry</span> <span class="o">+</span> <span class="nv">value</span><span class="p">;</span>
 <span class="p">},</span> <span class="m">0</span> <span class="p">);</span>
 <span class="nf">dump</span><span class="p">(</span> <span class="nv">reduced</span> <span class="p">);</span> <span class="c">// yields 10</span>
-
-<span class="nv">reduced</span> <span class="o">=</span> <span class="nf">ArrayReduce</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;there&#39;</span><span class="p">,</span> <span class="s1">&#39;lucee&#39;</span><span class="p">],</span> <span class="nf">function</span><span class="p">(</span><span class="nv">carry</span><span class="p">,</span> <span class="nv">value</span><span class="p">){</span>
-    <span class="nv">return</span> <span class="nv">carry</span> <span class="o">&amp;</span> <span class="s1">&#39; &#39;</span> <span class="o">&amp;</span> <span class="nv">value</span><span class="p">;</span>
-<span class="p">},</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
-<span class="nf">dump</span><span class="p">(</span> <span class="nv">reduced</span> <span class="p">);</span> <span class="c">// yields &#39;hello there lucee&#39;</span>
-</pre></div>
+<p><span class="nv">reduced</span> <span class="o">=</span> <span class="nf">ArrayReduce</span><span class="p">(</span> <span class="p">[</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'there'</span><span class="p">,</span> <span class="s1">'lucee'</span><span class="p">],</span> <span class="nf">function</span><span class="p">(</span><span class="nv">carry</span><span class="p">,</span> <span class="nv">value</span><span class="p">){</span>
+<span class="nv">return</span> <span class="nv">carry</span> <span class="o">&amp;</span> <span class="s1">' '</span> <span class="o">&amp;</span> <span class="nv">value</span><span class="p">;</span>
+<span class="p">},</span> <span class="s1">''</span> <span class="p">);</span>
+<span class="nf">dump</span><span class="p">(</span> <span class="nv">reduced</span> <span class="p">);</span> <span class="c">// yields 'hello there lucee'</span>
+</pre></div></p>
 							<h2>See also</h2>
 		<ul class="list-unstyled">
 			

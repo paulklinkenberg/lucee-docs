@@ -574,7 +574,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arrayeach/_arguments/maxThreads.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>maximum number of threads executed, ignored when argument "parallel" is set to false</p>
+								<p>maximum number of threads executed, ignored when argument &quot;parallel&quot; is set to false</p>
 							</td>
 						</tr>
 					
@@ -602,21 +602,19 @@ aNames.each(
     }
 );</script>
 <div class="highlight"><pre><span class="nv">aNames</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="s2">&quot;Marcus&quot;</span><span class="p">,</span><span class="s2">&quot;Sarah&quot;</span><span class="p">,</span><span class="s2">&quot;Josefine&quot;</span><span class="p">);</span>
-
-<span class="nf">arrayEach</span><span class="p">(</span>
-    <span class="nv">aNames</span><span class="p">,</span>
-    <span class="nf">function</span><span class="p">(</span><span class="nv">element</span><span class="p">){</span>
-        <span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#ucase(element)#</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">label</span><span class="o">=</span><span class="s2">&quot;ucase element&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">);</span>
-
-<span class="c">//member function version</span>
+<p><span class="nf">arrayEach</span><span class="p">(</span>
+<span class="nv">aNames</span><span class="p">,</span>
+<span class="nf">function</span><span class="p">(</span><span class="nv">element</span><span class="p">){</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#ucase(element)#</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">label</span><span class="o">=</span><span class="s2">&quot;ucase element&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">);</span></p>
+<p><span class="c">//member function version</span>
 <span class="nf">aNames.each</span><span class="p">(</span>
-    <span class="nf">function</span><span class="p">(</span><span class="nv">element</span><span class="p">){</span>
-        <span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#lcase(element)#</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">label</span><span class="o">=</span><span class="s2">&quot;lcase element&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="nf">function</span><span class="p">(</span><span class="nv">element</span><span class="p">){</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#lcase(element)#</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">label</span><span class="o">=</span><span class="s2">&quot;lcase element&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="p">);</span>
-</pre></div>
+</pre></div></p>
 
 							<h2>See also</h2>
 		<ul class="list-unstyled">

@@ -519,87 +519,98 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/13.sax/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Event driven XML reading (SAX)</h1><p><strong>Lucee not only allows you to convert a XML file to a object tree (DOM) but it also supports a event driven model (SAX)</strong></p><p>The function XMLParse is handy to get a object representation of a complete XML document however for large XML documents this can cause memory issues. This method is an overhead if you simply need to read some data from an XML file and convert it to something else. For this the SAX event driven model is a very handy and lightweight way to do this. Here is an example.</p><p>Let's say we want to read in the following XML document:</p>
+	<h1>Event driven XML reading (SAX)</h1>
+<p><strong>Lucee not only allows you to convert a XML file to a object tree (DOM) but it also supports a event driven model (SAX)</strong></p>
+<p>The function XMLParse is handy to get a object representation of a complete XML document however for large XML documents this can cause memory issues. This method is an overhead if you simply need to read some data from an XML file and convert it to something else. For this the SAX event driven model is a very handy and lightweight way to do this. Here is an example.</p>
+<p>Let's say we want to read in the following XML document:</p>
 <div class="highlight"><pre>#!xml
-
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
 &lt;catalog&gt;
-	&lt;cd&gt;
-		&lt;title&gt;Empire Burlesque&lt;/title&gt;
-		&lt;artist&gt;Bob Dylan&lt;/artist&gt;
-		&lt;country&gt;USA&lt;/country&gt;
-		&lt;company&gt;Columbia&lt;/company&gt;
-		&lt;price&gt;10.90&lt;/price&gt;
-		&lt;year&gt;1985&lt;/year&gt;
-	&lt;/cd&gt;
-	&lt;cd&gt;
-		&lt;title&gt;Hide your heart&lt;/title&gt;
-		&lt;artist&gt;Bonnie Tyler&lt;/artist&gt;
-		&lt;country&gt;UK&lt;/country&gt;
-		&lt;company&gt;CBS Records&lt;/company&gt;
-		&lt;price&gt;9.90&lt;/price&gt;
-		&lt;year&gt;1988&lt;/year&gt;
-	&lt;/cd&gt;
+&lt;cd&gt;
+&lt;title&gt;Empire Burlesque&lt;/title&gt;
+&lt;artist&gt;Bob Dylan&lt;/artist&gt;
+&lt;country&gt;USA&lt;/country&gt;
+&lt;company&gt;Columbia&lt;/company&gt;
+&lt;price&gt;10.90&lt;/price&gt;
+&lt;year&gt;1985&lt;/year&gt;
+&lt;/cd&gt;
+&lt;cd&gt;
+&lt;title&gt;Hide your heart&lt;/title&gt;
+&lt;artist&gt;Bonnie Tyler&lt;/artist&gt;
+&lt;country&gt;UK&lt;/country&gt;
+&lt;company&gt;CBS Records&lt;/company&gt;
+&lt;price&gt;9.90&lt;/price&gt;
+&lt;year&gt;1988&lt;/year&gt;
+&lt;/cd&gt;
 &lt;/catalog&gt;
-</pre></div><p>To read this we need to define a component that looks like the following and you need to add functions that are listening to certain events of the XML parser (startDocument, startElement, body, endElements, ...), it is completely up to your code to store the data for later use. <div class="highlight"><pre>#!javascript component {  this.cds=[];  this.cd={};  this.insideCD=false;  this.currentName=&quot;&quot;;  this.filter={};  this.removeCD=false;</p>
+</pre></div></p>
+<p>To read this we need to define a component that looks like the following and you need to add functions that are listening to certain events of the XML parser (startDocument, startElement, body, endElements, ...), it is completely up to your code to store the data for later use.</p>
+<div class="highlight"><pre>#!javascript
+component {
+	this.cds=[];
+	this.cd={};
+	this.insideCD=false;
+	this.currentName=&quot;&quot;;
+	this.filter={};
+	this.removeCD=false;
 <pre><code>/**
 * constructor of the component that takes the path to the xml file and a simple custom made filter
 * @param xmlFile xml File to parse
 * @param filter filter to limit content on certain records
 */
 function init(string xmlFile, struct filter={}) {
-    var xmlEventParser=createObject(&amp;quot;java&amp;quot;,&amp;quot;lucee.runtime.helpers.XMLEventParser&amp;quot;);
-    this.filter=filter;
-    // registering the event handlers
-    xmlEventParser.init(
-       getPageContext(),
-       this.startDocument,
-       this.startElement,
-       this.body,
-       this.endElement,
-       this.endDocument,
-       this.error
-    );
-    xmlEventParser.start(xmlFile);
-    return this.cds;
+	var xmlEventParser=createObject(&amp;quot;java&amp;quot;,&amp;quot;lucee.runtime.helpers.XMLEventParser&amp;quot;);
+	this.filter=filter;
+	// registering the event handlers
+	xmlEventParser.init(
+		getPageContext(),
+		this.startDocument,
+		this.startElement,
+		this.body,
+		this.endElement,
+		this.endDocument,
+		this.error
+	);
+	xmlEventParser.start(xmlFile);
+	return this.cds;
 }
 
 /**
 * this function will be called on the start of parsing of an XML Element (Tag)
 */
 function startElement(string uri, string localName, string qName, struct attributes){
-    if(localName EQ &amp;quot;cd&amp;quot;){
-       this.cd={};
-       this.insideCD=true;
-       this.removeCD=false;
+	if(localName EQ &amp;quot;cd&amp;quot;){
+		this.cd={};
+		this.insideCD=true;
+		this.removeCD=false;
 
-    }
-    else if(this.insideCD){
-       this.currentName=localName;
-    }
+	}
+	else if(this.insideCD){
+		this.currentName=localName;
+	}
 }
 
 /**
 * call with body of the tag
 */
 function body(string content){
-    if(len(this.currentName)) {
-       this.cd[this.currentName]=content;
-       if(structKeyExists(this.filter,this.currentName) and content NEQ this.filter[this.currentName])
-         this.removeCD=true;
-    }
+	if(len(this.currentName)) {
+		this.cd[this.currentName]=content;
+		if(structKeyExists(this.filter,this.currentName) and content NEQ this.filter[this.currentName])
+			this.removeCD=true;
+	}
 }
 
 /**
 * this function will be called at the end of parsing an XML Element (Tag)
 */
 function endElement(string uri, string localName, string qName, struct attributes){
-    if(localName EQ &amp;quot;cd&amp;quot;) {
-       if(!this.removeCD)
-         this.cds[arrayLen(this.cds)+1]=this.cd;
-       this.insideCD=false;
-    }
-    this.currentName=&amp;quot;&amp;quot;;
+	if(localName EQ &amp;quot;cd&amp;quot;) {
+		if(!this.removeCD)
+			this.cds[arrayLen(this.cds)+1]=this.cd;
+		this.insideCD=false;
+	}
+	this.currentName=&amp;quot;&amp;quot;;
 }
 
 /**
@@ -618,9 +629,12 @@ function endDocument(string uri, string localName, string qName, struct attribut
 * this function will be called when an error occurs
 */
 function error(struct cfcatch){
-    dump(cfcatch);
+	dump(cfcatch);
 }
-</code></pre><p>} </pre></div></p><p>Now we simply can invoke that component to parse the XML file and get the result as an array of structs:</p>
+</code></pre>
+<p>}
+</pre></div></p>
+<p>Now we simply can invoke that component to parse the XML file and get the result as an array of structs:</p>
 <div class="highlight"><pre>#!html
 &lt;!---
 	Calls XML Catalog Event Parser and converts the data to an array of structs
@@ -629,7 +643,9 @@ function error(struct cfcatch){
 &lt;cfset xmlFile=GetDirectoryFromPath(GetCurrentTemplatePath())&amp;&#39;catalog.xml&#39;&gt;
 &lt;cfset cds=new XMLCatalog(xmlFile,{country:&#39;USA&#39;})&gt;
 &lt;cfdump var=&quot;#cds#&quot;&gt;
-</pre></div><p>You can download the complete example here: https://bitbucket.org/lucee/lucee/downloads/lucee-sax-example.zip</p>
+</pre></div>
+<p>You can download the complete example here:
+https://bitbucket.org/lucee/lucee/downloads/lucee-sax-example.zip</p>
 
 							
 						</div>

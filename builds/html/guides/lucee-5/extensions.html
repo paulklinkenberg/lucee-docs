@@ -525,9 +525,29 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/01.extensions/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Lucee 5 Extension Framework</h1><p><strong>Lucee 5 has had a complete overhaul of the existing extension framework, to make them more flexible and easier for everyone to create extensions.</strong></p><p>Lucee already had support for extensions and extensions could be Java and / or CFML based applications that could be installed inside the Lucee Administrator but this feature was not as well adopted by the community as we would have liked. The main reason for this was the lack of documentation and the complexity of creating an extension. With the launch of Lucee 5 we will change this, removing the complexity and creating detailed documentation. Also extensions will be "convention based" and have complete OSGi support removing the risk of library conflicts.</p><h2>Different ways to install</h2><p>In Lucee 4 you could only install extensions via the administrator however in Lucee 5 you can install extensions in the following ways:</p><p><strong>Administrator</strong></p><p>You can still install extension in the administrator as you could before.</p><p><strong>Deploy Folder</strong></p><p>Lucee 5 extensions have the file extension ".lex" and you can install these by copying ".lex" files into the folder <code>{server|web-context}/deploy</code> and Lucee will pick them up and install them automatically.</p><p><strong>JVM Argument</strong></p><p>You can install extensions by declaring the "id" of the extension as a JVM argument in the startup script. The following is an example for installing the MySQL and the MSSQL Datasource driver</p>
+	<h1>Lucee 5 Extension Framework</h1>
+<p><strong>Lucee 5 has had a complete overhaul of the existing extension framework, to make them more flexible and easier for everyone to create extensions.</strong></p>
+<p>Lucee already had support for extensions and extensions could be Java and / or CFML based applications that could be installed inside the Lucee Administrator but this feature was not as well adopted by the community as we would have liked. The main reason for this was the lack of documentation and the complexity of creating an extension. With the launch of Lucee 5 we will change this, removing the complexity and creating detailed documentation. Also extensions will be &quot;convention based&quot; and have complete OSGi support removing the risk of library conflicts.</p>
+<h2>Different ways to install</h2>
+<p>In Lucee 4 you could only install extensions via the administrator however in Lucee 5 you can install extensions in the following ways:</p>
+<p><strong>Administrator</strong></p>
+<p>You can still install extension in the administrator as you could before.</p>
+<p><strong>Deploy Folder</strong></p>
+<p>Lucee 5 extensions have the file extension &quot;.lex&quot; and you can install these by copying &quot;.lex&quot; files into the folder <code>{server|web-context}/deploy</code> and Lucee will pick them up and install them automatically.</p>
+<p><strong>JVM Argument</strong></p>
+<p>You can install extensions by declaring the &quot;id&quot; of the extension as a JVM argument in the startup script. The following is an example for installing the MySQL and the MSSQL Datasource driver</p>
 <pre><code>-Dlucee-extensions=99A4EF8D-F2FD-40C8-8FB8C2E67A4EEEB6;7E673D15-D87C-41A6-8B5F1956528C605F
-</code></pre><h2>Convention Based</h2><p>The "convention based" approach means you simply have folders for different parts of your application, for example:</p><p>/applications - for cfm &amp; cfc files that need to be installed in the webroot /functions - for build-in functions to install /jars - for libraries used by your extension</p><p>This means that creating an extension for Lucee 5 is as simple as adding the stuff you need into certain folders, zipping it up and letting Lucee take care of the rest.</p><h2>OSGi Support</h2><p>The "OSGi support" means that Lucee makes sure that the jars you install are OSGi bundles and if they are not it converts them to OSGi bundles on the fly.</p><h2>But what if I have to define / check preconditions / relations?</h2><p>Every extension also needs a "META-INF/Manifest.mf" file, where you need to define certain settings, the following example is the content from the manifest file for the MongoDB extension:</p>
+</code></pre>
+<h2>Convention Based</h2>
+<p>The &quot;convention based&quot; approach means you simply have folders for different parts of your application, for example:</p>
+<p>/applications - for cfm &amp; cfc files that need to be installed in the webroot
+/functions - for build-in functions to install
+/jars - for libraries used by your extension</p>
+<p>This means that creating an extension for Lucee 5 is as simple as adding the stuff you need into certain folders, zipping it up and letting Lucee take care of the rest.</p>
+<h2>OSGi Support</h2>
+<p>The &quot;OSGi support&quot; means that Lucee makes sure that the jars you install are OSGi bundles and if they are not it converts them to OSGi bundles on the fly.</p>
+<h2>But what if I have to define / check preconditions / relations?</h2>
+<p>Every extension also needs a &quot;META-INF/Manifest.mf&quot; file, where you need to define certain settings, the following example is the content from the manifest file for the MongoDB extension:</p>
 <pre><code>Manifest-Version: 1.0
 Built-Date: 2015-03-11 16:11:16
 version: &quot;1.0.0.40&quot;
@@ -537,7 +557,10 @@ description: &quot;This Extensions allows to use MongoDB direcly in your code or
 start-bundles: false
 trial: false
 lucee-core-version: &quot;5.0.0.021&quot;
-</code></pre><p>In this case, for example, we have defined that Lucee "5.0.0.021" is necessary to install this extension.</p><h2>Install script no longer required</h2><p>With pre-Lucee 5 extensions you had to create an install.cfc file and code the installation of the extension yourself, however with Lucee 5 this script is no longer required and Lucee now takes care of the install for you.</p>
+</code></pre>
+<p>In this case, for example, we have defined that Lucee &quot;5.0.0.021&quot; is necessary to install this extension.</p>
+<h2>Install script no longer required</h2>
+<p>With pre-Lucee 5 extensions you had to create an install.cfc file and code the installation of the extension yourself, however with Lucee 5 this script is no longer required and Lucee now takes care of the install for you.</p>
 
 							
 						</div>
