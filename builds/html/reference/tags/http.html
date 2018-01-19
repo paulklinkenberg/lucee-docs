@@ -515,7 +515,9 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Lets you execute HTTP POST and GET operations on files. Using cfhttp, you can execute standard  GET operations and create a query object from a text file. POST operations lets you upload MIME file  types to a server, or post cookie, formfield, URL, file, or CGI variables directly to a specified server.</p>
+	<p>Lets you execute HTTP POST and GET operations on files. Using cfhttp, you can execute standard
+GET operations and create a query object from a text file. POST operations lets you upload MIME file
+types to a server, or post cookie, formfield, URL, file, or CGI variables directly to a specified server.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nb">&lt;cfhttp</span>
@@ -578,7 +580,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/url.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Full URL of the host name or IP address of the server on which the file resides. The URL must be  an absolute URL, including the protocol (http or https) and hostname. It may optionally contain a port  number. Port numbers specified in the url attribute override the port attribute.</p>
+								<p>Full URL of the host name or IP address of the server on which the file resides. The URL must be
+an absolute URL, including the protocol (http or https) and hostname. It may optionally contain a port
+number. Port numbers specified in the url attribute override the port attribute.</p>
 							</td>
 						</tr>
 					
@@ -589,7 +593,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/encodeurl.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>if set to true (default value) URL encodes the value of the attribute "URL" if necessary (no double encoding is happeing).  This setting has no influence on the values from httpparam type="url", for this use the attribute "encoded" from httpparam</p>
+								<p>if set to true (default value) URL encodes the value of the attribute &quot;URL&quot; if necessary (no double encoding is happeing).
+This setting has no influence on the values from httpparam type=&quot;url&quot;, for this use the attribute &quot;encoded&quot; from httpparam</p>
 							</td>
 						</tr>
 					
@@ -600,7 +605,12 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/compression.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Informs the target webserver to disable compression for the response. Possible values are: - true (default): compression enabled - false: compression disabled - none (deprecated): use "false" instead</p>
+								<p>Informs the target webserver to disable compression for the response. Possible values are:</p>
+<ul>
+<li>true (default): compression enabled</li>
+<li>false: compression disabled</li>
+<li>none (deprecated): use &quot;false&quot; instead</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -611,7 +621,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/result.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>return variable name, default "cfhttp"</p>
+								<p>return variable name, default &quot;cfhttp&quot;</p>
 							</td>
 						</tr>
 					
@@ -633,7 +643,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/port.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The port number on the server from which the object is requested. Default is 80. When used with  resolveURL, the URLs of retrieved documents that specify a port number are automatically resolved to  preserve links in the retrieved document. If a port number is specified in the url attribute, the port  value overrides the value of the port attribute.</p>
+								<p>The port number on the server from which the object is requested. Default is 80. When used with
+resolveURL, the URLs of retrieved documents that specify a port number are automatically resolved to
+preserve links in the retrieved document. If a port number is specified in the url attribute, the port
+value overrides the value of the port attribute.</p>
 							</td>
 						</tr>
 					
@@ -644,7 +657,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/method.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>GET or POST. Use GET to download a text or binary file or to create a query from the contents  of a text file. Use POST to send information to a server page or a CGI program for processing. POST  requires the use of a cfhttpparam tag.</p>
+								<p>GET or POST. Use GET to download a text or binary file or to create a query from the contents
+of a text file. Use POST to send information to a server page or a CGI program for processing. POST
+requires the use of a cfhttpparam tag.</p>
 							</td>
 						</tr>
 					
@@ -677,7 +692,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/preauth.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>if set to true (default), Lucee sends the basic authentication (username password) always (Preemptive Basic Authentication),  if set to false the authentication is only send when the server ask for it (status code 401).</p>
+								<p>if set to true (default), Lucee sends the basic authentication (username password) always (Preemptive Basic Authentication),
+if set to false the authentication is only send when the server ask for it (status code 401).</p>
 							</td>
 						</tr>
 					
@@ -688,7 +704,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/multipart.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Tells Lucee to send all data specified by cfhttpparam type="formField" tags as multipart form data, with a Content-Type of multipart/form-data.</p>
+								<p>Tells Lucee to send all data specified by cfhttpparam type=&quot;formField&quot; tags as multipart form data, with a Content-Type of multipart/form-data.</p>
 							</td>
 						</tr>
 					
@@ -699,7 +715,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/multiparttype.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>This attribute has been deprecated, use instead the attribute "multipart".</p>
+								<p>This attribute has been deprecated, use instead the attribute &quot;multipart&quot;.</p>
 							</td>
 						</tr>
 					
@@ -711,9 +727,9 @@
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/getAsBinary.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<ul>
-  <li>false: If CFML does not recognize the response body type as text, convert it to a CFML object.</li>
-  <li>auto: If CFML does not recognize the response body type as text, convert it to CFML Binary type data.</li>
-  <li>true: always convert the response body content into CFML Binary type data, even if CFML recognizes the response body type as text.</li>
+<li>false: If CFML does not recognize the response body type as text, convert it to a CFML object.</li>
+<li>auto: If CFML does not recognize the response body type as text, convert it to CFML Binary type data.</li>
+<li>true: always convert the response body content into CFML Binary type data, even if CFML recognizes the response body type as text.</li>
 </ul>
 							</td>
 						</tr>
@@ -747,7 +763,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/path.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The path to the directory in which a file is to be stored. If a path is not specified in a POST  or GET operation, a variable is created (cfhttp.fileContent) that you can use to display the results  of the POST operation in a cfoutput.</p>
+								<p>The path to the directory in which a file is to be stored. If a path is not specified in a POST
+or GET operation, a variable is created (cfhttp.fileContent) that you can use to display the results
+of the POST operation in a cfoutput.</p>
 							</td>
 						</tr>
 					
@@ -758,7 +776,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/file.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The filename to be used for the file that is accessed. For GET operations, defaults to the name  specified in url. Enter path information in the path attribute.</p>
+								<p>The filename to be used for the file that is accessed. For GET operations, defaults to the name
+specified in url. Enter path information in the path attribute.</p>
 							</td>
 						</tr>
 					
@@ -769,7 +788,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/delimiter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Used only when creating a query from an http request that returns data in a CSV format. This  value specifies the Field delimiter for the CSV data. Only the first character is used. Default is a comma.</p>
+								<p>Used only when creating a query from an http request that returns data in a CSV format. This
+value specifies the Field delimiter for the CSV data. Only the first character is used. Default is a comma.</p>
 							</td>
 						</tr>
 					
@@ -780,7 +800,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/textQualifier.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required for creating a query. Indicates the start and finish of a column. Should be  appropriately escaped when embedded in a column. For example, if the qualifier is a double quotation  mark, it should be escaped as """". If there is no text qualifier in the file, specify it as " ".  Default is the double quotation mark (").</p>
+								<p>Required for creating a query. Indicates the start and finish of a column. Should be
+appropriately escaped when embedded in a column. For example, if the qualifier is a double quotation
+mark, it should be escaped as &quot;&quot;&quot;&quot;. If there is no text qualifier in the file, specify it as &quot; &quot;.
+Default is the double quotation mark (&quot;).</p>
 							</td>
 						</tr>
 					
@@ -791,7 +814,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/resolveURL.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Yes or No. Default is No. For GET and POST operations, if Yes, page reference returned into the  fileContent internal variable has its internal URLs fully resolved, including port number, so that  links remain intact.</p>
+								<p>Yes or No. Default is No. For GET and POST operations, if Yes, page reference returned into the
+fileContent internal variable has its internal URLs fully resolved, including port number, so that
+links remain intact.</p>
 							</td>
 						</tr>
 					
@@ -813,7 +838,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The port number on the proxy server from which the object is requested. Default is 80. When  used with resolveURL, the URLs of retrieved documents that specify a port number are automatically  resolved to preserve links in the retrieved document.</p>
+								<p>The port number on the proxy server from which the object is requested. Default is 80. When
+used with resolveURL, the URLs of retrieved documents that specify a port number are automatically
+resolved to preserve links in the retrieved document.</p>
 							</td>
 						</tr>
 					
@@ -857,7 +884,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/throwOnError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Boolean indicating whether to throw an exception that can be caught by using the cftry and  cfcatch tags. The default is NO.</p>
+								<p>Boolean indicating whether to throw an exception that can be caught by using the cftry and
+cfcatch tags. The default is NO.</p>
 							</td>
 						</tr>
 					
@@ -868,7 +896,12 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/redirect.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Boolean indicating whether to redirect execution or stop execution. The default is Yes. If set  to No and throwOnError = "yes", execution stops if cfhttp fails, and the status code and associated  error message are returned in the variable cfhttp.statuscode. To see where execution would have been  redirected, use the variable cfhttp.responseHeader[LOCATION]. The key LOCATION identifies the path of  redirection. Lucee will follow up to five redirections on a request. if this limit is exceeded,  Lucee behaves as if redirect = "no".</p>
+								<p>Boolean indicating whether to redirect execution or stop execution. The default is Yes. If set
+to No and throwOnError = &quot;yes&quot;, execution stops if cfhttp fails, and the status code and associated
+error message are returned in the variable cfhttp.statuscode. To see where execution would have been
+redirected, use the variable cfhttp.responseHeader[LOCATION]. The key LOCATION identifies the path of
+redirection. Lucee will follow up to five redirections on a request. if this limit is exceeded,
+Lucee behaves as if redirect = &quot;no&quot;.</p>
 							</td>
 						</tr>
 					
@@ -879,7 +912,14 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A value, in seconds. When a URL timeout is specified in the browser, the timeout attribute setting  takes precedence over the Lucee Administrator timeout. The server then uses the lesser  of the URL timeout and the timeout passed in the timeout attribute, so that the request always times  out before or at the same time as the page times out. If there is no URL timeout specified, Lucee  takes the lesser of the Lucee Administrator timeout and the timeout passed in the timeout attribute.  If there is no timeout set on the URL in the browser, no timeout set in the Lucee Administrator,  and no timeout set with the timeout attribute, Lucee waits indefinitely for the cfhttp request to  process.</p>
+								<p>A value, in seconds. When a URL timeout is specified in the browser, the timeout attribute setting
+takes precedence over the Lucee Administrator timeout. The server then uses the lesser
+of the URL timeout and the timeout passed in the timeout attribute, so that the request always times
+out before or at the same time as the page times out. If there is no URL timeout specified, Lucee
+takes the lesser of the Lucee Administrator timeout and the timeout passed in the timeout attribute.
+If there is no timeout set on the URL in the browser, no timeout set in the Lucee Administrator,
+and no timeout set with the timeout attribute, Lucee waits indefinitely for the cfhttp request to
+process.</p>
 							</td>
 						</tr>
 					
@@ -912,7 +952,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/authType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>authentication type for a request with username and password, valid values are "BASIC" (default) and "NTLM"</p>
+								<p>authentication type for a request with username and password, valid values are &quot;BASIC&quot; (default) and &quot;NTLM&quot;</p>
 							</td>
 						</tr>
 					
@@ -923,7 +963,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/workstation.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The workstation the authentication request is originating from. Essentially, the computer name for this machine. this attribute is only used when authenication type is "NTLM"</p>
+								<p>The workstation the authentication request is originating from. Essentially, the computer name for this machine. this attribute is only used when authenication type is &quot;NTLM&quot;</p>
 							</td>
 						</tr>
 					
@@ -934,7 +974,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/domain.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The domain to authenticate within. this attribute is only used when authenication type is "NTLM"</p>
+								<p>The domain to authenticate within. this attribute is only used when authenication type is &quot;NTLM&quot;</p>
 							</td>
 						</tr>
 					

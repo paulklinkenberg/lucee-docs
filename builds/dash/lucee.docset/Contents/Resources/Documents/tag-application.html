@@ -64,7 +64,10 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Defines scoping for a application, enables or disables storing client variables,  and specifies a client variable storage mechanism.  By default, client variables are disabled. Also, enables session variables and sets timeouts  for session and application variables. Session and application variables are stored in memory.</p>
+	<p>Defines scoping for a application, enables or disables storing client variables,
+and specifies a client variable storage mechanism.
+By default, client variables are disabled. Also, enables session variables and sets timeouts
+for session and application variables. Session and application variables are stored in memory.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nt">&lt;cfapplication</span>
@@ -143,7 +146,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The name of your application. This name can be up to 64 characters long.  Required for application and session variables, optional for client variables</p>
+								<p>The name of your application. This name can be up to 64 characters long.
+Required for application and session variables, optional for client variables</p>
 							</td>
 						</tr>
 					
@@ -188,8 +192,8 @@
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<p>action for the data set:</p>
-<pre><code>       - create (default): creates a new application context and overwrite the existing
-       - update: update the existing application context when there is already one, otherwise a new one is created
+<pre><code>		- create (default): creates a new application context and overwrite the existing
+		- update: update the existing application context when there is already one, otherwise a new one is created
 </code></pre>
 							</td>
 						</tr>
@@ -201,7 +205,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/loginStorage.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>storage for the login data:  - cookie: store login information in the Cookie scope  - session: store login information in the Session scope</p>
+								<p>storage for the login data:
+- cookie: store login information in the Cookie scope
+- session: store login information in the Session scope</p>
 							</td>
 						</tr>
 					
@@ -223,7 +229,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/clientStorage.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies how Lucee stores client variables: - memory: the session is only kept in memory - cookie: the session is stored in the client cookie - file (default): the session is stored in a local file - "datasource-name"|"cache-name": when you select a name of an available datasource or cache, the client scope will be stored in there</p>
+								<p>Specifies how Lucee stores client variables:</p>
+<ul>
+<li>memory: the session is only kept in memory</li>
+<li>cookie: the session is stored in the client cookie</li>
+<li>file (default): the session is stored in a local file</li>
+<li>&quot;datasource-name&quot;|&quot;cache-name&quot;: when you select a name of an available datasource or cache, the client scope will be stored in there</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -234,7 +246,12 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Lucee provide 2 kind of sessions: - cfml: session handled by Lucee - j2ee: session handled by the Servlet Engine used Default value is defined in the Lucee Web Administrator. "j2ee" can not use a session storage.</p>
+								<p>Lucee provide 2 kind of sessions:</p>
+<ul>
+<li>cfml: session handled by Lucee</li>
+<li>j2ee: session handled by the Servlet Engine used
+Default value is defined in the Lucee Web Administrator. &quot;j2ee&quot; can not use a session storage.</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -245,7 +262,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionStorage.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies how Lucee stores session variables: - memory (default): the session is only kept in memory - cookie: the session is stored in the client cookie - file: the session is stored in a local file - "datasource-name"|"cache-name": when you select a name of an available datasource or cache, the session scope will be stored in there</p>
+								<p>Specifies how Lucee stores session variables:</p>
+<ul>
+<li>memory (default): the session is only kept in memory</li>
+<li>cookie: the session is stored in the client cookie</li>
+<li>file: the session is stored in a local file</li>
+<li>&quot;datasource-name&quot;|&quot;cache-name&quot;: when you select a name of an available datasource or cache, the session scope will be stored in there</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -256,7 +279,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/clientCluster.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>if set to true, lucee uses the storage backend for the client scope as master and Lucee checks for changes in the storage backend with every request,  if set to false (default), the storage is only used as slave, lucee only initially gets the data from the storage. Ignored for storage type "memory".</p>
+								<p>if set to true, lucee uses the storage backend for the client scope as master and Lucee checks for changes in the storage backend with every request,
+if set to false (default), the storage is only used as slave, lucee only initially gets the data from the storage. Ignored for storage type &quot;memory&quot;.</p>
 							</td>
 						</tr>
 					
@@ -267,7 +291,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionCluster.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>if set to true, lucee uses the storage backend for the session scope as master and Lucee checks for changes in the storage backend with every request,  if set to false (default), the storage is only used as slave, lucee only initially gets the data from the storage. Ignored for storage type "memory".</p>
+								<p>if set to true, lucee uses the storage backend for the session scope as master and Lucee checks for changes in the storage backend with every request,
+if set to false (default), the storage is only used as slave, lucee only initially gets the data from the storage. Ignored for storage type &quot;memory&quot;.</p>
 							</td>
 						</tr>
 					
@@ -278,7 +303,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/setClientCookies.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Yes or No. Yes enables client cookies. Default is Yes. If you set this attribute to  "No", Lucee does not automatically send the CFID and CFTOKEN cookies to the client browser;  you must manually code CFID and CFTOKEN on the URL for every page that uses Session or Client variables.</p>
+								<p>Yes or No. Yes enables client cookies. Default is Yes. If you set this attribute to
+&quot;No&quot;, Lucee does not automatically send the CFID and CFTOKEN cookies to the client browser;
+you must manually code CFID and CFTOKEN on the URL for every page that uses Session or Client variables.</p>
 							</td>
 						</tr>
 					
@@ -289,7 +316,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/bufferOutput.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>if set to true (default) the output written to the body of the tag is buffered and in case of a exception also outputted.  if set to false the content to body is ignored and not disabled when a failure in the body of the tag occur.</p>
+								<p>if set to true (default) the output written to the body of the tag is buffered and in case of a exception also outputted.
+if set to false the content to body is ignored and not disabled when a failure in the body of the tag occur.</p>
 							</td>
 						</tr>
 					
@@ -311,7 +339,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated  by commas, to specify the lifespan of session variables. The default value is specified in the  Variables page of the Lucee Administrator.</p>
+								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated
+by commas, to specify the lifespan of session variables. The default value is specified in the
+Variables page of the Lucee Administrator.</p>
 							</td>
 						</tr>
 					
@@ -322,7 +352,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/clientTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated  by commas, to specify the lifespan of client variables. The default value is specified in the  Variables page of the Lucee Administrator.</p>
+								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated
+by commas, to specify the lifespan of client variables. The default value is specified in the
+Variables page of the Lucee Administrator.</p>
 							</td>
 						</tr>
 					
@@ -333,7 +365,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/applicationTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated  by commas, to specify the lifespan of application variables. The default value is specified in  the Variables page of the Lucee Administrator.</p>
+								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated
+by commas, to specify the lifespan of application variables. The default value is specified in
+the Variables page of the Lucee Administrator.</p>
 							</td>
 						</tr>
 					
@@ -355,7 +389,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/setDomainCookies.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Yes or No. Sets the CFID and CFTOKEN cookies for a domain, not just a single host.  Applications that are running on clusters must set this value to Yes. The default is No.</p>
+								<p>Yes or No. Sets the CFID and CFTOKEN cookies for a domain, not just a single host.
+Applications that are running on clusters must set this value to Yes. The default is No.</p>
 							</td>
 						</tr>
 					
@@ -377,7 +412,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/mappings.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A structure that contains mappings. Each element in the structure consists of a key and a value.  The logical path is the key and the absolute path is the value.</p>
+								<p>A structure that contains mappings. Each element in the structure consists of a key and a value.
+The logical path is the key and the absolute path is the value.</p>
 							</td>
 						</tr>
 					
@@ -410,7 +446,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/secureJson.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A Boolean value that specifies whether to add a security prefix in front of the value that a function returns in JSON-format  in response to a remote call.</p>
+								<p>A Boolean value that specifies whether to add a security prefix in front of the value that a function returns in JSON-format
+in response to a remote call.</p>
 							</td>
 						</tr>
 					
@@ -421,7 +458,11 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/wstype.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>webservice type used, this can be one of the following values - Axis1 (default): The Apache Axis 1 implementation is used - CXF: The CXF implementation is used</p>
+								<p>webservice type used, this can be one of the following values</p>
+<ul>
+<li>Axis1 (default): The Apache Axis 1 implementation is used</li>
+<li>CXF: The CXF implementation is used</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -476,7 +517,11 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/localmode.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Defines how the local scope of a function is invoked when a variable with no scope definition is used (default value set in the lucee administrator). - modern: the local scope is always invoked - classic (CFML standard): the local scope is only invoked when the key already exists in it</p>
+								<p>Defines how the local scope of a function is invoked when a variable with no scope definition is used (default value set in the lucee administrator).</p>
+<ul>
+<li>modern: the local scope is always invoked</li>
+<li>classic (CFML standard): the local scope is only invoked when the key already exists in it</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -487,7 +532,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>tags/attributes default value in the following structure:</p><h1>{location:{addtoken=false}}</h1>
+								<p>tags/attributes default value in the following structure:
+#{location:{addtoken=false}}#</p>
 							</td>
 						</tr>
 					
@@ -509,7 +555,31 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/ormsettings.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A struct that defines all the ORM settings, the following keys are supported: - autogenmap(default:true): Specifies whether Lucee should automatically generate mapping for the persistent CFCs. If autogenmap=false, mapping should be provided in the form of "{cfc-name}.cfc.hbm.xml" files. - automanageSession(default:true; not supported yet): Lets you specify if Lucee must manage Hibernate session automatically. If enabled: Lucee manages the session completely. That is, it decides when to flush the session, when to clear the session, and when to close the session. If disabled: The application is responsible for managing flushing, clearing, or closing of the session. The only exception is (in the case of transaction), when the transaction commits, the application flushes the session. Lucee closes the ORM session at the end of request irrespective of this flag being enabled or disabled. - cacheconfig: Specifies the location of the configuration file that should be used by the secondary cache provider.This setting is used only when secondarycacheenabled=true. - cacheprovider: Specifies the cache provider that should be used by ORM as secondary cache. - catalog: Specifies the default Catalog that should be used by ORM. - cfclocation: Specifies the directory (or array of directories) that should be used by Lucee to search for persistent CFCs to generate the mapping. If cfclocation is set, Lucee looks at only the paths specified in it. If it is not set, Lucee looks at the application directory, its sub-directories, and its mapped directories to search for persistent CFCs. - datasource: Specifies the data source that should be used by ORM. If it is not specified here, then the data source specified for the application is picked up. - dbcreate(default:none): Hibernate can automatically create the tables for your application in the database. dbCreate takes the following values: -- update: Setting this value creates the table if it does not exist or update the table if it exists. -- dropcreate: Setting this value drops the table if it exists and then creates it. -- none: Setting this value does not change anything in the database schema. - dialect: Specifies the dialect.Lucee supports the following dialects: [Cache 2007.1, Cache71, Cache 2007.1, DB2, DB2/390, DB2/400, DB2390, DB2400, DB2AS400, DB2OS390, DataDirectOracle9, Derby, Firebird, FrontBase, H2, H2DB, HSQL, HSQLDB, Informix, Ingres, Interbase, JDataStore, MSSQL, Mckoi, MckoiSQL, MicrosoftSQLServer, Mimer, MimerSQL, MySQL, MySQL/InnoDB, MySQL/MyISAM, MySQL5, MySQL5/InnoDB, MySQL5InnoDB, MySQLInnoDB, MySQLMyISAM, MySQLwithInnoDB, MySQLwithMyISAM, Oracle, Oracle10g, Oracle8i, Oracle9, Oracle9i, Pointbase, PostgreSQL, PostgresPlus, Progress, SAPDB, SQLServer, Sybase, Sybase11, SybaseASE15, SybaseAnywhere, com.ddtek.jdbc.db2.DB2Driver, com.microsoft.jdbc.sqlserver.SQLServerDriver, oracle.jdbc.driver.OracleDriver, org.firebirdsql.jdbc.FBDriver, org.gjt.mm.mysql.Driver, org.h2.Driver, org.hsqldb.jdbcDriver, org.postgresql.Driver] - eventHandling(default:false): Specifies whether ORM Event callbacks should be given. - flushatrequestend(default:true): Specifies whether ormflush should be called automatically at request end. If flushatrequestend is false, ormflush is not called automatically at request end. - logSQL(default:false): Specifies whether the SQL queries that are executed by ORM will be logged. If LogSQL=true, the SQL queries are logged to the console. - ormconfig: The Hibernate configuration file. This file contains various configuration parameters like, dialect, cache settings, and mapping files that are required for the application. For more details, see www.hibernate.org/hib_docs/reference/en/html/session-configuration.html. The settings defined in the ormsettings override the settings defined in the Hibernate Configuration XML file.The connection information in the Hibernate Configuration XML file is however ignored because Lucee uses its own connection pool. You will need to use this only when you need to use a hibernate setting that is not available using ormsetting. - savemapping(default:false): Specifies whether the generated Hibernate mapping file has to be saved to disc. If you set the value to true, the Hibernate mapping XML file is saved with the filename "CFC name".hbm.xml in the same directory as the CFC. If any value of savemapping is specified in CFC, it will override the value specified in the ormsetting. - schema: Specifies the default Schema that should be used by ORM. - secondarycacheenabled(default:false): Specifies whether secondary caching should be enabled - skipCFCWithError(default:false;not implemented yet): Lets you specify if Lucee must skip the CFCs that have errors. If set to true, Lucee ignores the CFCs that have errors. - sqlscript: Path to the SQL script file that gets executed after ORM is initialized. This applies if dbcreate is set to dropcreate. This must be the absolute file path or the path relative to the application.The SQL script file lets you populate the tables before the application is accessed. - useDBForMapping(default:true): Specifies whether the database has to be inspected to identify the missing information required to generate the Hibernate mapping. The database is inspected to get the column data type, primary key and foreign key information.</p>
+								<p>A struct that defines all the ORM settings, the following keys are supported:</p>
+<ul>
+<li>autogenmap(default:true): Specifies whether Lucee should automatically generate mapping for the persistent CFCs. If autogenmap=false, mapping should be provided in the form of &quot;{cfc-name}.cfc.hbm.xml&quot; files.</li>
+<li>automanageSession(default:true; not supported yet): Lets you specify if Lucee must manage Hibernate session automatically. If enabled: Lucee manages the session completely. That is, it decides when to flush the session, when to clear the session, and when to close the session. If disabled: The application is responsible for managing flushing, clearing, or closing of the session. The only exception is (in the case of transaction), when the transaction commits, the application flushes the session. Lucee closes the ORM session at the end of request irrespective of this flag being enabled or disabled.</li>
+<li>cacheconfig: Specifies the location of the configuration file that should be used by the secondary cache provider.This setting is used only when secondarycacheenabled=true.</li>
+<li>cacheprovider: Specifies the cache provider that should be used by ORM as secondary cache.</li>
+<li>catalog: Specifies the default Catalog that should be used by ORM.</li>
+<li>cfclocation: Specifies the directory (or array of directories) that should be used by Lucee to search for persistent CFCs to generate the mapping. If cfclocation is set, Lucee looks at only the paths specified in it. If it is not set, Lucee looks at the application directory, its sub-directories, and its mapped directories to search for persistent CFCs.</li>
+<li>datasource: Specifies the data source that should be used by ORM. If it is not specified here, then the data source specified for the application is picked up.</li>
+<li>dbcreate(default:none): Hibernate can automatically create the tables for your application in the database. dbCreate takes the following values:
+-- update: Setting this value creates the table if it does not exist or update the table if it exists.
+-- dropcreate: Setting this value drops the table if it exists and then creates it.
+-- none: Setting this value does not change anything in the database schema.</li>
+<li>dialect: Specifies the dialect.Lucee supports the following dialects: [Cache 2007.1, Cache71, Cache 2007.1, DB2, DB2/390, DB2/400, DB2390, DB2400, DB2AS400, DB2OS390, DataDirectOracle9, Derby, Firebird, FrontBase, H2, H2DB, HSQL, HSQLDB, Informix, Ingres, Interbase, JDataStore, MSSQL, Mckoi, MckoiSQL, MicrosoftSQLServer, Mimer, MimerSQL, MySQL, MySQL/InnoDB, MySQL/MyISAM, MySQL5, MySQL5/InnoDB, MySQL5InnoDB, MySQLInnoDB, MySQLMyISAM, MySQLwithInnoDB, MySQLwithMyISAM, Oracle, Oracle10g, Oracle8i, Oracle9, Oracle9i, Pointbase, PostgreSQL, PostgresPlus, Progress, SAPDB, SQLServer, Sybase, Sybase11, SybaseASE15, SybaseAnywhere, com.ddtek.jdbc.db2.DB2Driver, com.microsoft.jdbc.sqlserver.SQLServerDriver, oracle.jdbc.driver.OracleDriver, org.firebirdsql.jdbc.FBDriver, org.gjt.mm.mysql.Driver, org.h2.Driver, org.hsqldb.jdbcDriver, org.postgresql.Driver]</li>
+<li>eventHandling(default:false): Specifies whether ORM Event callbacks should be given.</li>
+<li>flushatrequestend(default:true): Specifies whether ormflush should be called automatically at request end. If flushatrequestend is false, ormflush is not called automatically at request end.</li>
+<li>logSQL(default:false): Specifies whether the SQL queries that are executed by ORM will be logged. If LogSQL=true, the SQL queries are logged to the console.</li>
+<li>ormconfig: The Hibernate configuration file. This file contains various configuration parameters like, dialect, cache settings, and mapping files that are required for the application. For more details, see www.hibernate.org/hib_docs/reference/en/html/session-configuration.html. The settings defined in the ormsettings override the settings defined in the Hibernate Configuration XML file.The connection information in the Hibernate Configuration XML file is however ignored because Lucee uses its own connection pool. You will need to use this only when you need to use a hibernate setting that is not available using ormsetting.</li>
+<li>savemapping(default:false): Specifies whether the generated Hibernate mapping file has to be saved to disc. If you set the value to true, the Hibernate mapping XML file is saved with the filename &quot;CFC name&quot;.hbm.xml in the same directory as the CFC. If any value of savemapping is specified in CFC, it will override the value specified in the ormsetting.</li>
+<li>schema: Specifies the default Schema that should be used by ORM.</li>
+<li>secondarycacheenabled(default:false): Specifies whether secondary caching should be enabled</li>
+<li>skipCFCWithError(default:false;not implemented yet): Lets you specify if Lucee must skip the CFCs that have errors. If set to true, Lucee ignores the CFCs that have errors.</li>
+<li>sqlscript: Path to the SQL script file that gets executed after ORM is initialized. This applies if dbcreate is set to dropcreate. This must be the absolute file path or the path relative to the application.The SQL script file lets you populate the tables before the application is accessed.</li>
+<li>useDBForMapping(default:true): Specifies whether the database has to be inspected to identify the missing information required to generate the Hibernate mapping. The database is inspected to get the column data type, primary key and foreign key information.</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -520,7 +590,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/s3.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A struct that defines default S3 settings, this settings can be overwritten as part of the S3 file path, the following keys are supported: - accessKeyId: S3 access key id - awsSecretKey: AWS (Amazon Web Service) Secret Key - defaultLocation(default:us): region for the bucket, possible values are [eu,us,us-west] - host(default:"s3.amazonaws.com"): hostname of the service</p>
+								<p>A struct that defines default S3 settings, this settings can be overwritten as part of the S3 file path, the following keys are supported:</p>
+<ul>
+<li>accessKeyId: S3 access key id</li>
+<li>awsSecretKey: AWS (Amazon Web Service) Secret Key</li>
+<li>defaultLocation(default:us): region for the bucket, possible values are [eu,us,us-west]</li>
+<li>host(default:&quot;s3.amazonaws.com&quot;): hostname of the service</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -531,7 +607,12 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/triggerDataMember.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>If there is no accessible data member (property, element of the this scope) inside a component,  Lucee searches for available matching &quot;getters&quot; or &quot;setters&quot; for the requested property.  The following example should clarify this behaviour.  &quot;somevar = myComponent.properyName&quot;.  If &quot;myComponent&quot; has no accessible data member named &quot;propertyName&quot;,  Lucee searches for a function member (method) named &quot;getPropertyName&quot;.</p>
+								<p>If there is no accessible data member (property, element of the this scope) inside a component,
+Lucee searches for available matching &quot;getters&quot; or &quot;setters&quot; for the requested property.
+The following example should clarify this behaviour.
+&quot;somevar = myComponent.properyName&quot;.
+If &quot;myComponent&quot; has no accessible data member named &quot;propertyName&quot;,
+Lucee searches for a function member (method) named &quot;getPropertyName&quot;.</p>
 							</td>
 						</tr>
 					
@@ -630,7 +711,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/locale.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Sets the country/language locale for CFML processing. The locale value  determines the default format of date, time, number, and  currency values, according to language and regional  conventions.</p>
+								<p>Sets the country/language locale for CFML processing. The locale value
+determines the default format of date, time, number, and
+currency values, according to language and regional
+conventions.</p>
 							</td>
 						</tr>
 					
@@ -674,7 +758,12 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/scopecascading.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Depending on this setting Lucee scans certain scopes to find a variable called from the CFML source. This will only happen, when the variable is called without a scope. (Example: #myVar# instead of #variables.myVar#), the following values are supported: - strict: scans only the variables scope - small: scans the scopes variables,url,form - standard: scans the scopes variables,cgi,url,form,cookie</p>
+								<p>Depending on this setting Lucee scans certain scopes to find a variable called from the CFML source. This will only happen, when the variable is called without a scope. (Example: #myVar# instead of #variables.myVar#), the following values are supported:</p>
+<ul>
+<li>strict: scans only the variables scope</li>
+<li>small: scans the scopes variables,url,form</li>
+<li>standard: scans the scopes variables,cgi,url,form,cookie</li>
+</ul>
 							</td>
 						</tr>
 					

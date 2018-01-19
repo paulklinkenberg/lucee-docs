@@ -570,7 +570,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The name query. Must begin with a letter and may consist of letters, numbers, and the underscore  character, spaces are not allowed. The query name is used later in the page to reference the query's  record set.</p>
+								<p>The name query. Must begin with a letter and may consist of letters, numbers, and the underscore
+character, spaces are not allowed. The query name is used later in the page to reference the query's
+record set.</p>
 							</td>
 						</tr>
 					
@@ -581,7 +583,14 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/result.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies a name for the structure in which cfquery returns  the result variables.  - SQL: The SQL statement that was executed. (string)  - Cached: If the query was cached. (boolean)  - SqlParameters: An ordered Array of cfqueryparam values. (array)  - RecordCount: Total number of records in the query. (numeric)  - ColumnList: Column list, comma separated. (numeric)  - ExecutionTime: Execution time for the SQL request. (numeric)</p>
+								<p>Specifies a name for the structure in which cfquery returns
+the result variables.
+- SQL: The SQL statement that was executed. (string)
+- Cached: If the query was cached. (boolean)
+- SqlParameters: An ordered Array of cfqueryparam values. (array)
+- RecordCount: Total number of records in the query. (numeric)
+- ColumnList: Column list, comma separated. (numeric)
+- ExecutionTime: Execution time for the SQL request. (numeric)</p>
 							</td>
 						</tr>
 					
@@ -603,7 +612,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/dbType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>support the following values:  - query: for doing a query on a existing query object  - hql: for doing a query on orm</p>
+								<p>support the following values:
+- query: for doing a query on a existing query object
+- hql: for doing a query on orm</p>
 							</td>
 						</tr>
 					
@@ -680,7 +691,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/blockFactor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the maximum number of rows to fetch at a time from the server. The range is 1,  default to 100. This parameter applies to ORACLE native database drivers and to ODBC drivers.  Certain ODBC drivers may dynamically reduce the block factor at runtime.</p>
+								<p>Specifies the maximum number of rows to fetch at a time from the server. The range is 1,
+default to 100. This parameter applies to ORACLE native database drivers and to ODBC drivers.
+Certain ODBC drivers may dynamically reduce the block factor at runtime.</p>
 							</td>
 						</tr>
 					
@@ -691,7 +704,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The maximum number of milliseconds for the query to execute before returning an error  indicating that the query has timed-out. This attribute is not supported by most ODBC drivers.  timeout is supported by the SQL Server 6.x or above driver. The minimum and maximum allowable values  vary, depending on the driver.</p>
+								<p>The maximum number of milliseconds for the query to execute before returning an error
+indicating that the query has timed-out. This attribute is not supported by most ODBC drivers.
+timeout is supported by the SQL Server 6.x or above driver. The minimum and maximum allowable values
+vary, depending on the driver.</p>
 							</td>
 						</tr>
 					
@@ -713,7 +729,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/cachedWithin.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>possible values are: String "request": If original query was created within the current request, cached query data isused. a timespan (created with function CreateTimeSpan): If original query date falls within the time span, cached query data isused.</p><p>To use cached data, the current query must use the same SQL statement, data source, query name, user name, and password.</p>
+								<p>possible values are:
+String &quot;request&quot;: If original query was created within the current request, cached query data isused.
+a timespan (created with function CreateTimeSpan): If original query date falls within the time span, cached query data isused.</p>
+<p>To use cached data, the current query must use the same SQL statement, data source, query name, user name, and password.</p>
 							</td>
 						</tr>
 					
@@ -746,7 +765,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/debug.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Used for debugging queries. Specifying this attribute causes the SQL statement submitted to the  data source and the number of records returned from the query to be returned.</p>
+								<p>Used for debugging queries. Specifying this attribute causes the SQL statement submitted to the
+data source and the number of records returned from the query to be returned.</p>
 							</td>
 						</tr>
 					
@@ -801,7 +821,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/returntype.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>one of the following values:  - query: default for all dbtype expect "hql", returns a query object  - array_of_entity: works only with dbtype "hql" and is also the default value for dbtype "hql"</p>
+								<p>one of the following values:
+- query: default for all dbtype expect &quot;hql&quot;, returns a query object
+- array_of_entity: works only with dbtype &quot;hql&quot; and is also the default value for dbtype &quot;hql&quot;</p>
 							</td>
 						</tr>
 					
@@ -823,7 +845,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/lazy.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>if "lazy" is set to true (default "false") Lucee does not initially load all the data from the datasource,  in that case the data are only loaded when requested, so this means the data are depending on the datasource connection.  if the datasource connection is gone and the data are not requested yet, lucee throws a error if you try to access the data.  lazy is only working when the following attributes are not used: cachewithin,cacheafter,result</p>
+								<p>if &quot;lazy&quot; is set to true (default &quot;false&quot;) Lucee does not initially load all the data from the datasource,
+in that case the data are only loaded when requested, so this means the data are depending on the datasource connection.
+if the datasource connection is gone and the data are not requested yet, lucee throws a error if you try to access the data.
+lazy is only working when the following attributes are not used: cachewithin,cacheafter,result</p>
 							</td>
 						</tr>
 					

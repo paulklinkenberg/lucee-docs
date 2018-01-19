@@ -64,35 +64,65 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/01.application-context-basic/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Application.cfc</h1><p>The Application.cfc is a component you put in your web application that then is picked up by Lucee as part of the request. The Application.cfc is used to define context specific configurations/settings and event driven functions. Your website can have multiple Application.cfc files, every single file then defines a independent application context.</p><p>Let's say you have a website that has a shop under the path "/shop" that needs users sessions, but the rest of the website does not. In that case you could define a Application.cfc at "/shop" that has session handling enabled and one in the webroot that has not.</p><h2>Location, Location, Location</h2><p>With the default setting Lucee is always picking the "nearest" Application.cfc, so it is searching from the current location down to the webroot. This is only one possible behavior of many, Lucee gives you the possibility in the Lucee Administartor under "Settings / Request" to decide where Lucee looks for the Application.cfc and if it looks at all.</p><p><img src="https://bitbucket.org/repo/rX87Rq/images/3223743265-APP-SEARCH-MODE.png" alt="search mode" /></p><p>So if you for example only have one Application.cfc in the webroot, define "Root" as setting.</p><h2>Functions</h2><p>The Application.cfc is supporting multiple event driven functions, what does this means? You can define functions inside the Application.cfc that are called when certain events are happening, this way you can participate with this events.</p><h3>OnApplicationStart</h3><p>This function is triggered when no application context is existing for this Application.cfc, so normally with the first request on this application context.</p>
+	<h1>Application.cfc</h1>
+<p>The Application.cfc is a component you put in your web application that then is picked up by Lucee as part of the request.
+The Application.cfc is used to define context specific configurations/settings and event driven functions.
+Your website can have multiple Application.cfc files, every single file then defines a independent application context.</p>
+<p>Let's say you have a website that has a shop under the path &quot;/shop&quot; that needs users sessions, but the rest of the website does not.
+In that case you could define a Application.cfc at &quot;/shop&quot; that has session handling enabled and one in the webroot that has not.</p>
+<h2>Location, Location, Location</h2>
+<p>With the default setting Lucee is always picking the &quot;nearest&quot; Application.cfc, so it is searching from the current location down to the webroot.
+This is only one possible behavior of many, Lucee gives you the possibility in the Lucee Administartor under &quot;Settings / Request&quot; to decide where Lucee looks for the Application.cfc and if it looks at all.</p>
+<p><img src="https://bitbucket.org/repo/rX87Rq/images/3223743265-APP-SEARCH-MODE.png" alt="search mode" /></p>
+<p>So if you for example only have one Application.cfc in the webroot, define &quot;Root&quot; as setting.</p>
+<h2>Functions</h2>
+<p>The Application.cfc is supporting multiple event driven functions, what does this means?
+You can define functions inside the Application.cfc that are called when certain events are happening, this way you can participate with this events.</p>
+<h3>OnApplicationStart</h3>
+<p>This function is triggered when no application context is existing for this Application.cfc, so normally with the first request on this application context.</p>
 <div class="highlight"><pre>#!javascript
 component {
    boolean function onApplicationStart() {
       application.whatever=new Whatever(); // init whatever
    }
 }
-</pre></div><p>This is normally used to initialize the environment for your application, so for example load data/objects and store them in the application scope. if the the function is returning false or throws a exception the application context is not initialized and the next request will call "onApplicationStart" again. "onApplicationStart" is thread safe.</p><h3>OnApplicationEnd</h3><p>The opposite from "onApplicationStart", this function is triggered when the application context ends, means when the timeout of the application context is reached (this.applicationTimeout).</p>
+</pre></div>
+<p>This is normally used to initialize the environment for your application, so for example load data/objects and store them in the application scope.
+if the the function is returning false or throws a exception the application context is not initialized and the next request will call &quot;onApplicationStart&quot; again. &quot;onApplicationStart&quot; is thread safe.</p>
+<h3>OnApplicationEnd</h3>
+<p>The opposite from &quot;onApplicationStart&quot;, this function is triggered when the application context ends, means when the timeout of the application context is reached (this.applicationTimeout).</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onApplicationEnd(struct application) {
       arguments.application.whatever.finalize();
    }
 }
-</pre></div><p>This is normally used to finalize the environment of your application, so for example unload data/objects. You get the application scope that ends as argument with the function.</p><h3>OnSessionStart</h3><p>This function is triggered with every request that has no session definedin the current application context</p>
+</pre></div>
+<p>This is normally used to finalize the environment of your application, so for example unload data/objects.
+You get the application scope that ends as argument with the function.</p>
+<h3>OnSessionStart</h3>
+<p>This function is triggered with every request that has no session definedin the current application context</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onSessionStart() {
       session.whatever=new Whatever(session.cfid); // init whatever
    }
 }
-</pre></div><p>This is normally used to initialize the environment for a specific session, so for example load data/objects and store them in the session scope.</p><h3>OnSessionEnd</h3><p>The opposite from "onSessionStart", this function is triggered when a specific session context ends, means when the timeout of a session context is reached (this.sessionTimeout).</p>
+</pre></div>
+<p>This is normally used to initialize the environment for a specific session, so for example load data/objects and store them in the session scope.</p>
+<h3>OnSessionEnd</h3>
+<p>The opposite from &quot;onSessionStart&quot;, this function is triggered when a specific session context ends, means when the timeout of a session context is reached (this.sessionTimeout).</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onSessionEnd(struct application,struct session) {
       arguments.session.whatever.finalize();
    }
 }
-</pre></div><p>This is normally used to finalize the environment of your application, so for example unload data/objects.  You get the related application scope and the session scope that ends, as arguments with the function.</p><h3>OnRequestStart</h3><p>This function is triggered before every request, so you can prepare the environment for the request, for example produce the HTML header or loads some data/objects used within the request.</p>
+</pre></div>
+<p>This is normally used to finalize the environment of your application, so for example unload data/objects.
+You get the related application scope and the session scope that ends, as arguments with the function.</p>
+<h3>OnRequestStart</h3>
+<p>This function is triggered before every request, so you can prepare the environment for the request, for example produce the HTML header or loads some data/objects used within the request.</p>
 <div class="highlight"><pre>#!javascript
 component {
    boolean function onRequestStart(string targetPage) {
@@ -101,7 +131,10 @@ component {
        return true;
    }
 }
-</pre></div><p>if the the function is returning false Lucee stops any further execution of this request and return the result to the client.</p><h3>OnRequestEnd</h3><p>This function is triggered after every request, so you can cleanup the environment after the request, for example produce the HTML footer or unload some data/objects used within the request.</p>
+</pre></div>
+<p>if the the function is returning false Lucee stops any further execution of this request and return the result to the client.</p>
+<h3>OnRequestEnd</h3>
+<p>This function is triggered after every request, so you can cleanup the environment after the request, for example produce the HTML footer or unload some data/objects used within the request.</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onRequestEnd(string targetPage) {
@@ -109,35 +142,57 @@ component {
        request.whatever.finalize();
    }
 }
-</pre></div><h3>OnRequest</h3><p>If this function exists, Lucee is only executing this function and no longer looks for the "targetPage" defined with the request. So let's say you have the call "/index.cfm", if there is a "/index.cfm" in the file system or not, does not matter, it is not executed anyway.</p><p><strong>Other CFML Engines will complain when the called target page does not exists physically even it is never used!</strong></p>
+</pre></div>
+<h3>OnRequest</h3>
+<p>If this function exists, Lucee is only executing this function and no longer looks for the &quot;targetPage&quot; defined with the request.
+So let's say you have the call &quot;/index.cfm&quot;, if there is a &quot;/index.cfm&quot; in the file system or not, does not matter, it is not executed anyway.</p>
+<p><strong>Other CFML Engines will complain when the called target page does not exists physically even it is never used!</strong></p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onRequest(string targetPage) {
        echo(&#39;&lt;html&gt;&lt;bod&gt;Hello World&lt;/body&gt;&lt;/html&gt;&#39;);
    }
 }
-</pre></div><h3>OnCFCRequest</h3><p>Similar to "onRequest", but this function is used to handle remote component calls (HTTP Webservices). <div class="highlight"><pre>#!javascript component {  void function onCFCRequest(string cfcName, string methodName, struct args) {  echo(&#39;&lt;html&gt;&lt;bod&gt;Hello World&lt;/body&gt;&lt;/html&gt;&#39;);  } } </pre></div></p><h3>OnError</h3><p>This method is triggered when a uncaught exception occurs in this application context.</p>
+</pre></div>
+<h3>OnCFCRequest</h3>
+<p>Similar to &quot;onRequest&quot;, but this function is used to handle remote component calls (HTTP Webservices).</p>
+<div class="highlight"><pre>#!javascript
+component {
+   void function onCFCRequest(string cfcName, string methodName, struct args) {
+       echo(&#39;&lt;html&gt;&lt;bod&gt;Hello World&lt;/body&gt;&lt;/html&gt;&#39;);
+   }
+}
+</pre></div>
+<h3>OnError</h3>
+<p>This method is triggered when a uncaught exception occurs in this application context.</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onError(struct exception, string eventName) {
        dump(var:exception,label:eventName);
    }
 }
-</pre></div><p>As arguments you get the exception (cfcatch block) and the eventName.</p><h3>OnAbort</h3><p>This method is triggered when a request is ended with help of the tag <cfabort>.</p>
+</pre></div>
+<p>As arguments you get the exception (cfcatch block) and the eventName.</p>
+<h3>OnAbort</h3>
+<p>This method is triggered when a request is ended with help of the tag <cfabort>.</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onAbort(string targetPage) {
        dump(&quot;request &quot;&amp;targetPage&amp;&quot; ended with a abort!&quot;);
    }
 }
-</pre></div><h3>OnDebug</h3><p>This method is triggered when debugging is enabled for this request.</p>
+</pre></div>
+<h3>OnDebug</h3>
+<p>This method is triggered when debugging is enabled for this request.</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onDebug(struct debuggingData) {
        dump(var:debuggingData,label:&quot;debug information&quot;);
    }
 }
-</pre></div><h3>OnMissingTemplate</h3><p>This method is triggered when a requested page was not found and **no function "onRequest" is defined **.</p>
+</pre></div>
+<h3>OnMissingTemplate</h3>
+<p>This method is triggered when a requested page was not found and **no function &quot;onRequest&quot; is defined **.</p>
 <div class="highlight"><pre>#!javascript
 component {
    void function onMissingTemplate(string targetPage) {

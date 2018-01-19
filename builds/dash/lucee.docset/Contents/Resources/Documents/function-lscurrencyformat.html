@@ -104,9 +104,12 @@
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/lscurrencyformat/_arguments/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<ul>
-  <li>local: the currency format and currency symbol used in the locale.</li>
-  <li>international: the international standard currency format and currency symbol of the locale.</li>
-  <li>none: the currency format used in the locale without a currency symbol.</li>
+<li>local: the currency format and currency symbol used in the locale.
+<ul>
+<li>international: the international standard currency format and currency symbol of the locale.</li>
+<li>none: the currency format used in the locale without a currency symbol.</li>
+</ul>
+</li>
 </ul>
 							</td>
 						</tr>
@@ -132,18 +135,16 @@
 		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/lscurrencyformat/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 		<div class="highlight"><pre><span class="nb">&lt;cfscript&gt;</span>
   <span class="nv">amount</span> <span class="o">=</span> <span class="m">100</span><span class="p">;</span>
-  
-  <span class="nv">locale</span> <span class="o">=</span> <span class="s1">&#39;en_US&#39;</span><span class="p">;</span>
-  <span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// $100.00</span>
-  <span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">&#39;international&#39;</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// USD 100.00</span>
-  <span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// 100.00</span>
-  
-  <span class="nv">locale</span> <span class="o">=</span> <span class="s1">&#39;ja_JP&#39;</span><span class="p">;</span>
-  <span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// ￥100</span>
-  <span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">&#39;international&#39;</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// JPY 100</span>
-  <span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// 100</span>
+<p><span class="nv">locale</span> <span class="o">=</span> <span class="s1">'en_US'</span><span class="p">;</span>
+<span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">'local'</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// $100.00</span>
+<span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">'international'</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// USD 100.00</span>
+<span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// 100.00</span></p>
+<p><span class="nv">locale</span> <span class="o">=</span> <span class="s1">'ja_JP'</span><span class="p">;</span>
+<span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">'local'</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// ￥100</span>
+<span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">'international'</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// JPY 100</span>
+<span class="nf">LSCurrencyFormat</span><span class="p">(</span> <span class="nv">amount</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="nv">locale</span> <span class="p">);</span> <span class="c">// 100</span>
 <span class="nb">&lt;/cfscript&gt;</span>
-</pre></div>
+</pre></div></p>
 							<h2>See also</h2>
 		<ul class="list-unstyled">
 			

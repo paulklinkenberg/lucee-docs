@@ -64,13 +64,80 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/08.filesystem-mapping-define-mapping/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>How to define a regular Mapping</h1><p>Lucee allows you to define a mappings to a specific location in a filesystem, so you don't always have to use the full path, in most cases the full path is not working anyway, for example with <cfinclude> does not work with a full path. This is supported with all filesystems Lucee supports (local,ftp,http,ram,zip,s3 ...).</p><h2>Create a regular Mapping in the Administrator</h2><p>The most common way is to define a regular Mapping is in the Lucee Server or Web Administrator. The only difference between the Web and Server Administrator is, that a mapping defined in the Server Administrator is visible to all web contexts and a mapping defined in the Web Administrator only to the current web context. In your Administrator go to the Page "Archives &amp; Resources/Mappings", in the section "create new Mapping" that looks like this.</p><p><img src="https://bitbucket.org/repo/rX87Rq/images/4035761629-create-mapping.png" alt="create-mapping.png" /></p><p>With "Virtual" choose the virtual path for the mapping, this is the path you will later use to address this mapping.</p><p>"Resource" is the physical location where the mapping is pointing to, for example "C:\Projects\whatever\test".</p><p>With "Archive" you can map a Lucee archive (more below) to the mapping.</p><p>"Primary" defines where a template is searched first, let's say you have set primary to "archive" and you execute the following code <div class="highlight"><pre>#!html &lt;cfinclude template=&quot;/myMapping/test.cfm&quot;&gt; </pre></div></p><p>in that case Lucee is first checking the archive associated with the "/myMapping" mapping for "test.cfm", if the template is not found it there, Lucee also checks the physical location.</p><p>"Inspect templates" defines the rule for Lucee when and if to check changes in source templates and if necessary recompile them.</p>
+	<h1>How to define a regular Mapping</h1>
+<p>Lucee allows you to define a mappings to a specific location in a filesystem, so you don't always have to use the full path, in most cases the full path is not working anyway, for example with <cfinclude> does not work with a full path.
+This is supported with all filesystems Lucee supports (local,ftp,http,ram,zip,s3 ...).</p>
+<h2>Create a regular Mapping in the Administrator</h2>
+<p>The most common way is to define a regular Mapping is in the Lucee Server or Web Administrator.
+The only difference between the Web and Server Administrator is, that a mapping defined in the Server Administrator is visible to all web contexts and a mapping defined in the Web Administrator only to the current web context.
+In your Administrator go to the Page &quot;Archives &amp; Resources/Mappings&quot;, in the section &quot;create new Mapping&quot; that looks like this.</p>
+<p><img src="https://bitbucket.org/repo/rX87Rq/images/4035761629-create-mapping.png" alt="create-mapping.png" /></p>
+<p>With &quot;Virtual&quot; choose the virtual path for the mapping, this is the path you will later use to address this mapping.</p>
+<p>&quot;Resource&quot; is the physical location where the mapping is pointing to, for example &quot;C:\Projects\whatever\test&quot;.</p>
+<p>With &quot;Archive&quot; you can map a Lucee archive (more below) to the mapping.</p>
+<p>&quot;Primary&quot; defines where a template is searched first, let's say you have set primary to &quot;archive&quot; and you execute the following code</p>
+<div class="highlight"><pre>#!html
+&lt;cfinclude template=&quot;/myMapping/test.cfm&quot;&gt;
+</pre></div>
+<p>in that case Lucee is first checking the archive associated with the &quot;/myMapping&quot; mapping for &quot;test.cfm&quot;, if the template is not found it there, Lucee also checks the physical location.</p>
+<p>&quot;Inspect templates&quot; defines the rule for Lucee when and if to check changes in source templates and if necessary recompile them.</p>
 <ul>
-  <li>never - once the template is compiled and loaded Lucee never check for changes as long the template is not unloaded (restart server)</li>
-  <li>once - Lucee only checks with the first access within a request if the template has changed</li>
-  <li>always - Lucee checks with every access to the file if the file has changed</li>
-  <li>inherit - The mapping has no setting at all, it inherits the "inspect templates" setting made in "Settings - Performance/Caching"</li>
-</ul><p>"Web accessible" defines if you can call the mapping directly from the browser or not, "/lucee" for example is a web accessible mapping, because of that you can call it in the browser as follows "/lucee/admin.cfm".</p><h3>Compile the CFML Code inside a mapping</h3><p>In the detail view of a single mapping you can compile all cfm and cfc files in that mapping to test if they are syntactically correct. With the flag "stop on error" you can define if the process should stop if the compiler fails.</p><p><img src="https://bitbucket.org/repo/rX87Rq/images/362153996-compile.png" alt="compile.png" /></p><h3>Create a archive from a mapping</h3><p>In the detail view of a single mapping you can create a archive that contains all templates of the mapping in compiled form. With the flag "Add CFML Templates" you can define if Lucee should add the source version of the templates as well, this make sense when you need a proper error output in case of a exception (source code output) or you need to read the content of this files for example with <cffile>. With the flag "Add Non CFML Templates" you can define if Lucee should add all non CFML files (png,js,gif,css ...) as well, this make sense when you need to read the content of this files for example with <cffile>.</p><p><img src="https://bitbucket.org/repo/rX87Rq/images/2720116188-create-archive.png" alt="create-archive.png" /></p><p>By clicking the button "download archive" you create the archive and then you can download it directly, with the button "assign archive to mapping" you can create the mapping and directly add to the current mapping.</p><h2>Create a Mapping in the Application.cfc</h2><p>Lucee allows to create mappings in your Application.cfc, this mappings are only valid for the current request. <div class="highlight"><pre>#!javascript // Application.cfc component {  this.mappings[&#39;/shop&#39;]=getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop&quot;; } </pre></div></p><p>We define the mappings as a struct, where the key of the struct is the virtual path.</p><p>Now you can simply use that mapping in your code <div class="highlight"><pre>#!html  &lt;cfinclude template=&quot;/shop/whatever.cfm&quot;&gt; &lt;!--- load a template from the &quot;shop&quot; mapping ---&gt;  &lt;cfset cfc=new shop.Whatever()&gt;&lt;!--- load a CFC from the &quot;shop&quot; mapping (see also &quot;this.componentpaths&quot; for handling components) ---&gt; </pre></div></p><h2>Advanced</h2><p>In the previous example we have simply set a path, like you can see in the Administrator, a mapping can contain more data than only a physical path, of course you can use this settings also with a mapping done in the Application.cfc. <div class="highlight"><pre>#!javascript // Application.cfc component {  this.mappings[&#39;/shop&#39;]={  physical:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop&quot;,  archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop.lar&quot;,  primary:&quot;archive&quot;  }; } </pre></div></p><p>In that case we not only define a physical path, we also define a Lucee archive (.lar). "primary" defines where Lucee is checking first for a resource, let's say you have the following code <div class="highlight"><pre>#!html  &lt;cfinclude template=&quot;/shop/whatever.cfm&quot;&gt; </pre></div></p><p>In that case Lucee first checks in the archive for "whatever.cfm" , if not found there, it looks inside the physical path.</p><h3>Site Note</h3><p>Of course this can be done for all mapping types <div class="highlight"><pre>#!javascript // Application.cfc component {  this.componentpaths=[{archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;testbox.lar&quot;}];// loading testbox from a archive  this.customtagpaths=[{archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;helper.lar&quot;}];// a collection of helper custom tags</p><p>}; } </pre></div></p>
+<li>never - once the template is compiled and loaded Lucee never check for changes as long the template is not unloaded (restart server)</li>
+<li>once - Lucee only checks with the first access within a request if the template has changed</li>
+<li>always - Lucee checks with every access to the file if the file has changed</li>
+<li>inherit - The mapping has no setting at all, it inherits the &quot;inspect templates&quot; setting made in &quot;Settings - Performance/Caching&quot;</li>
+</ul>
+<p>&quot;Web accessible&quot; defines if you can call the mapping directly from the browser or not, &quot;/lucee&quot; for example is a web accessible mapping, because of that you can call it in the browser as follows &quot;/lucee/admin.cfm&quot;.</p>
+<h3>Compile the CFML Code inside a mapping</h3>
+<p>In the detail view of a single mapping you can compile all cfm and cfc files in that mapping to test if they are syntactically correct. With the flag &quot;stop on error&quot; you can define if the process should stop if the compiler fails.</p>
+<p><img src="https://bitbucket.org/repo/rX87Rq/images/362153996-compile.png" alt="compile.png" /></p>
+<h3>Create a archive from a mapping</h3>
+<p>In the detail view of a single mapping you can create a archive that contains all templates of the mapping in compiled form.
+With the flag &quot;Add CFML Templates&quot; you can define if Lucee should add the source version of the templates as well, this make sense when you need a proper error output in case of a exception (source code output) or you need to read the content of this files for example with <cffile>.
+With the flag &quot;Add Non CFML Templates&quot;  you can define if Lucee should add all non CFML files (png,js,gif,css ...) as well, this make sense when you need to read the content of this files for example with <cffile>.</p>
+<p><img src="https://bitbucket.org/repo/rX87Rq/images/2720116188-create-archive.png" alt="create-archive.png" /></p>
+<p>By clicking the button &quot;download archive&quot; you create the archive and then you can download it directly, with the button &quot;assign archive to mapping&quot; you can create the mapping and directly add to the current mapping.</p>
+<h2>Create a Mapping in the Application.cfc</h2>
+<p>Lucee allows to create mappings in your Application.cfc, this mappings are only valid for the current request.</p>
+<div class="highlight"><pre>#!javascript
+// Application.cfc
+component {
+    this.mappings[&#39;/shop&#39;]=getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop&quot;;
+}
+</pre></div>
+<p>We define the mappings as a struct, where the key of the struct is the virtual path.</p>
+<p>Now you can simply use that mapping in your code</p>
+<div class="highlight"><pre>#!html
+   &lt;cfinclude template=&quot;/shop/whatever.cfm&quot;&gt; &lt;!--- load a template from the &quot;shop&quot; mapping ---&gt;
+   &lt;cfset cfc=new shop.Whatever()&gt;&lt;!--- load a CFC from the &quot;shop&quot; mapping (see also &quot;this.componentpaths&quot; for handling components)  ---&gt;
+</pre></div>
+<h2>Advanced</h2>
+<p>In the previous example we have simply set a path, like you can see in the Administrator, a mapping can contain more data than only a physical path, of course you can use this settings also with a mapping done in the Application.cfc.</p>
+<div class="highlight"><pre>#!javascript
+// Application.cfc
+component {
+   this.mappings[&#39;/shop&#39;]={
+      physical:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop&quot;,
+      archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;shop.lar&quot;,
+      primary:&quot;archive&quot;
+   };
+}
+</pre></div>
+<p>In that case we not only define a physical path, we also define a Lucee archive (.lar). &quot;primary&quot; defines where Lucee is checking first for a resource, let's say you have the following code</p>
+<div class="highlight"><pre>#!html
+   &lt;cfinclude template=&quot;/shop/whatever.cfm&quot;&gt;
+</pre></div>
+<p>In that case Lucee first checks in the archive for &quot;whatever.cfm&quot; , if not found there, it looks inside the physical path.</p>
+<h3>Site Note</h3>
+<p>Of course this can be done for all mapping types</p>
+<div class="highlight"><pre>#!javascript
+// Application.cfc
+component {
+   this.componentpaths=[{archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;testbox.lar&quot;}];// loading testbox from a archive
+   this.customtagpaths=[{archive:getDirectoryFromPath(getCurrentTemplatePath())&amp;&quot;helper.lar&quot;}];// a collection of helper custom tags
+<p>};
+}
+</pre></div></p>
 							
 						</div>
 					</div>

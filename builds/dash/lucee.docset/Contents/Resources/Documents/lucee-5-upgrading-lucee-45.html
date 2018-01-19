@@ -64,14 +64,17 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/15.upgrading-lucee-45/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Upgrade from Lucee 4.5</h1>
+	<p>#Upgrade from Lucee 4.5#</p>
 <ol>
-  <li>Stop the servlet engine</li>
-  <li>Go to the Lucee website to the <a href="http://lucee.org/downloads.html">download page</a>, download "Custom/JARs" and unzip the downloaded zip file somewhere on your system.</li>
-  <li>Add lucee.jar and org-apache-felix-main-x-x-x.jar (x-x-x stands for a specific version) to "/lib/etc" from the download and remove all other jars in that directory, but do not remove the directory "lucee-server" if that directory is present there, which is the case with default installations.</li>
-  <li>If you have not defined a "railo-server-directory" in your servlet specification, add the rest of the jars you have downloaded to "{servlet-engine}/lucee-server/bundles/" (you will need to create these folders). If you have defined a "railo-server-directory" with your servlet specification copy the jars to "{your-path}/bundles"</li>
-  <li>Start the servlet engine</li>
-</ol><p><strong>Important information!</strong> With Lucee 5 the JARs used by Lucee (except lucee.jar and org-apache-felix-main-x-x-x.jar) are handled by Lucee and no longer by the servlet engine. It is therefore important that the servlet engine does not load the jars you added in point #4. Therefore they should not be in the servlet engines classpath, for example not inside the lib folder.</p>
+<li>Stop the servlet engine</li>
+<li>Go to the Lucee website to the <a href="http://lucee.org/downloads.html">download page</a>, download &quot;Custom/JARs&quot; and unzip the downloaded zip file somewhere on your system.</li>
+<li>Add lucee.jar and org-apache-felix-main-x-x-x.jar (x-x-x stands for a specific version) to &quot;/lib/etc&quot; from the download and remove all other jars in that directory, but do not remove the directory &quot;lucee-server&quot; if that directory is present there, which is the case with default installations.</li>
+<li>If you have not defined a &quot;railo-server-directory&quot; in your servlet specification, add the rest of the jars you have downloaded to &quot;{servlet-engine}/lucee-server/bundles/&quot; (you will need to create these folders). If you have defined a &quot;railo-server-directory&quot; with your servlet specification copy the jars to &quot;{your-path}/bundles&quot;</li>
+<li>Start the servlet engine</li>
+</ol>
+<p><strong>Important information!</strong>
+With Lucee 5 the JARs used by Lucee (except lucee.jar and org-apache-felix-main-x-x-x.jar) are handled by Lucee and no longer by the servlet engine. It is therefore important that the servlet engine does not load the jars you added in point #4.
+Therefore they should not be in the servlet engines classpath, for example not inside the lib folder.</p>
 							
 						</div>
 					</div>

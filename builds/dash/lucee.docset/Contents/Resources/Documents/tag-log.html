@@ -138,7 +138,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/log/_attributes/log.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>If you omit the file attribute, specifies the log in which to write the message.  this references can be defined in the Lucee Administrator.  Ignored if you specify a file attribute.</p>
+								<p>If you omit the file attribute, specifies the log in which to write the message.
+this references can be defined in the Lucee Administrator.
+Ignored if you specify a file attribute.</p>
 							</td>
 						</tr>
 					
@@ -149,7 +151,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/log/_attributes/file.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Define instead a log reference in the Lucee Administrator and use the name of the genrated log with the attribute log.  Specify only the main part of the filename.  For example, to log to the Testing.log file, specify  "Testing".  The file must be located in the default log directory. You  cannot specify a directory path. If the file does not  exist, it is created automatically, with the suffix .log.</p>
+								<p>Define instead a log reference in the Lucee Administrator and use the name of the genrated log with the attribute log.
+Specify only the main part of the filename.
+For example, to log to the Testing.log file, specify
+&quot;Testing&quot;.
+The file must be located in the default log directory. You
+cannot specify a directory path. If the file does not
+exist, it is created automatically, with the suffix .log.</p>
 							</td>
 						</tr>
 					
@@ -160,7 +168,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/log/_attributes/async.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>only works in combination with the attribute "file", if set to true the file is written in a separate thread.</p>
+								<p>only works in combination with the attribute &quot;file&quot;, if set to true the file is written in a separate thread.</p>
 							</td>
 						</tr>
 					
@@ -171,7 +179,15 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/log/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>the following is the log type (level) in decreasing order of severity: - fatal: Severe errors that cause premature termination. - error: Other runtime errors or unexpected conditions. - warn,warning: Use of deprecated APIs, poor use of API, 'almost' errors, other runtime situations that are undesirable or unexpected, but not necessarily "wrong". - info,information (default): Interesting runtime events. - debug: Detailed information on the flow through the system. - trace:Most detailed information.</p>
+								<p>the following is the log type (level) in decreasing order of severity:</p>
+<ul>
+<li>fatal: Severe errors that cause premature termination.</li>
+<li>error: Other runtime errors or unexpected conditions.</li>
+<li>warn,warning: Use of deprecated APIs, poor use of API, 'almost' errors, other runtime situations that are undesirable or unexpected, but not necessarily &quot;wrong&quot;.</li>
+<li>info,information (default): Interesting runtime events.</li>
+<li>debug: Detailed information on the flow through the system.</li>
+<li>trace:Most detailed information.</li>
+</ul>
 							</td>
 						</tr>
 					

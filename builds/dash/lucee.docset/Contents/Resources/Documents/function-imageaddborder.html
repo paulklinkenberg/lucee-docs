@@ -114,7 +114,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/_arguments/color.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Optional. Border color. The default border color is black. See Usage. Only valid if the borderType is not specified or if borderType = "constant".</p>
+								<p>Optional. Border color. The default border color is black. See Usage.
+Only valid if the borderType is not specified or if borderType = &quot;constant&quot;.</p>
 							</td>
 						</tr>
 					
@@ -125,7 +126,14 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/imageaddborder/_arguments/borderType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The type of border: - zero: Sets the border color to black. - constant: Sets the border to the specified color (default). - copy: Sets sample values to copies of the nearest valid pixel. For example, pixels to the left of the valid rectangle assume the value of the valid edge pixel in the same row. Pixels both above and to the left of the valid rectangle assume the value of the upper-left pixel. - reflect: Mirrors the edges of the source image. For example, if the left edge of the valid rectangle is located at x = 10, pixel (9, y) is a copy of pixel (10, y) and pixel (6, y) is a copy of pixel (13, y). - wrap: Tiles the source image in the plane.</p>
+								<p>The type of border:</p>
+<ul>
+<li>zero: Sets the border color to black.</li>
+<li>constant: Sets the border to the specified color (default).</li>
+<li>copy: Sets sample values to copies of the nearest valid pixel. For example, pixels to the left of the valid rectangle assume the value of the valid edge pixel in the same row. Pixels both above and to the left of the valid rectangle assume the value of the upper-left pixel.</li>
+<li>reflect: Mirrors the edges of the source image. For example, if the left edge of the valid rectangle is located at x = 10, pixel (9, y) is a copy of pixel (10, y) and pixel (6, y) is a copy of pixel (13, y).</li>
+<li>wrap: Tiles the source image in the plane.</li>
+</ul>
 							</td>
 						</tr>
 					

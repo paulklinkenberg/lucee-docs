@@ -552,7 +552,11 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/decrypt/_arguments/key.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Key or seed used to encrypt the string. - For the CFMX_COMPAT algorithm, any combination of any number of characters; used as a seed used to generate a 32-bit encryption key. - For all other algorithms, a key in the format used by the algorithm. For these algorithms, use the GenerateSecretKey function to generate the key.</p>
+								<p>Key or seed used to encrypt the string.</p>
+<ul>
+<li>For the CFMX_COMPAT algorithm, any combination of any number of characters; used as a seed used to generate a 32-bit encryption key.</li>
+<li>For all other algorithms, a key in the format used by the algorithm. For these algorithms, use the GenerateSecretKey function to generate the key.</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -563,7 +567,15 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/decrypt/_arguments/algorithm.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The algorithm to use to decrypt the string. Must be the same as the algorithm used to encrypt the string. - CFMX_COMPAT(default): the CFML specific algorithm. This algorithm is the least secure option - AES: the Advanced Encryption Standard specified by the National Institute of Standards and Technology (NIST) FIPS-197 - BLOWFISH: the Blowfish algorithm defined by Bruce Schneier - DES: the Data Encryption Standard algorithm defined by NIST FIPS-46-3 - DESEDE: the "Triple DES" algorithm defined by NIST FIPS-46-3 You may also specify other algorithm names as well as the feedback mode and padding scheme where applicable (in the format algorithm/mode/padding) as documented in the Java Cryptography Architecture (JCA) Reference Guide.</p>
+								<p>The algorithm to use to decrypt the string. Must be the same as the algorithm used to encrypt the string.</p>
+<ul>
+<li>CFMX_COMPAT(default): the CFML specific algorithm. This algorithm is the least secure option</li>
+<li>AES: the Advanced Encryption Standard specified by the National Institute of Standards and Technology (NIST) FIPS-197</li>
+<li>BLOWFISH: the Blowfish algorithm defined by Bruce Schneier</li>
+<li>DES: the Data Encryption Standard algorithm defined by NIST FIPS-46-3</li>
+<li>DESEDE: the &quot;Triple DES&quot; algorithm defined by NIST FIPS-46-3
+You may also specify other algorithm names as well as the feedback mode and padding scheme where applicable (in the format algorithm/mode/padding) as documented in the Java Cryptography Architecture (JCA) Reference Guide.</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -574,7 +586,12 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/decrypt/_arguments/encoding.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The binary encoding used to represent the data as a string. Must be the same as the algorithm used to encrypt the string. - Base64: the Base64 algorithm, as specified by IETF RFC 2045 - Hex: the characters A-F and 0-9 represent the hexadecimal byte values - UU(default): the UNIX standard UUEncode algorithm</p>
+								<p>The binary encoding used to represent the data as a string. Must be the same as the algorithm used to encrypt the string.</p>
+<ul>
+<li>Base64: the Base64 algorithm, as specified by IETF RFC 2045</li>
+<li>Hex: the characters A-F and 0-9 represent the hexadecimal byte values</li>
+<li>UU(default): the UNIX standard UUEncode algorithm</li>
+</ul>
 							</td>
 						</tr>
 					

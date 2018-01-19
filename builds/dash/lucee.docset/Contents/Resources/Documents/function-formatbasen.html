@@ -120,7 +120,9 @@
   <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="m">15</span><span class="p">,</span> <span class="m">16</span> <span class="p">)#</span> <span class="cm">&lt;!--- f (hexadecimal) ---&gt;</span>
   <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="m">15</span><span class="p">,</span> <span class="m">8</span>  <span class="p">)#</span> <span class="cm">&lt;!--- 17 (octal) ---&gt;</span>
 <span class="nb">&lt;/cfoutput&gt;</span>
-</pre></div><h3>Max value limitation</h3><p>Please note that the value to convert is limited to a maximum equal to <code>java.lang.Integer.MAX_VALUE</code>. Values greater than this will produce unexpected results. i.e.</p>
+</pre></div>
+<h3>Max value limitation</h3>
+<p>Please note that the value to convert is limited to a maximum equal to <code>java.lang.Integer.MAX_VALUE</code>. Values greater than this will produce unexpected results. i.e.</p>
 <div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">max</span> <span class="o">=</span> <span class="nf">CreateObject</span><span class="p">(</span> <span class="s2">&quot;java&quot;</span><span class="p">,</span> <span class="s2">&quot;java.lang.Integer&quot;</span> <span class="p">).</span><span class="nv">MAX_VALUE</span> <span class="nb">&gt;</span>
 <span class="nb">&lt;cfoutput&gt;</span>
   <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="nv">max</span>  <span class="p">,</span> <span class="m">16</span> <span class="p">)#</span> <span class="cm">&lt;!---  7fffffff (correct) ---&gt;</span>

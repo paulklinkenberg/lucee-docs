@@ -513,14 +513,28 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/06.docs/01.content/01.structure/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>All of the source files for this documentation can be found in the <code>/docs</code> folder of the public repository; i.e. <a href="https://github.com/lucee/lucee-docs/tree/master/docs">https://github.com/lucee/lucee-docs/tree/master/docs</a>.</p><p>The content is organised by a very simple system of folders and markdown files.</p><h2>Folders</h2><p>Folders containing a single markdown file represent a page of documentation. Subfolders are used to place pages beneath other pages to form a documentation tree. </p><p>Special folder naming rules:</p>
+	<p>All of the source files for this documentation can be found in the <code>/docs</code> folder of the public repository; i.e. <a href="https://github.com/lucee/lucee-docs/tree/master/docs">https://github.com/lucee/lucee-docs/tree/master/docs</a>.</p>
+<p>The content is organised by a very simple system of folders and markdown files.</p>
+<h2>Folders</h2>
+<p>Folders containing a single markdown file represent a page of documentation. Subfolders are used to place pages beneath other pages to form a documentation tree.</p>
+<p>Special folder naming rules:</p>
 <ul>
-  <li><p>Folders who's name begin with a number followed by a period are treated as pages that will appear in main navigation - the number indicating the relative order in which the page should appear</p></li>
-  <li><p>Folders and markdown files who's names begin with an underscore, <code>_</code>, are ignored by the tree system and may be used by particular page types to provide more structured content</p></li>
-</ul><h2>Page types</h2><p>Page types are indicated by the <strong>name</strong> of the markdown file within the page's folder. </p><p>For example, if we are creating a function reference page, you would expect the following folder and file structure:</p>
+<li>
+<p>Folders who's name begin with a number followed by a period are treated as pages that will appear in main navigation - the number indicating the relative order in which the page should appear</p>
+</li>
+<li>
+<p>Folders and markdown files who's names begin with an underscore, <code>_</code>, are ignored by the tree system and may be used by particular page types to provide more structured content</p>
+</li>
+</ul>
+<h2>Page types</h2>
+<p>Page types are indicated by the <strong>name</strong> of the markdown file within the page's folder.</p>
+<p>For example, if we are creating a function reference page, you would expect the following folder and file structure:</p>
 <div class="highlight"><pre>/nameoffunction
     function.md
-</pre></div><p>The various build systems can use the page types to format the output in different ways.</p><h2>Page IDs</h2><p>Page IDs are used for cross referencing and are specified in the page's markdown file using YAML front matter. e.g.</p>
+</pre></div>
+<p>The various build systems can use the page types to format the output in different ways.</p>
+<h2>Page IDs</h2>
+<p>Page IDs are used for cross referencing and are specified in the page's markdown file using YAML front matter. e.g.</p>
 <div class="highlight"><pre>---
 id: function-abs
 title: Abs()
@@ -534,8 +548,9 @@ title: Abs()
 				<div class="card-main">
 					<div class="card-inner">
 						<p class="card-heading">Tip</p>
-						<p>The name of the folder, without any preceding order number, will be used when an ID is not supplied in the markdown file's YAML front matter. See <a href="docs/content/markdown.html">LuceeDocs-flavoured Markdown</a> for a full guide to cross referencing and YAML front matter.</p>
-          
+						<p>The name of the folder, without any preceding order number, will be used when an ID is not supplied in the markdown file's YAML front matter.
+See <a href="docs/content/markdown.html">LuceeDocs-flavoured Markdown</a> for a full guide to cross referencing and YAML front matter.</p>
+
 					</div>
 				</div>
 			</div>

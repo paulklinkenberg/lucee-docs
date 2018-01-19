@@ -94,30 +94,30 @@
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/_arguments/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<p>The valid format for the data; one of the following:</p>
 <ul>
-  <li><strong>any</strong> - any simple value. Returns false for complex values, such as query objects; equivalent to the IsSimpleValue function.</li>
-  <li><strong>array</strong> - an array; equivalent to the IsArray function.</li>
-  <li><strong>binary</strong> - a binary value; equivalent to the IsBinary function.</li>
-  <li><strong>boolean</strong> - a Boolean value; equivalent to the IsBoolean function.</li>
-  <li><strong>component</strong> - a component (CFC).</li>
-  <li><strong>creditcard</strong> - a 13-16 digit number conforming to the mod10 algorithm.</li>
-  <li><strong>date or time</strong> - any date-time value, including dates or times; equivalent to the IsDate function.</li>
-  <li><strong>email</strong> - a string containig a valid email address.</li>
-  <li><strong>eurodate</strong> - this functionality is only supported for compatibility reasion, we do not suggest to use this functionality. Use instead function isDate or lsIsDate. A date in the form d/m/y, d-m-y, or d.m.y. The m and d format can be 1 or 2 digits; y can be 2 or 4 digits.</li>
-  <li><strong>float or numeric</strong> - a numeric value; equivalent to the IsNumeric function.</li>
-  <li><strong>guid</strong> - a Globally Unique Identifier in the format XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX where X is a hexadecimal number.</li>
-  <li><strong>integer</strong> - an integer.</li>
-  <li><strong>query</strong> - a query object; equivalent to the IsQuery function.</li>
-  <li><strong>range</strong> - a numeric range, specified by the min and max attributes.</li>
-  <li><strong>regex or regular_expression</strong> - matches input against pattern attribute.</li>
-  <li><strong>ssn or social_security_number</strong> - A U.S. social security number.</li>
-  <li><strong>string</strong> - a string value, including single characters and numbers</li>
-  <li><strong>struct</strong> - a structure; equivalent to the IsStruct function.</li>
-  <li><strong>telephone</strong> - a standard US telephone number.</li>
-  <li><strong>URL</strong> - an http, https, ftp, file, mailto, or news URL,</li>
-  <li><strong>UUID</strong> - a Universally Unique Identifier in the format XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXX, where X is a hexadecimal number. See CreateUUID.</li>
-  <li><strong>USdate</strong> - this functionality is only supported for compatibility reasion, we do not suggest to use this functionality. Use instead function isDate or lsIsDate. A U.S. date of the format mm/dd/yy, with 1-2 digit days and months, 1-4 digit years.</li>
-  <li><strong>variableName</strong> - a string formatted according to ColdFusion variable naming conventions.</li>
-  <li><strong>zipcode</strong> - U.S., 5- or 9-digit format ZIP codes.</li>
+<li><strong>any</strong> - any simple value. Returns false for complex values, such as query objects; equivalent to the IsSimpleValue function.</li>
+<li><strong>array</strong> - an array; equivalent to the IsArray function.</li>
+<li><strong>binary</strong> - a binary value; equivalent to the IsBinary function.</li>
+<li><strong>boolean</strong> - a Boolean value; equivalent to the IsBoolean function.</li>
+<li><strong>component</strong> - a component (CFC).</li>
+<li><strong>creditcard</strong> - a 13-16 digit number conforming to the mod10 algorithm.</li>
+<li><strong>date or time</strong> - any date-time value, including dates or times; equivalent to the IsDate function.</li>
+<li><strong>email</strong> - a string containig a valid email address.</li>
+<li><strong>eurodate</strong> - this functionality is only supported for compatibility reasion, we do not suggest to use this functionality. Use instead function isDate or lsIsDate. A date in the form d/m/y, d-m-y, or d.m.y. The m and d format can be 1 or 2 digits; y can be 2 or 4 digits.</li>
+<li><strong>float or numeric</strong> - a numeric value; equivalent to the IsNumeric function.</li>
+<li><strong>guid</strong> - a Globally Unique Identifier in the format XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX where X is a hexadecimal number.</li>
+<li><strong>integer</strong> - an integer.</li>
+<li><strong>query</strong> - a query object; equivalent to the IsQuery function.</li>
+<li><strong>range</strong> - a numeric range, specified by the min and max attributes.</li>
+<li><strong>regex or regular_expression</strong> - matches input against pattern attribute.</li>
+<li><strong>ssn or social_security_number</strong> - A U.S. social security number.</li>
+<li><strong>string</strong> - a string value, including single characters and numbers</li>
+<li><strong>struct</strong> - a structure; equivalent to the IsStruct function.</li>
+<li><strong>telephone</strong> - a standard US telephone number.</li>
+<li><strong>URL</strong> - an http, https, ftp, file, mailto, or news URL,</li>
+<li><strong>UUID</strong> - a Universally Unique Identifier in the format XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXX, where X is a hexadecimal number. See CreateUUID.</li>
+<li><strong>USdate</strong> - this functionality is only supported for compatibility reasion, we do not suggest to use this functionality. Use instead function isDate or lsIsDate. A U.S. date of the format mm/dd/yy, with 1-2 digit days and months, 1-4 digit years.</li>
+<li><strong>variableName</strong> - a string formatted according to ColdFusion variable naming conventions.</li>
+<li><strong>zipcode</strong> - U.S., 5- or 9-digit format ZIP codes.</li>
 </ul>
 							</td>
 						</tr>
@@ -140,7 +140,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/_arguments/min_or_pattern.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The minimum valid value; used only for range validation or  a JavaScript regular expression that the parameter must match; used only for regex or regular_expression validation.</p>
+								<p>The minimum valid value; used only for range validation or
+a JavaScript regular expression that the parameter must match; used only for regex or regular_expression validation.</p>
 							</td>
 						</tr>
 					
@@ -171,18 +172,17 @@
 <span class="nb">&lt;cfset</span> <span class="nv">string</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span><span class="nb">&gt;</span>
 <span class="nb">&lt;cfset</span> <span class="nv">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.test.com&quot;</span><span class="nb">&gt;</span>
 <span class="nb">&lt;cfset</span> <span class="nv">uuid</span> <span class="o">=</span> <span class="nf">createUUID</span><span class="p">()</span><span class="nb">&gt;</span>
-
-<span class="nb">&lt;cfoutput&gt;</span>
-	Array: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="nv">anArray</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
-	Boolean: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">&#39;boolean&#39;</span><span class="p">,</span> <span class="nv">boolean</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
-	Email: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nv">email</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
-	GUID: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">,</span> <span class="nv">guid</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
-	Integer: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="nv">integer</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
-	String: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="nv">string</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
-	URL: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="nv">url</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
-	UUID: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span> <span class="nv">uuid</span><span class="p">)#</span>
+<p><span class="nb">&lt;cfoutput&gt;</span>
+Array: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">'array'</span><span class="p">,</span> <span class="nv">anArray</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+Boolean: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">'boolean'</span><span class="p">,</span> <span class="nv">boolean</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+Email: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="nv">email</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+GUID: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">,</span> <span class="nv">guid</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+Integer: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="nv">integer</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+String: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="nv">string</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+URL: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="nv">url</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+UUID: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span> <span class="nv">uuid</span><span class="p">)#</span>
 <span class="nb">&lt;/cfoutput&gt;</span>
-</pre></div>
+</pre></div></p>
 							<h2>See also</h2>
 		<ul class="list-unstyled">
 			

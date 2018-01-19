@@ -3,7 +3,8 @@ title: LuceeDocs-flavoured Markdown
 id: docs-markdown
 ---
 
-The base markdown engine used is [pegdown](https://github.com/sirthias/pegdown). Please see both the [official markdown website](http://daringfireball.net/projects/markdown/) and the the [pegdown repository](https://github.com/sirthias/pegdown) for the supported syntax.
+The base markdown engine used is [flexMark](https://github.com/vsch/flexmark-java).
+Please see both the [official markdown website](http://daringfireball.net/projects/markdown/) and the [flexMark repository](https://github.com/vsch/flexmark-java) for the supported syntax.
 
 On top of this base layer, the Lucee Documentation system processes its own special syntaxes for syntax highlighting, cross referencing and notice boxes. It also processes YAML front matter to glean extra metadata about pages.
 

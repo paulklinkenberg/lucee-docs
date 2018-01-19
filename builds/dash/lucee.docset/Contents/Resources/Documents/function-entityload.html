@@ -64,7 +64,9 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/entityload/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Loads and returns an array of entities of the specified entityname. EntityLoad (entityname, filtercriteria [,unique] EntityLoad(entityname, filtercriteria, sortorder [, options])</p>
+	<p>Loads and returns an array of entities of the specified entityname.
+EntityLoad (entityname, filtercriteria [,unique]
+EntityLoad(entityname, filtercriteria, sortorder [, options])</p>
 
 	<p><strong>Returns:</strong> any</p>
 
@@ -103,7 +105,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/entityload/_arguments/idOrFilter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The primary key value of the entity that must be loaded or Key-value pair (Struct) of property names and values.  If there are more than one key-value pair, then the AND operator is used.If specified, loads and returns an array of entities of the specified entity name that matches the filtercriteria.</p>
+								<p>The primary key value of the entity that must be loaded or Key-value pair (Struct) of property names and values.
+If there are more than one key-value pair, then the AND operator is used.If specified, loads and returns an array of entities of the specified entity name that matches the filtercriteria.</p>
 							</td>
 						</tr>
 					
@@ -114,10 +117,18 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/entityload/_arguments/uniqueOrOrder.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>when the second argument is a id then this argument defines the boolean "unique" otherwise it defines the order.</p>
+								<p>when the second argument is a id then this argument defines the boolean &quot;unique&quot; otherwise it defines the order.</p>
 <ul>
-  <li><p>unique: If unique is set to true, then the entity is returned. If you are sure that only one record exists that matches this filtercriteria, then you can specify unique=true, so that a single entity is returned instead of an array. If you set unique=true and multiple records are returned, then an exception occurs.</p></li>
-  <li><p>order: String used to specify the sortorder of the entities that are returned.If specified, loads and returns an array of entities that satisfy the filtercriteria sorted as specified by the sortorder.</p></li>
+<li>
+<p>unique:
+If unique is set to true, then the entity is returned.
+If you are sure that only one record exists that matches this filtercriteria, then you can specify unique=true, so that a single entity is returned instead of an array.
+If you set unique=true and multiple records are returned, then an exception occurs.</p>
+</li>
+<li>
+<p>order:
+String used to specify the sortorder of the entities that are returned.If specified, loads and returns an array of entities that satisfy the filtercriteria sorted as specified by the sortorder.</p>
+</li>
 </ul>
 							</td>
 						</tr>
@@ -129,7 +140,15 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/entityload/_arguments/options.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The following options to customize the output (only used when second argument is "id"): - ignorecase: Ignores the case of sort order when set to true. Use only if you specify the sortorder parameter. - offset: Specifies the position from which to retrieve the objects. - maxResults: Specifies the maximum number of objects to be retrieved. - cacheable: Whether the result has to be cached in the secondary cache. Default is false. - cachename: Name of the cache in secondary cache. - timeout: Specifies the timeout value (in seconds) for the query.</p>
+								<p>The following options to customize the output (only used when second argument is &quot;id&quot;):</p>
+<ul>
+<li>ignorecase: Ignores the case of sort order when set to true. Use only if you specify the sortorder parameter.</li>
+<li>offset: Specifies the position from which to retrieve the objects.</li>
+<li>maxResults: Specifies the maximum number of objects to be retrieved.</li>
+<li>cacheable: Whether the result has to be cached in the secondary cache. Default is false.</li>
+<li>cachename: Name of the cache in secondary cache.</li>
+<li>timeout: Specifies the timeout value (in seconds) for the query.</li>
+</ul>
 							</td>
 						</tr>
 					

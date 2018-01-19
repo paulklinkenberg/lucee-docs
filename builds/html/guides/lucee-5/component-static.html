@@ -525,24 +525,28 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/06.component-static/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Static support for components</h1><p><strong>Lucee 5 supports static variables and functions inside components.</strong></p><p>Example:</p>
+	<p>#Static support for components#
+<strong>Lucee 5 supports static variables and functions inside components.</strong></p>
+<p>Example:</p>
 <div class="highlight"><pre><span class="nv">component</span> <span class="p">{</span>
      <span class="c">// inside the static constructor you can define static variables, this code is executed when the &quot;class&quot; instance is loaded</span>
      <span class="nv">static</span> <span class="p">{</span>
             <span class="nv">susi</span><span class="o">=</span><span class="m">1</span><span class="p">;</span> <span class="c">// written to the static scope</span>
             <span class="nv">static.sorglos</span><span class="o">=</span><span class="m">2</span><span class="p">;</span> <span class="c">// again written to the static scope</span>
      <span class="p">}</span>
+<pre><code> &lt;span class=&quot;nv&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testStatic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-     <span class="nv">public</span> <span class="nv">static</span> <span class="nv">function</span> <span class="nf">testStatic</span><span class="p">()</span> <span class="p">{</span>
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-    <span class="p">}</span>
-
-     <span class="nv">public</span> <span class="nv">function</span> <span class="nf">testInstance</span><span class="p">()</span> <span class="p">{</span>
-          <span class="nf">testStatic</span><span class="p">();</span> <span class="c">// calling a static function</span>
-          <span class="nv">return</span> <span class="nv">static.sorglos</span><span class="p">;</span> <span class="c">// returning data from the static scope</span>
-     <span class="p">}</span>
-<span class="p">}</span>
-</pre></div><p>The "static" constructor <code>static {...}</code> is executed once before the component is loaded for the first time, so every component of the same type shares the same static scope.</p><p>You can use static functions and data as follows.</p>
+ &lt;span class=&quot;nv&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;testStatic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// calling a static function&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;static.sorglos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// returning data from the static scope&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+</code></pre>
+<p><span class="p">}</span>
+</pre></div></p>
+<p>The &quot;static&quot; constructor <code>static {...}</code>  is executed once before the component is loaded for the first time, so every component of the same type shares the same static scope.</p>
+<p>You can use static functions and data as follows.</p>
 <div class="highlight"><pre><span class="nv">component</span> <span class="nv">Test</span> <span class="p">{</span>
    <span class="nv">static</span> <span class="p">{</span>
       <span class="nv">staticValue</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>

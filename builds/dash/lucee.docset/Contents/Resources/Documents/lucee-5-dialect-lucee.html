@@ -64,12 +64,30 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/07.dialect-lucee/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>New Language dialect Lucee</h1><p><strong>In addition to the existing "CFML" language dialect, Lucee 5 comes with a completely new dialect simply called "Lucee".</strong></p><p>The Lucee dialect is a light-weight dynamic scripting and tag language for the JVM that enables the rapid development of simple to highly sophisticated web applications.</p><h2>We love CFML</h2><p>Lucee has its roots in the ColdFusion Markup Language (CFML). Continuing to support CFML and making improvements in CFML compatibility will remain the highest priority.</p><p>Lucee will continue to support CFML and you can continue to build CFML applications that run on Lucee. “Supporting CFML” means providing compatibility to Adobe ColdFusion (ACF) and the Lucee Association Switzerland (LAS) are committed to the following:</p>
+	<p>#New Language dialect Lucee#
+<strong>In addition to the existing &quot;CFML&quot; language dialect, Lucee 5 comes with a completely new dialect simply called &quot;Lucee&quot;.</strong></p>
+<p>The Lucee dialect is a light-weight dynamic scripting and tag language for the JVM that enables the rapid development of simple to highly sophisticated web applications.</p>
+<h2>We love CFML</h2>
+<p>Lucee has its roots in the ColdFusion Markup Language (CFML). Continuing to support CFML and making improvements in CFML compatibility will remain the highest priority.</p>
+<p>Lucee will continue to support CFML and you can continue to build CFML applications that run on Lucee. “Supporting CFML” means providing compatibility to Adobe ColdFusion (ACF) and the Lucee Association Switzerland (LAS) are committed to the following:</p>
 <ul>
-  <li>If you find a compatibility issue between Lucee’s CFML implementation and ACF please raise a bug report and it will be reviewed and responded to.</li>
-  <li>If Adobe develop something new that is seen as a popular enhancement then Lucee will add it to the roadmap, features with the most interest are added as a matter of priority.</li>
-  <li>CFML applications will continue to run on Lucee.</li>
-</ul><p>Lucee, like Railo before it, has been trying to propel the CFML language forward. However, the more we advance the language the more we muddy the water of what CFML is.</p><p>Lucee Association Switzerland (LAS) wants to support Adobe CFML as well as possible, and at the same time be free to develop a modern language that delivers the features our community wants.</p><h2>The Lucee dialect</h2><p>The Lucee dialect is a modern language based on the original concepts of CFML. It is completely open source and exposes the most advanced features of the underlying JVM with performance, class loading, OSGi and JSR-223 support at its core. The Lucee language will continue to evolve to meet the ever increasing demands of modern web application development.</p><p>The Lucee language is LAS’s opportunity to evolve a modern dialect that is both familiar to existing CF developers while providing the freedom to grow in a more ambitious direction and LAS are committed to this as much as they are to supporting the CFML development community.</p><h2>So what changes for me?</h2><p>If you are happy to stick with CFML then nothing changes for you. If, however, you want to expand your possibilities going forward and are happy to embrace the new language then you will have the ability to take advantage of the new features the Lucee language will offer.</p><h2>How do I use it?</h2><p>Dialects are controlled by the file extension, to use the classic "CFML" dialect simply use the file extension <code>.cfc</code> or <code>.cfm</code> and to use the new "Lucee" dialect simply use the file extension <code>.lucee</code> for both templates and components.</p><p>You can also mix the "Lucee" dialect with the "CFML" dialect, so you can for example include a Lucee template in your CFML template or call a Lucee component from your CFML template ...</p><h2>What does this look like?</h2><p>Let's do some examples to get a feeling for the syntax.</p><p>Tag based template with a script island:</p>
+<li>If you find a compatibility issue between Lucee’s CFML implementation and ACF please raise a bug report and it will be reviewed and responded to.</li>
+<li>If Adobe develop something new that is seen as a popular enhancement then Lucee will add it to the roadmap, features with the most interest are added as a matter of priority.</li>
+<li>CFML applications will continue to run on Lucee.</li>
+</ul>
+<p>Lucee, like Railo before it, has been trying to propel the CFML language forward. However, the more we advance the language the more we muddy the water of what CFML is.</p>
+<p>Lucee Association Switzerland (LAS) wants to support Adobe CFML as well as possible, and at the same time be free to develop a modern language that delivers the features our community wants.</p>
+<h2>The Lucee dialect</h2>
+<p>The Lucee dialect is a modern language based on the original concepts of CFML. It is completely open source and exposes the most advanced features of the underlying JVM with performance, class loading, OSGi and JSR-223 support at its core. The Lucee language will continue to evolve to meet the ever increasing demands of modern web application development.</p>
+<p>The Lucee language is LAS’s opportunity to evolve a modern dialect that is both familiar to existing CF developers while providing the freedom to grow in a more ambitious direction and LAS are committed to this as much as they are to supporting the CFML development community.</p>
+<h2>So what changes for me?</h2>
+<p>If you are happy to stick with CFML then nothing changes for you. If, however, you want to expand your possibilities going forward and are happy to embrace the new language then you will have the ability to take advantage of the new features the Lucee language will offer.</p>
+<h2>How do I use it?</h2>
+<p>Dialects are controlled by the file extension, to use the classic &quot;CFML&quot; dialect simply use the file extension <code>.cfc</code> or <code>.cfm</code> and to use the new &quot;Lucee&quot; dialect simply use the file extension <code>.lucee</code> for both templates and components.</p>
+<p>You can also mix the &quot;Lucee&quot; dialect with the &quot;CFML&quot; dialect, so you can for example include a Lucee template in your CFML template or call a Lucee component from your CFML template ...</p>
+<h2>What does this look like?</h2>
+<p>Let's do some examples to get a feeling for the syntax.</p>
+<p>Tag based template with a script island:</p>
 <div class="highlight"><pre><span class="nt">&lt;:script&gt;</span>
   mail=evaluate(url.mail);
 <span class="nt">&lt;/:script&gt;</span>
@@ -78,30 +96,48 @@
     <span class="nt">&lt;:output&gt;</span>#mail.body#<span class="nt">&lt;/:output&gt;</span>
   <span class="nt">&lt;/:mail&gt;</span>
 <span class="nt">&lt;/:if&gt;</span>
-</pre></div><h2>How does it act?</h2><p>As you can see above the syntax is not that different to CFML, the real difference is with the environment.</p><p>Let's take a look into some details, of course this does not cover everything, a complete overview of the language in detail will follow ASAP.</p><h4>Full Null Support</h4><p>The Lucee dialect has full null support, so the following is possible:</p>
+</pre></div>
+<h2>How does it act?</h2>
+<p>As you can see above the syntax is not that different to CFML, the real difference is with the environment.</p>
+<p>Let's take a look into some details, of course this does not cover everything, a complete overview of the language in detail will follow ASAP.</p>
+<h4>Full Null Support</h4>
+<p>The Lucee dialect has full null support, so the following is possible:</p>
 <div class="highlight"><pre><span class="nv">test</span><span class="o">=</span><span class="nv">null</span><span class="p">;</span>
 <span class="c">// some code here that maybe change &quot;test&quot;</span>
 <span class="k">if</span><span class="p">(</span><span class="nv">test</span><span class="o">==</span><span class="nv">null</span><span class="p">)</span>
   <span class="nf">dump</span><span class="p">(</span><span class="nv">test</span><span class="p">);</span>
-</pre></div><h4>Local Scope</h4><p>Inside a function if the scope has not been defined for a variable then the nearest scope is used, so in the following that would be the "local" scope and not the "variables" scope that the CFML dialect would use.</p>
+</pre></div>
+<h4>Local Scope</h4>
+<p>Inside a function if the scope has not been defined for a variable then the nearest scope is used, so in the following that would be the &quot;local&quot; scope and not the &quot;variables&quot; scope that the CFML dialect would use.</p>
 <div class="highlight"><pre><span class="nv">function</span> <span class="nf">test</span><span class="p">(){</span>
   <span class="nv">test</span><span class="o">=</span><span class="m">1</span><span class="p">;</span> <span class="c">// sets &quot;test&quot; to the local scope</span>
   <span class="nv">variables.whatever</span><span class="o">=</span><span class="m">2</span><span class="p">;</span> <span class="c">// sets &quot;whatever&quot; to the variables scope.</span>
 <span class="p">}</span>
-</pre></div><h4>This Scope</h4><p>The CFML dialect has 2 instance scopes for components <code>this</code> and <code>variables</code> and the scopes are completely separated. The Lucee dialect only has one scope, the <code>this</code> scope that can still be accessed with <code>variables</code>.</p><p>In the CFML dialect variables in the <code>this</code> scope are accessible from outside (public) which breaks encapsulation, in the Lucee dialect the <code>this</code> scope is private for variables by default.</p><h4>Scope Cascading</h4><p>In the CFML dialect if you call a variable, for example <code>#susi#</code>, the engine will look for "susi" in the following scopes [local,arguments,variables,cgi,url,form,cookie] however in the Lucee dialect it only checks the following scopes [local,arguments,variables].</p>
+</pre></div>
+<h4>This Scope</h4>
+<p>The CFML dialect has 2 instance scopes for components <code>this</code> and <code>variables</code> and the scopes are completely separated. The Lucee dialect only has one scope, the <code>this</code> scope that can still be accessed with <code>variables</code>.</p>
+<p>In the CFML dialect variables in the <code>this</code> scope are accessible from outside (public) which breaks encapsulation, in the Lucee dialect the <code>this</code> scope is private for variables by default.</p>
+<h4>Scope Cascading</h4>
+<p>In the CFML dialect if you call a variable, for example <code>#susi#</code>, the engine will look for &quot;susi&quot; in the following scopes [local,arguments,variables,cgi,url,form,cookie] however in the Lucee dialect it only checks the following scopes [local,arguments,variables].</p>
 <div class="highlight"><pre><span class="nv">url.susi</span><span class="o">=</span><span class="s2">&quot;Susanne&quot;</span><span class="p">;</span>
  <span class="nv">form.susi</span><span class="o">=</span><span class="s2">&quot;Sorglos&quot;</span><span class="p">;</span>
  <span class="nf">dump</span><span class="p">(</span><span class="nv">susi</span><span class="p">);</span> <span class="c">// works in CFML, but fails in Lucee</span>
-</pre></div><h4>Tag Attributes</h4><p>In the CFML dialect if an attribute value is defined without (single or double) quotes, it is handled as a String, in the Lucee dialect the same is handled as a variable.</p><p>Take this example</p>
+</pre></div>
+<h4>Tag Attributes####</h4>
+<p>In the CFML dialect if an attribute value is defined without (single or double) quotes, it is handled as a String, in the Lucee dialect the same is handled as a variable.</p>
+<p>Take this example</p>
 <div class="highlight"><pre><span class="nb">&lt;cfmail</span> <span class="nv">subject</span><span class="o">=</span><span class="nv">mail.subject</span> <span class="nv">from</span><span class="o">=</span><span class="nv">mail.from</span> <span class="nv">to</span><span class="o">=</span><span class="nv">mail.to</span><span class="nb">&gt;</span>
 <span class="nb">&lt;/cfmail&gt;</span>
-</pre></div><p>In CFML this is handled the same way as this</p>
+</pre></div>
+<p>In CFML this is handled the same way as this</p>
 <div class="highlight"><pre><span class="nb">&lt;cfmail</span> <span class="nv">subject</span><span class="o">=</span><span class="s2">&quot;mail.subject&quot;</span> <span class="nv">from</span><span class="o">=</span><span class="s2">&quot;mail.from&quot;</span> <span class="nv">to</span><span class="o">=</span><span class="s2">&quot;mail.to&quot;</span><span class="nb">&gt;</span>
 <span class="nb">&lt;/cfmail&gt;</span>
-</pre></div><p>and in Lucee this is handled the same way as this</p>
+</pre></div>
+<p>and in Lucee this is handled the same way as this</p>
 <div class="highlight"><pre><span class="o">&lt;</span><span class="p">:</span><span class="nv">mail</span> <span class="nv">subject</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#mail.subject#</span><span class="s2">&quot;</span> <span class="nv">from</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#mail.from#</span><span class="s2">&quot;</span> <span class="nv">to</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#mail.to#</span><span class="s2">&quot;</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="p">:</span><span class="nv">mail</span><span class="o">&gt;</span>
-</pre></div><p><strong>This is just a first peek of what is possible with the Lucee dialect, more will come soon!</strong></p>
+</pre></div>
+<p><strong>This is just a first peek of what is possible with the Lucee dialect, more will come soon!</strong></p>
 							
 						</div>
 					</div>

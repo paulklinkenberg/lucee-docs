@@ -55,11 +55,19 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/06.docs/02.build/chapter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h2>Prerequisites</h2><p>The only dependency required is <a href="http://www.ortussolutions.com/products/commandbox">CommandBox</a>. Ensure that commandbox is installed and that the <code>box</code> command is in your path.</p><h2>Building the static documentation output</h2><p>The purpose of the structure of the documentation is to allow a human readable and editable form of documentation that can be built into multiple output formats. At present, there is a single "HTML" builder, found at <code>./builders/html</code> that will build the documentation website.</p><p>To run the build and produce a static HTML version of the documentation website, execute the <code>build.sh</code> file found in the root of the project, i.e.</p>
+	<h2>Prerequisites</h2>
+<p>The only dependency required is <a href="http://www.ortussolutions.com/products/commandbox">CommandBox</a>. Ensure that commandbox is installed and that the <code>box</code> command is in your path.</p>
+<h2>Building the static documentation output</h2>
+<p>The purpose of the structure of the documentation is to allow a human readable and editable form of documentation that can be built into multiple output formats. At present, there is a single &quot;HTML&quot; builder, found at <code>./builders/html</code> that will build the documentation website.</p>
+<p>To run the build and produce a static HTML version of the documentation website, execute the <code>build.sh</code> file found in the root of the project, i.e.</p>
 <pre><code>documentation&gt;./build.sh
-</code></pre><p>Once this has finished, you should find a <code>./builds/html</code> directory with the website content.</p><h2>Running a server locally</h2><p>We have provided a utility server who's purpose is to run locally to help while developing/writing the documentation. To start it up, execute the <code>serve.sh</code> file found in the root of the project, i.e.</p>
+</code></pre>
+<p>Once this has finished, you should find a <code>./builds/html</code> directory with the website content.</p>
+<h2>Running a server locally</h2>
+<p>We have provided a utility server who's purpose is to run locally to help while developing/writing the documentation. To start it up, execute the <code>serve.sh</code> file found in the root of the project, i.e.</p>
 <pre><code>documentation&gt;./serve.sh
-</code></pre><p>This will spin up a server using CommandBox on port 4040 and open it in your browser. You should also see a tray icon that will allow you to stop the server. Changes to the source docs should trigger an internal rebuild of the documentation tree which may take a little longer than regular requests to the documentation.</p>
+</code></pre>
+<p>This will spin up a server using CommandBox on port 4040 and open it in your browser. You should also see a tray icon that will allow you to stop the server. Changes to the source docs should trigger an internal rebuild of the documentation tree which may take a little longer than regular requests to the documentation.</p>
 							
 						</div>
 					</div>
