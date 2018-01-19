@@ -513,14 +513,36 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/01.getting-started/02.newbie-questions/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h2><strong>Setting up multiple Lucee websites on Windows/IIS:</strong></h2><p>These instructions assume you know how to set up DNS, port forwarding for your router, and how to add a new site in IIS.</p><p>1) Install Lucee (I installed http://railo.viviotech.net/downloader.cfm/id/134/file/lucee-4.5.1.000-pl0-windows-installer.exe from http://lucee.org/downloads.html )</p><p>2) Verify that Lucee is running (The internal IP of my Lucee server is 192.168.1.80, so I went to http://192.168.1.80:8888 to view the Hello Lucee page, which verified a successful deployment)</p><p>3) Set up DNS for a site, if you haven't already (I added lctest.blahblah.com to my GoDaddy DNS). Set up port forwarding on your router, if needed. Add your new site to IIS.</p><p>4) Create your local folder, if you haven't already ( I used C:\sites\lctest)</p><p>5) Add a Host entry to Server.XML - I installed to the default location (C:\lucee) so the path is C:\lucee\tomcat\conf\server.xml)</p><p>6) Just above the </Engine> tag, add the following Host entry:</p>
+	<h2><strong>Setting up multiple Lucee websites on Windows/IIS:</strong></h2>
+<p>These instructions assume you know how to set up DNS, port forwarding for your router, and how to add a new site in IIS.</p>
+<p>1) Install Lucee (I installed http://railo.viviotech.net/downloader.cfm/id/134/file/lucee-4.5.1.000-pl0-windows-installer.exe from http://lucee.org/downloads.html )</p>
+<p>2) Verify that Lucee is running (The internal IP of my Lucee server is 192.168.1.80, so I went to http://192.168.1.80:8888 to view the Hello Lucee page, which verified a successful deployment)</p>
+<p>3) Set up DNS for a site, if you haven't already (I added lctest.blahblah.com to my GoDaddy DNS). Set up port forwarding on your router, if needed. Add your new site to IIS.</p>
+<p>4) Create your local folder, if you haven't already ( I used C:\sites\lctest)</p>
+<p>5) Add a Host entry to Server.XML - I installed to the default location (C:\lucee) so the path is C:\lucee\tomcat\conf\server.xml)</p>
+<p>6) Just above the </Engine> tag, add the following Host entry:</p>
 <pre><code>&lt;Host name=&quot;lctest.blahblah.com&quot; appBase=&quot;webapps&quot;
-     unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;
-     xmlValidation=&quot;false&quot; xmlNamespaceAware=&quot;false&quot;&gt;
-     &lt;Context path=&quot;&quot; docBase=&quot;C:\sites\lctest\&quot; /&gt;
-    &lt;Alias&gt;lctest.blahblah.com&lt;/Alias&gt;
+	 unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;
+	 xmlValidation=&quot;false&quot; xmlNamespaceAware=&quot;false&quot;&gt;
+	 &lt;Context path=&quot;&quot; docBase=&quot;C:\sites\lctest\&quot; /&gt;
+	&lt;Alias&gt;lctest.blahblah.com&lt;/Alias&gt;
 &lt;/Host&gt;
-</code></pre><p>Substitute your host name and alias, and put in your local folder for docBase</p><p>7) Save the XML file and Restart Lucy - in Windows 2012 R2, click the Start button, click the down arrow, select Lucy-Tomcat Service Control</p><p>8) On the General tab, click the Stop button. When Service Status changes to Stopped, click the Start button.</p><p>9) Create a simple index.cfm file - if you're stumped, you can use the example code from Tom Kitta's tutorial - http://www.tomkitta.com/guides/cf_101.cfm</p><p>10) Navigate to your alias - for me, it was http://]lctest.blahblah.com - and check that index.cfm executes</p><p>The same principles apply for migrating existing sites to a new Lucee server, after setting up any necessary datasources and, if needed, SMTP server.</p><h2><strong>Enabling Debugging on multiple Lucee websites</strong></h2><p>Create a web.config file in the site's root folder. It should contain:</p><p><configuration>  &lt;system.webServer&gt;  <httpErrors errorMode="Detailed" />  &lt;/system.webServer&gt; </configuration></p><p>Here is a quick way to get a dump to make sure debug works (add to your index.cfm file):</p><p><cfdump var="#{ URL: URL, variables: variables, CGI: CGI }#"></p>
+</code></pre>
+<p>Substitute your host name and alias, and put in your local folder for docBase</p>
+<p>7) Save the XML file and Restart Lucy - in Windows 2012 R2, click the Start button, click the down arrow, select Lucy-Tomcat Service Control</p>
+<p>8) On the General tab, click the Stop button. When Service Status changes to Stopped, click the Start button.</p>
+<p>9) Create a simple index.cfm file - if you're stumped, you can use the example code from Tom Kitta's tutorial - http://www.tomkitta.com/guides/cf_101.cfm</p>
+<p>10) Navigate to your alias - for me, it was http://]lctest.blahblah.com - and check that index.cfm executes</p>
+<p>The same principles apply for migrating existing sites to a new Lucee server, after setting up any necessary datasources and, if needed, SMTP server.</p>
+<h2><strong>Enabling Debugging on multiple Lucee websites</strong></h2>
+<p>Create a web.config file in the site's root folder. It should contain:</p>
+<p><configuration>
+&lt;system.webServer&gt;
+<httpErrors errorMode="Detailed" />
+&lt;/system.webServer&gt;
+</configuration></p>
+<p>Here is a quick way to get a dump to make sure debug works (add to your index.cfm file):</p>
+<p><cfdump var="#{ URL: URL, variables: variables, CGI: CGI }#"></p>
 
 							
 						</div>

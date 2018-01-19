@@ -64,22 +64,24 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/10.lambda/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Lambda Expressions</h1><p><strong>Lucee 5 supports lambda expressions which are shorthand for defining anonymous functions.</strong></p><p>Lambda expressions reduce much of the syntax around creating anonymous functions. In its simplest form, you can eliminate the <code>function</code> keyword, curly braces and <code>return</code> statement. Lambda expressions implicitly return the results of the expression body.</p><p>A simple lambda expression with no arguments:</p>
+	<h1>Lambda Expressions</h1>
+<p><strong>Lucee 5 supports lambda expressions which are shorthand for defining anonymous functions.</strong></p>
+<p>Lambda expressions reduce much of the syntax around creating anonymous functions. In its simplest form, you can eliminate the <code>function</code> keyword, curly braces and <code>return</code> statement. Lambda expressions implicitly return the results of the expression body.</p>
+<p>A simple lambda expression with no arguments:</p>
 <div class="highlight"><pre><span class="c">// Using a traditional function</span>
 <span class="nv">makeSix</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{</span> <span class="nv">return</span> <span class="m">5</span> <span class="o">+</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="c">// Using a lambda expression</span>
-<span class="nv">makeSix</span> <span class="o">=</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="m">5</span> <span class="o">+</span> <span class="m">1</span><span class="p">;</span>
-
-<span class="c">// returns 6</span>
-<span class="nf">dump</span><span class="p">(</span><span class="nf">makeSix</span><span class="p">());</span>
-</pre></div><p>A simple lambda expression with multiple arguments:</p>
+<p><span class="c">// Using a lambda expression</span>
+<span class="nv">makeSix</span> <span class="o">=</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="m">5</span> <span class="o">+</span> <span class="m">1</span><span class="p">;</span></p>
+<p><span class="c">// returns 6</span>
+<span class="nf">dump</span><span class="p">(</span><span class="nf">makeSix</span><span class="p">());</span></p>
+</pre></div>
+<p>A simple lambda expression with multiple arguments:</p>
 <div class="highlight"><pre><span class="c">// Takes two numeric values and adds them</span>
 <span class="nv">add</span> <span class="o">=</span> <span class="p">(</span><span class="nv">numeric</span> <span class="nv">x</span><span class="p">,</span> <span class="nv">numeric</span> <span class="nv">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">x</span> <span class="o">+</span> <span class="nv">y</span><span class="p">;</span>
-
-<span class="c">// returns 4</span>
-<span class="nf">dump</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">));</span>
-</pre></div><p>A complex lambda expression with an argument:</p>
+<p><span class="c">// returns 4</span>
+<span class="nf">dump</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">));</span></p>
+</pre></div>
+<p>A complex lambda expression with an argument:</p>
 <div class="highlight"><pre><span class="c">// Takes a numeric value and returns a string</span>
 <span class="nv">isOdd</span> <span class="o">=</span> <span class="p">(</span><span class="nv">numeric</span> <span class="nv">n</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span> <span class="nv">n</span> <span class="err">%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span> <span class="p">)</span> <span class="p">{</span>
@@ -88,12 +90,10 @@
     <span class="nv">return</span> <span class="s1">&#39;odd&#39;</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">};</span>
-
-<span class="c">// returns &#39;odd&#39;</span>
-<span class="nf">dump</span><span class="p">(</span><span class="nf">isOdd</span><span class="p">(</span><span class="m">1</span><span class="p">));</span>
-
-<span class="c">// returns &#39;even&#39;</span>
-<span class="nf">dump</span><span class="p">(</span><span class="nf">isOdd</span><span class="p">(</span><span class="m">10</span><span class="p">));</span>
+<p><span class="c">// returns 'odd'</span>
+<span class="nf">dump</span><span class="p">(</span><span class="nf">isOdd</span><span class="p">(</span><span class="m">1</span><span class="p">));</span></p>
+<p><span class="c">// returns 'even'</span>
+<span class="nf">dump</span><span class="p">(</span><span class="nf">isOdd</span><span class="p">(</span><span class="m">10</span><span class="p">));</span></p>
 </pre></div>
 							
 						</div>

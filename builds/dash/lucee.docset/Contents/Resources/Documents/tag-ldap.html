@@ -64,7 +64,8 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Provides an interface to LDAP Lightweight Directory Access Protocol  directory servers like the Netscape Directory Server.</p>
+	<p>Provides an interface to LDAP Lightweight Directory Access Protocol
+directory servers like the Netscape Directory Server.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nt">&lt;cfldap</span>
@@ -129,7 +130,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/server.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Host name "biff.upperlip.com" or IP address "192.1.2.225" of the LDAP server.</p>
+								<p>Host name &quot;biff.upperlip.com&quot; or IP address &quot;192.1.2.225&quot; of the LDAP server.</p>
 							</td>
 						</tr>
 					
@@ -206,7 +207,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the maximum amount of time, in seconds, to wait for LDAP processing. Defaults to  60 seconds.</p>
+								<p>Specifies the maximum amount of time, in seconds, to wait for LDAP processing. Defaults to
+60 seconds.</p>
 							</td>
 						</tr>
 					
@@ -239,7 +241,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/scope.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the scope of the search from the entry specified in the Start attribute  for action = "Query".</p>
+								<p>Specifies the scope of the search from the entry specified in the Start attribute
+for action = &quot;Query&quot;.</p>
 							</td>
 						</tr>
 					
@@ -250,7 +253,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/attributes.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required if action = "Query", "Add", "ModifyDN", or "Modify"  For queries: comma-delimited list of attributes to return. For  queries, to get all attributes, specify "*".</p>
+								<p>Required if action = &quot;Query&quot;, &quot;Add&quot;, &quot;ModifyDN&quot;, or &quot;Modify&quot;
+For queries: comma-delimited list of attributes to return. For
+queries, to get all attributes, specify &quot;*&quot;.</p>
 <pre><code>        If action = &quot;add&quot; or &quot;modify&quot;, you can specify a list of update
         columns. Separate attributes with a semicolon.
 
@@ -267,7 +272,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/filter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Search criteria for action = "Query".  List attributes in the form:  "(attribute operator value)" Example: "(sn = Smith)"</p>
+								<p>Search criteria for action = &quot;Query&quot;.
+List attributes in the form:
+&quot;(attribute operator value)&quot; Example: &quot;(sn = Smith)&quot;</p>
 							</td>
 						</tr>
 					
@@ -322,7 +329,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/startRow.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Used in conjunction with action = "Query". Specifies the first row of the LDAP query to insert  into the query. The default is 1.</p>
+								<p>Used in conjunction with action = &quot;Query&quot;. Specifies the first row of the LDAP query to insert
+into the query. The default is 1.</p>
 							</td>
 						</tr>
 					
@@ -344,7 +352,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/rebind.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>If you set rebind to Yes, cfldap attempts to rebind the referral callback and reissue the query  by the referred address using the original credentials. The default is No, which means referred  connections are anonymous.</p>
+								<p>If you set rebind to Yes, cfldap attempts to rebind the referral callback and reissue the query
+by the referred address using the original credentials. The default is No, which means referred
+connections are anonymous.</p>
 							</td>
 						</tr>
 					
@@ -366,7 +376,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/separator.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the character that cfldap uses to separate attribute values in multi-value attributes. This character is used by the query, add, and modify action attributes, and  by cfldap to output multi-value attributes. The default character is the comma (,).</p>
+								<p>Specifies the character that cfldap uses to separate attribute values in multi-value attributes. This character is used by the query, add, and modify action attributes, and
+by cfldap to output multi-value attributes. The default character is the comma (,).</p>
 							</td>
 						</tr>
 					
@@ -377,7 +388,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ldap/_attributes/delimiter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the character that cfldap uses to separate multiple attribute name/value pairs when more than one attribute is specified in the attribute attribute or the attribute that you want to use has the default delimiter character, which is the semicolon (;), such as mgrpmsgrejecttext;lang-en. The delimiter character is used by the query, add, and  modify action attributes, and is used by cfldap to output multi-value attributes</p>
+								<p>Specifies the character that cfldap uses to separate multiple attribute name/value pairs when more than one attribute is specified in the attribute attribute or the attribute that you want to use has the default delimiter character, which is the semicolon (;), such as mgrpmsgrejecttext;lang-en. The delimiter character is used by the query, add, and
+modify action attributes, and is used by cfldap to output multi-value attributes</p>
 							</td>
 						</tr>
 					

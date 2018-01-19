@@ -64,16 +64,16 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/16.updating-railo/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Upgrade from Railo</h1>
+	<p>#Upgrade from Railo#</p>
 <ul>
-  <li>Stop the servlet engine</li>
-  <li>Go to the Lucee website to the <a href="http://lucee.org/downloads.html">download page</a>, download "Custom/JARs for Lucee 5" and unzip the downloaded zip file somewhere on your system.</li>
-  <li>If the folder "{servlet-engine}/lib/ext" exists: remove all jars, but do not remove the directory "railo-server"/"lucee-server" if that directory is present there (which is the case with default installations).</li>
-  <li>If the folder "{servlet-engine}/lib/ext" doesn' exist yet: Create the folder "{servlet-engine}/lib/ext"</li>
-  <li>Copy <strong>lucee.jar</strong> and <strong>org-apache-felix-main-x-x-x.jar</strong> (x-x-x stands for a specific version) to "{servlet-engine}/lib/ext"</li>
-  <li>Remove "-javaagent:.../...-inst.jar" from the startup script.</li>
-  <li>Remove "MessageBrokerServlet" definition with mapping from your web.xml (Tomcat: conf/web.xml, Jetty etc/webdefault.xml)</li>
-  <li>Add Lucee Servlet to /conf/web.xml (pay attention to the load-on-startup values for your servlets)</li>
+<li>Stop the servlet engine</li>
+<li>Go to the Lucee website to the <a href="http://lucee.org/downloads.html">download page</a>, download &quot;Custom/JARs for Lucee 5&quot; and unzip the downloaded zip file somewhere on your system.</li>
+<li>If the folder &quot;{servlet-engine}/lib/ext&quot; exists: remove all jars, but do not remove the directory &quot;railo-server&quot;/&quot;lucee-server&quot; if that directory is present there (which is the case with default installations).</li>
+<li>If the folder &quot;{servlet-engine}/lib/ext&quot; doesn' exist yet: Create the folder &quot;{servlet-engine}/lib/ext&quot;</li>
+<li>Copy <strong>lucee.jar</strong> and <strong>org-apache-felix-main-x-x-x.jar</strong> (x-x-x stands for a specific version) to &quot;{servlet-engine}/lib/ext&quot;</li>
+<li>Remove &quot;-javaagent:.../...-inst.jar&quot; from the startup script.</li>
+<li>Remove &quot;MessageBrokerServlet&quot; definition with mapping from your web.xml (Tomcat: conf/web.xml, Jetty etc/webdefault.xml)</li>
+<li>Add Lucee Servlet to /conf/web.xml (pay attention to the load-on-startup values for your servlets)</li>
 </ul>
 <div class="highlight"><pre><span class="nt">&lt;servlet&gt;</span>
  		<span class="nt">&lt;servlet-name&gt;</span>LuceeServlet<span class="nt">&lt;/servlet-name&gt;</span>
@@ -87,15 +87,18 @@
  	<span class="nt">&lt;/servlet-mapping&gt;</span>
 </pre></div>
 <ul>
-  <li>Add the following code to to catalina.properties (Tomcat: conf/catalina.properties) at the and of <strong>common.loader=...</strong></li>
+<li>Add the following code to to catalina.properties (Tomcat: conf/catalina.properties) at the and of <strong>common.loader=...</strong></li>
 </ul>
 <div class="highlight"><pre>,&quot;${catalina.base}/lib/ext&quot;,&quot;${catalina.base}/lib/ext/*.jar&quot;,&quot;${catalina.home}/lib/ext&quot;,&quot;${catalina.home}/lib/ext/*.jar&quot;
 </pre></div>
 <ul>
-  <li>If you have not defined a "railo-server-directory"/"lucee-server-directory" in your servlet specification, add the rest of the jars you have downloaded to "{servlet-engine}/lucee-server/bundles/" (you will need to create these folders). If you have defined a "railo-server-directory"/"lucee-server-directory" with your servlet specification copy the jars to "{lucee-server-directory-path}/lucee-server/bundles"</li>
-  <li>Please check the servlet definition for the CFMLServlet: The value for "<load-on-startup>" should be 1, otherwise (at this stage) the params "lucee-server-directory" and "lucee-web-directory" are ignored!</li>
-  <li>Start the servlet engine</li>
-</ul><p><strong>Important information</strong></p><p>With Lucee 5 the JARs used by Lucee (except lucee.jar and org-apache-felix-main-x-x-x.jar) are handled by Lucee and no longer by the servlet engine. It is therefore important that the servlet engine does not load the jars you added. Therefore they should not be in the servlet engines classpath, for example not inside the lib folder.</p><p><strong>Sample Lucee Servlet Definition in web.xml</strong></p>
+<li>If you have not defined a &quot;railo-server-directory&quot;/&quot;lucee-server-directory&quot; in your servlet specification, add the rest of the jars you have downloaded to &quot;{servlet-engine}/lucee-server/bundles/&quot; (you will need to create these folders). If you have defined a &quot;railo-server-directory&quot;/&quot;lucee-server-directory&quot; with your servlet specification copy the jars to &quot;{lucee-server-directory-path}/lucee-server/bundles&quot;</li>
+<li>Please check the servlet definition for the CFMLServlet: The value for &quot;<load-on-startup>&quot; should be 1, otherwise (at this stage) the params &quot;lucee-server-directory&quot; and &quot;lucee-web-directory&quot; are ignored!</li>
+<li>Start the servlet engine</li>
+</ul>
+<p><strong>Important information</strong></p>
+<p>With Lucee 5 the JARs used by Lucee (except lucee.jar and org-apache-felix-main-x-x-x.jar) are handled by Lucee and no longer by the servlet engine. It is therefore important that the servlet engine does not load the jars you added. Therefore they should not be in the servlet engines classpath, for example not inside the lib folder.</p>
+<p><strong>Sample Lucee Servlet Definition in web.xml</strong></p>
 <div class="highlight"><pre><span class="c">&lt;!-- ===================================================================== --&gt;</span>
     <span class="c">&lt;!-- Lucee CFML Servlet - this is the main Lucee servlet                   --&gt;</span>
     <span class="c">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --&gt;</span>
@@ -123,29 +126,29 @@
         <span class="nt">&lt;url-pattern&gt;</span>/index.cfm/*<span class="nt">&lt;/url-pattern&gt;</span>
         <span class="nt">&lt;url-pattern&gt;</span>/index.cfml/*<span class="nt">&lt;/url-pattern&gt;</span>
     <span class="nt">&lt;/servlet-mapping&gt;</span>
-
-    <span class="nt">&lt;servlet&gt;</span>
-        <span class="nt">&lt;servlet-name&gt;</span>LuceeServlet<span class="nt">&lt;/servlet-name&gt;</span>
-        <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.LuceeServlet<span class="nt">&lt;/servlet-class&gt;</span>
-        <span class="nt">&lt;load-on-startup&gt;</span>2<span class="nt">&lt;/load-on-startup&gt;</span>
-    <span class="nt">&lt;/servlet&gt;</span>
-    <span class="nt">&lt;servlet-mapping&gt;</span>
-        <span class="nt">&lt;servlet-name&gt;</span>LuceeServlet<span class="nt">&lt;/servlet-name&gt;</span>
-        <span class="nt">&lt;url-pattern&gt;</span>*.lucee<span class="nt">&lt;/url-pattern&gt;</span>
-        <span class="nt">&lt;url-pattern&gt;</span>/index.lucee/*<span class="nt">&lt;/url-pattern&gt;</span>
-    <span class="nt">&lt;/servlet-mapping&gt;</span>
-    <span class="c">&lt;!-- ===================================================================== --&gt;</span>
-    <span class="c">&lt;!-- Lucee REST Servlet - handles Lucee&#39;s RESTful web services             --&gt;</span>
-    <span class="c">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --&gt;</span>
-    <span class="nt">&lt;servlet&gt;</span>
-        <span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
-        <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.RestServlet<span class="nt">&lt;/servlet-class&gt;</span>
-        <span class="nt">&lt;load-on-startup&gt;</span>3<span class="nt">&lt;/load-on-startup&gt;</span>
-    <span class="nt">&lt;/servlet&gt;</span>
-    <span class="nt">&lt;servlet-mapping&gt;</span>
-        <span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
-        <span class="nt">&lt;url-pattern&gt;</span>/rest/*<span class="nt">&lt;/url-pattern&gt;</span>
-    <span class="nt">&lt;/servlet-mapping&gt;</span>
+<pre><code>&lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;LuceeServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;lucee.loader.servlet.LuceeServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;load-on-startup&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/load-on-startup&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-mapping&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;LuceeServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;*.lucee&lt;span class=&quot;nt&quot;&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;/index.lucee/*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-mapping&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- ===================================================================== --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Lucee REST Servlet - handles Lucee&amp;#39;s RESTful web services             --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;RESTServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;lucee.loader.servlet.RestServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;load-on-startup&amp;gt;&lt;/span&gt;3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/load-on-startup&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-mapping&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;RESTServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;/rest/*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-mapping&amp;gt;&lt;/span&gt;
+</code></pre>
 </pre></div>
 							
 						</div>

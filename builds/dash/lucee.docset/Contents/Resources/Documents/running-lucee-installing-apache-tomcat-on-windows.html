@@ -66,83 +66,112 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/03.installing-apache-tomcat-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p><img src="https://bitbucket.org/repo/rX87Rq/images/1093758943-tomcat-logo65x45.jpg" alt="tomcat-logo65x45.jpg" /></p><p>Before we start with the installation, we need to dive into some basics:</p><h2>What we don't like</h2>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/1093758943-tomcat-logo65x45.jpg" alt="tomcat-logo65x45.jpg" /></p>
+<p>Before we start with the installation, we need to dive into some basics:</p>
+<h2>What we don't like</h2>
 <ul>
-  <li>A mix of binaries (exe, dll-files) and configuration data (eg. xml files) in the <em>application directory</em></li>
-  <li>The software needs <strong>change permissions</strong> to write data into his <em>application directory</em></li>
-  <li>A windows service needs <strong>System Authority</strong> permissions</li>
-</ul><h2>What we really like</h2>
+<li>A mix of binaries (exe, dll-files) and configuration data (eg. xml files) in the <em>application directory</em></li>
+<li>The software needs <strong>change permissions</strong> to write data into his <em>application directory</em></li>
+<li>A windows service needs <strong>System Authority</strong> permissions</li>
+</ul>
+<h2>What we really like</h2>
 <ul>
-  <li>The application can live perfectly with <strong>read permissions</strong> in its <em>application directory</em></li>
-  <li>The data of the application can be stored in a <em>data directory</em> on a different drive as C-drive</li>
-  <li>A windows service can run with a <strong>low privileged</strong> user permissions</li>
-</ul><p>This guide will fully cover a setup of Apache Tomcat to fullfill these goals from <em>What we really like</em> above.</p><p>In terms of Apache Tomcat, we split the files by setting Tomcat's main variables to the <strong>Application path</strong> and <strong>Data path</strong> later on:</p>
-<blockquote><p>catalina.home=C:\Program Files\Tomcat<br/>catalina.base=D:\Tomcat</p>
-</blockquote><p>Before we start, let's download Apache Tomcat from this page: <a href="http://tomcat.apache.org/download-80.cgi">Tomcat 8 Downloads</a>. Scroll down a bit and choose the link <strong><em>64-bit Windows zip</em></strong>. Download the product and unzip the content to a temporary folder on your server.</p><h2>Installation</h2>
+<li>The application can live perfectly with <strong>read permissions</strong> in its <em>application directory</em></li>
+<li>The data of the application can be stored in a <em>data directory</em> on a different drive as C-drive</li>
+<li>A windows service can run with a <strong>low privileged</strong> user permissions</li>
+</ul>
+<p>This guide will  fully cover a setup of Apache Tomcat to fullfill these goals from <em>What we really like</em> above.</p>
+<p>In terms of Apache Tomcat, we split the files by setting Tomcat's main variables to the <strong>Application path</strong> and <strong>Data path</strong> later on:</p>
+<blockquote>
+<p>catalina.home=C:\Program Files\Tomcat<br />
+catalina.base=D:\Tomcat</p>
+</blockquote>
+<p>Before we start, let's download Apache Tomcat from this page: <a href="http://tomcat.apache.org/download-80.cgi">Tomcat 8 Downloads</a>. Scroll down a bit and choose the link <strong><em>64-bit Windows zip</em></strong>. Download the product and unzip the content to a temporary folder on your server.</p>
+<h2>Installation</h2>
 <ol>
-  <li>Create the folders <strong>C:\Program Files\Tomcat</strong>, <strong>C:\Program Files\Tomcat\bin</strong> and <strong>C:\Program Files\Tomcat\lib</strong></li>
-  <li>Browse the expanded content in your temporary folder and change into the folder <strong>apache-tomcat-8.0.18</strong>.</li>
-  <li>Copy the five files from the root in to the folder <strong>C:\Program Files\Tomcat</strong></li>
-  <li>Goto the folder named <em>bin</em>.</li>
-  <li>Copy all files, except <em>*.bat</em>, <em>*.gz</em> and <em>*.sh</em> to the folder <strong>C:\Program Files\Tomcat\bin</strong>. We don't need need the batch files: The Tomcat service will get his configuration from the Windows registry instead.</li>
-  <li>Go back one level and goto to the folder named <em>lib</em></li>
-  <li>Copy all files to the folder <strong>C:\Program Files\Tomcat\lib</strong></li>
-</ol><p>That's it, at least for the application folder. Tomcat requires approximately 10MB of diskspace.</p><p>Command line:</p>
+<li>Create the folders <strong>C:\Program Files\Tomcat</strong>, <strong>C:\Program Files\Tomcat\bin</strong> and <strong>C:\Program Files\Tomcat\lib</strong></li>
+<li>Browse the expanded content in your temporary folder and change into the folder <strong>apache-tomcat-8.0.18</strong>.</li>
+<li>Copy the five files from the root in to the folder <strong>C:\Program Files\Tomcat</strong></li>
+<li>Goto the folder named <em>bin</em>.</li>
+<li>Copy all files, except  <em>*.bat</em>, <em>*.gz</em> and <em>*.sh</em> to the folder <strong>C:\Program Files\Tomcat\bin</strong>. We don't need need the batch files: The Tomcat service will get his configuration from the Windows registry instead.</li>
+<li>Go back one level and goto to the folder named <em>lib</em></li>
+<li>Copy all files to the folder <strong>C:\Program Files\Tomcat\lib</strong></li>
+</ol>
+<p>That's it, at least for the application folder. Tomcat requires approximately 10MB of diskspace.</p>
+<p>Command line:</p>
 <div class="highlight"><pre>md &quot;C:\Program Files\Tomcat&quot;
 copy D:\temp\apache-tomcat-8.0.18\*.* &quot;C:\Program Files\Tomcat&quot; /Y
-
-md &quot;C:\Program Files\Tomcat\bin&quot;
-copy D:\temp\apache-tomcat-8.0.18\bin\*.exe &quot;C:\Program Files\Tomcat\bin&quot; /Y
-copy D:\temp\apache-tomcat-8.0.18\bin\*.dll &quot;C:\Program Files\Tomcat\bin&quot; /Y
-copy D:\temp\apache-tomcat-8.0.18\bin\*.jar &quot;C:\Program Files\Tomcat\bin&quot; /Y
-copy D:\temp\apache-tomcat-8.0.18\bin\*.xml &quot;C:\Program Files\Tomcat\bin&quot; /Y
-
-md &quot;C:\Program Files\Tomcat\lib&quot;
-copy D:\temp\apache-tomcat-8.0.18\lib\*.jar &quot;C:\Program Files\Tomcat\lib&quot; /Y
-</pre></div><p>Note: You can paste the content of the container above directly into the command line of the server.</p><p>Now lets do the same for the configuration and data folder:</p>
+<p>md &quot;C:\Program Files\Tomcat\bin&quot;
+copy D:\temp\apache-tomcat-8.0.18\bin*.exe &quot;C:\Program Files\Tomcat\bin&quot; /Y
+copy D:\temp\apache-tomcat-8.0.18\bin*.dll &quot;C:\Program Files\Tomcat\bin&quot; /Y
+copy D:\temp\apache-tomcat-8.0.18\bin*.jar &quot;C:\Program Files\Tomcat\bin&quot; /Y
+copy D:\temp\apache-tomcat-8.0.18\bin*.xml &quot;C:\Program Files\Tomcat\bin&quot; /Y</p>
+<p>md &quot;C:\Program Files\Tomcat\lib&quot;
+copy D:\temp\apache-tomcat-8.0.18\lib*.jar &quot;C:\Program Files\Tomcat\lib&quot; /Y</p>
+</pre></div>
+<p>Note: You can paste the content of the container above directly into the command line of the server.</p>
+<p>Now lets do the same for the configuration and data folder:</p>
 <ol>
-  <li>Create the folders: <strong>D:\Tomcat</strong>, <strong>D:\Tomcat\conf</strong> and <strong>D:\Tomcat\webapps</strong>.</li>
-  <li>Goto the folder named <em>conf</em>.</li>
-  <li>Copy all files to the folder <strong>D:\Tomcat\conf</strong></li>
-  <li>Create the folders <strong>D:\Tomcat\webapps\host-manager</strong>, <strong>D:\Tomcat\webapps\manager</strong> and <strong>D:\Tomcat\webapps\root</strong>.</li>
-  <li>Goto the folder named <em>webapps</em>.</li>
-  <li>Copy the folders <em>host-manager</em>, <em>manager</em> and <em>root</em> to the matching folder on the target. All these folders have subfolders.</li>
-  <li>Create the folders <strong>D:\Tomcat\logs</strong>, <strong>D:\Tomcat\endorsed</strong>, <strong>D:\Tomcat\temp</strong> and <strong>D:\Tomcat\work</strong>. Some of these directories remain empty until the very first start of Tomcat.</li>
-</ol><p>Command line:</p>
+<li>Create the folders: <strong>D:\Tomcat</strong>, <strong>D:\Tomcat\conf</strong> and <strong>D:\Tomcat\webapps</strong>.</li>
+<li>Goto the folder named <em>conf</em>.</li>
+<li>Copy all files to the folder <strong>D:\Tomcat\conf</strong></li>
+<li>Create the folders <strong>D:\Tomcat\webapps\host-manager</strong>, <strong>D:\Tomcat\webapps\manager</strong> and <strong>D:\Tomcat\webapps\root</strong>.</li>
+<li>Goto the folder named <em>webapps</em>.</li>
+<li>Copy the folders <em>host-manager</em>, <em>manager</em> and <em>root</em> to the matching folder on the target. All these folders have subfolders.</li>
+<li>Create the folders <strong>D:\Tomcat\logs</strong>, <strong>D:\Tomcat\endorsed</strong>, <strong>D:\Tomcat\temp</strong> and <strong>D:\Tomcat\work</strong>. Some of these directories remain empty until the very first start of Tomcat.</li>
+</ol>
+<p>Command line:</p>
 <div class="highlight"><pre>md D:\Tomcat
 md D:\Tomcat\conf
 copy D:\temp\apache-tomcat-8.0.18\conf\*.* D:\Tomcat\conf /Y
-
-md D:\Tomcat\webapps
+<p>md D:\Tomcat\webapps
 md D:\Tomcat\webapps\host-manager
-xcopy D:\temp\apache-tomcat-8.0.18\webapps\host-manager\*.* D:\Tomcat\webapps\host-manager /s /Y
+xcopy D:\temp\apache-tomcat-8.0.18\webapps\host-manager*.* D:\Tomcat\webapps\host-manager /s /Y
 md D:\Tomcat\webapps\manager
-xcopy D:\temp\apache-tomcat-8.0.18\webapps\manager\*.* D:\Tomcat\webapps\manager /s /Y
+xcopy D:\temp\apache-tomcat-8.0.18\webapps\manager*.* D:\Tomcat\webapps\manager /s /Y
 md D:\Tomcat\webapps\root
-xcopy D:\temp\apache-tomcat-8.0.18\webapps\root\*.* D:\Tomcat\webapps\root /s /Y
-
-md D:\Tomcat\endorsed
+xcopy D:\temp\apache-tomcat-8.0.18\webapps\root*.* D:\Tomcat\webapps\root /s /Y</p>
+<p>md D:\Tomcat\endorsed
 md D:\Tomcat\logs
 md D:\Tomcat\temp
-md D:\Tomcat\work
-</pre></div><p>We finished the basic installation. Now we have to edit some of the configuration files.<br/>Let's go to the folder <strong>D:\Tomcat\conf</strong>.</p><h2>server.xml</h2><p>Catalina's default host needs some tweaking. Find the line:</p>
+md D:\Tomcat\work</p>
+</pre></div>
+<p>We finished the basic installation. Now we have to edit some of the configuration files.<br />
+Let's go to the folder <strong>D:\Tomcat\conf</strong>.</p>
+<h2>server.xml##</h2>
+<p>Catalina's default host needs some tweaking. Find the line:</p>
 <div class="highlight"><pre><span class="nt">&lt;Host</span> <span class="na">name=</span><span class="s">&quot;localhost&quot;</span>  <span class="na">appBase=</span><span class="s">&quot;webapps&quot;</span>
             <span class="na">unpackWARs=</span><span class="s">&quot;true&quot;</span> <span class="na">autoDeploy=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</pre></div><p>Change this line to:</p>
+</pre></div>
+<p>Change this line to:</p>
 <div class="highlight"><pre><span class="nt">&lt;Host</span> <span class="na">name=</span><span class="s">&quot;localhost&quot;</span> <span class="na">appBase=</span><span class="s">&quot;D:\Tomcat\webapps&quot;</span> <span class="na">workDir=</span><span class="s">&quot;D:\Tomcat\work\Catalina\localhost&quot;</span> <span class="na">unpackWARs=</span><span class="s">&quot;true&quot;</span> <span class="na">autoDeploy=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</pre></div><p>A few lines below, you will find the line:</p>
+</pre></div>
+<p>A few lines below, you will find the line:</p>
 <div class="highlight"><pre><span class="nt">&lt;Valve</span> <span class="na">className=</span><span class="s">&quot;org.apache.catalina.valves.AccessLogValve&quot;</span> <span class="na">directory=</span><span class="s">&quot;logs&quot;</span>
-</pre></div><p>We need to specify the full path to the log directory:</p>
+</pre></div>
+<p>We need to specify the full path to the log directory:</p>
 <div class="highlight"><pre><span class="nt">&lt;Valve</span> <span class="na">className=</span><span class="s">&quot;org.apache.catalina.valves.AccessLogValve&quot;</span> <span class="na">directory=</span><span class="s">&quot;D:\Tomcat\logs&quot;</span>
-</pre></div><p>The next step is optional. Tomcat and Lucee are listening on port <strong>8080</strong> to access the administrator interface. Other web servers might use this port already or if you suffer from a security paranoia like i do, we want to have this port on a <em>really weard number</em>. </p><p><em>Note:</em> The Lucee'ians are used to have port <strong>8888</strong> to access the administrator interface.</p><p>Find the setting:</p>
+</pre></div>
+<p>The next step is optional. Tomcat and Lucee are listening on port <strong>8080</strong> to access the administrator interface. Other web servers might use this port already or if you suffer from a security paranoia like i do, we want to have this port on a <em>really weard number</em>.</p>
+<p><em>Note:</em> The Lucee'ians are used to have port <strong>8888</strong> to access the administrator interface.</p>
+<p>Find the setting:</p>
 <div class="highlight"><pre><span class="nt">&lt;Connector</span> <span class="na">port=</span><span class="s">&quot;8080&quot;</span> <span class="na">protocol=</span><span class="s">&quot;HTTP/1.1&quot;</span>
                <span class="na">connectionTimeout=</span><span class="s">&quot;20000&quot;</span>
                <span class="na">redirectPort=</span><span class="s">&quot;8443&quot;</span> <span class="nt">/&gt;</span>
-</pre></div><p>Change the port <em>8080</em> to the new port. </p><p>If you like to access the Tomcat Administration from outside of the server, the Windows firewall needs to be opened with a rule:</p>
+</pre></div>
+<p>Change the port <em>8080</em> to the new port.</p>
+<p>If you like to access the Tomcat Administration from outside of the server, the Windows firewall needs to be opened with a rule:</p>
 <div class="highlight"><pre>netsh advfirewall firewall add rule name=&quot;Apache Tomcat&quot; dir=in action=allow protocol=TCP localport=8888 program=&quot;C:\Program Files\Tomcat\bin\tomcat8.exe&quot; profile=ANY
-</pre></div><p>You don't like the command prompt? Add the rule with the firewall applet in the control panel. Be sure, that the port is limited to the main exe file <strong>C:\Program Files\Tomcat\bin\tomcat8.exe</strong>.</p>
-<blockquote><p>Todo: maxHttpHeaderSize="8192" (Default: 4096)  minSpareThreads="25" (Default: 4)  disableUploadTimeout="true" (Default: false)</p>
-</blockquote><h2>tomcat-users.xml</h2><p>This file holds rules, usernames and passwords to access the administrator interface of Tomcat. The access to the administrator interface is disabled by default:</p>
+</pre></div>
+<p>You don't like the command prompt? Add the rule with the firewall applet in the control panel.
+Be sure, that the port is limited to the main exe file <strong>C:\Program Files\Tomcat\bin\tomcat8.exe</strong>.</p>
+<blockquote>
+<p>Todo: maxHttpHeaderSize=&quot;8192&quot; (Default: 4096)
+minSpareThreads=&quot;25&quot; (Default: 4)
+disableUploadTimeout=&quot;true&quot; (Default: false)</p>
+</blockquote>
+<h2>tomcat-users.xml##</h2>
+<p>This file holds rules, usernames and passwords to access the administrator interface of Tomcat. The access to the administrator interface is disabled by default:</p>
 <div class="highlight"><pre><span class="c">&lt;!--</span>
 <span class="c">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span>
 <span class="c">  &lt;role rolename=&quot;role1&quot;/&gt;</span>
@@ -150,26 +179,34 @@ md D:\Tomcat\work
 <span class="c">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span>
 <span class="c">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span>
 <span class="c">--&gt;</span>
-</pre></div><p>Replace the content with this:</p>
+</pre></div>
+<p>Replace the content with this:</p>
 <div class="highlight"><pre><span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;admin-gui&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;manager-gui&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;user</span> <span class="na">name=</span><span class="s">&quot;AccountName&quot;</span> <span class="na">password=</span><span class="s">&quot;VeryStrongPassword&quot;</span> <span class="na">roles=</span><span class="s">&quot;admin-gui,manager-gui&quot;</span> <span class="nt">/&gt;</span>
-</pre></div><p>Choose a clever name for the administrator account. For security reasons, do not choose <em>admin</em> oder <em>administrator</em>! The password should contain a mix between upper- and lower-case letters, numbers and special characters like _-!.</p><h2>catalina.properties</h2><p>This is an optional task, which cuts the time Tomcat takes to start:</p><p>Find the line:</p>
+</pre></div>
+<p>Choose a clever name for the administrator account. For security reasons, do not choose <em>admin</em> oder <em>administrator</em>!
+The password should contain a mix between upper- and lower-case letters, numbers and special characters like _-!.</p>
+<h2>catalina.properties</h2>
+<p>This is an optional task, which cuts the time Tomcat takes to start:</p>
+<p>Find the line:</p>
 <div class="highlight"><pre>tomcat.util.scan.StandardJarScanFilter.jarsToSkip=\
-</pre></div><p>Remove the lines below until the next comment and change the line to:</p>
+</pre></div>
+<p>Remove the lines below until the next comment and change the line to:</p>
 <div class="highlight"><pre>tomcat.util.scan.StandardJarScanFilter.jarsToSkip=\*.jar
-</pre></div><p>Instead of skipping the list of JAR's at startup, Tomcat will skip all JAR's.</p><p>Find the line:</p>
+</pre></div>
+<p>Instead of skipping the list of JAR's at startup, Tomcat will skip all JAR's.</p>
+<p>Find the line:</p>
 <div class="highlight"><pre>tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-core*.jar,log4j-taglib*.jar
-</pre></div><p>Add a <strong>remark</strong> in front of the line:</p>
+</pre></div>
+<p>Add a <strong>remark</strong> in front of the line:</p>
 <div class="highlight"><pre>#tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-core*.jar,log4j-taglib*.jar
-</pre></div><h2>Update</h2><p>An minor update requires mostly only the replacement of the files in the folders <strong>C:\Program Files\Tomcat\bin</strong> and <strong>C:\Program Files\Tomcat\lib</strong>. Stop the Tomcat service, replace the files and start the service. That's it.</p>
-<ul>
-  <li>
-  <ul>
-    <li>- Reference: <a href="http://tomcat.apache.org/tomcat-8.0-doc/config/systemprops.html">Tomcat Configuration Reference</a></li>
-  </ul></li>
-</ul>
-<hr/>
+</pre></div>
+<p>##Update##</p>
+<p>An minor update requires mostly only the replacement of the files in the folders <strong>C:\Program Files\Tomcat\bin</strong> and <strong>C:\Program Files\Tomcat\lib</strong>. Stop the Tomcat service, replace the files and start the service. That's it.</p>
+<hr />
+<p>Reference: <a href="http://tomcat.apache.org/tomcat-8.0-doc/config/systemprops.html">Tomcat Configuration Reference</a></p>
+<hr />
 							
 						</div>
 					</div>

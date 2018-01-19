@@ -519,19 +519,22 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/06.cached-within-request/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Cache a Query for the current request</h1><p>maybe you are familiar with the "cachedwithin" attribute of the tag <cfquery>, that is normally used as follows:</p>
+	<h1>Cache a Query for the current request</h1>
+<p>maybe you are familiar with the &quot;cachedwithin&quot; attribute of the tag <cfquery>, that is normally used as follows:</p>
 <div class="highlight"><pre>#!html
-
-&lt;cfquery cachedWithin=&quot;#createTimeSpan(0,0,0,1)#&quot;&gt;
-select * from whatever where whatsoever=&#39;#whatsoever#&#39;
-&lt;/cfquery&gt;
-</pre></div><p>in that case the query is cached for ALL users for a single second. This is sometime used to cache a query for the current request, because most request are done in under a second. Problem is that this cache is for all request and because of that more complicated to handle for Lucee what means unnecessary overhead on the system.</p><p>What you can do in this particular case is very simple, replace the timespan defined in the "cachedWithin" attribute with the value "request":</p>
+<p>&lt;cfquery cachedWithin=&quot;#createTimeSpan(0,0,0,1)#&quot;&gt;
+select * from whatever where whatsoever='#whatsoever#'
+&lt;/cfquery&gt;</p>
+</pre></div>
+<p>in that case the query is cached for ALL users for a single second. This is sometime used to cache a query for the current request, because most request are done in under a second.
+Problem is that this cache is for all request and because of that more complicated to handle for Lucee what means unnecessary overhead on the system.</p>
+<p>What you can do in this particular case is very simple, replace the timespan defined in the &quot;cachedWithin&quot; attribute with the value &quot;request&quot;:</p>
 <div class="highlight"><pre>#!html
-
-&lt;cfquery cachedWithin=&quot;request&quot;&gt;
-select * from whatever where whatsoever=&#39;#whatsoever#&#39;
-&lt;/cfquery&gt;
-</pre></div><p>this way the query is cache only for the current request, independent how long this request takes!</p>
+<p>&lt;cfquery cachedWithin=&quot;request&quot;&gt;
+select * from whatever where whatsoever='#whatsoever#'
+&lt;/cfquery&gt;</p>
+</pre></div>
+<p>this way the query is cache only for the current request, independent how long this request takes!</p>
 
 							
 						</div>

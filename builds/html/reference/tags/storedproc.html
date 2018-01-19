@@ -515,7 +515,8 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/storedproc/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Executes stored procedures by an ODBC or native connection to a server database. It specifies database connection  information and identifies the stored procedure.</p>
+	<p>Executes stored procedures by an ODBC or native connection to a server database. It specifies database connection
+information and identifies the stored procedure.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nt">&lt;cfstoredproc</span>
@@ -579,7 +580,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/storedproc/_attributes/dataSource.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The name data source that points to the database that contains the stored  procedure.</p>
+								<p>The name data source that points to the database that contains the stored
+procedure.</p>
 							</td>
 						</tr>
 					
@@ -612,7 +614,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/storedproc/_attributes/blockFactor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Specifies the maximum number of rows to fetch at a time from the server. The range is 1  which is the default to 100. The ODBC driver may dynamically reduce the block factor at runtime.</p>
+								<p>Specifies the maximum number of rows to fetch at a time from the server. The range is 1
+which is the default to 100. The ODBC driver may dynamically reduce the block factor at runtime.</p>
 							</td>
 						</tr>
 					
@@ -634,7 +637,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/storedproc/_attributes/returnCode.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Yes or No. Specifies whether the tag populates cfstoredproc.statusCode with the status code  returned by the stored procedure. Default is No.</p>
+								<p>Yes or No. Specifies whether the tag populates cfstoredproc.statusCode with the status code
+returned by the stored procedure. Default is No.</p>
 							</td>
 						</tr>
 					
@@ -667,7 +671,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/storedproc/_attributes/cachedWithin.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>possible values are: String "request": If original query was created within the current request, cached query data isused. a timespan (created with function CreateTimeSpan): If original query date falls within the time span, cached query data isused.</p><p>To use cached data, the current query must use the same SQL statement, data source, query name, user name, and password.</p>
+								<p>possible values are:
+String &quot;request&quot;: If original query was created within the current request, cached query data isused.
+a timespan (created with function CreateTimeSpan): If original query date falls within the time span, cached query data isused.</p>
+<p>To use cached data, the current query must use the same SQL statement, data source, query name, user name, and password.</p>
 							</td>
 						</tr>
 					

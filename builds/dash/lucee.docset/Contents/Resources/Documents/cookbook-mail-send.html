@@ -64,7 +64,26 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/10.mail-send/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>How to send a Mail</h1><p>The following example shows you how you can send a mail. Before you can use this functionality, you have to define a Mail server in the Lucee Administrator.</p><p><strong>Tags</strong> <div class="highlight"><pre>#!cfm &lt;cfmail subject=&quot;Your Order&quot; from=&quot;whatever@lucee.org&quot; to=&quot;whatever@gmail.com&quot;&gt; Hi there, This mail is sent to confirm that we have received your order. &lt;/cfmail&gt; </pre></div></p><p><strong>Script</strong> <div class="highlight"><pre>#!javascript mail subject=&quot;Your Order&quot; from=&quot;whatever@lucee.org&quot; to=&quot;whatever@gmail.com&quot; {  writeOutput(&#39;Hi there,&#39;);  writeOutput(&#39;This mail is sent to confirm that we have received your order.&#39;); }; </pre></div></p><p>That is all you need to do to send a mail.</p><h2>Advanced</h2><p>TODO</p>
+	<h1>How to send a Mail</h1>
+<p>The following example shows you how you can send a mail.
+Before you can use this functionality, you have to define a Mail server in the Lucee Administrator.</p>
+<p><strong>Tags</strong>
+<div class="highlight"><pre>#!cfm
+&lt;cfmail subject=&quot;Your Order&quot; from=&quot;whatever@lucee.org&quot; to=&quot;whatever@gmail.com&quot;&gt;
+Hi there,
+This mail is sent to confirm that we have received your order.
+&lt;/cfmail&gt;</p>
+</pre></div>
+<p><strong>Script</strong>
+<div class="highlight"><pre>#!javascript
+mail subject=&quot;Your Order&quot; from=&quot;whatever@lucee.org&quot; to=&quot;whatever@gmail.com&quot; {
+writeOutput('Hi there,');
+writeOutput('This mail is sent to confirm that we have received your order.');
+};</p>
+</pre></div>
+<p>That is all you need to do to send a mail.</p>
+<h2>Advanced</h2>
+<p>TODO</p>
 							
 						</div>
 					</div>

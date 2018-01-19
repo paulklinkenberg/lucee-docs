@@ -66,25 +66,44 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/05.installing-the-jdk-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p><img src="https://bitbucket.org/repo/rX87Rq/images/398847305-java-logo70x45.jpg" alt="java-logo70x45.jpg" /></p><p>First download the current <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java 8 SE Development Kit</a>.</p><p>Choose the <strong>Windows x64</strong> edition and save it to a temporary folder on your server.</p><h2>Installation</h2>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/398847305-java-logo70x45.jpg" alt="java-logo70x45.jpg" /></p>
+<p>First download the current <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java 8 SE Development Kit</a>.</p>
+<p>Choose the <strong>Windows x64</strong> edition and save it to a temporary folder on your server.</p>
+<h2>Installation</h2>
 <ol>
-  <li>Create the folder <strong>C:\Program Files\Oracle Java JDK</strong> on your server.</li>
-  <li>Start the installer by double-clicking the downloaded .exe file.</li>
-  <li>Click <em>Next</em>. Select <strong>Development Tools</strong> and set the "Install to..." location to be the folder you created above.</li>
-  <li>Untick <strong>Source Code</strong> and <strong>Public JRE</strong>. We don't need these.</li>
-  <li>Click <em>Next</em> to start installing.</li>
-</ol><p><img src="https://bitbucket.org/repo/rX87Rq/images/252239566-java-jdk-setup.png" alt="java-jdk-setup.png" /></p><h2>Set JDK_HOME Environment variable</h2><p>Finally we need to set an environment variable to point to our new Java installation:</p>
+<li>Create the folder <strong>C:\Program Files\Oracle Java JDK</strong> on your server.</li>
+<li>Start the installer by double-clicking the downloaded .exe file.</li>
+<li>Click <em>Next</em>. Select <strong>Development Tools</strong> and set the &quot;Install to...&quot; location to be the folder you created above.</li>
+<li>Untick <strong>Source Code</strong> and <strong>Public JRE</strong>. We don't need these.</li>
+<li>Click <em>Next</em> to start installing.</li>
+</ol>
+<p><img src="https://bitbucket.org/repo/rX87Rq/images/252239566-java-jdk-setup.png" alt="java-jdk-setup.png" /></p>
+<h2>Set JDK_HOME Environment variable</h2>
+<p>Finally we need to set an environment variable to point to our new Java installation:</p>
 <ol>
-  <li>Open the control panel and choose the <em>system applet</em></li>
-  <li>Click the <em>Advanced</em> tab and the button <em>Environment Variables</em></li>
-  <li>Click <em>New...</em> at the <strong>System Variables</strong></li>
-  <li>Use <strong>JDK_HOME</strong> as the name of the variable and the path <strong>C:\Program Files\Oracle Java JDK</strong> as the value.</li>
-  <li>Finish by clicking OK until your are back at the control panel.</li>
-</ol><p>Or using the command line: <div class="highlight"><pre>setx JDK_HOME &quot;C:\Program Files\Oracle Java JDK&quot; /m </pre></div></p><p>To check the environment variable has been set correctly:</p>
+<li>Open the control panel and choose the <em>system applet</em></li>
+<li>Click the <em>Advanced</em> tab and the button <em>Environment Variables</em></li>
+<li>Click <em>New...</em> at the <strong>System Variables</strong></li>
+<li>Use <strong>JDK_HOME</strong> as the name of the variable and the path <strong>C:\Program Files\Oracle Java JDK</strong> as the value.</li>
+<li>Finish by clicking OK until your are back at the control panel.</li>
+</ol>
+<p>Or using the command line:
+<div class="highlight"><pre>setx JDK_HOME &quot;C:\Program Files\Oracle Java JDK&quot; /m</p>
+</pre></div>
+<p>To check the environment variable has been set correctly:</p>
 <ol>
-  <li>Open a <em>new</em> command prompt, type <strong>set</strong> and hit <em>enter</em></li>
-  <li>Scroll until you see the variable <strong>JDK_HOME</strong></li>
-</ol><h2>Update</h2><p>It is important to keep Java updated with the latest security patches. To do so simply download the latest installer, <em>Stop your Tomcat-Service</em> and install the new version over the old one. Don't forget to re-start Tomcat after the update.</p><h2>Silent Installation</h2><p>If you need to install this product on several servers then a silent installation will make your life easier: <div class="highlight"><pre>jdk-8u31-windows-x64.exe /s addlocal=&quot;ToolsFeature&quot; installdir=&quot;C:\Program Files\Oracle Java JDK&quot; setx JDK_HOME &quot;C:\Program Files\Oracle Java JDK&quot; /m </pre></div></p><p>(Make sure you change the update version number as appropriate). - - -</p>
+<li>Open a <em>new</em> command prompt, type <strong>set</strong> and hit <em>enter</em></li>
+<li>Scroll until you see the variable <strong>JDK_HOME</strong></li>
+</ol>
+<h2>Update</h2>
+<p>It is important to keep Java updated with the latest security patches. To do so simply download the latest installer, <em>Stop your Tomcat-Service</em> and install the new version over the old one. Don't forget to re-start Tomcat after the update.</p>
+<h2>Silent Installation</h2>
+<p>If you need to install this product on several servers then a silent installation will make your life easier:
+<div class="highlight"><pre>jdk-8u31-windows-x64.exe /s addlocal=&quot;ToolsFeature&quot; installdir=&quot;C:\Program Files\Oracle Java JDK&quot;
+setx JDK_HOME &quot;C:\Program Files\Oracle Java JDK&quot; /m</p>
+</pre></div>
+<p>(Make sure you change the update version number as appropriate).</p>
+<hr />
 							
 						</div>
 					</div>

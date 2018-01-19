@@ -66,33 +66,43 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/01.installing-and-configuring-lucee-jar-file-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p><img src="https://bitbucket.org/repo/rX87Rq/images/1133943380-lucee-logo108x45.png" alt="lucee-logo108x45.png" /></p><h2>Installation</h2><p>Lucee needs to be downloaded first from this page: <a href="https://bitbucket.org/lucee/lucee/downloads">Lucee Downloads</a>. Choose the <em>zip file</em> containing the <strong>JAR files</strong>.</p>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/1133943380-lucee-logo108x45.png" alt="lucee-logo108x45.png" /></p>
+<h2>Installation</h2>
+<p>Lucee needs to be downloaded first from this page: <a href="https://bitbucket.org/lucee/lucee/downloads">Lucee Downloads</a>. Choose the <em>zip file</em> containing the <strong>JAR files</strong>.</p>
 <ol>
-  <li>Create the folder <strong>C:\Program Files\Lucee</strong></li>
-  <li>Browse the expanded content in your temporary folder and copy all files to the folder <strong>C:\Program Files\Lucee</strong></li>
-  <li>Create the folder <strong>D:\Lucee</strong>. This directory will hold the configuration, the log files, some data and the server context.</li>
-</ol><p>The jar files require approximately 71MB of diskspace.</p><p>Command line:</p>
+<li>Create the folder <strong>C:\Program Files\Lucee</strong></li>
+<li>Browse the expanded content in your temporary folder and copy all files to the folder <strong>C:\Program Files\Lucee</strong></li>
+<li>Create the folder <strong>D:\Lucee</strong>. This directory will hold the configuration, the log files, some data and the server context.</li>
+</ol>
+<p>The jar files require approximately 71MB of diskspace.</p>
+<p>Command line:</p>
 <div class="highlight"><pre>md &quot;C:\Program Files\Lucee&quot;
 copy D:\temp\*.* &quot;C:\Program Files\Lucee&quot; /Y
 md D:\Lucee
-</pre></div><h2>Configuration</h2><p>We have to take care, that Apache Tomcat is able find the jar files of Lucee. The file <strong>D:\Tomcat\conf\catalina.properties</strong> needs to be edited. Find the line:</p>
+</pre></div>
+<h2>Configuration##</h2>
+<p>We have to take care, that Apache Tomcat is able find the jar files of Lucee. The file <strong>D:\Tomcat\conf\catalina.properties</strong> needs to be edited. Find the line:</p>
 <div class="highlight"><pre>common.loader=&quot;${catalina.base}/lib&quot;,&quot;${catalina.base}/lib/*.jar&quot;,&quot;${catalina.home}/lib&quot;,&quot;${catalina.home}/lib/*.jar&quot;
-</pre></div><p>Append the path to Lucee's program directory, which is <strong>C:/Program Files/Lucee/*.jar</strong>. Did you notice the <em>foward slashes</em>?</p>
+</pre></div>
+<p>Append the path to Lucee's program directory, which is <strong>C:/Program Files/Lucee/*.jar</strong>. Did you notice the <em>foward slashes</em>?</p>
 <div class="highlight"><pre>common.loader=&quot;${catalina.base}/lib&quot;,&quot;${catalina.base}/lib/*.jar&quot;,&quot;${catalina.home}/lib&quot;,&quot;${catalina.home}/lib/*.jar&quot;,&quot;C:/Program Files/Lucee/*.jar&quot;
-</pre></div><p>The next step is to tell Apache Tomcat, that we need a new <em>welcome file</em>, which we add in the file <strong>D:\Tomcat\conf\web.xml</strong>. At the end of the file, you will find this list:</p>
+</pre></div>
+<p>The next step is to tell Apache Tomcat, that we need a new <em>welcome file</em>, which we add in the file <strong>D:\Tomcat\conf\web.xml</strong>. At the end of the file, you will find this list:</p>
 <div class="highlight"><pre><span class="nt">&lt;welcome-file-list&gt;</span>
     <span class="nt">&lt;welcome-file&gt;</span>index.html<span class="nt">&lt;/welcome-file&gt;</span>
     <span class="nt">&lt;welcome-file&gt;</span>index.htm<span class="nt">&lt;/welcome-file&gt;</span>
     <span class="nt">&lt;welcome-file&gt;</span>index.jsp<span class="nt">&lt;/welcome-file&gt;</span>
 <span class="nt">&lt;/welcome-file-list&gt;</span>
-</pre></div><p><strong>Append</strong> new line containing <strong>index.cfm</strong> as the <strong>last line</strong>:</p>
+</pre></div>
+<p><strong>Append</strong> new line containing <strong>index.cfm</strong> as the <strong>last line</strong>:</p>
 <div class="highlight"><pre><span class="nt">&lt;welcome-file-list&gt;</span>
     <span class="nt">&lt;welcome-file&gt;</span>index.html<span class="nt">&lt;/welcome-file&gt;</span>
     <span class="nt">&lt;welcome-file&gt;</span>index.htm<span class="nt">&lt;/welcome-file&gt;</span>
     <span class="nt">&lt;welcome-file&gt;</span>index.jsp<span class="nt">&lt;/welcome-file&gt;</span>
     <span class="nt">&lt;welcome-file&gt;</span>index.cfm<span class="nt">&lt;/welcome-file&gt;</span>
 <span class="nt">&lt;/welcome-file-list&gt;</span>
-</pre></div><p>Below this list, new servlets and their mappings must be added:</p>
+</pre></div>
+<p>Below this list, new servlets and their mappings must be added:</p>
 <div class="highlight"><pre><span class="nt">&lt;servlet&gt;</span>
     <span class="nt">&lt;servlet-name&gt;</span>CFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
     <span class="nt">&lt;description&gt;</span>CFML runtime Engine<span class="nt">&lt;/description&gt;</span>
@@ -109,29 +119,28 @@ md D:\Lucee
     <span class="nt">&lt;/init-param&gt;</span>
     <span class="nt">&lt;load-on-startup&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span>
 <span class="nt">&lt;/servlet&gt;</span>
-
-<span class="nt">&lt;servlet&gt;</span>
-    <span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
-    <span class="nt">&lt;description&gt;</span>Servlet to access REST service<span class="nt">&lt;/description&gt;</span>
-    <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.RestServlet<span class="nt">&lt;/servlet-class&gt;</span>
-    <span class="nt">&lt;load-on-startup&gt;</span>2<span class="nt">&lt;/load-on-startup&gt;</span>
-<span class="nt">&lt;/servlet&gt;</span>
-
-<span class="nt">&lt;servlet-mapping&gt;</span>
-    <span class="nt">&lt;servlet-name&gt;</span>CFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
-    <span class="nt">&lt;url-pattern&gt;</span>*.cfm<span class="nt">&lt;/url-pattern&gt;</span>
-    <span class="nt">&lt;url-pattern&gt;</span>*.cfml<span class="nt">&lt;/url-pattern&gt;</span>
-    <span class="nt">&lt;url-pattern&gt;</span>*.cfc<span class="nt">&lt;/url-pattern&gt;</span>
-    <span class="nt">&lt;url-pattern&gt;</span>/index.cfm/*<span class="nt">&lt;/url-pattern&gt;</span>
-    <span class="nt">&lt;url-pattern&gt;</span>/index.cfc/*<span class="nt">&lt;/url-pattern&gt;</span>
-    <span class="nt">&lt;url-pattern&gt;</span>/index.cfml/*<span class="nt">&lt;/url-pattern&gt;</span>
-<span class="nt">&lt;/servlet-mapping&gt;</span>
-
-<span class="nt">&lt;servlet-mapping&gt;</span>
-    <span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
-     <span class="nt">&lt;url-pattern&gt;</span>/rest/*<span class="nt">&lt;/url-pattern&gt;</span>
-<span class="nt">&lt;/servlet-mapping&gt;</span>
-</pre></div><p><em>Note:</em> After the last <strong></servlet-mapping></strong>, the file ends by having the closing <strong></web-app></strong></p><p>Finally a Java option needs to be added:</p>
+<p><span class="nt">&lt;servlet&gt;</span>
+<span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
+<span class="nt">&lt;description&gt;</span>Servlet to access REST service<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.RestServlet<span class="nt">&lt;/servlet-class&gt;</span>
+<span class="nt">&lt;load-on-startup&gt;</span>2<span class="nt">&lt;/load-on-startup&gt;</span>
+<span class="nt">&lt;/servlet&gt;</span></p>
+<p><span class="nt">&lt;servlet-mapping&gt;</span>
+<span class="nt">&lt;servlet-name&gt;</span>CFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span><em>.cfm<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span></em>.cfml<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span><em>.cfc<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/index.cfm/</em><span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/index.cfc/<em><span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/index.cfml/</em><span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/servlet-mapping&gt;</span></p>
+<p><span class="nt">&lt;servlet-mapping&gt;</span>
+<span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/rest/*<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/servlet-mapping&gt;</span></p>
+</pre></div>
+<p><em>Note:</em> After the last  <strong></servlet-mapping></strong>, the file ends by having the closing <strong></web-app></strong></p>
+<p>Finally a Java option needs to be added:</p>
 <div class="highlight"><pre>&quot;C:\Program Files\Tomcat\bin\tomcat8.exe&quot; //US//Tomcat8 ++JvmOptions=&quot;-javaagent:C:\Program Files\Lucee\lucee-inst.jar&quot;
 </pre></div>
 							

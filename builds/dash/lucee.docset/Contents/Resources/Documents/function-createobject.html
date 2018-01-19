@@ -80,7 +80,7 @@
 					<div class="card-inner">
 						<p class="card-heading">Warning</p>
 						<p>In Lucee 5, this function has been deprecated in favour of the <code>new object()</code> syntax (reference needed). In line with our <a href="http://lucee.org/blog/the-lucee-language.html">committment to CFML</a>, this function will never be dropped from the language and you are safe to use it going forward.</p>
-      
+
 					</div>
 				</div>
 			</div>
@@ -112,7 +112,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>one of the following: - com: for loading a com Object - java: for loading a java object - webservice: for loading a remote webservice - component: for loading a Component</p>
+								<p>one of the following:</p>
+<ul>
+<li>com: for loading a com Object</li>
+<li>java: for loading a java object</li>
+<li>webservice: for loading a remote webservice</li>
+<li>component: for loading a Component</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -123,7 +129,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/classname.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>the usage of this argument depend on type defined with argument "type": - com: Component ProgID for the object to invoke. - java: java class to load - webservice: WSDL url to call - component: The CFC name; corresponds to the name of the file that defines the component</p>
+								<p>the usage of this argument depend on type defined with argument &quot;type&quot;:</p>
+<ul>
+<li>com: Component ProgID for the object to invoke.</li>
+<li>java: java class to load</li>
+<li>webservice: WSDL url to call</li>
+<li>component: The CFC name; corresponds to the name of the file that defines the component</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -134,7 +146,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/context.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>the usage of this argument depend on type defined with argument "type": - com: not used (ignored) - java: classpath used to load the defined class, this can be a list of multiple paths (directories containing class files or jar files) - webservice: a struct containing the following optional keys (username,password,proxyServer,proxyPort,proxyUser,proxyPassword) - component: not used (ignored)</p>
+								<p>the usage of this argument depend on type defined with argument &quot;type&quot;:</p>
+<ul>
+<li>com: not used (ignored)</li>
+<li>java: classpath used to load the defined class, this can be a list of multiple paths (directories containing class files or jar files)</li>
+<li>webservice: a struct containing the following optional keys (username,password,proxyServer,proxyPort,proxyUser,proxyPassword)</li>
+<li>component: not used (ignored)</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -145,7 +163,13 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/createobject/_arguments/arg4.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>the usage of this argument depend on type defined with argument "type": - com: not used (ignored) - java: delimiter used for the classpath (default comma) - webservice: not used (ignored) - component: not used (ignored)</p>
+								<p>the usage of this argument depend on type defined with argument &quot;type&quot;:</p>
+<ul>
+<li>com: not used (ignored)</li>
+<li>java: delimiter used for the classpath (default comma)</li>
+<li>webservice: not used (ignored)</li>
+<li>component: not used (ignored)</li>
+</ul>
 							</td>
 						</tr>
 					

@@ -513,12 +513,12 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isempty/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Returns whether or not a given value is "empty". The following data types can be checked:</p>
+	<p>Returns whether or not a given value is &quot;empty&quot;. The following data types can be checked:</p>
 <ul>
-  <li>Strings (a zero length string will return <code>true</code>)</li>
-  <li>Arrays (an array with no elements will return <code>true</code>)</li>
-  <li>Structs (a struct with no keys will return <code>true</code>)</li>
-  <li>Query (a query with no rows will return <code>true</code>)</li>
+<li>Strings (a zero length string will return <code>true</code>)</li>
+<li>Arrays (an array with no elements will return <code>true</code>)</li>
+<li>Structs (a struct with no keys will return <code>true</code>)</li>
+<li>Query (a query with no rows will return <code>true</code>)</li>
 </ul>
 
 	<p><strong>Returns:</strong> boolean</p>
@@ -564,26 +564,21 @@
 IsEmpty( &#39;&#39; ) == true;
 IsEmpty( &#39; &#39; ) == false;
 IsEmpty( &#39;0&#39; ) == false;
-
-// arrays
+<p>// arrays
 IsEmpty( [] ) == true;
-IsEmpty( [ 1, 2, 3 ] ) == false;
-
-// structs
+IsEmpty( [ 1, 2, 3 ] ) == false;</p>
+<p>// structs
 IsEmpty( {} ) == true;
-IsEmpty( { key=&quot;value&quot; } ) == false;
-
-// queries
-IsEmpty( QueryNew( &#39;column&#39; ) ) == true;
-IsEmpty( QueryNew( &#39;column&#39;, &#39;varchar&#39;, [ [ &#39;value&#39; ] ] ) ) == false;
-
-// numerics (always non-empty)
+IsEmpty( { key=&quot;value&quot; } ) == false;</p>
+<p>// queries
+IsEmpty( QueryNew( 'column' ) ) == true;
+IsEmpty( QueryNew( 'column', 'varchar', [ [ 'value' ] ] ) ) == false;</p>
+<p>// numerics (always non-empty)
 IsEmpty( 0 ) == false;
-IsEmpty( 1 ) == false;
-
-// booleans (always non-empty)
+IsEmpty( 1 ) == false;</p>
+<p>// booleans (always non-empty)
 IsEmpty( false ) == false;
-IsEmpty( true ) == false;
+IsEmpty( true ) == false;</p>
 </pre></div>
 <div class="card-wrap">
 			<div class="card card-yellow">
@@ -594,7 +589,7 @@ IsEmpty( true ) == false;
 					<div class="card-inner">
 						<p class="card-heading">Warning</p>
 						<p>Prior to Lucee 4.5.1.016, <code>IsEmpty( 0 )</code> and <code>IsEmpty( false )</code> both returned true.</p>
-      
+
 					</div>
 				</div>
 			</div>

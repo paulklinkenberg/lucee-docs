@@ -64,7 +64,8 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Tests for a parameter's existence, tests its data type, and provides a default value if one  is not assigned.</p>
+	<p>Tests for a parameter's existence, tests its data type, and provides a default value if one
+is not assigned.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nb">&lt;cfparam</span>
@@ -101,7 +102,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The name of the parameter to test, such as Client.Email or Cookie.BackgroundColor. If  you omit the DEFAULT attribute, an error occurs if the specified parameter does not exist</p>
+								<p>The name of the parameter to test, such as Client.Email or Cookie.BackgroundColor. If
+you omit the DEFAULT attribute, an error occurs if the specified parameter does not exist</p>
 							</td>
 						</tr>
 					
@@ -112,7 +114,33 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The type of parameter that is required. The default is 'any' and valid values are: - any: any type of value - array: an array of values - binary: a binary value - boolean: a Boolean value - creditcard: a 13-16 digit number conforming to the mod10 algorithm - date or time: a date-time value - email: a valid e-mail address - eurodate: a date-time value. Any date part must be in the format dd/mm/yy. The format can use /, -, or . characters as delimiters - float or numeric: a numeric value - guid: a Universally Unique Identifier of the form "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" where X is a hexadecimal number - integer: an integer - query: a query object - range: a numeric range, specified by the min and max attributes - regex or regular_expression: matches input against pattern attribute - ssn or social_security_number: a U.S. social security number - string: a string value or single character - struct: a structure - telephone: a standard U.S. telephone number - url: an http, https, ftp, file, mailto, or news URL - uuid: a ColdFusion Universally Unique Identifier, formatted XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXX, where X is a hexadecimal number. See CreateUUID - usdate: a U.S. date of the format mm/dd/yy, with 1-2 digit days and months, 1-4 digit years - variableName: a string formatted according to ColdFusion variable naming conventions - xml: XML objects and XML strings - zipcode: U.S., 5- or 9-digit format ZIP codes</p>
+								<p>The type of parameter that is required. The default is 'any' and valid values are:</p>
+<ul>
+<li>any: any type of value</li>
+<li>array: an array of values</li>
+<li>binary: a binary value</li>
+<li>boolean: a Boolean value</li>
+<li>creditcard: a 13-16 digit number conforming to the mod10 algorithm</li>
+<li>date or time: a date-time value</li>
+<li>email: a valid e-mail address</li>
+<li>eurodate: a date-time value. Any date part must be in the format dd/mm/yy. The format can use /, -, or . characters as delimiters</li>
+<li>float or numeric: a numeric value</li>
+<li>guid: a Universally Unique Identifier of the form &quot;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&quot; where X is a hexadecimal number</li>
+<li>integer: an integer</li>
+<li>query: a query object</li>
+<li>range: a numeric range, specified by the min and max attributes</li>
+<li>regex or regular_expression: matches input against pattern attribute</li>
+<li>ssn or social_security_number: a U.S. social security number</li>
+<li>string: a string value or single character</li>
+<li>struct: a structure</li>
+<li>telephone: a standard U.S. telephone number</li>
+<li>url: an http, https, ftp, file, mailto, or news URL</li>
+<li>uuid: a ColdFusion Universally Unique Identifier, formatted XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXX, where X is a hexadecimal number. See CreateUUID</li>
+<li>usdate: a U.S. date of the format mm/dd/yy, with 1-2 digit days and months, 1-4 digit years</li>
+<li>variableName: a string formatted according to ColdFusion variable naming conventions</li>
+<li>xml: XML objects and XML strings</li>
+<li>zipcode: U.S., 5- or 9-digit format ZIP codes</li>
+</ul>
 							</td>
 						</tr>
 					

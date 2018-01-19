@@ -515,7 +515,10 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Provides a programmatic interface to the scheduling engine. You can run a specified  page at scheduled intervals with the option to write out static HTML pages. This lets you offer users  access to pages that publish data, such as reports, without forcing users to wait while a database transaction  is performed in order to populate the data on the page.</p>
+	<p>Provides a programmatic interface to the scheduling engine. You can run a specified
+page at scheduled intervals with the option to write out static HTML pages. This lets you offer users
+access to pages that publish data, such as reports, without forcing users to wait while a database transaction
+is performed in order to populate the data on the page.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nt">&lt;cfschedule</span>
@@ -573,12 +576,12 @@
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
 								<ul>
-  <li>delete: deletes the specified task</li>
-  <li>update: updates an existing task or creates a new task, if one with the name specified by the task attribute does not exist</li>
-  <li>run: executes the specified task</li>
-  <li>list: list all scheduled tasks defined</li>
-  <li>pause: pause execution of the defined scheduled task</li>
-  <li>resume: resume execution of a paused scheduled task</li>
+<li>delete: deletes the specified task</li>
+<li>update: updates an existing task or creates a new task, if one with the name specified by the task attribute does not exist</li>
+<li>run: executes the specified task</li>
+<li>list: list all scheduled tasks defined</li>
+<li>pause: pause execution of the defined scheduled task</li>
+<li>resume: resume execution of a paused scheduled task</li>
 </ul>
 							</td>
 						</tr>
@@ -689,7 +692,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/startTime.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required when creating tasks with action = 'update'. Enter a value in seconds. The time when  scheduling of the task starts.</p>
+								<p>Required when creating tasks with action = 'update'. Enter a value in seconds. The time when
+scheduling of the task starts.</p>
 							</td>
 						</tr>
 					
@@ -744,7 +748,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/interval.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required when creating tasks with action = 'update'. Interval at which task should be scheduled.  Can be set in seconds or as Once, Daily, Weekly, and Monthly. The default interval is one hour. The  minimum interval is one minute.</p>
+								<p>Required when creating tasks with action = 'update'. Interval at which task should be scheduled.
+Can be set in seconds or as Once, Daily, Weekly, and Monthly. The default interval is one hour. The
+minimum interval is one minute.</p>
 							</td>
 						</tr>
 					
@@ -755,7 +761,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/requestTimeOut.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Customizes the requestTimeOut for the task operation. Can be used to extend the default timeout  for operations that require more time to execute.</p>
+								<p>Customizes the requestTimeOut for the task operation. Can be used to extend the default timeout
+for operations that require more time to execute.</p>
 							</td>
 						</tr>
 					
@@ -832,7 +839,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/port.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The port number on the server from which the task is being scheduled. Default is 80. When used  with resolveURL, the URLs of retrieved documents that specify a port number are automatically resolved  to preserve links in the retrieved document.</p>
+								<p>The port number on the server from which the task is being scheduled. Default is 80. When used
+with resolveURL, the URLs of retrieved documents that specify a port number are automatically resolved
+to preserve links in the retrieved document.</p>
 							</td>
 						</tr>
 					
@@ -843,7 +852,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The port number on the proxy server from which the task is being requested. Default is 80. When  used with resolveURL, the URLs of retrieved documents that specify a port number are automatically  resolved to preserve links in the retrieved document.</p>
+								<p>The port number on the proxy server from which the task is being requested. Default is 80. When
+used with resolveURL, the URLs of retrieved documents that specify a port number are automatically
+resolved to preserve links in the retrieved document.</p>
 							</td>
 						</tr>
 					

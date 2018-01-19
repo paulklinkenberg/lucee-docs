@@ -64,20 +64,23 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/13.tags/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Loop - times</h1><p><strong>Lucee 5 also extends the popular <code>cfloop</code> tag with a new way to do a very simple and fast loop. If you have simply to loop something a certain number of times and you do not require an index, this is the fastest way to do it.</strong></p><p>Example:</p>
+	<p>#Loop - times#
+<strong>Lucee 5 also extends the popular <code>cfloop</code> tag with a new way to do a very simple and fast loop. If you have simply to loop something a certain number of times and you do not require an index, this is the fastest way to do it.</strong></p>
+<p>Example:</p>
 <div class="highlight"><pre><span class="nb">&lt;cfloop</span> <span class="nv">times</span><span class="o">=</span><span class="s2">&quot;5&quot;</span><span class="nb">&gt;</span>
     Hi There
 <span class="nb">&lt;/cfloop&gt;</span>
-
-<span class="nb">&lt;cfscript&gt;</span>
-  <span class="nv">loop</span> <span class="nv">times</span><span class="o">=</span><span class="s2">&quot;5&quot;</span> <span class="p">{</span>
-     <span class="nf">echo</span><span class="p">(</span><span class="s2">&quot;Hi There&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="nb">&lt;/cfscript&gt;</span>
-</pre></div><h1>Cachedwithin</h1><p><strong>The attribute cachedWithin that you will already know from tags like <code>cffunction</code> or <code>cfquery</code> is now also supported for the following tags:</strong></p>
+<p><span class="nb">&lt;cfscript&gt;</span>
+<span class="nv">loop</span> <span class="nv">times</span><span class="o">=</span><span class="s2">&quot;5&quot;</span> <span class="p">{</span>
+<span class="nf">echo</span><span class="p">(</span><span class="s2">&quot;Hi There&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nb">&lt;/cfscript&gt;</span></p>
+</pre></div>
+<p>#Cachedwithin#
+<strong>The attribute cachedWithin that you will already know from tags like <code>cffunction</code> or <code>cfquery</code> is now also supported for the following tags:</strong></p>
 <ul>
-  <li>cffile</li>
-  <li>cfhttp</li>
+<li>cffile</li>
+<li>cfhttp</li>
 </ul>
 							
 						</div>

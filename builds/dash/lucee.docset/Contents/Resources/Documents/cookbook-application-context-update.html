@@ -64,19 +64,21 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/03.application-context-update/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<h1>Update Application Context</h1><p>Lucee allows to update a existing application context defined for example with a Application.cfc. So for example add a per application mapping</p>
+	<h1>Update Application Context</h1>
+<p>Lucee allows to update a existing application context defined for example with a Application.cfc.
+So for example add a per application mapping</p>
 <div class="highlight"><pre><span class="cm">&lt;!--- creates a mapping with name &quot;/test&quot; that is pointing to the current directory ---&gt;</span>
 <span class="nt">&lt;cfapplication</span> <span class="na">action=</span><span class="s">&quot;update&quot;</span> <span class="na">mappings=</span><span class="s">&quot;#{&#39;/test&#39;:getDirectoryFromPath(getCurrentTemplatePath())}#&quot;</span><span class="nt">&gt;</span>
-</pre></div><p>this examples does not extend the already defined per application mappings with this new one, it replaces them. So when you plan to add a mapping best read the existing mappings with help of the function getApplicationSettings() and extend this mappings as follows:</p>
+</pre></div>
+<p>this examples does not extend the already defined per application mappings with this new one, it replaces them. So when you plan to add a mapping best read the existing mappings with help of the function getApplicationSettings() and extend this mappings as follows:</p>
 <div class="highlight"><pre><span class="cm">&lt;!--- read the existing per application mappings ---&gt;</span>
 <span class="nb">&lt;cfset</span> <span class="nv">mappings</span><span class="o">=</span><span class="nf">getApplicationSettings</span><span class="p">().</span><span class="nv">mappings</span><span class="nb">&gt;</span>
-
-<span class="cm">&lt;!--- add a mapping with name &quot;/test&quot; to the mappings struct ---&gt;</span>
-<span class="nb">&lt;cfset</span> <span class="nv">mappings</span><span class="p">[</span><span class="s1">&#39;/test&#39;</span><span class="p">]</span><span class="o">=</span><span class="nf">getDirectoryFromPath</span><span class="p">(</span><span class="nf">getCurrentTemplatePath</span><span class="p">())</span><span class="nb">&gt;</span>
-
-<span class="cm">&lt;!--- add all mappings ---&gt;</span>
-<span class="nt">&lt;cfapplication</span> <span class="na">action=</span><span class="s">&quot;update&quot;</span> <span class="na">mappings=</span><span class="s">&quot;#mappings#&quot;</span><span class="nt">&gt;</span>
-</pre></div><p>Of course you not only can update mappings, you can update all kind of data, <cfappliaction> is supporting all possible settings you can do in the Application.cfc!</p>
+<p><span class="cm">&lt;!--- add a mapping with name &quot;/test&quot; to the mappings struct ---&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">mappings</span><span class="p">[</span><span class="s1">'/test'</span><span class="p">]</span><span class="o">=</span><span class="nf">getDirectoryFromPath</span><span class="p">(</span><span class="nf">getCurrentTemplatePath</span><span class="p">())</span><span class="nb">&gt;</span></p>
+<p><span class="cm">&lt;!--- add all mappings ---&gt;</span>
+<span class="nt">&lt;cfapplication</span> <span class="na">action=</span><span class="s">&quot;update&quot;</span> <span class="na">mappings=</span><span class="s">&quot;#mappings#&quot;</span><span class="nt">&gt;</span></p>
+</pre></div>
+<p>Of course you not only can update mappings, you can update all kind of data, <cfappliaction> is supporting all possible settings you can do in the Application.cfc!</p>
 							
 						</div>
 					</div>

@@ -125,7 +125,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryfilter/_arguments/maxThreads.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>maximum number of threads executed, ignored when argument "parallel" is set to false</p>
+								<p>maximum number of threads executed, ignored when argument &quot;parallel&quot; is set to false</p>
 							</td>
 						</tr>
 					
@@ -176,33 +176,27 @@ dump(var=qryPeopleOldEnough, label='qryPeopleOldEnough - older than 21');
     <span class="p">[</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1960</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">],</span>
     <span class="p">[</span> <span class="s2">&quot;Jim&quot;</span> <span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1988</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">]</span>
 <span class="p">]);</span>
-
-<span class="nf">Dump</span><span class="p">(</span> <span class="k">var</span><span class="o">=</span><span class="nv">people</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;people - origional query&quot;</span> <span class="p">);</span>
-
-<span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span>
-
-<span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
+<p><span class="nf">Dump</span><span class="p">(</span> <span class="k">var</span><span class="o">=</span><span class="nv">people</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;people - origional query&quot;</span> <span class="p">);</span></p>
+<p><span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span></p>
+<p><span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
 <span class="o">------------------------------------</span>
 <span class="err">|</span> <span class="nv">Susi</span> <span class="err">|</span> <span class="m">1970</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
 <span class="err">|</span> <span class="nv">Urs</span>  <span class="err">|</span> <span class="m">1995</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
 <span class="err">|</span> <span class="nv">Fred</span> <span class="err">|</span> <span class="m">1960</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
 <span class="err">|</span> <span class="nv">Jim</span>  <span class="err">|</span> <span class="m">1988</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
-<span class="o">*/</span>
-
-<span class="c">//filter - older than 21</span>
+<span class="o">*/</span></p>
+<p><span class="c">//filter - older than 21</span>
 <span class="nv">qryPeopleOldEnough</span> <span class="o">=</span> <span class="nf">people.filter</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="nv">row</span><span class="p">,</span> <span class="nv">rowNumber</span><span class="p">,</span> <span class="nv">qryData</span><span class="p">){</span>
-    <span class="nv">return</span> <span class="nf">DateDiff</span><span class="p">(</span><span class="s1">&#39;yyyy&#39;</span><span class="p">,</span> <span class="nv">row.dob</span><span class="p">,</span> <span class="nf">Now</span><span class="p">())</span> <span class="o">&gt;</span> <span class="m">21</span>
+<span class="nv">return</span> <span class="nf">DateDiff</span><span class="p">(</span><span class="s1">'yyyy'</span><span class="p">,</span> <span class="nv">row.dob</span><span class="p">,</span> <span class="nf">Now</span><span class="p">())</span> <span class="o">&gt;</span> <span class="m">21</span>
 <span class="p">});</span>
-<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="nv">qryPeopleOldEnough</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s1">&#39;qryPeopleOldEnough - older than 21&#39;</span><span class="p">);</span>
-
-<span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span>
-
-<span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="nv">qryPeopleOldEnough</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s1">'qryPeopleOldEnough - older than 21'</span><span class="p">);</span></p>
+<p><span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span></p>
+<p><span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
 <span class="o">------------------------------------</span>
 <span class="err">|</span> <span class="nv">Susi</span> <span class="err">|</span> <span class="m">1970</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
 <span class="err">|</span> <span class="nv">Fred</span> <span class="err">|</span> <span class="m">1960</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
 <span class="err">|</span> <span class="nv">Jim</span>  <span class="err">|</span> <span class="m">1988</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
-<span class="o">*/</span>
+<span class="o">*/</span></p>
 </pre></div>
 							<h2>See also</h2>
 		<ul class="list-unstyled">

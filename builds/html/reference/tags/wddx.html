@@ -515,7 +515,9 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/wddx/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Serializes and de-serializes CFML data structures to the XML-based WDDX format.  Generates JavaScript statements to instantiate JavaScript objects equivalent to the contents of a  WDDX packet or some CFML data structures.</p>
+	<p>Serializes and de-serializes CFML data structures to the XML-based WDDX format.
+Generates JavaScript statements to instantiate JavaScript objects equivalent to the contents of a
+WDDX packet or some CFML data structures.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nt">&lt;cfwddx</span>
@@ -574,7 +576,9 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/wddx/_attributes/output.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The name of the variable to hold the output of the operation. This attribute is required for  action = 'WDDX2CFML'. For all other actions, if this attribute is not provided, the result of the  WDDX processing is outputted in the HTML stream.</p>
+								<p>The name of the variable to hold the output of the operation. This attribute is required for
+action = 'WDDX2CFML'. For all other actions, if this attribute is not provided, the result of the
+WDDX processing is outputted in the HTML stream.</p>
 							</td>
 						</tr>
 					
@@ -585,7 +589,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/wddx/_attributes/topLevelVariable.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The name of the top-level JavaScript object created by the deserialization process. The object  created is an instance of the WddxRecordset object, explained in WddxRecordset Object.</p>
+								<p>The name of the top-level JavaScript object created by the deserialization process. The object
+created is an instance of the WddxRecordset object, explained in WddxRecordset Object.</p>
 							</td>
 						</tr>
 					
@@ -596,7 +601,10 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/wddx/_attributes/useTimeZoneInfo.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Indicates whether to output time-zone information when serializing CFML to WDDX. If time-zone  information is taken into account, the hour-minute offset, as represented in the ISO8601 format, is  calculated in the date-time output. If time-zone information is not taken into account, the local  time is output. The default is Yes.</p>
+								<p>Indicates whether to output time-zone information when serializing CFML to WDDX. If time-zone
+information is taken into account, the hour-minute offset, as represented in the ISO8601 format, is
+calculated in the date-time output. If time-zone information is not taken into account, the local
+time is output. The default is Yes.</p>
 							</td>
 						</tr>
 					
@@ -607,7 +615,12 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/wddx/_attributes/validate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Applies if action = "wddx2cfml" or "wddx2js".  - Yes: validates WDDX input with an XML parser using  WDDX DTD. If parser processes input without error,  packet is deserialized. Otherwise, an error is  thrown.  - No: no input validation</p>
+								<p>Applies if action = &quot;wddx2cfml&quot; or &quot;wddx2js&quot;.
+- Yes: validates WDDX input with an XML parser using
+WDDX DTD. If parser processes input without error,
+packet is deserialized. Otherwise, an error is
+thrown.
+- No: no input validation</p>
 							</td>
 						</tr>
 					

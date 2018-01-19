@@ -64,7 +64,8 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/httpparam/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Required for cfhttp POST operations, cfhttpparam is used to specify the parameters necessary to  build a cfhttp POST.</p>
+	<p>Required for cfhttp POST operations, cfhttpparam is used to specify the parameters necessary to
+build a cfhttp POST.</p>
 
 	<h2>Usage</h2>
 <div class="highlight"><pre><span class="nt">&lt;cfhttpparam</span>
@@ -111,7 +112,17 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/httpparam/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>valid values are: - header: specifies an HTTP header. - CGI: specifies an HTTP header. encodes the value depending on the attribute "encoded - body: specifies the body of the HTTP request. - XML: identifies the request as having a content-type of text/xml. Specifies that the value attribute contains the body of the HTTP request. Used to send XML to the destination URL. - file: tells Lucee to send the contents of the specified file. - URL: specifies a URL query string name-value pair to append to the cfhttp url attribute. - form,formField: specifies a form field to send. - cookie: specifies a cookie to send as an HTTP header.</p>
+								<p>valid values are:</p>
+<ul>
+<li>header: specifies an HTTP header.</li>
+<li>CGI: specifies an HTTP header. encodes the value depending on the attribute &quot;encoded</li>
+<li>body: specifies the body of the HTTP request.</li>
+<li>XML: identifies the request as having a content-type of text/xml. Specifies that the value attribute contains the body of the HTTP request. Used to send XML to the destination URL.</li>
+<li>file: tells Lucee to send the contents of the specified file.</li>
+<li>URL: specifies a URL query string name-value pair to append to the cfhttp url attribute.</li>
+<li>form,formField: specifies a form field to send.</li>
+<li>cookie: specifies a cookie to send as an HTTP header.</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -133,7 +144,7 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/httpparam/_attributes/file.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Required for type = "File".</p>
+								<p>Required for type = &quot;File&quot;.</p>
 							</td>
 						</tr>
 					
@@ -144,7 +155,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/httpparam/_attributes/encoded.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>Applies to type "cgi" and "url", ignored for all other types.  Specifies whether to URL encode the the values defined with the tag, but only if necessary (no double encoding).</p>
+								<p>Applies to type &quot;cgi&quot; and &quot;url&quot;, ignored for all other types.
+Specifies whether to URL encode the the values defined with the tag, but only if necessary (no double encoding).</p>
 							</td>
 						</tr>
 					

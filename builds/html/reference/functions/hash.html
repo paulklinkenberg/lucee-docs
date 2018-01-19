@@ -513,7 +513,10 @@
 								</div>
 							</div>
 							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/hash/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	<p>Converts a variable-length string to a 32-byte, hexadecimal  string, using the MD5 algorithm. (It is not possible to convert  the hash result back to the source string.)  32-byte, hexadecimal string</p>
+	<p>Converts a variable-length string to a 32-byte, hexadecimal
+string, using the MD5 algorithm. (It is not possible to convert
+the hash result back to the source string.)
+32-byte, hexadecimal string</p>
 
 	<p><strong>Returns:</strong> string</p>
 
@@ -552,7 +555,16 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/hash/_arguments/algorithm.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>The algorithm to use to hash the string. Supported are the following algorithms: - QUICK: generating a fast hash string, that provides no security. this algorithm is good when you simply need to shorten a string for an id, for example - CFMX_COMPAT: generating a hash string using classic CFML algorithm. - MD5: (default) Generates a 32-character, hexadecimal string, using the MD5 algorithm. - SHA: Generates a 28-character string using the Secure Hash Standard SHA-1 algorithm specified by Nation Institute of Standards and Technology (NIST) FIPS-180-2. - SHA-256: Generates a 44-character string using the SHA-256 algorithm specified by FIPS-180-2. - SHA-384: Generates a 64-character string using the SHA-384 algorithm specified by FIPS-180-2. - SHA-512: Generates an 88-character string using the SHA-1 algorithm specified by FIPS-180-2.</p>
+								<p>The algorithm to use to hash the string. Supported are the following algorithms:</p>
+<ul>
+<li>QUICK: generating a fast hash string, that provides no security. this algorithm is good when you simply need to shorten a string for an id, for example</li>
+<li>CFMX_COMPAT: generating a hash string using classic CFML algorithm.</li>
+<li>MD5: (default) Generates a 32-character, hexadecimal string, using the MD5 algorithm.</li>
+<li>SHA: Generates a 28-character string using the Secure Hash Standard SHA-1 algorithm specified by Nation Institute of Standards and Technology (NIST) FIPS-180-2.</li>
+<li>SHA-256: Generates a 44-character string using the SHA-256 algorithm specified by FIPS-180-2.</li>
+<li>SHA-384: Generates a 64-character string using the SHA-384 algorithm specified by FIPS-180-2.</li>
+<li>SHA-512: Generates an 88-character string using the SHA-1 algorithm specified by FIPS-180-2.</li>
+</ul>
 							</td>
 						</tr>
 					
@@ -563,7 +575,8 @@
 							</td>
 							<td>
 								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/hash/_arguments/encoding.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-								<p>A string specifying the encoding to use when converting  the string to byte data used by the hash algorithm.</p>
+								<p>A string specifying the encoding to use when converting
+the string to byte data used by the hash algorithm.</p>
 							</td>
 						</tr>
 					
