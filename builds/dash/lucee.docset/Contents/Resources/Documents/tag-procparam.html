@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfprocparam&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-processingdirective.html">
+							<span class="access-hide">Previous page: &lt;cfprocessingdirective&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-procresult.html">
+							<span class="access-hide">Previous page: &lt;cfprocresult&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfprocparam&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfprocparam&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfprocparam&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Specifies parameter information, including type, name, value, and length. The cfprocparam tag
+is nested within a cfstoredproc tag.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfprocparam</span>
+    <span class="err">[</span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">variable=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dbVarName=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">value=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sqltype=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">CFSQLType=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">maxLength=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scale=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">null=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Indicates whether the passed variable is an input, output or input/output variable. Default is IN.
+The value IN passes the parameter by value. Values OUT and INOUT pass parameters as bound variables.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								variable<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/variable.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The variable name that you use to reference the value that the output parameter
+represents after the call is made to the stored procedure.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dbVarName<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/dbVarName.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Corresponds to the actual value that Lucee passes to the stored procedure.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sqltype<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/sqltype.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The SQL type that the parameter (any type) will be bound to.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								CFSQLType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/CFSQLType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated, use instead the attribute &quot;sqltype&quot; that has exact the same functionality.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								maxLength<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/maxLength.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Maximum length of the parameter.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scale<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/scale.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Number of decimal places of the parameter.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								null<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_attributes/null.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Indicates whether the parameter is passed as a null. If you specify Yes, the tag ignores
+the value attribute.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/procparam/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

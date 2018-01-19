@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfregistry&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-queryparam.html">
+							<span class="access-hide">Previous page: &lt;cfqueryparam&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-report.html">
+							<span class="access-hide">Previous page: &lt;cfreport&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfregistry&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfregistry&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfregistry&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Reads, writes, and deletes keys and values in the system registry. The cfregistry tag is supported
+on all platforms, including Linux, Solaris, and HP-UX.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfregistry</span>
+    <span class="na">action=</span><span class="s">&quot;string&quot;</span>
+    <span class="na">branch=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sort=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">entry=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">variable=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">value=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>action to the registry</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								branch<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/branch.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of a registry branch.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>string: return string values
+dWord: return DWord values
+key: return keys
+any: return keys and values</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of record set to contain returned keys and values.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sort<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/sort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Sorts query column data (case-insensitive). Sorts on Entry, Type, and Value columns as text. Specify a combination of columns from query output, in a comma-delimited list. For example:
+sort = &quot;value desc, entry asc&quot;</p>
+<p>asc: ascending (a to z) sort order
+desc: descending (z to a) sort order</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								entry<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/entry.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Registry value to access.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								variable<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/variable.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Variable into which to put value.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_attributes/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Value data to set. If you omit this attribute, cfregistry creates default value, as follows:</p>
+<p>string: creates an empty string: &quot;&quot;
+dWord: creates a value of 0 (zero)</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/registry/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

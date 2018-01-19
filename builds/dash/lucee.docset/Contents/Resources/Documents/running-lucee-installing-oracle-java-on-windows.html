@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Installing Oracle Java on Windows</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="running-lucee-installing-apache-tomcat-on-windows.html">
+							<span class="access-hide">Previous page: Installing Apache Tomcat on Windows</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="running-lucee-installing-the-jdk-on-windows.html">
+							<span class="access-hide">Previous page: Installing the JDK on Windows</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Installing Oracle Java on Windows</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Installing Oracle Java on Windows</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="running-lucee.html">Running Lucee</a></li>
+			
+				<li><a href="running-lucee-windows.html">Windows</a></li>
+			
+			<li class="active">Installing Oracle Java on Windows</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/04.installing-oracle-java-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/3132406793-java-logo70x45.jpg" alt="java-logo70x45.jpg" /></p>
+<p>Java 8 (also known as 1.8) is the current version of Oracle's Java Platform and comes in two flavours:</p>
+<ul>
+<li>Server JRE (Java SE Runtime Environment)</li>
+<li>Java SE Development Kit</li>
+</ul>
+<p>Which is the right one for my server?</p>
+<p><strong>Server SE Runtime Environment (Server JRE)</strong> is designed for production servers. It is similar to the desktop JRE but without any GUI, browser integration or auto-update mechanism.</p>
+<p>It requires approximately 145MB of disk space.</p>
+<p><strong>Java SE Development Kit (JDK)</strong>  is designed for development servers and includes a complete JRE plus tools for developing, debugging, and monitoring Java applications. Monitoring tools like the cool <a href="http://docs.oracle.com/javacomponents/jmc-5-4/jmc-user-guide/index.html">Mission Control</a> can help solve problems.<br />
+<em>Note:</em> If you plan to use <a href="http://visualvm.java.net/">VisualVM</a> as your Java monitoring and troubleshooting tool, then the JDK is your choice. It requires approximately 310MB of diskspace.</p>
+<p>Installing either the Server JRE or JDK is simple and takes around 10 minutes.</p>
+<ul>
+<li>[Installing the Server JRE](Installing the Server JRE on Windows)</li>
+<li>[Installing the JDK](Installing the JDK on Windows)</li>
+</ul>
+<hr />
+<p>Both packages can be installed on a server without any drawbacks. Switching from one product to the other can be done on the command line:</p>
+<h2>Switch from Server JRE to JDK</h2>
+<div class="highlight"><pre>setx JAVA_HOME &quot;&quot; /m
+setx JDK_HOME &quot;C:\Program Files\Oracle Java JDK&quot; /m
+</pre></div>
+<h2>Switch from JDK to Server JRE</h2>
+<div class="highlight"><pre>setx JDK_HOME &quot;&quot; /m
+setx JAVA_HOME &quot;C:\Program Files\Oracle Java Server&quot; /m
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

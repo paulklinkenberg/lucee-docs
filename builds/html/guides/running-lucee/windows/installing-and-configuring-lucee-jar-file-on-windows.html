@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Installing and configuring Lucee (JAR files) on Windows</title>
+		<base href="../../../">
+
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
+			<script src="assets/js/respond.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+
+	<body class="page">
+		<nav class="menu menu-left nav-drawer" id="menu">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<a class="nav-drawer-logo" href="index.html"><img class="Lucee" src="assets/images/lucee-logo-bw.png"></a>
+						<ul class="nav">
+		
+			
+		
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="guides/getting-started.html">Getting Started</a>
+
+					
+					
+
+
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="reference.html">Reference</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#reference" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="reference">
+							
+						
+							
+								
+								
+								<li><a href="reference/functions.html">Lucee functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/tags.html">Lucee tags</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/unsupported.html">Unsupported Tags &amp; Functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/additional.html">Additional Tags &amp; Functions</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="guides.html">Guides and tutorials</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle " data-target="#guides" data-toggle="collapse" aria-expanded="true">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse expand" id="guides">
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/getting-started.html">Getting Started</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/running-lucee.html">Running Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/updating-lucee.html">Updating Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/cookbooks.html">Cookbook</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/working-with-source.html">Working with the Lucee Source</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/extensions.html">Extensions</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/about-lucee.html">About Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/lucee-5.html">Lucee 5</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="categories.html">Categories</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#categories" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="categories">
+							
+						
+							
+								
+								
+								<li><a href="categories/ajax.html">Ajax features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/array.html">Arrays</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/binary.html">Binary data</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/boolean.html">Booleans</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/collection.html">Collections</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/component.html">Components (CFCs)</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/currency.html">Currency features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/date.html">Date and time</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/decision.html">Decision logic</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/formatting.html">Formatting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/html.html">HTML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/image.html">Image manipulation</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/javascript.html">JavaScript</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/json.html">JSON</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/ldap.html">LDAP</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/list.html">Lists</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/math.html">Math</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/number.html">Numbers</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/parsing.html">Parsing</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/pdf.html">PDFs</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/query.html">Queries</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/regex.html">Regex</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/sort.html">Sorting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/string.html">Strings</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/struct.html">Structures</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/video.html">Video</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/wddx.html">WDDX</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/webservice.html">Web services</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/xml.html">XML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/zip.html">Zip files</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="docs.html">About the docs</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#about" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="about">
+							
+						
+							
+								
+								
+								<li><a href="docs/content.html">Content</a></li>
+							
+						
+							
+								
+								
+								<li><a href="docs/build.html">Build</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+	</ul>
+						<hr>
+						<ul class="nav">
+							<li>
+								<a href="http://lucee.org"><span class="fa fa-fw fa-globe"></span>Lucee Website</a>
+							</li>
+							<li>
+								<a href="https://github.com/lucee/lucee-docs"><span class="fa fa-fw fa-github"></span>Source repository</a>
+							</li>
+							<li>
+								<a href="http://javadoc.lucee.org"><span class="fa fa-fw fa-code"></span>JavaDocs</a>
+							</li>
+							<li>
+								<a href="download.html"><span class="fa fa-fw fa-download"></span>Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="header">
+			<ul class="hidden-lg nav nav-list pull-left">
+				<li>
+					<a class="menu-toggle" href="#menu">
+						<span class="access-hide">Menu</span>
+						<span class="icon icon-menu icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="/guides/running-lucee/windows.html">
+							<span class="access-hide">Previous page: Windows</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="/guides/running-lucee/windows/installing-the-boncode-connector-and-mod_cfml.html">
+							<span class="access-hide">Previous page: Installing the Boncode connector and mod_cfml</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+				<li>
+					<a class="menu-toggle" href="#search">
+						<span class="access-hide">Search</span>
+						<span class="icon icon-search icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Installing and configuring Lucee (JAR files) on Windows</span>
+		</header>
+		<div class="menu menu-right menu-search" id="search">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<div class="menu-content-inner">
+							<label class="access-hide" for="lucee-docs-search-input">Search</label>
+							<input class="form-control form-control-lg menu-search-focus" id="lucee-docs-search-input" placeholder="Search" type="search">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Installing and configuring Lucee (JAR files) on Windows</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="guides/running-lucee.html">Running Lucee</a></li>
+			
+				<li><a href="guides/running-lucee/windows.html">Windows</a></li>
+			
+			<li class="active">Installing and configuring Lucee (JAR files) on Windows</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/02.windows/01.installing-and-configuring-lucee-jar-file-on-windows/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p><img src="https://bitbucket.org/repo/rX87Rq/images/1133943380-lucee-logo108x45.png" alt="lucee-logo108x45.png" /></p>
+<h2>Installation</h2>
+<p>Lucee needs to be downloaded first from this page: <a href="https://bitbucket.org/lucee/lucee/downloads">Lucee Downloads</a>. Choose the <em>zip file</em> containing the <strong>JAR files</strong>.</p>
+<ol>
+<li>Create the folder <strong>C:\Program Files\Lucee</strong></li>
+<li>Browse the expanded content in your temporary folder and copy all files to the folder <strong>C:\Program Files\Lucee</strong></li>
+<li>Create the folder <strong>D:\Lucee</strong>. This directory will hold the configuration, the log files, some data and the server context.</li>
+</ol>
+<p>The jar files require approximately 71MB of diskspace.</p>
+<p>Command line:</p>
+<div class="highlight"><pre>md &quot;C:\Program Files\Lucee&quot;
+copy D:\temp\*.* &quot;C:\Program Files\Lucee&quot; /Y
+md D:\Lucee
+</pre></div>
+<h2>Configuration##</h2>
+<p>We have to take care, that Apache Tomcat is able find the jar files of Lucee. The file <strong>D:\Tomcat\conf\catalina.properties</strong> needs to be edited. Find the line:</p>
+<div class="highlight"><pre>common.loader=&quot;${catalina.base}/lib&quot;,&quot;${catalina.base}/lib/*.jar&quot;,&quot;${catalina.home}/lib&quot;,&quot;${catalina.home}/lib/*.jar&quot;
+</pre></div>
+<p>Append the path to Lucee's program directory, which is <strong>C:/Program Files/Lucee/*.jar</strong>. Did you notice the <em>foward slashes</em>?</p>
+<div class="highlight"><pre>common.loader=&quot;${catalina.base}/lib&quot;,&quot;${catalina.base}/lib/*.jar&quot;,&quot;${catalina.home}/lib&quot;,&quot;${catalina.home}/lib/*.jar&quot;,&quot;C:/Program Files/Lucee/*.jar&quot;
+</pre></div>
+<p>The next step is to tell Apache Tomcat, that we need a new <em>welcome file</em>, which we add in the file <strong>D:\Tomcat\conf\web.xml</strong>. At the end of the file, you will find this list:</p>
+<div class="highlight"><pre><span class="nt">&lt;welcome-file-list&gt;</span>
+    <span class="nt">&lt;welcome-file&gt;</span>index.html<span class="nt">&lt;/welcome-file&gt;</span>
+    <span class="nt">&lt;welcome-file&gt;</span>index.htm<span class="nt">&lt;/welcome-file&gt;</span>
+    <span class="nt">&lt;welcome-file&gt;</span>index.jsp<span class="nt">&lt;/welcome-file&gt;</span>
+<span class="nt">&lt;/welcome-file-list&gt;</span>
+</pre></div>
+<p><strong>Append</strong> new line containing <strong>index.cfm</strong> as the <strong>last line</strong>:</p>
+<div class="highlight"><pre><span class="nt">&lt;welcome-file-list&gt;</span>
+    <span class="nt">&lt;welcome-file&gt;</span>index.html<span class="nt">&lt;/welcome-file&gt;</span>
+    <span class="nt">&lt;welcome-file&gt;</span>index.htm<span class="nt">&lt;/welcome-file&gt;</span>
+    <span class="nt">&lt;welcome-file&gt;</span>index.jsp<span class="nt">&lt;/welcome-file&gt;</span>
+    <span class="nt">&lt;welcome-file&gt;</span>index.cfm<span class="nt">&lt;/welcome-file&gt;</span>
+<span class="nt">&lt;/welcome-file-list&gt;</span>
+</pre></div>
+<p>Below this list, new servlets and their mappings must be added:</p>
+<div class="highlight"><pre><span class="nt">&lt;servlet&gt;</span>
+    <span class="nt">&lt;servlet-name&gt;</span>CFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
+    <span class="nt">&lt;description&gt;</span>CFML runtime Engine<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.CFMLServlet<span class="nt">&lt;/servlet-class&gt;</span>
+    <span class="nt">&lt;init-param&gt;</span>
+       <span class="nt">&lt;param-name&gt;</span>lucee-server-directory<span class="nt">&lt;/param-name&gt;</span>
+       <span class="nt">&lt;param-value&gt;</span>D:\Lucee<span class="nt">&lt;/param-value&gt;</span>
+       <span class="nt">&lt;description&gt;</span>Lucee Server configuration directory (for Server-wide configurations, settings, and libraries)<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/init-param&gt;</span>
+    <span class="nt">&lt;init-param&gt;</span>
+        <span class="nt">&lt;param-name&gt;</span>lucee-web-directory<span class="nt">&lt;/param-name&gt;</span>
+        <span class="nt">&lt;param-value&gt;</span>{web-root-directory}/WEB-INF/lucee/<span class="nt">&lt;/param-value&gt;</span>
+        <span class="nt">&lt;description&gt;</span>Lucee Web Directory (for Website-specific configurations, settings, and libraries)<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/init-param&gt;</span>
+    <span class="nt">&lt;load-on-startup&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span>
+<span class="nt">&lt;/servlet&gt;</span>
+<p><span class="nt">&lt;servlet&gt;</span>
+<span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
+<span class="nt">&lt;description&gt;</span>Servlet to access REST service<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;servlet-class&gt;</span>lucee.loader.servlet.RestServlet<span class="nt">&lt;/servlet-class&gt;</span>
+<span class="nt">&lt;load-on-startup&gt;</span>2<span class="nt">&lt;/load-on-startup&gt;</span>
+<span class="nt">&lt;/servlet&gt;</span></p>
+<p><span class="nt">&lt;servlet-mapping&gt;</span>
+<span class="nt">&lt;servlet-name&gt;</span>CFMLServlet<span class="nt">&lt;/servlet-name&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span><em>.cfm<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span></em>.cfml<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span><em>.cfc<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/index.cfm/</em><span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/index.cfc/<em><span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/index.cfml/</em><span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/servlet-mapping&gt;</span></p>
+<p><span class="nt">&lt;servlet-mapping&gt;</span>
+<span class="nt">&lt;servlet-name&gt;</span>RESTServlet<span class="nt">&lt;/servlet-name&gt;</span>
+<span class="nt">&lt;url-pattern&gt;</span>/rest/*<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/servlet-mapping&gt;</span>
+</pre></div></p>
+<p><em>Note:</em> After the last  <strong></servlet-mapping></strong>, the file ends by having the closing <strong></web-app></strong></p>
+<p>Finally a Java option needs to be added:</p>
+<div class="highlight"><pre>&quot;C:\Program Files\Tomcat\bin\tomcat8.exe&quot; //US//Tomcat8 ++JvmOptions=&quot;-javaagent:C:\Program Files\Lucee\lucee-inst.jar&quot;
+</pre></div>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/base.min.js" type="text/javascript"></script>
+	</body>
+</html>

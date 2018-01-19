@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: IsValid</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-isuserloggedin.html">
+							<span class="access-hide">Previous page: IsUserLoggedIn</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-isvideofile.html">
+							<span class="access-hide">Previous page: IsVideoFile</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">IsValid</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">IsValid</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">IsValid</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Tests whether a value meets a validation or data type rule.</p>
+
+
+	<p><strong>Returns:</strong> boolean</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">IsValid</span><span class="p">(</span> <span class="nv">type</span><span class="p">,</span> <span class="nv">value</span> <span class="p">[,</span> <span class="nv">min_or_pattern</span> <span class="p">[,</span> <span class="nv">max</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/_arguments/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The valid format for the data; one of the following:</p>
+<ul>
+<li><strong>any</strong> - any simple value. Returns false for complex values, such as query objects; equivalent to the IsSimpleValue function.</li>
+<li><strong>array</strong> - an array; equivalent to the IsArray function.</li>
+<li><strong>binary</strong> - a binary value; equivalent to the IsBinary function.</li>
+<li><strong>boolean</strong> - a Boolean value; equivalent to the IsBoolean function.</li>
+<li><strong>component</strong> - a component (CFC).</li>
+<li><strong>creditcard</strong> - a 13-16 digit number conforming to the mod10 algorithm.</li>
+<li><strong>date or time</strong> - any date-time value, including dates or times; equivalent to the IsDate function.</li>
+<li><strong>email</strong> - a string containig a valid email address.</li>
+<li><strong>eurodate</strong> - this functionality is only supported for compatibility reasion, we do not suggest to use this functionality. Use instead function isDate or lsIsDate. A date in the form d/m/y, d-m-y, or d.m.y. The m and d format can be 1 or 2 digits; y can be 2 or 4 digits.</li>
+<li><strong>float or numeric</strong> - a numeric value; equivalent to the IsNumeric function.</li>
+<li><strong>guid</strong> - a Globally Unique Identifier in the format XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX where X is a hexadecimal number.</li>
+<li><strong>integer</strong> - an integer.</li>
+<li><strong>query</strong> - a query object; equivalent to the IsQuery function.</li>
+<li><strong>range</strong> - a numeric range, specified by the min and max attributes.</li>
+<li><strong>regex or regular_expression</strong> - matches input against pattern attribute.</li>
+<li><strong>ssn or social_security_number</strong> - A U.S. social security number.</li>
+<li><strong>string</strong> - a string value, including single characters and numbers</li>
+<li><strong>struct</strong> - a structure; equivalent to the IsStruct function.</li>
+<li><strong>telephone</strong> - a standard US telephone number.</li>
+<li><strong>URL</strong> - an http, https, ftp, file, mailto, or news URL,</li>
+<li><strong>UUID</strong> - a Universally Unique Identifier in the format XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXX, where X is a hexadecimal number. See CreateUUID.</li>
+<li><strong>USdate</strong> - this functionality is only supported for compatibility reasion, we do not suggest to use this functionality. Use instead function isDate or lsIsDate. A U.S. date of the format mm/dd/yy, with 1-2 digit days and months, 1-4 digit years.</li>
+<li><strong>variableName</strong> - a string formatted according to ColdFusion variable naming conventions.</li>
+<li><strong>zipcode</strong> - U.S., 5- or 9-digit format ZIP codes.</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/_arguments/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The value to test.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								min_or_pattern<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/_arguments/min_or_pattern.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The minimum valid value; used only for range validation or
+a JavaScript regular expression that the parameter must match; used only for regex or regular_expression validation.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								max<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/_arguments/max.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The maximum valid value; used only for range validation.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isvalid/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">anArray</span> <span class="o">=</span> <span class="p">[]</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">boolean</span> <span class="o">=</span> <span class="nv">true</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">email</span> <span class="o">=</span> <span class="s2">&quot;test@test.com&quot;</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">guid</span> <span class="o">=</span> <span class="nf">createGUID</span><span class="p">()</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">integer</span> <span class="o">=</span> <span class="m">15</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">string</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.test.com&quot;</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfset</span> <span class="nv">uuid</span> <span class="o">=</span> <span class="nf">createUUID</span><span class="p">()</span><span class="nb">&gt;</span>
+<p><span class="nb">&lt;cfoutput&gt;</span>
+Array: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">'array'</span><span class="p">,</span> <span class="nv">anArray</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+Boolean: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">'boolean'</span><span class="p">,</span> <span class="nv">boolean</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+Email: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="nv">email</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+GUID: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;guid&quot;</span><span class="p">,</span> <span class="nv">guid</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+Integer: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="nv">integer</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+String: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="nv">string</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+URL: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="nv">url</span><span class="p">)#</span><span class="nt">&lt;br&gt;</span>
+UUID: <span class="p">#</span><span class="nf">isValid</span><span class="p">(</span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span> <span class="nv">uuid</span><span class="p">)#</span>
+<span class="nb">&lt;/cfoutput&gt;</span>
+</pre></div></p>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-decision.html">Decision logic</a></li>
+			
+				<li><a href="category-binary.html">Binary data</a></li>
+			
+				<li><a href="category-array.html">Arrays</a></li>
+			
+				<li><a href="category-boolean.html">Booleans</a></li>
+			
+				<li><a href="category-component.html">Components (CFCs)</a></li>
+			
+				<li><a href="category-date.html">Date and time</a></li>
+			
+				<li><a href="category-query.html">Queries</a></li>
+			
+				<li><a href="category-string.html">Strings</a></li>
+			
+				<li><a href="category-struct.html">Structures</a></li>
+			
+				<li><a href="category-regex.html">Regex</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

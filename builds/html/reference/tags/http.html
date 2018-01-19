@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfhttp&gt;</title>
+		<base href="../../">
+
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
+			<script src="assets/js/respond.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+
+	<body class="tag">
+		<nav class="menu menu-left nav-drawer" id="menu">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<a class="nav-drawer-logo" href="index.html"><img class="Lucee" src="assets/images/lucee-logo-bw.png"></a>
+						<ul class="nav">
+		
+			
+		
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides/getting-started.html">Getting Started</a>
+
+					
+					
+
+
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="reference.html">Reference</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle " data-target="#reference" data-toggle="collapse" aria-expanded="true">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse expand" id="reference">
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/functions.html">Lucee functions</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/tags.html">Lucee tags</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/unsupported.html">Unsupported Tags &amp; Functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/additional.html">Additional Tags &amp; Functions</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides.html">Guides and tutorials</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#guides" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="guides">
+							
+						
+							
+								
+								
+								<li><a href="guides/getting-started.html">Getting Started</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/running-lucee.html">Running Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/updating-lucee.html">Updating Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/cookbooks.html">Cookbook</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/working-with-source.html">Working with the Lucee Source</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/extensions.html">Extensions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/about-lucee.html">About Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/lucee-5.html">Lucee 5</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="categories.html">Categories</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#categories" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="categories">
+							
+						
+							
+								
+								
+								<li><a href="categories/ajax.html">Ajax features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/array.html">Arrays</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/binary.html">Binary data</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/boolean.html">Booleans</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/collection.html">Collections</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/component.html">Components (CFCs)</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/currency.html">Currency features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/date.html">Date and time</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/decision.html">Decision logic</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/formatting.html">Formatting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/html.html">HTML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/image.html">Image manipulation</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/javascript.html">JavaScript</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/json.html">JSON</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/ldap.html">LDAP</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/list.html">Lists</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/math.html">Math</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/number.html">Numbers</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/parsing.html">Parsing</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/pdf.html">PDFs</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/query.html">Queries</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/regex.html">Regex</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/sort.html">Sorting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/string.html">Strings</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/struct.html">Structures</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/video.html">Video</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/wddx.html">WDDX</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/webservice.html">Web services</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/xml.html">XML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/zip.html">Zip files</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="docs.html">About the docs</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#about" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="about">
+							
+						
+							
+								
+								
+								<li><a href="docs/content.html">Content</a></li>
+							
+						
+							
+								
+								
+								<li><a href="docs/build.html">Build</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+	</ul>
+						<hr>
+						<ul class="nav">
+							<li>
+								<a href="http://lucee.org"><span class="fa fa-fw fa-globe"></span>Lucee Website</a>
+							</li>
+							<li>
+								<a href="https://github.com/lucee/lucee-docs"><span class="fa fa-fw fa-github"></span>Source repository</a>
+							</li>
+							<li>
+								<a href="http://javadoc.lucee.org"><span class="fa fa-fw fa-code"></span>JavaDocs</a>
+							</li>
+							<li>
+								<a href="download.html"><span class="fa fa-fw fa-download"></span>Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="header">
+			<ul class="hidden-lg nav nav-list pull-left">
+				<li>
+					<a class="menu-toggle" href="#menu">
+						<span class="access-hide">Menu</span>
+						<span class="icon icon-menu icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="/reference/tags/htmltopdfitem.html">
+							<span class="access-hide">Previous page: &lt;cfhtmltopdfitem&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="/reference/tags/httpparam.html">
+							<span class="access-hide">Previous page: &lt;cfhttpparam&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+				<li>
+					<a class="menu-toggle" href="#search">
+						<span class="access-hide">Search</span>
+						<span class="icon icon-search icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfhttp&gt;</span>
+		</header>
+		<div class="menu menu-right menu-search" id="search">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<div class="menu-content-inner">
+							<label class="access-hide" for="lucee-docs-search-input">Search</label>
+							<input class="form-control form-control-lg menu-search-focus" id="lucee-docs-search-input" placeholder="Search" type="search">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfhttp&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="reference/tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfhttp&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Lets you execute HTTP POST and GET operations on files. Using cfhttp, you can execute standard
+GET operations and create a query object from a text file. POST operations lets you upload MIME file
+types to a server, or post cookie, formfield, URL, file, or CGI variables directly to a specified server.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nb">&lt;cfhttp</span>
+    <span class="nv">url</span><span class="o">=</span><span class="s2">&quot;string&quot;</span>
+    <span class="p">[</span><span class="nv">encodeurl</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">compression</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">result</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">addtoken</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">port</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">method</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">password</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">preauth</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">multipart</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">multiparttype</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">getAsBinary</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">columns</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">path</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">file</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">delimiter</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">textQualifier</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">resolveURL</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">proxyServer</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">proxyPort</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">proxyUser</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">proxyPassword</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">userAgent</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">throwOnError</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">redirect</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">timeout</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">charset</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">firstrowasheaders</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">authType</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">workstation</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">domain</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+<span class="nb">&gt;</span><span class="cm">&lt;!--- body ---&gt;</span>[<span class="nb">&lt;/cfhttp&gt;</span>]
+</pre></div>
+
+
+	<p>This tag <strong>may</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								url<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/url.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Full URL of the host name or IP address of the server on which the file resides. The URL must be
+an absolute URL, including the protocol (http or https) and hostname. It may optionally contain a port
+number. Port numbers specified in the url attribute override the port attribute.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								encodeurl<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/encodeurl.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true (default value) URL encodes the value of the attribute &quot;URL&quot; if necessary (no double encoding is happeing).
+This setting has no influence on the values from httpparam type=&quot;url&quot;, for this use the attribute &quot;encoded&quot; from httpparam</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								compression<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/compression.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Informs the target webserver to disable compression for the response. Possible values are:</p>
+<ul>
+<li>true (default): compression enabled</li>
+<li>false: compression disabled</li>
+<li>none (deprecated): use &quot;false&quot; instead</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								result<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/result.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>return variable name, default &quot;cfhttp&quot;</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								addtoken<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/addtoken.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if yes add urltoken as cookie</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								port<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/port.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The port number on the server from which the object is requested. Default is 80. When used with
+resolveURL, the URLs of retrieved documents that specify a port number are automatically resolved to
+preserve links in the retrieved document. If a port number is specified in the url attribute, the port
+value overrides the value of the port attribute.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								method<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/method.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>GET or POST. Use GET to download a text or binary file or to create a query from the contents
+of a text file. Use POST to send information to a server page or a CGI program for processing. POST
+requires the use of a cfhttpparam tag.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								username<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/username.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>When required by a server, a valid username.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								password<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/password.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>When required by a server, a valid password.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								preauth<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/preauth.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true (default), Lucee sends the basic authentication (username password) always (Preemptive Basic Authentication),
+if set to false the authentication is only send when the server ask for it (status code 401).</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								multipart<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/multipart.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Tells Lucee to send all data specified by cfhttpparam type=&quot;formField&quot; tags as multipart form data, with a Content-Type of multipart/form-data.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								multiparttype<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/multiparttype.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated, use instead the attribute &quot;multipart&quot;.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								getAsBinary<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/getAsBinary.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<ul>
+<li>false: If CFML does not recognize the response body type as text, convert it to a CFML object.</li>
+<li>auto: If CFML does not recognize the response body type as text, convert it to CFML Binary type data.</li>
+<li>true: always convert the response body content into CFML Binary type data, even if CFML recognizes the response body type as text.</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name to assign to a query if the a query is constructed from a file.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								columns<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/columns.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the column names for a query when creating a query as a result of a cfhttp GET.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								path<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/path.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The path to the directory in which a file is to be stored. If a path is not specified in a POST
+or GET operation, a variable is created (cfhttp.fileContent) that you can use to display the results
+of the POST operation in a cfoutput.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								file<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/file.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The filename to be used for the file that is accessed. For GET operations, defaults to the name
+specified in url. Enter path information in the path attribute.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								delimiter<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/delimiter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Used only when creating a query from an http request that returns data in a CSV format. This
+value specifies the Field delimiter for the CSV data. Only the first character is used. Default is a comma.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								textQualifier<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/textQualifier.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Required for creating a query. Indicates the start and finish of a column. Should be
+appropriately escaped when embedded in a column. For example, if the qualifier is a double quotation
+mark, it should be escaped as &quot;&quot;&quot;&quot;. If there is no text qualifier in the file, specify it as &quot; &quot;.
+Default is the double quotation mark (&quot;).</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								resolveURL<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/resolveURL.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Default is No. For GET and POST operations, if Yes, page reference returned into the
+fileContent internal variable has its internal URLs fully resolved, including port number, so that
+links remain intact.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyServer<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/proxyServer.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Host name or IP address of a proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPort<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The port number on the proxy server from which the object is requested. Default is 80. When
+used with resolveURL, the URLs of retrieved documents that specify a port number are automatically
+resolved to preserve links in the retrieved document.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyUser<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/proxyUser.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>When required by a proxy server, a valid username.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/proxyPassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>When required by a proxy server, a valid password.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								userAgent<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/userAgent.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>User agent request header.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								throwOnError<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/throwOnError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Boolean indicating whether to throw an exception that can be caught by using the cftry and
+cfcatch tags. The default is NO.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								redirect<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/redirect.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Boolean indicating whether to redirect execution or stop execution. The default is Yes. If set
+to No and throwOnError = &quot;yes&quot;, execution stops if cfhttp fails, and the status code and associated
+error message are returned in the variable cfhttp.statuscode. To see where execution would have been
+redirected, use the variable cfhttp.responseHeader[LOCATION]. The key LOCATION identifies the path of
+redirection. Lucee will follow up to five redirections on a request. if this limit is exceeded,
+Lucee behaves as if redirect = &quot;no&quot;.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timeout<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A value, in seconds. When a URL timeout is specified in the browser, the timeout attribute setting
+takes precedence over the Lucee Administrator timeout. The server then uses the lesser
+of the URL timeout and the timeout passed in the timeout attribute, so that the request always times
+out before or at the same time as the page times out. If there is no URL timeout specified, Lucee
+takes the lesser of the Lucee Administrator timeout and the timeout passed in the timeout attribute.
+If there is no timeout set on the URL in the browser, no timeout set in the Lucee Administrator,
+and no timeout set with the timeout attribute, Lucee waits indefinitely for the cfhttp request to
+process.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								charset<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/charset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>set the charset for the call.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								firstrowasheaders<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/firstrowasheaders.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>sets if first row of csv is file</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								authType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/authType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>authentication type for a request with username and password, valid values are &quot;BASIC&quot; (default) and &quot;NTLM&quot;</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								workstation<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/workstation.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The workstation the authentication request is originating from. Essentially, the computer name for this machine. this attribute is only used when authenication type is &quot;NTLM&quot;</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								domain<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_attributes/domain.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The domain to authenticate within. this attribute is only used when authenication type is &quot;NTLM&quot;</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/http/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/base.min.js" type="text/javascript"></script>
+	</body>
+</html>

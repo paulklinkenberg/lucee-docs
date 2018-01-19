@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: ArrayContains</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-arrayclear.html">
+							<span class="access-hide">Previous page: ArrayClear</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-arraycontainsnocase.html">
+							<span class="access-hide">Previous page: ArrayContainsNoCase</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">ArrayContains</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">ArrayContains</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">ArrayContains</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraycontains/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Returns the position of the first element in the array that matches the item that we are searching for, or 0 if the item is not found.</p>
+
+
+	<p><strong>Returns:</strong> number</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">ArrayContains</span><span class="p">(</span> <span class="nv">haystack</span><span class="p">,</span> <span class="nv">needle</span> <span class="p">[,</span> <span class="nv">substringMatch</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								haystack<br>
+								<sub>(array, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraycontains/_arguments/haystack.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The array in which to search for the item</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								needle<br>
+								<sub>(object, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraycontains/_arguments/needle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The item that we are looking for in the array</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								substringMatch<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraycontains/_arguments/substringMatch.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If set to true then a substring match will also return an array position. This will only work with simple values. Passing true with complex objects will throw an exception.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/arraycontains/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<div class="highlight"><pre><span class="nv">numbers</span>         <span class="o">=</span> <span class="p">[</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">];</span>
+<span class="nv">positionOfThree</span> <span class="o">=</span> <span class="nf">ArrayContains</span><span class="p">(</span> <span class="nv">numbers</span><span class="p">,</span> <span class="m">3</span> <span class="p">);</span>
+<span class="nf">Echo</span><span class="p">(</span> <span class="nv">positionOfThree</span> <span class="p">);</span> <span class="c">// outputs 3</span>
+<p><span class="nv">words</span>               <span class="o">=</span> <span class="p">[</span> <span class="s1">'hello'</span> <span class="p">,</span> <span class="s1">'world'</span> <span class="p">];</span>
+<span class="nv">positionOfWorld</span>     <span class="o">=</span> <span class="nf">ArrayContains</span><span class="p">(</span> <span class="nv">words</span><span class="p">,</span> <span class="s1">'world'</span> <span class="p">);</span>
+<span class="nv">positionOfSubstring</span> <span class="o">=</span> <span class="nf">ArrayContains</span><span class="p">(</span> <span class="nv">words</span><span class="p">,</span> <span class="s1">'el'</span><span class="p">,</span> <span class="nv">true</span> <span class="p">);</span>
+<span class="nf">Echo</span><span class="p">(</span> <span class="nv">positionOfSubstring</span> <span class="p">);</span> <span class="c">// outputs 1</span>
+<span class="nf">Echo</span><span class="p">(</span> <span class="nv">positionOfWorld</span>     <span class="p">);</span> <span class="c">// outputs 2</span>
+</pre></div></p>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-array.html">Arrays</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

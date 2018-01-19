@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfquery&gt;</title>
+		<base href="../../">
+
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
+			<script src="assets/js/respond.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+
+	<body class="tag">
+		<nav class="menu menu-left nav-drawer" id="menu">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<a class="nav-drawer-logo" href="index.html"><img class="Lucee" src="assets/images/lucee-logo-bw.png"></a>
+						<ul class="nav">
+		
+			
+		
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides/getting-started.html">Getting Started</a>
+
+					
+					
+
+
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="reference.html">Reference</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle " data-target="#reference" data-toggle="collapse" aria-expanded="true">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse expand" id="reference">
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/functions.html">Lucee functions</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/tags.html">Lucee tags</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/unsupported.html">Unsupported Tags &amp; Functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/additional.html">Additional Tags &amp; Functions</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides.html">Guides and tutorials</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#guides" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="guides">
+							
+						
+							
+								
+								
+								<li><a href="guides/getting-started.html">Getting Started</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/running-lucee.html">Running Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/updating-lucee.html">Updating Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/cookbooks.html">Cookbook</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/working-with-source.html">Working with the Lucee Source</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/extensions.html">Extensions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/about-lucee.html">About Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/lucee-5.html">Lucee 5</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="categories.html">Categories</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#categories" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="categories">
+							
+						
+							
+								
+								
+								<li><a href="categories/ajax.html">Ajax features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/array.html">Arrays</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/binary.html">Binary data</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/boolean.html">Booleans</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/collection.html">Collections</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/component.html">Components (CFCs)</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/currency.html">Currency features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/date.html">Date and time</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/decision.html">Decision logic</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/formatting.html">Formatting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/html.html">HTML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/image.html">Image manipulation</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/javascript.html">JavaScript</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/json.html">JSON</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/ldap.html">LDAP</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/list.html">Lists</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/math.html">Math</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/number.html">Numbers</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/parsing.html">Parsing</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/pdf.html">PDFs</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/query.html">Queries</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/regex.html">Regex</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/sort.html">Sorting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/string.html">Strings</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/struct.html">Structures</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/video.html">Video</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/wddx.html">WDDX</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/webservice.html">Web services</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/xml.html">XML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/zip.html">Zip files</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="docs.html">About the docs</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#about" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="about">
+							
+						
+							
+								
+								
+								<li><a href="docs/content.html">Content</a></li>
+							
+						
+							
+								
+								
+								<li><a href="docs/build.html">Build</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+	</ul>
+						<hr>
+						<ul class="nav">
+							<li>
+								<a href="http://lucee.org"><span class="fa fa-fw fa-globe"></span>Lucee Website</a>
+							</li>
+							<li>
+								<a href="https://github.com/lucee/lucee-docs"><span class="fa fa-fw fa-github"></span>Source repository</a>
+							</li>
+							<li>
+								<a href="http://javadoc.lucee.org"><span class="fa fa-fw fa-code"></span>JavaDocs</a>
+							</li>
+							<li>
+								<a href="download.html"><span class="fa fa-fw fa-download"></span>Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="header">
+			<ul class="hidden-lg nav nav-list pull-left">
+				<li>
+					<a class="menu-toggle" href="#menu">
+						<span class="access-hide">Menu</span>
+						<span class="icon icon-menu icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="/reference/tags/property.html">
+							<span class="access-hide">Previous page: &lt;cfproperty&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="/reference/tags/queryparam.html">
+							<span class="access-hide">Previous page: &lt;cfqueryparam&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+				<li>
+					<a class="menu-toggle" href="#search">
+						<span class="access-hide">Search</span>
+						<span class="icon icon-search icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfquery&gt;</span>
+		</header>
+		<div class="menu menu-right menu-search" id="search">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<div class="menu-content-inner">
+							<label class="access-hide" for="lucee-docs-search-input">Search</label>
+							<input class="form-control form-control-lg menu-search-focus" id="lucee-docs-search-input" placeholder="Search" type="search">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfquery&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="reference/tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfquery&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Passes SQL statements to a data source. Not limited to queries.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfquery</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">result=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dataSource=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dbType=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dbServer=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dbName=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">connectString=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">username=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">password=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">maxRows=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">blockFactor=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">timeout=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cachedAfter=</span><span class="s">&quot;datetime&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cachedWithin=</span><span class="s">&quot;object&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">provider=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">providerDSN=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">debug=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cachename=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">psq=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">unique=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ormoptions=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">returntype=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">timezone=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">lazy=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">params=</span><span class="s">&quot;object&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name query. Must begin with a letter and may consist of letters, numbers, and the underscore
+character, spaces are not allowed. The query name is used later in the page to reference the query's
+record set.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								result<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/result.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies a name for the structure in which cfquery returns
+the result variables.
+- SQL: The SQL statement that was executed. (string)
+- Cached: If the query was cached. (boolean)
+- SqlParameters: An ordered Array of cfqueryparam values. (array)
+- RecordCount: Total number of records in the query. (numeric)
+- ColumnList: Column list, comma separated. (numeric)
+- ExecutionTime: Execution time for the SQL request. (numeric)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dataSource<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/dataSource.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the data source from which this query should retrieve data.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dbType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/dbType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>support the following values:
+- query: for doing a query on a existing query object
+- hql: for doing a query on orm</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dbServer<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/dbServer.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dbName<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/dbName.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								connectString<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/connectString.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								username<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/username.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If specified, username overrides the username value specified in the data source setup.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								password<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/password.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If specified, password overrides the password value specified in the data source setup.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								maxRows<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/maxRows.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the maximum number of rows to return in the record set.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								blockFactor<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/blockFactor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the maximum number of rows to fetch at a time from the server. The range is 1,
+default to 100. This parameter applies to ORACLE native database drivers and to ODBC drivers.
+Certain ODBC drivers may dynamically reduce the block factor at runtime.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timeout<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The maximum number of milliseconds for the query to execute before returning an error
+indicating that the query has timed-out. This attribute is not supported by most ODBC drivers.
+timeout is supported by the SQL Server 6.x or above driver. The minimum and maximum allowable values
+vary, depending on the driver.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cachedAfter<br>
+								<sub>(datetime, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/cachedAfter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This is the age of which the query data can be</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cachedWithin<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/cachedWithin.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>possible values are:
+String &quot;request&quot;: If original query was created within the current request, cached query data isused.
+a timespan (created with function CreateTimeSpan): If original query date falls within the time span, cached query data isused.</p>
+<p>To use cached data, the current query must use the same SQL statement, data source, query name, user name, and password.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								provider<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/provider.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								providerDSN<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/providerDSN.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								debug<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/debug.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Used for debugging queries. Specifying this attribute causes the SQL statement submitted to the
+data source and the number of records returned from the query to be returned.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cachename<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/cachename.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								psq<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/psq.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>preserve single quote or not</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								unique<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/unique.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies if the object parameter is unique, used only for dbtype=orm or hql</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ormoptions<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/ormoptions.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Object parameter for the entity.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								returntype<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/returntype.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>one of the following values:
+- query: default for all dbtype expect &quot;hql&quot;, returns a query object
+- array_of_entity: works only with dbtype &quot;hql&quot; and is also the default value for dbtype &quot;hql&quot;</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timezone<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/timezone.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the timezone used to convert a date object to a timestamp (string), this value is needed when your database runs in another timezone and you are not using cfqueryparam to to insert dates.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								lazy<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/lazy.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if &quot;lazy&quot; is set to true (default &quot;false&quot;) Lucee does not initially load all the data from the datasource,
+in that case the data are only loaded when requested, so this means the data are depending on the datasource connection.
+if the datasource connection is gone and the data are not requested yet, lucee throws a error if you try to access the data.
+lazy is only working when the following attributes are not used: cachewithin,cacheafter,result</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								params<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_attributes/params.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/query/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/base.min.js" type="text/javascript"></script>
+	</body>
+</html>

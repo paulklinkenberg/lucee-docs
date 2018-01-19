@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Read XML with a listener Model (SAX)</title>
+		<base href="../../">
+
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
+			<script src="assets/js/respond.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+
+	<body class="page">
+		<nav class="menu menu-left nav-drawer" id="menu">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<a class="nav-drawer-logo" href="index.html"><img class="Lucee" src="assets/images/lucee-logo-bw.png"></a>
+						<ul class="nav">
+		
+			
+		
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="guides/getting-started.html">Getting Started</a>
+
+					
+					
+
+
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="reference.html">Reference</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#reference" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="reference">
+							
+						
+							
+								
+								
+								<li><a href="reference/functions.html">Lucee functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/tags.html">Lucee tags</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/unsupported.html">Unsupported Tags &amp; Functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/additional.html">Additional Tags &amp; Functions</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="guides.html">Guides and tutorials</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle " data-target="#guides" data-toggle="collapse" aria-expanded="true">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse expand" id="guides">
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/getting-started.html">Getting Started</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/running-lucee.html">Running Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/updating-lucee.html">Updating Lucee</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="guides/cookbooks.html">Cookbook</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/working-with-source.html">Working with the Lucee Source</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/extensions.html">Extensions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/about-lucee.html">About Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/lucee-5.html">Lucee 5</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="categories.html">Categories</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#categories" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="categories">
+							
+						
+							
+								
+								
+								<li><a href="categories/ajax.html">Ajax features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/array.html">Arrays</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/binary.html">Binary data</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/boolean.html">Booleans</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/collection.html">Collections</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/component.html">Components (CFCs)</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/currency.html">Currency features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/date.html">Date and time</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/decision.html">Decision logic</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/formatting.html">Formatting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/html.html">HTML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/image.html">Image manipulation</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/javascript.html">JavaScript</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/json.html">JSON</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/ldap.html">LDAP</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/list.html">Lists</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/math.html">Math</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/number.html">Numbers</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/parsing.html">Parsing</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/pdf.html">PDFs</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/query.html">Queries</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/regex.html">Regex</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/sort.html">Sorting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/string.html">Strings</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/struct.html">Structures</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/video.html">Video</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/wddx.html">WDDX</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/webservice.html">Web services</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/xml.html">XML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/zip.html">Zip files</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="docs.html">About the docs</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#about" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="about">
+							
+						
+							
+								
+								
+								<li><a href="docs/content.html">Content</a></li>
+							
+						
+							
+								
+								
+								<li><a href="docs/build.html">Build</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+	</ul>
+						<hr>
+						<ul class="nav">
+							<li>
+								<a href="http://lucee.org"><span class="fa fa-fw fa-globe"></span>Lucee Website</a>
+							</li>
+							<li>
+								<a href="https://github.com/lucee/lucee-docs"><span class="fa fa-fw fa-github"></span>Source repository</a>
+							</li>
+							<li>
+								<a href="http://javadoc.lucee.org"><span class="fa fa-fw fa-code"></span>JavaDocs</a>
+							</li>
+							<li>
+								<a href="download.html"><span class="fa fa-fw fa-download"></span>Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="header">
+			<ul class="hidden-lg nav nav-list pull-left">
+				<li>
+					<a class="menu-toggle" href="#menu">
+						<span class="access-hide">Menu</span>
+						<span class="icon icon-menu icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="/guides/cookbooks/filesystem-mapping.html">
+							<span class="access-hide">Previous page: File system - Mappings</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="/guides/cookbooks/check-for-changes.html">
+							<span class="access-hide">Previous page: Check for changes</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+				<li>
+					<a class="menu-toggle" href="#search">
+						<span class="access-hide">Search</span>
+						<span class="icon icon-search icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Read XML with a listener Model (SAX)</span>
+		</header>
+		<div class="menu menu-right menu-search" id="search">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<div class="menu-content-inner">
+							<label class="access-hide" for="lucee-docs-search-input">Search</label>
+							<input class="form-control form-control-lg menu-search-focus" id="lucee-docs-search-input" placeholder="Search" type="search">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Read XML with a listener Model (SAX)</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="guides/cookbooks.html">Cookbook</a></li>
+			
+			<li class="active">Read XML with a listener Model (SAX)</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/13.sax/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Event driven XML reading (SAX)</h1>
+<p><strong>Lucee not only allows you to convert a XML file to a object tree (DOM) but it also supports a event driven model (SAX)</strong></p>
+<p>The function XMLParse is handy to get a object representation of a complete XML document however for large XML documents this can cause memory issues. This method is an overhead if you simply need to read some data from an XML file and convert it to something else. For this the SAX event driven model is a very handy and lightweight way to do this. Here is an example.</p>
+<p>Let's say we want to read in the following XML document:</p>
+<div class="highlight"><pre>#!xml
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;catalog&gt;
+&lt;cd&gt;
+&lt;title&gt;Empire Burlesque&lt;/title&gt;
+&lt;artist&gt;Bob Dylan&lt;/artist&gt;
+&lt;country&gt;USA&lt;/country&gt;
+&lt;company&gt;Columbia&lt;/company&gt;
+&lt;price&gt;10.90&lt;/price&gt;
+&lt;year&gt;1985&lt;/year&gt;
+&lt;/cd&gt;
+&lt;cd&gt;
+&lt;title&gt;Hide your heart&lt;/title&gt;
+&lt;artist&gt;Bonnie Tyler&lt;/artist&gt;
+&lt;country&gt;UK&lt;/country&gt;
+&lt;company&gt;CBS Records&lt;/company&gt;
+&lt;price&gt;9.90&lt;/price&gt;
+&lt;year&gt;1988&lt;/year&gt;
+&lt;/cd&gt;
+&lt;/catalog&gt;
+</pre></div></p>
+<p>To read this we need to define a component that looks like the following and you need to add functions that are listening to certain events of the XML parser (startDocument, startElement, body, endElements, ...), it is completely up to your code to store the data for later use.</p>
+<div class="highlight"><pre>#!javascript
+component {
+	this.cds=[];
+	this.cd={};
+	this.insideCD=false;
+	this.currentName=&quot;&quot;;
+	this.filter={};
+	this.removeCD=false;
+<pre><code>/**
+* constructor of the component that takes the path to the xml file and a simple custom made filter
+* @param xmlFile xml File to parse
+* @param filter filter to limit content on certain records
+*/
+function init(string xmlFile, struct filter={}) {
+	var xmlEventParser=createObject(&amp;quot;java&amp;quot;,&amp;quot;lucee.runtime.helpers.XMLEventParser&amp;quot;);
+	this.filter=filter;
+	// registering the event handlers
+	xmlEventParser.init(
+		getPageContext(),
+		this.startDocument,
+		this.startElement,
+		this.body,
+		this.endElement,
+		this.endDocument,
+		this.error
+	);
+	xmlEventParser.start(xmlFile);
+	return this.cds;
+}
+
+/**
+* this function will be called on the start of parsing of an XML Element (Tag)
+*/
+function startElement(string uri, string localName, string qName, struct attributes){
+	if(localName EQ &amp;quot;cd&amp;quot;){
+		this.cd={};
+		this.insideCD=true;
+		this.removeCD=false;
+
+	}
+	else if(this.insideCD){
+		this.currentName=localName;
+	}
+}
+
+/**
+* call with body of the tag
+*/
+function body(string content){
+	if(len(this.currentName)) {
+		this.cd[this.currentName]=content;
+		if(structKeyExists(this.filter,this.currentName) and content NEQ this.filter[this.currentName])
+			this.removeCD=true;
+	}
+}
+
+/**
+* this function will be called at the end of parsing an XML Element (Tag)
+*/
+function endElement(string uri, string localName, string qName, struct attributes){
+	if(localName EQ &amp;quot;cd&amp;quot;) {
+		if(!this.removeCD)
+			this.cds[arrayLen(this.cds)+1]=this.cd;
+		this.insideCD=false;
+	}
+	this.currentName=&amp;quot;&amp;quot;;
+}
+
+/**
+* this function will be called when the document starts to be parsed
+*/
+function startDocument(string uri, string localName, string qName, struct attributes){
+}
+
+/**
+* this function will be called when the document finishes being parsed
+*/
+function endDocument(string uri, string localName, string qName, struct attributes){
+}
+
+/**
+* this function will be called when an error occurs
+*/
+function error(struct cfcatch){
+	dump(cfcatch);
+}
+</code></pre>
+<p>}
+</pre></div></p>
+<p>Now we simply can invoke that component to parse the XML file and get the result as an array of structs:</p>
+<div class="highlight"><pre>#!html
+&lt;!---
+	Calls XML Catalog Event Parser and converts the data to an array of structs
+	with a filter that limits the country to &quot;USA&quot;
+ ---&gt;
+&lt;cfset xmlFile=GetDirectoryFromPath(GetCurrentTemplatePath())&amp;&#39;catalog.xml&#39;&gt;
+&lt;cfset cds=new XMLCatalog(xmlFile,{country:&#39;USA&#39;})&gt;
+&lt;cfdump var=&quot;#cds#&quot;&gt;
+</pre></div>
+<p>You can download the complete example here:
+https://bitbucket.org/lucee/lucee/downloads/lucee-sax-example.zip</p>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/base.min.js" type="text/javascript"></script>
+	</body>
+</html>

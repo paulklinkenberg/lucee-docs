@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfform&gt;</title>
+		<base href="../../">
+
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
+			<script src="assets/js/respond.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+
+	<body class="tag">
+		<nav class="menu menu-left nav-drawer" id="menu">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<a class="nav-drawer-logo" href="index.html"><img class="Lucee" src="assets/images/lucee-logo-bw.png"></a>
+						<ul class="nav">
+		
+			
+		
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides/getting-started.html">Getting Started</a>
+
+					
+					
+
+
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class="active ">
+
+					<a href="reference.html">Reference</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle " data-target="#reference" data-toggle="collapse" aria-expanded="true">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse expand" id="reference">
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/functions.html">Lucee functions</a></li>
+							
+						
+							
+								
+								
+									
+								
+								<li class="active"><a href="reference/tags.html">Lucee tags</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/unsupported.html">Unsupported Tags &amp; Functions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="reference/additional.html">Additional Tags &amp; Functions</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="guides.html">Guides and tutorials</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#guides" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="guides">
+							
+						
+							
+								
+								
+								<li><a href="guides/getting-started.html">Getting Started</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/running-lucee.html">Running Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/updating-lucee.html">Updating Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/cookbooks.html">Cookbook</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/working-with-source.html">Working with the Lucee Source</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/extensions.html">Extensions</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/about-lucee.html">About Lucee</a></li>
+							
+						
+							
+								
+								
+								<li><a href="guides/lucee-5.html">Lucee 5</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="categories.html">Categories</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#categories" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="categories">
+							
+						
+							
+								
+								
+								<li><a href="categories/ajax.html">Ajax features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/array.html">Arrays</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/binary.html">Binary data</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/boolean.html">Booleans</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/collection.html">Collections</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/component.html">Components (CFCs)</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/currency.html">Currency features</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/date.html">Date and time</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/decision.html">Decision logic</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/formatting.html">Formatting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/html.html">HTML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/image.html">Image manipulation</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/javascript.html">JavaScript</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/json.html">JSON</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/ldap.html">LDAP</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/list.html">Lists</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/math.html">Math</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/number.html">Numbers</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/parsing.html">Parsing</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/pdf.html">PDFs</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/query.html">Queries</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/regex.html">Regex</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/sort.html">Sorting</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/string.html">Strings</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/struct.html">Structures</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/video.html">Video</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/wddx.html">WDDX</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/webservice.html">Web services</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/xml.html">XML</a></li>
+							
+						
+							
+								
+								
+								<li><a href="categories/zip.html">Zip files</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+			
+				
+				
+				<li class=" ">
+
+					<a href="docs.html">About the docs</a>
+
+					
+					
+
+
+					
+						<span class="menu-collapse-toggle collapsed" data-target="#about" data-toggle="collapse" aria-expanded="0">
+							<i class="icon icon-close menu-collapse-toggle-close"></i>
+							<i class="icon icon-add menu-collapse-toggle-default"></i>
+						</span>
+						<ul class="menu-collapse collapse" id="about">
+							
+						
+							
+								
+								
+								<li><a href="docs/content.html">Content</a></li>
+							
+						
+							
+								
+								
+								<li><a href="docs/build.html">Build</a></li>
+							
+						
+					
+						</ul>
+					
+				</li>
+			
+		
+	</ul>
+						<hr>
+						<ul class="nav">
+							<li>
+								<a href="http://lucee.org"><span class="fa fa-fw fa-globe"></span>Lucee Website</a>
+							</li>
+							<li>
+								<a href="https://github.com/lucee/lucee-docs"><span class="fa fa-fw fa-github"></span>Source repository</a>
+							</li>
+							<li>
+								<a href="http://javadoc.lucee.org"><span class="fa fa-fw fa-code"></span>JavaDocs</a>
+							</li>
+							<li>
+								<a href="download.html"><span class="fa fa-fw fa-download"></span>Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="header">
+			<ul class="hidden-lg nav nav-list pull-left">
+				<li>
+					<a class="menu-toggle" href="#menu">
+						<span class="access-hide">Menu</span>
+						<span class="icon icon-menu icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="/reference/tags/flush.html">
+							<span class="access-hide">Previous page: &lt;cfflush&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="/reference/tags/formgroup.html">
+							<span class="access-hide">Previous page: &lt;cfformgroup&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+				<li>
+					<a class="menu-toggle" href="#search">
+						<span class="access-hide">Search</span>
+						<span class="icon icon-search icon-lg"></span>
+						<span class="header-close icon icon-close icon-lg"></span>
+					</a>
+				</li>
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfform&gt;</span>
+		</header>
+		<div class="menu menu-right menu-search" id="search">
+			<div class="menu-scroll">
+				<div class="menu-wrap">
+					<div class="menu-content">
+						<div class="menu-content-inner">
+							<label class="access-hide" for="lucee-docs-search-input">Search</label>
+							<input class="form-control form-control-lg menu-search-focus" id="lucee-docs-search-input" placeholder="Search" type="search">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfform&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="reference/tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfform&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Builds a form with CFML custom control tags that provide more functionality than standard
+HTML form input elements (XML and Flash type not supported).</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfform</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">action=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">preserveData=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">enableCAB=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">target=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">method=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">encType=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">passThrough=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">codeBase=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">archive=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scriptSrc=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">id=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onError=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onReset=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onLoad=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onSubmit=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">style=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">class=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">format=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">skin=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">width=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">height=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">preloader=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">timeout=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">wMode=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">accessible=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">accept=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">acceptcharset=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">title=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dir=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">lang=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onclick=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ondblclick=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmousedown=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmouseup=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmouseover=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmousemove=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onmouseout=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onkeypress=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onkeyup=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onkeydown=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A name for the form you are creating.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the page that executed when the form is submitted for processing.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								preserveData<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/preserveData.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Optional. &quot;Yes&quot; or &quot;No.&quot; Specifies whether to display the data that was entered into cfform
+controls in the action page. &quot;Yes&quot; resets the value of the control to the value submitted when the
+form is submitted to itself. This works as expected for the cftextinput and cfslider controls.
+This attribute can be used only if the form and action are on a single page, or if the action page has
+a form that contains controls with the same names as the corresponding controls on the form page.  <strong>This has not yet been implemented</strong></p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								enableCAB<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/enableCAB.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>This attribute has been deprecated and is non-functional.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								target<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/target.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the window or window frame to which the form output is sent.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								method<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/method.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>other than post will ignored</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								encType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/encType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The MIME type used to encode data sent by the POST method. The default value is application/x-www-form-urlencoded.
+It is recommended that you accept the default value. This attribute is included for compatibility with
+the HTML form tag.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								passThrough<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/passThrough.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Used for HTML attributes that are not explicitly supported by cfform. If you specify an
+attribute and value, they are passed to the HTML code that is generated for the cfinput tag.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								codeBase<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/codeBase.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>URL for a downloadable JRE plugin (for Internet explorer only). Default is
+/CFIDE/classes/cf-j2re-win.cab.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								archive<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/archive.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>URL for a downloadable Java classes for controls.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scriptSrc<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/scriptSrc.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the URL, relative to the web root, of the
+directory that contains the cfform.js file with the
+client-side JavaScript used by this tag and its child
+tags. For XML format forms, this directory is also the
+default directory for XSLT skins.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								id<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/id.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>HTML id passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onError<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of a JavaScript function that runs if a form submission fails.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onReset<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onReset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to execute when the user clicks a reset button.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onLoad<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onLoad.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript to execute when the form loads.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onSubmit<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onSubmit.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>JavaScript function to execute after other input validation returns. Use this attribute to
+execute JavaScript for preprocessing data before the form is submitted</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								style<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/style.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Styles to apply to the form. In HTML or XML format,
+Lucee passes the style attribute to the browser
+or XML. In Flash format, must be a style specification
+in CSS format (XML and Flash type no supported).</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								class<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/class.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								format<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/format.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								skin<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/skin.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								width<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/width.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The width of the form. Use a number to specify
+pixels, In Flash, you can use a percentage value to
+specify a percentage of the available width.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								height<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/height.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The height of the form. Use a number to specify
+pixels, In Flash, you can use a percentage value to
+specify a percentage of the available width. The
+displayed height might be less than the specified size.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								preloader<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/preloader.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether to display a progress bar when
+loading the Flash form. Default is: true.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timeout<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Integer number of seconds for which to keep the
+form data in the Flash cache on the server. A value of
+0 prevents the data from being cached.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								wMode<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/wMode.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies how the Flash form appears relative to
+other displayable content that occupies the same
+space on an HTML page.
+- window: The Flash form is the topmost layer on the
+page and obscures anything that would share the
+space, such as drop-down dynamic HTML lists.
+- transparent: The Flash form honors the z-index of
+dhtml so you can float items above it. If the Flash
+form is above any item, transparent regions in the
+form show the content that is below it.
+- opaque: The Flash form honors the z-index of
+dhtml so you can float items above it. If the Flash
+form is above any item, it blocks any content that is
+below it.
+Default is: window.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								accessible<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/accessible.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether to include support screen readers
+in the Flash form. Screen reader support adds
+approximately 80KB to the SWF file sent to the
+client. Default is: false.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								accept<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/accept.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								acceptcharset<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/acceptcharset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								title<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/title.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dir<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/dir.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								lang<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/lang.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onclick<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onclick.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ondblclick<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/ondblclick.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmousedown<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onmousedown.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmouseup<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onmouseup.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmouseover<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onmouseover.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmousemove<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onmousemove.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onmouseout<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onmouseout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onkeypress<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onkeypress.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onkeyup<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onkeyup.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onkeydown<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_attributes/onkeydown.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>passed through to form tag created, only used for type html.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/form/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/base.min.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfapplication&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-applet.html">
+							<span class="access-hide">Previous page: &lt;cfapplet&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-argument.html">
+							<span class="access-hide">Previous page: &lt;cfargument&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfapplication&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfapplication&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfapplication&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Defines scoping for a application, enables or disables storing client variables,
+and specifies a client variable storage mechanism.
+By default, client variables are disabled. Also, enables session variables and sets timeouts
+for session and application variables. Session and application variables are stored in memory.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfapplication</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">datasource=</span><span class="s">&quot;object&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">defaultdatasource=</span><span class="s">&quot;object&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">datasources=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">action=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">loginStorage=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">clientManagement=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">clientStorage=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sessionType=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sessionStorage=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">clientCluster=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sessionCluster=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">setClientCookies=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">bufferOutput=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sessionManagement=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">sessionTimeout=</span><span class="s">&quot;timespan&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">clientTimeout=</span><span class="s">&quot;timespan&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">applicationTimeout=</span><span class="s">&quot;timespan&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">requestTimeout=</span><span class="s">&quot;timespan&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">setDomainCookies=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scriptProtect=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">mappings=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">customtagpaths=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">componentpaths=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">secureJson=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">wstype=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">typeChecking=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">compression=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">suppressRemoteComponentContent=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">secureJsonPrefix=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">localmode=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">tag=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ormenabled=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ormsettings=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">s3=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">triggerDataMember=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">InvokeImplicitAccessor=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cacheObject=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cacheFunction=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cacheQuery=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cacheTemplate=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cacheResource=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">cacheInclude=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">onMissingTemplate=</span><span class="s">&quot;object&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">locale=</span><span class="s">&quot;String&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">timeZone=</span><span class="s">&quot;String&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">webcharset=</span><span class="s">&quot;String&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">resourcecharset=</span><span class="s">&quot;String&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">scopecascading=</span><span class="s">&quot;String&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of your application. This name can be up to 64 characters long.
+Required for application and session variables, optional for client variables</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								datasource<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/datasource.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>alias for default datasource</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								defaultdatasource<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/defaultdatasource.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the default datasource for this environment</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								datasources<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/datasources.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A structure that contains datasources defintions.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>action for the data set:</p>
+<pre><code>		- create (default): creates a new application context and overwrite the existing
+		- update: update the existing application context when there is already one, otherwise a new one is created
+</code></pre>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								loginStorage<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/loginStorage.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>storage for the login data:
+- cookie: store login information in the Cookie scope
+- session: store login information in the Session scope</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								clientManagement<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/clientManagement.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Enables client variables. Default is No.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								clientStorage<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/clientStorage.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies how Lucee stores client variables:</p>
+<ul>
+<li>memory: the session is only kept in memory</li>
+<li>cookie: the session is stored in the client cookie</li>
+<li>file (default): the session is stored in a local file</li>
+<li>&quot;datasource-name&quot;|&quot;cache-name&quot;: when you select a name of an available datasource or cache, the client scope will be stored in there</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sessionType<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionType.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Lucee provide 2 kind of sessions:</p>
+<ul>
+<li>cfml: session handled by Lucee</li>
+<li>j2ee: session handled by the Servlet Engine used
+Default value is defined in the Lucee Web Administrator. &quot;j2ee&quot; can not use a session storage.</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sessionStorage<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionStorage.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies how Lucee stores session variables:</p>
+<ul>
+<li>memory (default): the session is only kept in memory</li>
+<li>cookie: the session is stored in the client cookie</li>
+<li>file: the session is stored in a local file</li>
+<li>&quot;datasource-name&quot;|&quot;cache-name&quot;: when you select a name of an available datasource or cache, the session scope will be stored in there</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								clientCluster<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/clientCluster.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true, lucee uses the storage backend for the client scope as master and Lucee checks for changes in the storage backend with every request,
+if set to false (default), the storage is only used as slave, lucee only initially gets the data from the storage. Ignored for storage type &quot;memory&quot;.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sessionCluster<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionCluster.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true, lucee uses the storage backend for the session scope as master and Lucee checks for changes in the storage backend with every request,
+if set to false (default), the storage is only used as slave, lucee only initially gets the data from the storage. Ignored for storage type &quot;memory&quot;.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								setClientCookies<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/setClientCookies.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Yes enables client cookies. Default is Yes. If you set this attribute to
+&quot;No&quot;, Lucee does not automatically send the CFID and CFTOKEN cookies to the client browser;
+you must manually code CFID and CFTOKEN on the URL for every page that uses Session or Client variables.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								bufferOutput<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/bufferOutput.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true (default) the output written to the body of the tag is buffered and in case of a exception also outputted.
+if set to false the content to body is ignored and not disabled when a failure in the body of the tag occur.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sessionManagement<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionManagement.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Yes enables session variables. Default is No.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								sessionTimeout<br>
+								<sub>(timespan, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/sessionTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated
+by commas, to specify the lifespan of session variables. The default value is specified in the
+Variables page of the Lucee Administrator.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								clientTimeout<br>
+								<sub>(timespan, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/clientTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated
+by commas, to specify the lifespan of client variables. The default value is specified in the
+Variables page of the Lucee Administrator.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								applicationTimeout<br>
+								<sub>(timespan, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/applicationTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Enter the CreateTimeSpan function and values in days, hours, minutes, and seconds, separated
+by commas, to specify the lifespan of application variables. The default value is specified in
+the Variables page of the Lucee Administrator.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								requestTimeout<br>
+								<sub>(timespan, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/requestTimeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Sets the amount of time Lucee will wait for a request to finish before a request timeout will be raised. This means that the execution of the request will be stopped.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								setDomainCookies<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/setDomainCookies.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Yes or No. Sets the CFID and CFTOKEN cookies for a domain, not just a single host.
+Applications that are running on clusters must set this value to Yes. The default is No.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scriptProtect<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/scriptProtect.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether to protect variables from cross-site scripting attacks</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								mappings<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/mappings.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A structure that contains mappings. Each element in the structure consists of a key and a value.
+The logical path is the key and the absolute path is the value.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								customtagpaths<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/customtagpaths.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Contains custom tag paths.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								componentpaths<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/componentpaths.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Contains component paths.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								secureJson<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/secureJson.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A Boolean value that specifies whether to add a security prefix in front of the value that a function returns in JSON-format
+in response to a remote call.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								wstype<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/wstype.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>webservice type used, this can be one of the following values</p>
+<ul>
+<li>Axis1 (default): The Apache Axis 1 implementation is used</li>
+<li>CXF: The CXF implementation is used</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								typeChecking<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/typeChecking.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If disabled, Lucee ignores type defintions with function arguments and return values</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								compression<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/compression.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Enable compression (GZip) for the Lucee Response stream for text-based responses when supported by the client (Web Browser).</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								suppressRemoteComponentContent<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/suppressRemoteComponentContent.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Suppress content written to response stream when a Component is invoked remotely. Only works if the content was not flushed before.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								secureJsonPrefix<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/secureJsonPrefix.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The security prefix to put in front of the value that a function returns in JSON-format in response to a remote call if the secureJSON setting is true.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								localmode<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/localmode.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Defines how the local scope of a function is invoked when a variable with no scope definition is used (default value set in the lucee administrator).</p>
+<ul>
+<li>modern: the local scope is always invoked</li>
+<li>classic (CFML standard): the local scope is only invoked when the key already exists in it</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								tag<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>tags/attributes default value in the following structure:
+#{location:{addtoken=false}}#</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ormenabled<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/ormenabled.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether ORM should be enabled for the current application context.The default is false.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ormsettings<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/ormsettings.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A struct that defines all the ORM settings, the following keys are supported:</p>
+<ul>
+<li>autogenmap(default:true): Specifies whether Lucee should automatically generate mapping for the persistent CFCs. If autogenmap=false, mapping should be provided in the form of &quot;{cfc-name}.cfc.hbm.xml&quot; files.</li>
+<li>automanageSession(default:true; not supported yet): Lets you specify if Lucee must manage Hibernate session automatically. If enabled: Lucee manages the session completely. That is, it decides when to flush the session, when to clear the session, and when to close the session. If disabled: The application is responsible for managing flushing, clearing, or closing of the session. The only exception is (in the case of transaction), when the transaction commits, the application flushes the session. Lucee closes the ORM session at the end of request irrespective of this flag being enabled or disabled.</li>
+<li>cacheconfig: Specifies the location of the configuration file that should be used by the secondary cache provider.This setting is used only when secondarycacheenabled=true.</li>
+<li>cacheprovider: Specifies the cache provider that should be used by ORM as secondary cache.</li>
+<li>catalog: Specifies the default Catalog that should be used by ORM.</li>
+<li>cfclocation: Specifies the directory (or array of directories) that should be used by Lucee to search for persistent CFCs to generate the mapping. If cfclocation is set, Lucee looks at only the paths specified in it. If it is not set, Lucee looks at the application directory, its sub-directories, and its mapped directories to search for persistent CFCs.</li>
+<li>datasource: Specifies the data source that should be used by ORM. If it is not specified here, then the data source specified for the application is picked up.</li>
+<li>dbcreate(default:none): Hibernate can automatically create the tables for your application in the database. dbCreate takes the following values:
+-- update: Setting this value creates the table if it does not exist or update the table if it exists.
+-- dropcreate: Setting this value drops the table if it exists and then creates it.
+-- none: Setting this value does not change anything in the database schema.</li>
+<li>dialect: Specifies the dialect.Lucee supports the following dialects: [Cache 2007.1, Cache71, Cache 2007.1, DB2, DB2/390, DB2/400, DB2390, DB2400, DB2AS400, DB2OS390, DataDirectOracle9, Derby, Firebird, FrontBase, H2, H2DB, HSQL, HSQLDB, Informix, Ingres, Interbase, JDataStore, MSSQL, Mckoi, MckoiSQL, MicrosoftSQLServer, Mimer, MimerSQL, MySQL, MySQL/InnoDB, MySQL/MyISAM, MySQL5, MySQL5/InnoDB, MySQL5InnoDB, MySQLInnoDB, MySQLMyISAM, MySQLwithInnoDB, MySQLwithMyISAM, Oracle, Oracle10g, Oracle8i, Oracle9, Oracle9i, Pointbase, PostgreSQL, PostgresPlus, Progress, SAPDB, SQLServer, Sybase, Sybase11, SybaseASE15, SybaseAnywhere, com.ddtek.jdbc.db2.DB2Driver, com.microsoft.jdbc.sqlserver.SQLServerDriver, oracle.jdbc.driver.OracleDriver, org.firebirdsql.jdbc.FBDriver, org.gjt.mm.mysql.Driver, org.h2.Driver, org.hsqldb.jdbcDriver, org.postgresql.Driver]</li>
+<li>eventHandling(default:false): Specifies whether ORM Event callbacks should be given.</li>
+<li>flushatrequestend(default:true): Specifies whether ormflush should be called automatically at request end. If flushatrequestend is false, ormflush is not called automatically at request end.</li>
+<li>logSQL(default:false): Specifies whether the SQL queries that are executed by ORM will be logged. If LogSQL=true, the SQL queries are logged to the console.</li>
+<li>ormconfig: The Hibernate configuration file. This file contains various configuration parameters like, dialect, cache settings, and mapping files that are required for the application. For more details, see www.hibernate.org/hib_docs/reference/en/html/session-configuration.html. The settings defined in the ormsettings override the settings defined in the Hibernate Configuration XML file.The connection information in the Hibernate Configuration XML file is however ignored because Lucee uses its own connection pool. You will need to use this only when you need to use a hibernate setting that is not available using ormsetting.</li>
+<li>savemapping(default:false): Specifies whether the generated Hibernate mapping file has to be saved to disc. If you set the value to true, the Hibernate mapping XML file is saved with the filename &quot;CFC name&quot;.hbm.xml in the same directory as the CFC. If any value of savemapping is specified in CFC, it will override the value specified in the ormsetting.</li>
+<li>schema: Specifies the default Schema that should be used by ORM.</li>
+<li>secondarycacheenabled(default:false): Specifies whether secondary caching should be enabled</li>
+<li>skipCFCWithError(default:false;not implemented yet): Lets you specify if Lucee must skip the CFCs that have errors. If set to true, Lucee ignores the CFCs that have errors.</li>
+<li>sqlscript: Path to the SQL script file that gets executed after ORM is initialized. This applies if dbcreate is set to dropcreate. This must be the absolute file path or the path relative to the application.The SQL script file lets you populate the tables before the application is accessed.</li>
+<li>useDBForMapping(default:true): Specifies whether the database has to be inspected to identify the missing information required to generate the Hibernate mapping. The database is inspected to get the column data type, primary key and foreign key information.</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								s3<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/s3.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A struct that defines default S3 settings, this settings can be overwritten as part of the S3 file path, the following keys are supported:</p>
+<ul>
+<li>accessKeyId: S3 access key id</li>
+<li>awsSecretKey: AWS (Amazon Web Service) Secret Key</li>
+<li>defaultLocation(default:us): region for the bucket, possible values are [eu,us,us-west]</li>
+<li>host(default:&quot;s3.amazonaws.com&quot;): hostname of the service</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								triggerDataMember<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/triggerDataMember.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If there is no accessible data member (property, element of the this scope) inside a component,
+Lucee searches for available matching &quot;getters&quot; or &quot;setters&quot; for the requested property.
+The following example should clarify this behaviour.
+&quot;somevar = myComponent.properyName&quot;.
+If &quot;myComponent&quot; has no accessible data member named &quot;propertyName&quot;,
+Lucee searches for a function member (method) named &quot;getPropertyName&quot;.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								InvokeImplicitAccessor<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/InvokeImplicitAccessor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>alias for triggerDataMember</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cacheObject<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/cacheObject.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the cache used for object caching in this context</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cacheFunction<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/cacheFunction.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the cache used for function caching in this context</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cacheQuery<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/cacheQuery.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the cache used for query caching in this context</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cacheTemplate<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/cacheTemplate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the cache used for template caching in this context</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cacheResource<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/cacheResource.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the cache used to store data from ram resource in this context</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								cacheInclude<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/cacheInclude.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the cache used to store data from a include</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								onMissingTemplate<br>
+								<sub>(object, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/onMissingTemplate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>closure/udf executed when the requested template does not exist</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								locale<br>
+								<sub>(String, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/locale.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Sets the country/language locale for CFML processing. The locale value
+determines the default format of date, time, number, and
+currency values, according to language and regional
+conventions.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timeZone<br>
+								<sub>(String, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/timeZone.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>change the timezone defintion for the current application context.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								webcharset<br>
+								<sub>(String, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/webcharset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>character set used for output streams, form-, url-, and cgi scope variables and reading/writing the header</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								resourcecharset<br>
+								<sub>(String, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/resourcecharset.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>character set used for reading from/writing to various resources</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								scopecascading<br>
+								<sub>(String, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_attributes/scopecascading.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Depending on this setting Lucee scans certain scopes to find a variable called from the CFML source. This will only happen, when the variable is called without a scope. (Example: #myVar# instead of #variables.myVar#), the following values are supported:</p>
+<ul>
+<li>strict: scans only the variables scope</li>
+<li>small: scans the scopes variables,url,form</li>
+<li>standard: scans the scopes variables,cgi,url,form,cookie</li>
+</ul>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/application/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

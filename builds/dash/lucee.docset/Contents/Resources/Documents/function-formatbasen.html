@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: FormatBaseN</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-fix.html">
+							<span class="access-hide">Previous page: Fix</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-generatesecretkey.html">
+							<span class="access-hide">Previous page: GenerateSecretKey</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">FormatBaseN</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">FormatBaseN</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">FormatBaseN</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/formatbasen/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Converts a number to a string, formatted in the base specified by radix.</p>
+
+
+	<p><strong>Returns:</strong> string</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">FormatBaseN</span><span class="p">(</span> <span class="nv">number</span><span class="p">,</span> <span class="nv">radix</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								number<br>
+								<sub>(number, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/formatbasen/_arguments/number.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Number to convert</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								radix<br>
+								<sub>(number, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/formatbasen/_arguments/radix.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Base of the result</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/formatbasen/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<div class="highlight"><pre><span class="nb">&lt;cfoutput&gt;</span>
+  <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="m">15</span><span class="p">,</span> <span class="m">2</span>  <span class="p">)#</span> <span class="cm">&lt;!--- 1111 (binary) ---&gt;</span>
+  <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="m">15</span><span class="p">,</span> <span class="m">16</span> <span class="p">)#</span> <span class="cm">&lt;!--- f (hexadecimal) ---&gt;</span>
+  <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="m">15</span><span class="p">,</span> <span class="m">8</span>  <span class="p">)#</span> <span class="cm">&lt;!--- 17 (octal) ---&gt;</span>
+<span class="nb">&lt;/cfoutput&gt;</span>
+</pre></div>
+<h3>Max value limitation</h3>
+<p>Please note that the value to convert is limited to a maximum equal to <code>java.lang.Integer.MAX_VALUE</code>. Values greater than this will produce unexpected results. i.e.</p>
+<div class="highlight"><pre><span class="nb">&lt;cfset</span> <span class="nv">max</span> <span class="o">=</span> <span class="nf">CreateObject</span><span class="p">(</span> <span class="s2">&quot;java&quot;</span><span class="p">,</span> <span class="s2">&quot;java.lang.Integer&quot;</span> <span class="p">).</span><span class="nv">MAX_VALUE</span> <span class="nb">&gt;</span>
+<span class="nb">&lt;cfoutput&gt;</span>
+  <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="nv">max</span>  <span class="p">,</span> <span class="m">16</span> <span class="p">)#</span> <span class="cm">&lt;!---  7fffffff (correct) ---&gt;</span>
+  <span class="p">#</span><span class="nf">formatBaseN</span><span class="p">(</span> <span class="nv">max</span><span class="o">+</span><span class="m">1</span><span class="p">,</span> <span class="m">16</span> <span class="p">)#</span> <span class="cm">&lt;!---  7fffffff (incorrect) ---&gt;</span>
+<span class="nb">&lt;/cfoutput&gt;</span>
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

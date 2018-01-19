@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Cached Within</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="lucee-5-access=modifiers.html">
+							<span class="access-hide">Previous page: Access Modifiers for variables</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="lucee-5-class-updating.html">
+							<span class="access-hide">Previous page: Class Updating</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Cached Within</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Cached Within</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="lucee-5.html">Lucee 5</a></li>
+			
+			<li class="active">Cached Within</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/04.cached-within/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>#CachedWithin#
+<strong>The attribute <code>cachedWithin</code> has been added to the tags <code>cffile</code> and <code>cfhttp</code> and it has also been added as an interface to Lucee so you can make your own <code>cachedwithin</code> implementation.</strong></p>
+<p>##Supported with cffile and cfhttp##
+The possibility to cache the result of the tags <code>cffile</code> and <code>cfhttp</code> has been added in Lucee 5 using the attribute <code>cachedWithin</code> for these tags.</p>
+<div class="highlight"><pre><span class="nb">&lt;cffile</span> <span class="nv">action</span><span class="o">=</span><span class="s2">&quot;read&quot;</span> <span class="nv">file</span><span class="o">=</span><span class="s2">&quot;test.txt&quot;</span> <span class="nv">variable</span><span class="o">=</span><span class="s2">&quot;content&quot;</span> <span class="nv">cachedWithin</span><span class="o">=</span><span class="s2">&quot;request&quot;</span><span class="o">/</span><span class="nb">&gt;</span>
+<span class="nb">&lt;cfhttp</span> <span class="nv">url</span><span class="o">=</span><span class="s2">&quot;http://lucee.org&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;http&quot;</span> <span class="nv">cachedWithin</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#createTimespan(0,0,0,10)#</span><span class="s2">&quot;</span><span class="o">/</span><span class="nb">&gt;</span>
+</pre></div>
+<p>##Interface for cachedWithin##
+Lucee 5 extends with an interface making it possible to make an extension for the <code>cachedWithin</code> attribute in Java.</p>
+<p>Lucee's built-in <code>cachedWithin</code> attributes supports two types, <code>request</code> and <code>timespan</code>.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: DateTimeFormat</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-datepart.html">
+							<span class="access-hide">Previous page: DatePart</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-day.html">
+							<span class="access-hide">Previous page: Day</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">DateTimeFormat</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">DateTimeFormat</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">DateTimeFormat</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/datetimeformat/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Formats a date object to a given string output.</p>
+
+
+	<p><strong>Returns:</strong> string</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">DateTimeFormat</span><span class="p">(</span> <span class="nv">datetime</span> <span class="p">[,</span> <span class="nv">mask</span> <span class="p">[,</span> <span class="nv">timezone</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								datetime<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/datetimeformat/_arguments/datetime.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>date object; for example, <a href="function-now.html">now()</a></p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								mask<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/datetimeformat/_arguments/mask.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Date time formatting mask (case sensitive):</p>
+<ul>
+<li>a,..,aaaa: AM/PM marker (see also &quot;t&quot; and &quot;tt&quot;; Example:AM)</li>
+<li>d: Day in month, no leading zero for single-digit days (Example:3)</li>
+<li>dd: Day in month, leading zero for single-digit days (Example:03)</li>
+<li>D: Day in year, no leading zero for single-digit days (Example:4)</li>
+<li>DD: Day in month, leading zero for single-digit days (Example:04)</li>
+<li>DDD: Day in month, 2 leading zero for single-digit days (Example:004)</li>
+<li>E,EE,EEE: Day of week as a three-letter abbreviation (Example:Tue)</li>
+<li>EEEE: Day of week as its full name (Example:Tuesday)</li>
+<li>F: Day of week in month, no leading zero for single-digit days (Example:4)</li>
+<li>FF: Day of week in month, leading zero for single-digit days (Example:04)</li>
+<li>G,GG: Era designator (Example:AD)</li>
+<li>h: Hour in am/pm (1-12), no leading zero for single-digit hours (Example:3)</li>
+<li>hh: Hour in am/pm (1-12), leading zero for single-digit hours (Example:03)</li>
+<li>H: Hour in day (0-23), no leading zero for single-digit hours (Example:14)</li>
+<li>HH: Hour in day (00-23), leading zero for single-digit hours (Example:14)</li>
+<li>k: Hour in day (1-24), no leading zero for single-digit hours (Example:15)</li>
+<li>kk: Hour in day (1-24), leading zero for single-digit hours (Example:15)</li>
+<li>K: Hour in am/pm (0-11), no leading zero for single-digit hours (Example:2)</li>
+<li>KK: Hour in am/pm (0-11), leading zero for single-digit hours (Example:02)</li>
+<li>l,L: milliseconds, with no leading zeros (Example:3)</li>
+<li>ll,LL: milliseconds, leading zero for single-digit days (Example:03)</li>
+<li>lll,LLL: milliseconds,  2 leading zero for single-digit days (Example:003)</li>
+<li>m,M: Month as digits, no leading zero for single-digit months (Example:6)</li>
+<li>mm,MM: Month as digits, leading zero for single-digit months (Example:06)</li>
+<li>mmm,MMM: Month as a three-letter abbreviation (Example:Jun)</li>
+<li>mmmm,MMMM: Month as its full name (Example:June)</li>
+<li>n,N: minutes in hour, no leading zero for single-digit minutes (Example:3)</li>
+<li>nn,NN: minutes in hour, leading zero for single-digit minutes (Example:03)</li>
+<li>s,S: seconds in minute, no leading zero for single-digit seconds (Example:3)</li>
+<li>ss,SS: seconds in minute, leading zero for single-digit seconds (Example:03)</li>
+<li>t,T: one-character time marker string (Example:P)</li>
+<li>tt,TT: multiple-character time marker string (Example:PM)</li>
+<li>w: Week in year, no leading zero for single-digit hours (Example:27)</li>
+<li>ww: Week in year, leading zero for single-digit hours (Example:27)</li>
+<li>W: Week in month, no leading zero for single-digit hours (Example:2)</li>
+<li>WW: Week in month, leading zero for single-digit hours (Example:02)</li>
+<li>y,yy,yyy: Year as last two digits, leading zero for single-digit (Example:09)</li>
+<li>yyyy: Year represented by four digits (Example:2009)</li>
+<li>z,zz,zzz: General time zone as a 3 to 4 letter abbreviation (Example:PST)</li>
+<li>zzzz: General time zone as its full name (Example:Pacific Standard Time)</li>
+<li>Z,..,ZZZZ: RFC 822 time zone (Example:-0800)</li>
+</ul>
+<p>The following masks can be used to format the full date and time and may not be combined with other masks:</p>
+<ul>
+<li>short: equivalent to &quot;m/d/y h:mm tt&quot;</li>
+<li>medium: equivalent to &quot;mmm d, yyyy h:mm:ss tt&quot;</li>
+<li>long: medium followed by three-letter time zone; i.e. &quot;mmmm d, yyyy h:mm:ss tt zzz&quot;</li>
+<li>full: equivalent to &quot;dddd, mmmm d, yyyy h:mm:ss tt zz&quot;</li>
+<li>ISO8601: equivalent to &quot;yyyy-mm-dd'T'HH:nn:ss'Z'Z&quot;</li>
+</ul>
+<p>The function follows Java date time mask.  For details, see the Java documentation section <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">Date and Time Patterns</a>.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timezone<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/datetimeformat/_arguments/timezone.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A datetime object is independent of a specific timezone; it is only an offset in milliseconds from <code>1970-1-1 00.00:00 UTC</code> (Coordinated Universal Time).</p>
+<p>The timezone only comes into play when you need specific information like hours in a day, minutes in a hour or which day it is as these calculations depend on the timezone.</p>
+<p>A timezone must be specified in order to translate the date object to something else. If you do not provide the timezone in the function call, it will default to the timezone specified in the Lucee Administrator (Settings/Regional), or the timezone specified for the current request using the function <a href="function-settimezone.html">setTimezone()</a>.</p>
+<p>You can find a list of all available timezones in the Lucee administrator (Settings/Regional). Some examples of valid timezones include:</p>
+<ul>
+<li>AGT (for time in Argentina)</li>
+<li>Europe/Zurich (for time in Zurich/Switzerland)</li>
+<li>HST (Hawaiian Standard Time in the USA)</li>
+</ul>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/datetimeformat/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this function.</em></p>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-date.html">Date and time</a></li>
+			
+				<li><a href="category-string.html">Strings</a></li>
+			
+				<li><a href="category-formatting.html">Formatting</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

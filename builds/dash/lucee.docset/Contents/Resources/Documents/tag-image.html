@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfimage&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-if.html">
+							<span class="access-hide">Previous page: &lt;cfif&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-imap.html">
+							<span class="access-hide">Previous page: &lt;cfimap&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfimage&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfimage&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfimage&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Lets you resize and add labels to GIF and JPEG format images.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nb">&lt;cfimage</span>
+    <span class="p">[</span><span class="nv">action</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">angle</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">passthrough</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">destination</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">difficulty</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">fonts</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">fontSize</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">format</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">height</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">isBase64</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">overwrite</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">quality</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">structName</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">text</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">thickness</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">width</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">base64</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+<span class="nb">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Action to execute.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								angle<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/angle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Angle in degrees to rotate the image.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								passthrough<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/passthrough.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>HTML attributes that are not explicitly supported by cfimage.
+If you specify an attribute and value,
+they are passed to the tag &quot;img&quot;.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								color<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/color.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Border color. Hexadecimal value or supported named color. For a hexadecimal value, use the form &quot;#xxxxxx&quot; or &quot;xxxxxx&quot;, where x = 0-9 or A-F; use two number signs or none.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								destination<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/destination.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Absolute or relative pathname where the image output is written.
+The image format is determined by the file extension.
+The convert and write actions require a destination attribute.
+The border, captcha, resize, and rotate actions require a name attribute or a destination attribute.
+You can specify both.
+If you do not enter a destination,
+the CAPTCHA image is placed inline in the HTML output and displayed in the web browser.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								difficulty<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/difficulty.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Level of complexity of the CAPTCHA text.
+Specify one of the following levels of text distortion:
+low, medium, high</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fonts<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/fonts.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>One or more valid fonts to use for the CAPTCHA text. Separate multiple fonts with commas.
+Lucee supports only the system fonts that the JDK can recognize. For example, TTF fonts in the Windows directory are supported on Windows.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								fontSize<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/fontSize.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>font size of the text in the CAPTCHA image.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								format<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/format.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Format of the image displayed in the browser.
+If you do not specify a format, the image is displayed in PNG format.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								height<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/height.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Height in pixels of the image.
+For the resize attribute, you also can specify the height as a percentage.
+When you resize an image, if you specify a value for the width.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								isBase64<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/isBase64.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether the source is a Base64 string</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of the image variable to create.
+The read action requires a name attribute.
+The border, resize, and rotate actions require a name attribute or a destination attribute.
+You can specify both.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								overwrite<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/overwrite.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If the destination file already exists, Lucee generates an error if the overwrite action is not set to yes.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								quality<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/quality.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Quality of the JPEG destination file. Applies only to files with an extension of JPG or JPEG. Valid values are fractions that range from 0 through 1 (the lower the number, the lower the quality).</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								source<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/source.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>source file</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								structName<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/structName.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of the structure to be created.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								text<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/text.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Text string displayed in the CAPTCHA image. Use capital letters for better readability. Do not include spaces because users cannot detect them in the resulting CAPTCHA image.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								thickness<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/thickness.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Border thickness in pixels. The border is added to the outside edge of the source image, increasing the image area accordingly.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								width<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/width.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Width in pixels of the image.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								base64<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_attributes/base64.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>should action &quot;writetobrowser&quot; embed the source of the image as base64 encoded string, default is false.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/image/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

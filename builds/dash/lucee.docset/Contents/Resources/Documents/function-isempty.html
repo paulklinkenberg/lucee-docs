@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: IsEmpty</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-isdefined.html">
+							<span class="access-hide">Previous page: IsDefined</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-isimage.html">
+							<span class="access-hide">Previous page: IsImage</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">IsEmpty</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">IsEmpty</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">IsEmpty</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isempty/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Returns whether or not a given value is &quot;empty&quot;. The following data types can be checked:</p>
+<ul>
+<li>Strings (a zero length string will return <code>true</code>)</li>
+<li>Arrays (an array with no elements will return <code>true</code>)</li>
+<li>Structs (a struct with no keys will return <code>true</code>)</li>
+<li>Query (a query with no rows will return <code>true</code>)</li>
+</ul>
+
+
+	<p><strong>Returns:</strong> boolean</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">IsEmpty</span><span class="p">(</span> <span class="nv">value</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isempty/_arguments/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The value to check. Can be either a string, array, struct or query object.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isempty/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p>The following statements all evaluate to true:</p>
+<div class="highlight"><pre>// Strings
+IsEmpty( &#39;&#39; ) == true;
+IsEmpty( &#39; &#39; ) == false;
+IsEmpty( &#39;0&#39; ) == false;
+<p>// arrays
+IsEmpty( [] ) == true;
+IsEmpty( [ 1, 2, 3 ] ) == false;</p>
+<p>// structs
+IsEmpty( {} ) == true;
+IsEmpty( { key=&quot;value&quot; } ) == false;</p>
+<p>// queries
+IsEmpty( QueryNew( 'column' ) ) == true;
+IsEmpty( QueryNew( 'column', 'varchar', [ [ 'value' ] ] ) ) == false;</p>
+<p>// numerics (always non-empty)
+IsEmpty( 0 ) == false;
+IsEmpty( 1 ) == false;</p>
+<p>// booleans (always non-empty)
+IsEmpty( false ) == false;
+IsEmpty( true ) == false;
+</pre></div></p>
+<div class="card-wrap">
+			<div class="card card-yellow">
+				<aside class="card-side">
+					<span class="card-heading icon icon-info"></span>
+				</aside>
+				<div class="card-main">
+					<div class="card-inner">
+						<p class="card-heading">Warning</p>
+						<p>Prior to Lucee 4.5.1.016, <code>IsEmpty( 0 )</code> and <code>IsEmpty( false )</code> both returned true.</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-decision.html">Decision logic</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

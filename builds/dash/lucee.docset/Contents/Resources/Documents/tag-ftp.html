@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfftp&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-forward.html">
+							<span class="access-hide">Previous page: &lt;cfforward&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-function.html">
+							<span class="access-hide">Previous page: &lt;cffunction&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfftp&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfftp&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfftp&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Lets users implement File Transfer Protocol (FTP) operations.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfftp</span>
+    <span class="na">action=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">username=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">password=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">server=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">timeout=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">port=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">connection=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyServer=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPort=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyUser=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPassword=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">retrycount=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">stoponerror=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">passive=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">directory=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ASCIIExtensionList=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">transferMode=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">remoteFile=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">localFile=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">failIfExists=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">existing=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">new=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">item=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">result=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the action that should be execute</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								username<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/username.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The Username for the connection</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								password<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/password.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The Password for the connection</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								server<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/server.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The Server to connect</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timeout<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>timeout for the connection</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								port<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/port.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>server port of the connection</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								connection<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/connection.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the name for the connection, used to cache the connection</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyServer<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/proxyServer.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Host name or IP address of a proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPort<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The port number on the proxy server from which the object is requested. Default is 80. When
+used with resolveURL, the URLs of retrieved documents that specify a port number are automatically
+resolved to preserve links in the retrieved document.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyUser<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/proxyUser.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>When required by a proxy server, a valid username.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/proxyPassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>When required by a proxy server, a valid password.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								retrycount<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/retrycount.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>retry count</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								stoponerror<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/stoponerror.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>define if execution halt on error or not</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								passive<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/passive.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>enable passive mode</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name of the query for list directory</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								directory<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/directory.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>remote directory to list</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ASCIIExtensionList<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/ASCIIExtensionList.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Delimited list of file extensions that force ASCII transfer mode, if transferMode = &quot;auto&quot;.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								transferMode<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/transferMode.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>ASCII, binary or auto mode</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								remoteFile<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/remoteFile.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>File on the Server</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								localFile<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/localFile.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>File on the current machine</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								failIfExists<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/failIfExists.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>throw a error if local file already exist or overwrite it</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								existing<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/existing.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>source or existing file or directory to rename</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								new<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/new.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>new name for file or directory</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								item<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/item.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>item on the server</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								result<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_attributes/result.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of the result value (default:cfftp)</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/ftp/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

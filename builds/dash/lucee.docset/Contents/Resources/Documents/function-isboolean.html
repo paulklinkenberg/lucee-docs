@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: IsBoolean</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-isbinary.html">
+							<span class="access-hide">Previous page: IsBinary</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-isclosure.html">
+							<span class="access-hide">Previous page: IsClosure</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">IsBoolean</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">IsBoolean</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">IsBoolean</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isboolean/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Determines if the object represents a boolean value</p>
+
+
+	<p><strong>Returns:</strong> boolean</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">IsBoolean</span><span class="p">(</span> <span class="nv">value</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								value<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isboolean/_arguments/value.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Number or string</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/isboolean/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p>The following statements evaluate to <code>true</code>:</p>
+<div class="highlight"><pre><span class="nf">IsBoolean</span><span class="p">(</span> <span class="nv">true</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="nv">false</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="m">0</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="o">-</span><span class="m">10</span><span class="p">.</span><span class="m">4</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="m">3</span><span class="p">.</span><span class="m">6</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;yes&quot;</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;no&quot;</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;true&quot;</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;false&quot;</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;0&quot;</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;-10.4&quot;</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;3.6&quot;</span> <span class="p">);</span>
+</pre></div>
+<p>The following statements evaluate to <code>false</code>:</p>
+<div class="highlight"><pre><span class="nf">IsBoolean</span><span class="p">(</span> <span class="nf">Now</span><span class="p">()</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="p">{}</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="p">[]</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="nf">QueryNew</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;&quot;</span> <span class="p">);</span>
+<span class="nf">IsBoolean</span><span class="p">(</span> <span class="s2">&quot;a string&quot;</span> <span class="p">);</span>
+</pre></div>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-decision.html">Decision logic</a></li>
+			
+				<li><a href="category-boolean.html">Booleans</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

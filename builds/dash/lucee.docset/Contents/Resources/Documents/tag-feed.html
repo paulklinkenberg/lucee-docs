@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cffeed&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-exit.html">
+							<span class="access-hide">Previous page: &lt;cfexit&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-file.html">
+							<span class="access-hide">Previous page: &lt;cffile&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cffeed&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cffeed&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cffeed&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Reads or creates an RSS or Atom syndication feed.
+This tag can read various RSS and Atom 0.3 versions. It can create RSS 2.0 or Atom 1.0 feeds.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cffeed</span>
+    <span class="err">[</span><span class="na">action=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">columnMap=</span><span class="s">&quot;struct&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">enclosureDir=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">ignoreEnclosureError=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">outputFile=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">overwrite=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">overwriteEnclosure=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">properties=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPassword=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPort=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyServer=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyUser=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">query=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">source=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">timeout=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">userAgent=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">xmlVar=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name to use for the JavaScript proxy class.
+The action to take, one of the following values:
+- create: Creates an RSS 2.0 or Atom 1.0 feed XML document and saves it in a variable, writes it to a file, or both.
+- read (default): Parses an RSS or Atom feed from a URL or an XML file and saves it in a structure or query.
+You can also get query metadata in a separate structure.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								columnMap<br>
+								<sub>(struct, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/columnMap.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Used only for the create action with a query attribute.
+A structure specifying a mapping between the names of the columns in the object specified by the query attribute
+and the columns of the feed format, as described in the Query attribute section.
+The key for each field must be a column name listed in the Query columns section. The value of the field must be
+the name of the corresponding column in the query object used as input to the create action.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								enclosureDir<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/enclosureDir.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Used only for the read action.
+Path to the directory in which to save any enclosures that are available in the feed being read.
+The path can be absolute or relative to the CFML file.
+If the directory does not exist, Lucee generates an error.
+If you omit this attribute, Lucee does not save enclosures.
+To specify the directory that contains the current page, set this attribute to .(period).</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								ignoreEnclosureError<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/ignoreEnclosureError.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>If this attribute is true, Lucee attempts to save all enclosures.
+If it encounters an error downloading one enclosure, it continues downloading other enclosures and writes the
+error information in the server log.
+If this attribute is false, Lucee stops downloading all enclosures and generates an error when it encounters
+an error downloading an enclosure.
+Note: Enclosure errors can occur if the specified enclosure is of a type that the web server does not allow to be
+downloaded. (optional, default=false)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A structure that contains complete feed data:
+The output of a read action.
+The input definition of the feed to create.
+This structure contains complete feed information.
+When you specify the name attribute for a create action, you must put it in pound signs (#).</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								outputFile<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/outputFile.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Path of the file in which to write the feed as XML text.
+The path can be absolute, or relative to the CFML file.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								overwrite<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/overwrite.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Whether to overwrite the XML feed file if it already exists.
+If you do not set this attribute to true and the cffeed tag tries to write to a file that exists, Lucee
+generates an error. (optional, default=false)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								overwriteEnclosure<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/overwriteEnclosure.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Used only for the read action.
+Whether to overwrite files in the enclosure directory if they already exist.
+If you do not set this attribute to true and the cffeed tag tries to write to a file that exists, Lucee
+generates an error. (optional, default=false)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								properties<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/properties.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A structure containing the feed metadata, the information about the entire feed.
+Can contain either of the following:
+The output of a read action.
+Input to a create action.
+The properties and query attributes combined provide complete feed information.
+When you specify the properties attribute for a create action, you must put it in pound signs (#)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/proxyPassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Password required by the proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPort<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The port to connect to on the proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyServer<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/proxyServer.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Host name or IP address of a proxy server to which to send the request.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyUser<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/proxyUser.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>User name to provide to the proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								query<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/query.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A query object containing the Atom entries or RSS items in the feed. Can contain either of the following:
+The output of a read action.
+Input to a create action.
+The properties and query attributes combined provide complete feed information.
+When you specify the query attribute for a create action, you must put it in pound signs (#)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								source<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/source.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Used only for the read action.
+The URL of the feed or the path to the XML file that contains the feed contents.
+A path can be absolute, or relative to the CFML file.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timeout<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The number of seconds to wait for a response from the feed source. A value of 0 specifies that the request does not time out.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								userAgent<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/userAgent.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Text to put in the HTTP User-Agent request header field. Used to identify the request client software.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								xmlVar<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_attributes/xmlVar.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A variable in which to save the read or created feed as XML text.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/feed/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

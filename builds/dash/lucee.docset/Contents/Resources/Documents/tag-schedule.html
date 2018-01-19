@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfschedule&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-savecontent.html">
+							<span class="access-hide">Previous page: &lt;cfsavecontent&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-script.html">
+							<span class="access-hide">Previous page: &lt;cfscript&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfschedule&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfschedule&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfschedule&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Provides a programmatic interface to the scheduling engine. You can run a specified
+page at scheduled intervals with the option to write out static HTML pages. This lets you offer users
+access to pages that publish data, such as reports, without forcing users to wait while a database transaction
+is performed in order to populate the data on the page.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfschedule</span>
+    <span class="na">action=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">serverpassword=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">hidden=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">readonly=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">task=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">operation=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">paused=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">file=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">path=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">startDate=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">startTime=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">url=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">publish=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">endDate=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">endTime=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">interval=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">requestTimeOut=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">username=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">password=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyServer=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyUser=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPassword=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">resolveURL=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">port=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">proxyPort=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">returnvariable=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">autoDelete=</span><span class="s">&quot;boolean&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<ul>
+<li>delete: deletes the specified task</li>
+<li>update: updates an existing task or creates a new task, if one with the name specified by the task attribute does not exist</li>
+<li>run: executes the specified task</li>
+<li>list: list all scheduled tasks defined</li>
+<li>pause: pause execution of the defined scheduled task</li>
+<li>resume: resume execution of a paused scheduled task</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								serverpassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/serverpassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>allow you to access filesystem, also when access is denied for your context</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								hidden<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/hidden.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true the scheduled task is not displayed in the Lucee Administrator.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								readonly<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/readonly.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true the scheduled task can not be modified or deleted in the Lucee Administrator.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								task<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/task.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the task to delete, update, or run.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								operation<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/operation.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The type of operation the scheduler performs when executing this task.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								paused<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/paused.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true the scheduled task is paused.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								file<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/file.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Required with publish ='Yes' A valid filename for the published file.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								path<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/path.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Required with publish ='Yes' The path location for the published file.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								startDate<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/startDate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Required when action ='update'. The date when scheduling of the task should start.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								startTime<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/startTime.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Required when creating tasks with action = 'update'. Enter a value in seconds. The time when
+scheduling of the task starts.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								url<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/url.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Required when action = 'update'. The URL to be executed.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								publish<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/publish.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether the result should be saved to a file.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								endDate<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/endDate.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The date when the scheduled task ends.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								endTime<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/endTime.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The time when the scheduled task ends. Enter a value in seconds.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								interval<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/interval.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Required when creating tasks with action = 'update'. Interval at which task should be scheduled.
+Can be set in seconds or as Once, Daily, Weekly, and Monthly. The default interval is one hour. The
+minimum interval is one minute.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								requestTimeOut<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/requestTimeOut.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Customizes the requestTimeOut for the task operation. Can be used to extend the default timeout
+for operations that require more time to execute.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								username<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/username.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Username if URL is protected.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								password<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/password.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Password if URL is protected.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyServer<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/proxyServer.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Host name or IP address of a proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyUser<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/proxyUser.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>User name to provide to the proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPassword<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/proxyPassword.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Password to provide to the proxy server.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								resolveURL<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/resolveURL.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies whether to resolve links in the result page to absolute references.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								port<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/port.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The port number on the server from which the task is being scheduled. Default is 80. When used
+with resolveURL, the URLs of retrieved documents that specify a port number are automatically resolved
+to preserve links in the retrieved document.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								proxyPort<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/proxyPort.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The port number on the proxy server from which the task is being requested. Default is 80. When
+used with resolveURL, the URLs of retrieved documents that specify a port number are automatically
+resolved to preserve links in the retrieved document.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								returnvariable<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/returnvariable.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>return variable name of action list</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								autoDelete<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_attributes/autoDelete.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>if set to true, the scheduled task get deleted when there is no possible future execution.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/schedule/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

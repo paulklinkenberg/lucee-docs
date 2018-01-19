@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfchartseries&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-chartdata.html">
+							<span class="access-hide">Previous page: &lt;cfchartdata&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-client.html">
+							<span class="access-hide">Previous page: &lt;cfclient&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfchartseries&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfchartseries&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfchartseries&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Used with the cfchart and cfchartseries tags. This tag defines chart data points. Its data is submitted to the cfchartseries tag.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfchartseries</span>
+    <span class="err">[</span><span class="na">colorlist=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">itemColumn=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">markerStyle=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">paintStyle=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">query=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">seriesColor=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">seriesLabel=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="na">type=</span><span class="s">&quot;string&quot;</span>
+    <span class="err">[</span><span class="na">valueColumn=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">dataLabelStyle=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span><span class="cm">&lt;!--- body ---&gt;</span>[<span class="nt">&lt;/cfchartseries&gt;</span>]
+</pre></div>
+
+
+	<p>This tag <strong>may</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								colorlist<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/colorlist.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies if chartseries type attribute = &quot;pie&quot;. Sets pie
+slice colors.</p>
+<pre><code>        Comma-delimited list of hex values or supported, named web
+        colors; see name list in the cfchart Usage section.
+
+        For a hex value, use the form &quot;##xxxxxx&quot;, where x = 0-9 or
+        A-F; use two pound signs or none.
+</code></pre>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								itemColumn<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/itemColumn.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of a column in the query specified in the query
+attribute; contains the item label for a data point to
+graph.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								markerStyle<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/markerStyle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Applies to chartseries type attribute values line, curve
+and scatter, and show3D attribute value no.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								paintStyle<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/paintStyle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Sets the paint display style of the data series.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								query<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/query.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of CFML query from which to get data.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								seriesColor<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/seriesColor.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Color of the main element (such as the bars) of a chart.
+For a pie chart, the color of the first slice.</p>
+<pre><code>        Hex value or supported named color; see name list in the
+        cfchart Usage section.
+        For a hex value, use the form &quot;##xxxxxx&quot;, where x = 0-9 or
+        A-F; use two pound signs or none.
+</code></pre>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								seriesLabel<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/seriesLabel.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Text of data series label</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Sets the chart display style</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								valueColumn<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/valueColumn.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Name of a column in the query specified in the query
+attribute; contains data values to graph.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								dataLabelStyle<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_attributes/dataLabelStyle.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Specifies the way in which the color is applied to the
+item in the series:
+- None = nothing is printed (default)
+- Value = the value of the datapoint
+- Rowlabel = the row's label
+- Columnlabel = the column's label
+- Pattern</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/chartseries/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

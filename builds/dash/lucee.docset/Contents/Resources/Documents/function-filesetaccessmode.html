@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: FileSetAccessMode</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-fileseek.html">
+							<span class="access-hide">Previous page: FileSeek</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-filesetattribute.html">
+							<span class="access-hide">Previous page: FileSetAttribute</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">FileSetAccessMode</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">FileSetAccessMode</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">FileSetAccessMode</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/filesetaccessmode/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Sets the attributes of an on-disk file on UNIX or Linux. This function does not work with in-memory files.</p>
+
+
+	<p><strong>Returns:</strong> void</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">FileSetAccessMode</span><span class="p">(</span> <span class="nv">source</span><span class="p">,</span> <span class="nv">mode</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								source<br>
+								<sub>(any, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/filesetaccessmode/_arguments/source.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>file path</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								mode<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/filesetaccessmode/_arguments/mode.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>A three-digit value, in which each digit specifies the file access for individuals and groups:</p>
+<ul>
+<li>The first digit represents the owner.</li>
+<li>The second digit represents a group.</li>
+<li>The third digit represents anyone.</li>
+</ul>
+<p>Each digit of this code sets permissions for the appropriate individual or group:</p>
+<ul>
+<li>4 specifies read permission.</li>
+<li>2 specifies write permission.</li>
+<li>1 specifies execute permission.</li>
+</ul>
+<p>You use the sums of these numbers to indicate combinations of the permissions:</p>
+<ul>
+<li>3 specifies write and execute permission.</li>
+<li>5 specifies read and execute permission.</li>
+<li>6 indicates read and write permission.</li>
+<li>7 indicates read, write, and execute permission.</li>
+</ul>
+<p>For example, 400 specifies that only the owner can read the file; 004 specifies that anyone can read the file.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/filesetaccessmode/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this function.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

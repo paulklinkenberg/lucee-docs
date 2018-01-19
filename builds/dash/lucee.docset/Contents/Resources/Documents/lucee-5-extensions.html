@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Extensions in Lucee 5</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="lucee-5.html">
+							<span class="access-hide">Previous page: Lucee 5</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="lucee-5-abstract-final.html">
+							<span class="access-hide">Previous page: Abstract/Final Modifiers</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Extensions in Lucee 5</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Extensions in Lucee 5</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="lucee-5.html">Lucee 5</a></li>
+			
+			<li class="active">Extensions in Lucee 5</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/01.extensions/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Lucee 5 Extension Framework</h1>
+<p><strong>Lucee 5 has had a complete overhaul of the existing extension framework, to make them more flexible and easier for everyone to create extensions.</strong></p>
+<p>Lucee already had support for extensions and extensions could be Java and / or CFML based applications that could be installed inside the Lucee Administrator but this feature was not as well adopted by the community as we would have liked. The main reason for this was the lack of documentation and the complexity of creating an extension. With the launch of Lucee 5 we will change this, removing the complexity and creating detailed documentation. Also extensions will be &quot;convention based&quot; and have complete OSGi support removing the risk of library conflicts.</p>
+<h2>Different ways to install</h2>
+<p>In Lucee 4 you could only install extensions via the administrator however in Lucee 5 you can install extensions in the following ways:</p>
+<p><strong>Administrator</strong></p>
+<p>You can still install extension in the administrator as you could before.</p>
+<p><strong>Deploy Folder</strong></p>
+<p>Lucee 5 extensions have the file extension &quot;.lex&quot; and you can install these by copying &quot;.lex&quot; files into the folder <code>{server|web-context}/deploy</code> and Lucee will pick them up and install them automatically.</p>
+<p><strong>JVM Argument</strong></p>
+<p>You can install extensions by declaring the &quot;id&quot; of the extension as a JVM argument in the startup script. The following is an example for installing the MySQL and the MSSQL Datasource driver</p>
+<pre><code>-Dlucee-extensions=99A4EF8D-F2FD-40C8-8FB8C2E67A4EEEB6;7E673D15-D87C-41A6-8B5F1956528C605F
+</code></pre>
+<h2>Convention Based</h2>
+<p>The &quot;convention based&quot; approach means you simply have folders for different parts of your application, for example:</p>
+<p>/applications - for cfm &amp; cfc files that need to be installed in the webroot
+/functions - for build-in functions to install
+/jars - for libraries used by your extension</p>
+<p>This means that creating an extension for Lucee 5 is as simple as adding the stuff you need into certain folders, zipping it up and letting Lucee take care of the rest.</p>
+<h2>OSGi Support</h2>
+<p>The &quot;OSGi support&quot; means that Lucee makes sure that the jars you install are OSGi bundles and if they are not it converts them to OSGi bundles on the fly.</p>
+<h2>But what if I have to define / check preconditions / relations?</h2>
+<p>Every extension also needs a &quot;META-INF/Manifest.mf&quot; file, where you need to define certain settings, the following example is the content from the manifest file for the MongoDB extension:</p>
+<pre><code>Manifest-Version: 1.0
+Built-Date: 2015-03-11 16:11:16
+version: &quot;1.0.0.40&quot;
+id: &quot;E6634E1A-4CC5-4839-A83C67549ECA8D5B&quot;
+name: &quot;MongoDB Datasource and Cache&quot;
+description: &quot;This Extensions allows to use MongoDB direcly in your code or as a Cache (Experimentel). MongoDB (from humongous) is a cross-platform document-oriented database. Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor of JSON-like documents with dynamic schemas (MongoDB calls the format BSON), making the integration of data in certain types of applications easier and faster.&quot;
+start-bundles: false
+trial: false
+lucee-core-version: &quot;5.0.0.021&quot;
+</code></pre>
+<p>In this case, for example, we have defined that Lucee &quot;5.0.0.021&quot; is necessary to install this extension.</p>
+<h2>Install script no longer required</h2>
+<p>With pre-Lucee 5 extensions you had to create an install.cfc file and code the installation of the extension yourself, however with Lucee 5 this script is no longer required and Lucee now takes care of the install for you.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

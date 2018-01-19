@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Sending Emails</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="cookbook-filesystem-vfs.html">
+							<span class="access-hide">Previous page: Virtual File Systems (ram, ftp, zip, s3, etc...)</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="cookbook-configuration-administrator-cfc.html">
+							<span class="access-hide">Previous page: Configure Lucee within your Application</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Sending Emails</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Sending Emails</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="cookbook.html">Cookbook</a></li>
+			
+			<li class="active">Sending Emails</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/10.mail-send/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>How to send a Mail</h1>
+<p>The following example shows you how you can send a mail.
+Before you can use this functionality, you have to define a Mail server in the Lucee Administrator.</p>
+<p><strong>Tags</strong></p>
+<div class="highlight"><pre>#!cfm
+&lt;cfmail subject=&quot;Your Order&quot; from=&quot;whatever@lucee.org&quot; to=&quot;whatever@gmail.com&quot;&gt;
+Hi there,
+This mail is sent to confirm that we have received your order.
+&lt;/cfmail&gt;
+</pre></div>
+<p><strong>Script</strong></p>
+<div class="highlight"><pre>#!javascript
+mail subject=&quot;Your Order&quot; from=&quot;whatever@lucee.org&quot; to=&quot;whatever@gmail.com&quot; {
+  writeOutput(&#39;Hi there,&#39;);
+  writeOutput(&#39;This mail is sent to confirm that we have received your order.&#39;);
+};
+</pre></div>
+<p>That is all you need to do to send a mail.</p>
+<h2>Advanced</h2>
+<p>TODO</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

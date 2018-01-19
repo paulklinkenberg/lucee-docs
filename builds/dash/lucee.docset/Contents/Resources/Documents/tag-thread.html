@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfthread&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-textinput.html">
+							<span class="access-hide">Previous page: &lt;cftextinput&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-throw.html">
+							<span class="access-hide">Previous page: &lt;cfthrow&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfthread&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfthread&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfthread&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>The cfthread tag enables you to create threads, independent streams of code execution, in your application.
+You use this tag to run or end a thread, temporarily stop thread execution, or join together multiple threads.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfthread</span>
+    <span class="err">[</span><span class="na">action=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">retryInterval=</span><span class="s">&quot;any&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">duration=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">name=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">priority=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">timeout=</span><span class="s">&quot;number&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span><span class="cm">&lt;!--- body ---&gt;</span>[<span class="nt">&lt;/cfthread&gt;</span>]
+</pre></div>
+
+
+	<p>This tag <strong>may</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								action<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_attributes/action.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The action to take, one of the following values:</p>
+<ul>
+<li>join: Makes the current thread wait until the thread or threads specified in the name attribute complete processing,
+or until the period specified in the timeout attribute passes, before continuing processing.
+If you don't specify a timeout and thread you are joining to doesn't finish, the current thread also cannot finish processing.</li>
+<li>run: Creates a thread and starts it processing.</li>
+<li>sleep: Suspends the current threads processing for the time specified by the duration attribute.
+This action is useful if one thread must wait for another thread to do processing without joining the threads.</li>
+<li>terminate: Stops processing of the thread specified in the name attribute.
+If you terminate a thread, the thread scope includes an ERROR metadata structure with information about the termination.</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>type of the thread:
+- deamon (default): executes as deamon of the current thread
+- task: executed by the task manager</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								retryInterval<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_attributes/retryInterval.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>when type task, this attribute define a execution plan for additional tries of execution.
+you can define a single rule or multiple rules as array</p>
+<pre><code>		Example single rule:
+		#{interval:createTimeSpan(0,0,0,5),tries:5}#
+
+		in this case Lucee replay the thread for a maximum of 5 times, when the execution fails, Lucee waits for 5 seconds before doing the next try.
+
+		Example multiple rules:
+		#[{interval:createTimeSpan(0,0,0,5),tries:5},{interval:createTimeSpan(0,0,0,10),tries:5}]#
+
+		in this case Lucee replay the thread for maximum of 10 times, when the execution fails, 5 times every 5 seconds, then 5 times every 10 seconds.
+</code></pre>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								duration<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_attributes/duration.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>(sleep) The number of milliseconds for which to suspend thread processing. (required)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the thread to which the action applies:
+terminate The name of the thread to stop.
+join The name of the thread or threads to join to the current thread.
+To specify multiple threads, use a comma-delimited list.
+run The name to use to identify the thread being created.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								priority<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_attributes/priority.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The priority level at which to run the thread.
+The following values are valid:
+HIGH, LOW, NORMAL
+Higher priority threads get more processing time than lower priority
+threads. Page-level code, the code that is outside of cfthread tags,
+always has NORMAL priority. (optional, default=NORMAL)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								timeout<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_attributes/timeout.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The number of milliseconds that the current thread waits for
+the thread or threads being joined to finish. If any thread does not
+finish by the specified time, the current thread proceeds.
+If the attribute value is 0, the default, the current thread continues
+waiting until all joining threads finish. If the current thread is the
+page thread, the page continues waiting until the threads are joined,
+even if you specify a page timeout. (optional, default=0)</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/thread/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

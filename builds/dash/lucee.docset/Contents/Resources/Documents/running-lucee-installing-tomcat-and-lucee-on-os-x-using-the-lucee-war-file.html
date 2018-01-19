@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Installing Tomcat and Lucee on Mac OS X using the Lucee WAR file</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="running-lucee-osx.html">
+							<span class="access-hide">Previous page: Mac OS X</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="running-lucee-configuring-lucee.html">
+							<span class="access-hide">Previous page: Configuring Lucee</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Installing Tomcat and Lucee on Mac OS X using the Lucee WAR file</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Installing Tomcat and Lucee on Mac OS X using the Lucee WAR file</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="running-lucee.html">Running Lucee</a></li>
+			
+				<li><a href="running-lucee-osx.html">Mac OS X</a></li>
+			
+			<li class="active">Installing Tomcat and Lucee on Mac OS X using the Lucee WAR file</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/02.running-lucee/03.osx/01.installing-tomcat-and-lucee-on-os-x-using-the-lucee-war-file/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Download a copy of Apache Tomcat 7 core, available at the <a href="http://tomcat.apache.org/download-70.cgi">Tomcat download page</a>.</p>
+<p>Install Tomcat by extracting the downloaded archive. Extract the archive to your home folder, /Users/<username>. For convenience, you can rename the resulting folder from //apache-tomcat-7.0.59// to //tomcat//.</p>
+<ol>
+<li>
+<p>Go into //./tomcat/webapps///. Delete the //ROOT// folder and //ROOT.war//.</p>
+</li>
+<li>
+<p>Next, go to the <a href="https://bitbucket.org/lucee/lucee/downloads">Lucee download page</a> and download the latest lucee war file.</p>
+</li>
+<li>
+<p>Rename the lucee war file to //ROOT.war// (note the capitalization).</p>
+</li>
+<li>
+<p>Copy the renamed //ROOT.war// file into //./tomcat/webapps//.</p>
+</li>
+<li>
+<p>Create a directory called //lucee// in //./tomcat//.</p>
+</li>
+<li>
+<p>Extract the contents of //ROOT.war//.</p>
+</li>
+<li>
+<p>Go into  //./tomcat/webappsROOT/WEB-INF/lib// and copy everything in that folder to //./tomcat/lucee//.</p>
+</li>
+<li>
+<p>Go into //./tomcat/bin//.
+​</p>
+</li>
+<li>
+<p>Create a file called //setenv.sh//. Tomcat uses this file to set environment variables on startup. Open the file and add this line:</p>
+</li>
+</ol>
+<div class="highlight"><pre>JAVA_OPTS=&quot;-Xms256m -Xmx1024m -XX:MaxPermSize=128m  -javaagent:${CATALINA_HOME}/lucee/lucee-inst.jar&quot;;
+</pre></div>
+<ol start="10">
+<li>
+<p>Go into //./tomcat/conf//.</p>
+</li>
+<li>
+<p>Open //catalina.properties//. Replace the commented line in this text with the new line:</p>
+</li>
+</ol>
+<div class="highlight"><pre>#common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+common.loader=${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lucee,${catalina.home}/lucee/*.jar
+</pre></div>
+<ol start="12">
+<li>Open a Terminal prompt. Follow these commands:</li>
+</ol>
+<div class="highlight"><pre>$ cd tomcat/bin
+$ chmod 775 *
+$ ./startup.sh
+</pre></div>
+<ol start="13">
+<li>Next, open a web browser to localhost:8080/lucee/admin/web.cfm. You should see the Lucee Web admin login screen. Lucee is now installed.</li>
+</ol>
+<p><strong>Next Steps</strong></p>
+<p>From this point you can configure your Tomcat instance and set up your applications in Lucee.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

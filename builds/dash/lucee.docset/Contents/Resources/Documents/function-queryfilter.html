@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: QueryFilter</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="function" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="function-queryevery.html">
+							<span class="access-hide">Previous page: QueryEvery</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="function-querygetcell.html">
+							<span class="access-hide">Previous page: QueryGetCell</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">QueryFilter</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">QueryFilter</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="functions.html">Lucee functions</a></li>
+			
+			<li class="active">QueryFilter</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryfilter/function.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>This function creates a new Query that returns all rows from an query that match the given filter.</p>
+
+
+	<p><strong>Returns:</strong> query</p>
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nf">QueryFilter</span><span class="p">(</span> <span class="nv">query</span><span class="p">,</span> <span class="nv">filter</span> <span class="p">[,</span> <span class="nv">parallel</span> <span class="p">[,</span> <span class="nv">maxThreads</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+
+	<h2>Arguments</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Arguments">
+				<thead>
+					<tr>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								query<br>
+								<sub>(query, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryfilter/_arguments/query.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>query to filter entries from</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								filter<br>
+								<sub>(function, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryfilter/_arguments/filter.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>filter can be a function/closure that implements the following constructor [function(struct row[, number rowNumber, query query]):boolean].</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								parallel<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryfilter/_arguments/parallel.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>execute closures parallel</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								maxThreads<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryfilter/_arguments/maxThreads.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>maximum number of threads executed, ignored when argument &quot;parallel&quot; is set to false</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/01.functions/queryfilter/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<script type="text/template" id="code-ffc51398c4211a0db7bb147088948cd6" data-trycf="true" data-script="true">people = QueryNew( "name,dob,age", "varchar,date,int", [
+    [ "Susi", CreateDate( 1970, 1, 1 ), 0 ],
+    [ "Urs" , CreateDate( 1995, 1, 1 ), 0 ],
+    [ "Fred", CreateDate( 1960, 1, 1 ), 0 ],
+    [ "Jim" , CreateDate( 1988, 1, 1 ), 0 ]
+]);
+
+Dump( var=people, label="people - origional query" );
+
+/* Output:
+
+| name | dob                 | age |
+------------------------------------
+| Susi | 1970-01-01 00:00:00 | 0   |
+| Urs  | 1995-01-01 00:00:00 | 0   |
+| Fred | 1960-01-01 00:00:00 | 0   |
+| Jim  | 1988-01-01 00:00:00 | 0   |
+*/
+
+//filter - older than 21
+qryPeopleOldEnough = people.filter(function(row, rowNumber, qryData){
+    return DateDiff('yyyy', row.dob, Now()) > 21
+});
+dump(var=qryPeopleOldEnough, label='qryPeopleOldEnough - older than 21');
+
+/* Output:
+
+| name | dob                 | age |
+------------------------------------
+| Susi | 1970-01-01 00:00:00 | 0   |
+| Fred | 1960-01-01 00:00:00 | 0   |
+| Jim  | 1988-01-01 00:00:00 | 0   |
+*/</script>
+<div class="highlight"><pre><span class="nv">people</span> <span class="o">=</span> <span class="nf">QueryNew</span><span class="p">(</span> <span class="s2">&quot;name,dob,age&quot;</span><span class="p">,</span> <span class="s2">&quot;varchar,date,int&quot;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">[</span> <span class="s2">&quot;Susi&quot;</span><span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1970</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">&quot;Urs&quot;</span> <span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1960</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">&quot;Jim&quot;</span> <span class="p">,</span> <span class="nf">CreateDate</span><span class="p">(</span> <span class="m">1988</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="m">0</span> <span class="p">]</span>
+<span class="p">]);</span>
+<p><span class="nf">Dump</span><span class="p">(</span> <span class="k">var</span><span class="o">=</span><span class="nv">people</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;people - origional query&quot;</span> <span class="p">);</span></p>
+<p><span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span></p>
+<p><span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
+<span class="o">------------------------------------</span>
+<span class="err">|</span> <span class="nv">Susi</span> <span class="err">|</span> <span class="m">1970</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Urs</span>  <span class="err">|</span> <span class="m">1995</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Fred</span> <span class="err">|</span> <span class="m">1960</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Jim</span>  <span class="err">|</span> <span class="m">1988</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="o">*/</span></p>
+<p><span class="c">//filter - older than 21</span>
+<span class="nv">qryPeopleOldEnough</span> <span class="o">=</span> <span class="nf">people.filter</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="nv">row</span><span class="p">,</span> <span class="nv">rowNumber</span><span class="p">,</span> <span class="nv">qryData</span><span class="p">){</span>
+<span class="nv">return</span> <span class="nf">DateDiff</span><span class="p">(</span><span class="s1">'yyyy'</span><span class="p">,</span> <span class="nv">row.dob</span><span class="p">,</span> <span class="nf">Now</span><span class="p">())</span> <span class="o">&gt;</span> <span class="m">21</span>
+<span class="p">});</span>
+<span class="nf">dump</span><span class="p">(</span><span class="k">var</span><span class="o">=</span><span class="nv">qryPeopleOldEnough</span><span class="p">,</span> <span class="nv">label</span><span class="o">=</span><span class="s1">'qryPeopleOldEnough - older than 21'</span><span class="p">);</span></p>
+<p><span class="o">/*</span> <span class="nv">Output</span><span class="p">:</span></p>
+<p><span class="err">|</span> <span class="nv">name</span> <span class="err">|</span> <span class="nv">dob</span>                 <span class="err">|</span> <span class="nv">age</span> <span class="err">|</span>
+<span class="o">------------------------------------</span>
+<span class="err">|</span> <span class="nv">Susi</span> <span class="err">|</span> <span class="m">1970</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Fred</span> <span class="err">|</span> <span class="m">1960</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="err">|</span> <span class="nv">Jim</span>  <span class="err">|</span> <span class="m">1988</span><span class="o">-</span><span class="m">01</span><span class="o">-</span><span class="m">01</span> <span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span> <span class="err">|</span> <span class="m">0</span>   <span class="err">|</span>
+<span class="o">*/</span>
+</pre></div></p>
+							<h2>See also</h2>
+		<ul class="list-unstyled">
+			
+				<li><a href="category-query.html">Queries</a></li>
+			
+				<li><a href="category-collection.html">Collections</a></li>
+			
+		</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

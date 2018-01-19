@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Basic Date</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="cookbook-application-context-update.html">
+							<span class="access-hide">Previous page: Update current Application Context</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="cookbook-cache-list.html">
+							<span class="access-hide">Previous page: List existing Cache Connections</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Basic Date</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Basic Date</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="cookbook.html">Cookbook</a></li>
+			
+			<li class="active">Basic Date</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/04.cookbooks/04.basic-date/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<h1>Output the current date</h1>
+<p>The following examples shows you how to output the current date.</p>
+<div class="highlight"><pre>#!cfm
+	&lt;html&gt;
+		&lt;head&gt;
+			&lt;title&gt;Current date&lt;/title&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;cfoutput&gt;
+			&lt;p&gt;The time is #lsdateTimeFormat(now())#&lt;/p&gt;
+			&lt;/cfoutput&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+</pre></div>
+<p>Executing this code you will see something like the following:</p>
+<blockquote>
+<p>The time is 31-Jan-2038 11:12:08</p>
+</blockquote>
+<p>The tag <code>&lt;cfoutput&gt;</code> defines for the compiler that everything within a <code>##</code> is a code expression and needs to be parsed accordingly. <code>now()</code> is a function call that is returning a date object containing the current time, <code>lsDateTimeFormat</code> then converts that date to a string using &quot;locale&quot; specific formatting rules (default en_US).</p>
+<p>You can define a different locale globally in the Lucee admin at &quot;Settings/Regional&quot;.
+You can define a different locale for the current request in the Application.cfc file (for example: <code>this.locale=&quot;de_CH&quot;</code>) or with help of the function <code>setLocale</code> or as argument of the function call itself as follows:</p>
+<div class="highlight"><pre>#!cfm
+	&lt;html&gt;
+		&lt;head&gt;
+			&lt;title&gt;Current date&lt;/title&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;cfoutput&gt;
+			&lt;p&gt;The time is #lsDateTimeFormat(date:now(),locale:&#39;de_CH&#39;)#&lt;/p&gt;
+			&lt;/cfoutput&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

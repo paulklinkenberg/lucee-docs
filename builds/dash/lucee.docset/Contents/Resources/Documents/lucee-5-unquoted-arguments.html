@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Handling unquoted arguments as variables</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="lucee-5-tags.html">
+							<span class="access-hide">Previous page: New and modified tags</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="lucee-5-upgrading-lucee-45.html">
+							<span class="access-hide">Previous page: Upgrading from Lucee 4.5</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Handling unquoted arguments as variables</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Handling unquoted arguments as variables</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="lucee-5.html">Lucee 5</a></li>
+			
+			<li class="active">Handling unquoted arguments as variables</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/14.unquoted-arguments/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>#Handle unquoted tag attribute values as strings#
+Unquoted values for tag attributes are handled as strings by default, however with Lucee 5 there is now a setting in the Administrator (under Settings - Language/Compiler) where you can select to handle these values as variables instead.</p>
+<p>Take this example:</p>
+<div class="highlight"><pre><span class="nb">&lt;cfmail</span> <span class="nv">subject</span><span class="o">=</span><span class="nv">subject</span> <span class="nv">from</span><span class="o">=</span><span class="nv">from</span> <span class="nv">to</span><span class="o">=</span><span class="nv">to</span> <span class="o">/</span><span class="nb">&gt;</span>
+</pre></div>
+<p>With the default setting, this is interpreted as strings, e.g.:</p>
+<div class="highlight"><pre><span class="nb">&lt;cfmail</span> <span class="nv">subject</span><span class="o">=</span><span class="s2">&quot;subject&quot;</span> <span class="nv">from</span><span class="o">=</span><span class="s2">&quot;from&quot;</span> <span class="nv">to</span><span class="o">=</span><span class="s2">&quot;to&quot;</span> <span class="o">/</span><span class="nb">&gt;</span>
+</pre></div>
+<p>However when this setting is enabled, it is interpreted as variables, e.g.:</p>
+<div class="highlight"><pre><span class="nb">&lt;cfmail</span> <span class="nv">subject</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#subject#</span><span class="s2">&quot;</span> <span class="nv">from</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#from#</span><span class="s2">&quot;</span> <span class="nv">to</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#to#</span><span class="s2">&quot;</span> <span class="o">/</span><span class="nb">&gt;</span>
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

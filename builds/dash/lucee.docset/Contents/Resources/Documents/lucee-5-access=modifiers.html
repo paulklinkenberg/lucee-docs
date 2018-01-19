@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: Access Modifiers for variables</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="page" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="lucee-5-abstract-final.html">
+							<span class="access-hide">Previous page: Abstract/Final Modifiers</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="lucee-5-cached-within.html">
+							<span class="access-hide">Previous page: Cached Within</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">Access Modifiers for variables</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">Access Modifiers for variables</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="guides.html">Guides and tutorials</a></li>
+			
+				<li><a href="lucee-5.html">Lucee 5</a></li>
+			
+			<li class="active">Access Modifiers for variables</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/04.guides/08.lucee-5/03.access-modifiers/page.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>#Access Modifiers for variables#
+<strong>Lucee already supports access modifiers for functions, but with Lucee 4 this was limited to functions, Lucee 5 now also supports access modifiers for variables.</strong></p>
+<p>Access modifiers can be defined for all variables defined within the body of a component, for example:</p>
+<div class="highlight"><pre><span class="nv">component</span> <span class="p">{</span>
+   <span class="nv">private</span> <span class="nv">this.lastName</span><span class="o">=</span><span class="s2">&quot;Sorglos&quot;</span><span class="p">;</span> <span class="c">// cannot be accessed from outside</span>
+   <span class="nv">public</span> <span class="nv">this.comment</span><span class="o">=</span><span class="s2">&quot;This is a comment&quot;</span><span class="p">;</span> <span class="c">// can be accessed from outside</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfparam&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-pageencoding.html">
+							<span class="access-hide">Previous page: &lt;cfpageencoding&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-pdf.html">
+							<span class="access-hide">Previous page: &lt;cfpdf&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfparam&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfparam&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfparam&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Tests for a parameter's existence, tests its data type, and provides a default value if one
+is not assigned.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nb">&lt;cfparam</span>
+    <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;string&quot;</span>
+    <span class="p">[</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="k">default</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">min</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">max</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">pattern</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">maxlength</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">]</span>
+<span class="nb">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the parameter to test, such as Client.Email or Cookie.BackgroundColor. If
+you omit the DEFAULT attribute, an error occurs if the specified parameter does not exist</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The type of parameter that is required. The default is 'any' and valid values are:</p>
+<ul>
+<li>any: any type of value</li>
+<li>array: an array of values</li>
+<li>binary: a binary value</li>
+<li>boolean: a Boolean value</li>
+<li>creditcard: a 13-16 digit number conforming to the mod10 algorithm</li>
+<li>date or time: a date-time value</li>
+<li>email: a valid e-mail address</li>
+<li>eurodate: a date-time value. Any date part must be in the format dd/mm/yy. The format can use /, -, or . characters as delimiters</li>
+<li>float or numeric: a numeric value</li>
+<li>guid: a Universally Unique Identifier of the form &quot;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&quot; where X is a hexadecimal number</li>
+<li>integer: an integer</li>
+<li>query: a query object</li>
+<li>range: a numeric range, specified by the min and max attributes</li>
+<li>regex or regular_expression: matches input against pattern attribute</li>
+<li>ssn or social_security_number: a U.S. social security number</li>
+<li>string: a string value or single character</li>
+<li>struct: a structure</li>
+<li>telephone: a standard U.S. telephone number</li>
+<li>url: an http, https, ftp, file, mailto, or news URL</li>
+<li>uuid: a ColdFusion Universally Unique Identifier, formatted XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXX, where X is a hexadecimal number. See CreateUUID</li>
+<li>usdate: a U.S. date of the format mm/dd/yy, with 1-2 digit days and months, 1-4 digit years</li>
+<li>variableName: a string formatted according to ColdFusion variable naming conventions</li>
+<li>xml: XML objects and XML strings</li>
+<li>zipcode: U.S., 5- or 9-digit format ZIP codes</li>
+</ul>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								default<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/default.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>Default value to set the parameter to if it does not exist.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								min<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/min.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>define the smallest size of a numeric value, used for type range</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								max<br>
+								<sub>(number, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/max.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>define the biggest size of a numeric value, used for type range</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								pattern<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/pattern.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>define a regular expression pattern, to check value against</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								maxlength<br>
+								<sub>(int, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_attributes/maxlength.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>define the maxlength of a value for this types: email, url and string</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/param/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

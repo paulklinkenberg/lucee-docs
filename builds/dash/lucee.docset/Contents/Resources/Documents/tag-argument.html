@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfargument&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-application.html">
+							<span class="access-hide">Previous page: &lt;cfapplication&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-associate.html">
+							<span class="access-hide">Previous page: &lt;cfassociate&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfargument&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfargument&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfargument&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Allows subtag data to be saved with the base tag. Applies only to custom tags.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nb">&lt;cfargument</span>
+    <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;string&quot;</span>
+    <span class="p">[</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">required</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="k">default</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">displayname</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">hint</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">passby</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">]</span>
+<span class="nb">&gt;</span>
+</pre></div>
+
+
+	<p>This tag <strong>cannot</strong> have a body.</p>
+
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								name<br>
+								<sub>(string, required)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_attributes/name.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the argument</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								type<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_attributes/type.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>the type of the argumentany (array, binary, boolean, date, guid, numeric, query, string, struct, uuid)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								required<br>
+								<sub>(boolean, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_attributes/required.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>is argument required or not</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								default<br>
+								<sub>(any, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_attributes/default.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>default value of the argument</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								displayname<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_attributes/displayname.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>name to display (only used by components)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								hint<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_attributes/hint.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>hint to the argument (only used by components)</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								passby<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_attributes/passby.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>should the argument passed as reference (default) or as a value</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/argument/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<p><em>There are currently no examples for this tag.</em></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

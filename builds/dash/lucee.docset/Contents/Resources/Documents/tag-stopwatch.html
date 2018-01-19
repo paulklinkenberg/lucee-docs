@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucee Documentation :: &lt;cfstopwatch&gt;</title>
+		<base href="">
+		<meta content="initial-scale=1.0, width=device-width" name="viewport">
+		<link href="assets/css/base.min.css" rel="stylesheet">
+		<link href="assets/css/highlight.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	</head>
+
+	<body class="tag" style="margin-bottom:150px;">
+		<header class="header">
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Lucee" src="assets/images/lucee-logo.png"></a>
+			<ul class="nav nav-list pull-right">
+				
+				
+				
+					<li>
+						<a href="tag-sprydataset.html">
+							<span class="access-hide">Previous page: &lt;cfsprydataset&gt;</span>
+							<span class="icon icon-arrow-back icon-lg"></span>
+						</a>
+					</li>
+				
+				
+					<li>
+						<a href="tag-storedproc.html">
+							<span class="access-hide">Previous page: &lt;cfstoredproc&gt;</span>
+							<span class="icon icon-arrow-forward icon-lg"></span>
+						</a>
+					</li>
+				
+			</ul>
+			<span class="header-fix-show header-logo pull-none text-overflow">&lt;cfstopwatch&gt;</span>
+		</header>
+
+		<div class="content">
+			<div class="content-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1">
+							<h1 class="heading">&lt;cfstopwatch&gt;</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-push-1 body">
+							<div class="tile-wrap">
+								<div class="tile">
+									<ul class="breadcrumb margin-no-top margin-right margin-no-bottom margin-left">
+			<li><a href="index.html">Home</a></li>
+			
+				<li><a href="reference.html">Reference</a></li>
+			
+				<li><a href="tags.html">Lucee tags</a></li>
+			
+			<li class="active">&lt;cfstopwatch&gt;</li>
+		</ul>
+								</div>
+							</div>
+							<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/stopwatch/tag.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+	<p>Measures the time taken, in milliseconds, for the code between the start tag and end tag to execute.</p>
+
+
+	<h2>Usage</h2>
+<div class="highlight"><pre><span class="nt">&lt;cfstopwatch</span>
+    <span class="err">[</span><span class="na">label=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+    <span class="err">[</span><span class="na">variable=</span><span class="s">&quot;string&quot;</span><span class="err">]</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+
+	
+	<p>This tag is also supported within cfscript</p>
+
+
+	<h2>Attributes</h2>
+	
+		<div class="table-responsive">
+			<table class="table" title="Attributes">
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td>
+								label<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/stopwatch/_attributes/label.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The label for the stopwatch, used in debugging output.</p>
+
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+								variable<br>
+								<sub>(string, optional)</sub>
+							</td>
+							<td>
+								<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/stopwatch/_attributes/variable.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+								<p>The name of the variable which will contain the value of the time taken.</p>
+
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	
+
+	<h2>Examples</h2>
+	
+		<a class="pull-right" href="https://github.com/lucee/lucee-docs/edit/master/docs/03.reference/02.tags/stopwatch/_examples.md" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
+		<h3>Tags</h3>
+<script type="text/template" id="code-b9c384673f571cc9ef4a0133c8a8d555" data-trycf="true" data-script="false"><cfstopwatch variable="stopwatchVar">
+    <cfset i = 0>
+    <cfloop from="1" to="10000" index="j">
+        <cfset i++>
+    </cfloop>
+</cfstopwatch>
+
+<cfdump var="#stopwatchVar#"></script>
+<div class="highlight"><pre><span class="nt">&lt;cfstopwatch</span> <span class="na">variable=</span><span class="s">&quot;stopwatchVar&quot;</span><span class="nt">&gt;</span>
+    <span class="nb">&lt;cfset</span> <span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="nb">&gt;</span>
+    <span class="nb">&lt;cfloop</span> <span class="nv">from</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="nv">to</span><span class="o">=</span><span class="s2">&quot;10000&quot;</span> <span class="nv">index</span><span class="o">=</span><span class="s2">&quot;j&quot;</span><span class="nb">&gt;</span>
+        <span class="nb">&lt;cfset</span> <span class="nv">i</span><span class="o">++</span><span class="nb">&gt;</span>
+    <span class="nb">&lt;/cfloop&gt;</span>
+<span class="nt">&lt;/cfstopwatch&gt;</span>
+<p><span class="nb">&lt;cfdump</span> <span class="k">var</span><span class="o">=</span><span class="s2">&quot;</span><span class="s-Interp">#stopwatchVar#</span><span class="s2">&quot;</span><span class="nb">&gt;</span>
+</pre></div></p>
+<h3>Script</h3>
+<script type="text/template" id="code-d7977be250d7764ac6fb96c25bed16ea" data-trycf="true" data-script="true">stopwatch variable="stopwatchVar" {
+    i = 0;
+    loop from="1" to="10000" index="j" {
+        i++;
+    }
+}
+dump(stopwatchVar);</script>
+<div class="highlight"><pre><span class="nv">stopwatch</span> <span class="nv">variable</span><span class="o">=</span><span class="s2">&quot;stopwatchVar&quot;</span> <span class="p">{</span>
+    <span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nv">loop</span> <span class="nv">from</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="nv">to</span><span class="o">=</span><span class="s2">&quot;10000&quot;</span> <span class="nv">index</span><span class="o">=</span><span class="s2">&quot;j&quot;</span> <span class="p">{</span>
+        <span class="nv">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">dump</span><span class="p">(</span><span class="nv">stopwatchVar</span><span class="p">);</span>
+</pre></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>The Lucee Documentation is developed and maintained by the Lucee Association Switzerland and is licensed under a
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
